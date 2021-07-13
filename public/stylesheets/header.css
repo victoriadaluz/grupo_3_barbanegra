@@ -7,12 +7,15 @@
     
 }
 body{
-    font-family: p;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1B5185, #011528);
+
 }
 header{    
     height: 100px;
    /*  background-color: #011528; */
     background-image: url(/img/frame2.png);
+    
     background-size: cover;
     background-position: center;
     background-blend-mode: color-burn;
@@ -36,6 +39,9 @@ display: flex;
     width: 80px;
     
 } 
+
+
+
 /* Search Bar  */
   .search {
     position:fixed;
@@ -134,7 +140,12 @@ display: flex;
 
 }
 @media screen and (min-width : 1024px){
-  
+    
+    .menu nav .nav-menu{
+        position:absolute;
+        left: -6%;
+        }
+
     .menu nav{
         height: 100px;
     }
