@@ -4,7 +4,7 @@ _Primer sprint del e-commerce para DH Venture Capitals_
 
 ## NOSOTROS SOMOS : 
 
-![logo2](https://user-images.githubusercontent.com/84512061/121984500-71d55a80-cd69-11eb-9e92-b34bd891ea14.png)
+![logos](public/images/marca/logos.png)
 
 ## COMENZANDO 🚀
 
