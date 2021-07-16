@@ -1,0 +1,247 @@
+/* HEADER */
+header{    
+    height: 150px;
+   /*  background-color: #011528; */   
+    background-image: url(/img/frame2.png);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: color-burn;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+nav{
+    height: 110px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+/* Images fix */
+ .logo1 img {
+    width: 150px; 
+    margin: 10px auto;
+    
+       
+}
+.logo2 img{
+    width:80px;
+    margin-right: 25px;
+    
+    
+} 
+/* Search Bar  */
+  .search {
+    position:absolute;
+    top: 80%;
+    left: 10px;
+    transform: translate(0%, -50%);
+    background: #08354F;
+    height: 40px;
+    border-radius: 40px;   
+  }
+  .search:hover > .search-input {
+    width: 200px;
+    padding: 0 6px;
+  }
+  .search:hover > .search-btn {
+    background: white;
+  }  
+
+  .search-btn {
+    color: #fff;
+    float : right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: transparent;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    text-decoration: none;
+  }
+  .search-btn i{
+      color: #011528;
+  }
+  .search-input {
+    border: none;
+    background: none;
+    outline: none;
+    float: right;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.5s;
+    line-height: 40px;
+    width: 0px;
+  }
+/* Magic button */
+.menu{
+  font-size: 25px;
+}
+.menu .bar-btn{
+    font-size: 23px;
+    color: #fff;
+    margin-left: 20px;  
+    margin-bottom: 70px;  
+    cursor: pointer;
+    padding: 10px auto;
+}
+
+.menu .nav-menu{
+    position: fixed;
+    width: 100%;
+   /*  height: 100vh; */
+    top: 100px;
+    background: #011528;
+    text-align: center;
+    /* transition:  all 2s;   */  
+}
+.menu .nav-menu li{
+    display: none;
+    line-height: 30px;
+    margin: 100px 0;
+    transition: all  1s;
+    
+}
+.menu .nav-menu li a {
+    color: #FFFEFE;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    
+}
+
+/* .menu .nav-menu li a.active,  */
+.nav-menu li a:hover{
+    color: rgb(155, 13, 199);
+    transition: all 1s;    
+}
+
+.menu #check{
+    display: none;
+}
+
+.menu #check:checked ~ .nav-menu{
+    height: 100vh;
+    
+      
+}
+
+.menu #check:checked ~ .nav-menu li{
+    display: block;
+   
+}
+
+
+/* SHOP-CART  FLOAT*/
+
+
+.item1{
+    font-size: 20px;
+    position: fixed;
+    top: 0;
+    right: -80%;
+    background-color: rgba(0, 0, 0, .9);
+    width: 80%;
+    height: 100vh;
+    padding-top: 20px;
+    z-index: 100;
+    transition: all 1s;
+}
+.item1 article{
+    display: flex;    
+    flex-wrap: wrap;
+}
+
+.item1 img{    
+  width: 100px;
+  height: 100px;
+  margin: 5px auto;  
+}
+
+.item1 h5{
+    margin: 10px;
+    padding: 10px;
+    color: #fff;
+    
+   
+}
+.items-amount{
+    margin: 50px auto;
+    padding: 10px;
+    width: 80%;
+}
+.items-amount .value{
+    width: 60%;
+}
+.items-amount #number{
+    width: 40px;
+}
+.item1 .send-package{
+    text-align: center;
+    margin: 50px auto;
+
+}
+.item1 .send-package #cp{  
+    max-width: 33%;
+}
+.item1 .sum-total{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 80px auto;
+}
+.item1 .sum-total h1{
+    background-color: #011528;
+    color: #FFFEFE;
+    border: solid 1px rgb(255, 255, 255);
+    border-radius: 5%;
+    text-align: center;
+    width: 100px;
+    font-size: 20px;
+}
+/* .item1 .sum-total{
+    display: grid;
+    grid-template-columns: 50% 50%;
+} */
+.item1 .car-botton .go-car{
+    position: absolute;
+    bottom: 0px;
+    left: 10px;
+}
+.item1 .car-botton .pay{
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+}
+.item1 .car-botton a{
+    text-decoration: none;
+    color: #FFFEFE;
+    border: 1px solid white;
+    margin:auto;
+    padding: 7px;
+    background-color: #011528;
+
+    
+}
+#show-car{
+    display:none ;
+}
+.shop-car .label1 {
+    position: fixed;
+    top: 40px;
+    left: 0;
+    line-height: 2;
+    background-color: transparent;
+    color: #FFFEFE;
+    padding: 20px 20px;
+    cursor: pointer;
+    z-index: 150;
+    transition: all .5s;
+}
+#show-car:checked ~ .item1{
+    right: 0;
+}
