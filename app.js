@@ -23,6 +23,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname,'./views/home.html'))
 })
+app.get('/loginRegistro', (req, res) => {
+  res.sendFile(path.join(__dirname,'./views/loginRegistro.html'))
+})
+
+
 app.listen(port, () => console.log(`Servidor levantado en el puerto ${port}\n http://localhost:${port}` ))
 
 app.use('/', indexRouter);
