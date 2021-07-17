@@ -24,10 +24,10 @@
     position: relative;
   }
  
-  .row .content .card  img{
+  .row-main .content .card-collap  img{
     width: 120px;
   }
-  .row .content .column h1{
+  .row-main .content .column h1{
     font-size: 20px;
   }
   .active, .collapsible:hover {
@@ -35,7 +35,7 @@
     
   }
  
-.card {
+.card-collap {
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
   text-align: center;  
 }
@@ -45,7 +45,7 @@
   font-size: 22px;
 }
 
-.card button {
+.card-collap button {
   border: none;
   outline: 0;
   padding: 12px;
@@ -57,7 +57,7 @@
   font-size: 18px;
 }
 
-.card button:hover {
+.card-collap button:hover {
   opacity: 0.7;
 }
  
@@ -67,7 +67,7 @@
 }
 
 /* Clear floats after the columns */
-.row:after {
+.row-main:after {
   content: "";
   display: table;
   clear: both;
@@ -113,7 +113,7 @@
   padding: 0 16px;
 }
 
-.container {
+.container-form-master {
   /* background-color: #f2f2f2; */
   padding: 5px 20px 15px 20px;
   border: 1px solid lightgrey;
