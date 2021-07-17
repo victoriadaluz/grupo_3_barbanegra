@@ -20,6 +20,8 @@
     <!-- Stylesheets -->
 
     <link rel="stylesheet" href="/stylesheets/home.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/footer.css">
     
     <title>Barba Negra</title>
 
@@ -27,6 +29,71 @@
 </head>
 
 <body>
+    <header>
+        <div class='search'>
+            <input class='search-input' type='text' name='' placeholder='Busqueda...'>
+            <a class='search-btn' href='#'><i class='fa fa-search'></i></a>
+        </div>
+        <div class="menu-header-main">
+            <nav class="nav-main">
+                <input type="checkbox" id="check">
+                <label for="check" class="bar-btn">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <ul class="nav-menu">
+                    <li><a class="active1" href="/">Home</a></li>
+                    <li><a href="/detalleProducto">Maquinas</a></li>
+                    <li><a href="/detalleProducto">Equipamiento</a></li>
+                    <li><a href="/detalleProducto">Repuestos</a></li>
+                    <li><a href="/loginRegistro">Registro</a></li>
+                </ul>
+
+            </nav>
+        </div>
+        <div class="logo1"><img src="images/logo.png" alt=""></div>
+        <div class="logo2"><img src="/images/logocompleto.png" alt=""></div>
+
+
+    </header>
+    <nav class="shop-car">
+        <input type="checkbox" id="show-car">
+        <label class="label1" for="show-car"><i class="fas fa-cart-plus"></i></i></label>
+        <div class="item1">
+            <article>
+                <img src="/images/wahl-senior.jpeg" alt="Cortadora de pelos profesional">
+                <h5>WAHL SENIOR CORDLESS SERIE 5 STAR + ACCESORIOS</h5>
+
+                <form action="items-amount" class="items-amount">
+                    <input type="text" value="$8500" class="value">
+                    <!-- use type button por que, si no recargaba la pagina y se iba el carrito -->
+                    <input type="button" value="-">
+                    <!--  lograr interaccion de formularios agregar o quitar -->
+                    <input type="number" name="name" id="number" min=0>
+                    <input type="reset" value="+">
+                </form>
+            </article>
+            <hr>
+            <div class="send-package">
+                <form action="">
+                    <input type="text" name="cp" id="cp" placeholder="Ingrese CP">
+                    <input type="button" value="Calcular">
+                    <input type="reset" value="Cambiar CP">
+                </form>
+            </div>
+            <hr>
+            <div class="sum-total">
+                <h1>TOTAL</h1>
+                <h1>$8500</h1>
+
+            </div>
+            <hr>
+            <div class="car-botton">
+                <a href="/car" class="go-car">Ver carrito</a>
+                <a href="#" class="pay">PAGAR</a>
+            </div>
+        </div>
+
+    </nav>
 
     <main>
 
@@ -369,7 +436,95 @@
         <!-- Popular brand end -->
 
     </main>
+    <footer>
 
+        <div class="container-footer-all">
+    
+            <div class="container-body">
+    
+                <div class="column1">
+                    <h1>Sobre nosotros</h1>
+    
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste, ipsam! Veritatis, reprehenderit. Ducimus commodi enim sint, obcaecati numquam aliquam cumque reiciendis? Officia temporibus magni delectus cum saepe pariatur nesciunt itaque!</p>
+                </div>
+    
+                <div class="column2">
+                    <h1>Contactos</h1>
+                    <div class="row2">
+                        <img src="images/correo-electronico.png">
+                        <label>email: barbanegra@outlook.com</label>
+                    </div>
+                    <div class="row2">
+                        <img src="images/receptor-de-telefono.png">
+                        <label>Telefono: 4699-7042</label>
+                    </div>
+                    <div class="row2">
+                        <img src="images/whatsapp.png">
+                        <label>whatsapp: +54 01132873559</label>
+                    </div>
+                    <div class="row2">
+                        <img src="images/home.png">
+                        <label>Lunes a Viernes de 9 a 13 y de 14 a 18hs
+    
+                            (Excepto días de fiesta)Hable con nosotros</label>
+                    </div>
+                </div>
+    
+                <div class="column3">
+                    <h1>Redes sociales</h1>
+    
+                    <div class="rowicon">
+    
+                    <div class="row">
+                        <img src="images/facebook.png">
+                    </div>
+    
+                    <div class="row">
+                        <img src="images/twitter.png">
+                    </div>
+    
+                    <div class="row">
+                        <img src="images/instagram.png">
+                        
+                    </div>
+    
+                    <div class="row">
+                        <img src="images/google-mas.png">
+                        
+                    </div>
+    
+                </div>
+    
+                </div>
+    
+                <div class="column4">
+    
+                    <h1>Ayuda</h1>
+                    <ul class="lista">
+                        <li>Mi Cuenta</li>
+                        <li>Mis pedidos</li>
+                        <li>Entregas</li>
+                        <li>¿Este sitio es seguro?</li>
+                        <li>Cambios y devoluciones</li>
+                    </ul>
+                </div>
+    
+            </div>
+    
+    
+        </div>
+    
+        <div class="container-footer">
+            <div class="footer">
+    
+            <div class="copyright">
+                Wahl Argentina S.R.L - CUIT 30-70765598-0
+    Precios exclusivos y condiciones de pago para compras a través de Internet.
+        </div>
+    
+            </div>
+        </div>
+        </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
