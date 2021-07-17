@@ -27,6 +27,9 @@ app.get('/loginRegistro', (req, res) => {
   res.sendFile(path.join(__dirname,'./views/loginRegistro.html'))
 })
 
+app.get('/detalleProducto', (req, res) => {
+  res.sendFile(path.join(__dirname,'./views/detalleProducto.html'))
+})
 
 /* CARRITO DE COMPRAS */
 app.get('/car', (req, res) => {
