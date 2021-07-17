@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    
+    <!--  Google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;1,100;1,200;1,400;1,500&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class='search'>
+            <input class='search-input' type='text' name='' placeholder='Busqueda...'>
+            <a class='search-btn' href='#'><i class='fa fa-search'></i></a>
+        </div>
+        <div class="menu-header-main">
+            <nav class="nav-main">
+                <input type="checkbox" id="check">
+                <label for="check" class="bar-btn">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <ul class="nav-menu">
+                    <li><a class="active1" href="/">Home</a></li>
+                    <li><a href="/detalleProducto">Maquinas</a></li>
+                    <li><a href="/detalleProducto">Equipamiento</a></li>
+                    <li><a href="/detalleProducto">Repuestos</a></li>
+                    <li><a href="/loginRegistro">Registro</a></li>
+                </ul>
+
+            </nav>
+        </div>
+        <div class="logo1"><img src="images/logo.png" alt=""></div>
+        <div class="logo2"><img src="/images/logocompleto.png" alt=""></div>
+
+
+    </header>
+    <div class="detail-float">
+        <div class="row-main">
+            <button type="button" class="detail-btn">Detalle de compra</button>
+            <div class="content">
+                <div class="card-collap">
+                    <div class="column left">
+                        <img src="/images/wahl-senior.jpeg" alt="Producto"></div>
+                    <div class="column right">
+                        <h1>WAHL SENIOR CORDLESS SERIE 5 STAR </h1>
+                        <p class="price">$8.200</p>
+                        <p>Costo del envio $300</p>
+                        <button>Total: $8.500</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- PRODUCT-CAR -->
+        <nav class="shop-car">
+            <input type="checkbox" id="show-car">
+            <label class="label1" for="show-car"><i class="fas fa-cart-plus"></i></i></label>
+            <div class="item1">
+                <article>
+                    <img src="/images/wahl-senior.jpeg" alt="Cortadora de pelos profesional">
+                    <h5>WAHL SENIOR CORDLESS SERIE 5 STAR + ACCESORIOS</h5>
+
+                    <form action="items-amount" class="items-amount">
+                        <input type="text" value="$8500" class="value">
+                        <!-- use type button por que, si no recargaba la pagina y se iba el carrito -->
+                        <input type="button" value="-">
+                        <!--  lograr interaccion de formularios agregar o quitar -->
+                        <input type="number" name="name" id="number" min=0>
+                        <input type="reset" value="+">
+                    </form>
+                </article>
+                <hr>
+                <div class="send-package">
+                    <form action="">
+                        <input type="text" name="cp" id="cp" placeholder="Ingrese CP">
+                        <input type="button" value="Calcular">
+                        <input type="reset" value="Cambiar CP">
+                    </form>
+                </div>
+                <hr>
+                <div class="sum-total">
+                    <h1>TOTAL</h1>
+                    <h1>$8500</h1>
+
+                </div>
+                <hr>
+                <div class="car-botton">
+                    <a href="/car" class="go-car">Ver carrito</a>
+                    <a href="#" class="pay">PAGAR</a>
+                </div>
+            </div>
+
+        </nav>
+        <!--  Checkout payment -->
+        <div class="row2">
+            <div class="col-75">
+                <div class="container-form-master">
+                    <form action="">
+
+                        <div class="row2">
+                            <div class="col-50">
+                                <h3>Ingrese su direccion</h3>
+                                <label for="fname"><i class="fa fa-user"></i>Nombre completo</label>
+                                <input type="text" id="fname" name="firstname" placeholder="Ricardo Fort">
+                                <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                                <input type="text" id="email" name="email" placeholder="ricardofort@maiameee.usa">
+                                <label for="adr"><i class="fa fa-address-card-o"></i>Direccion</label>
+                                <input type="text" id="adr" name="address" placeholder="Miami bulevard 123">
+                                <label for="city"><i class="fa fa-institution"></i> Ciudad</label>
+                                <input type="text" id="city" name="city" placeholder="Nordelta">
+
+                                <div class="row2">
+                                    <div class="col-50">
+                                        <label for="state">Provincia</label>
+                                        <input type="text" id="state" name="state" placeholder="BA">
+                                    </div>
+                                    <div class="col-50">
+                                        <label for="zip">Codig postal</label>
+                                        <input type="text" id="zip" name="zip" placeholder="5539">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-50">
+                                <h3>Forma de pago</h3>
+                                <label for="name">Tarjetas de credito</label>
+                                <div class="icon-container">
+                                    <i class="fa fa-cc-visa" style="color:navy;"></i>
+                                    <i class="fa fa-cc-amex" style="color:blue;"></i>
+                                    <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                                    <i class="fa fa-cc-discover" style="color:orange;"></i>
+                                </div>
+                                <label for="cname">Nombre titular</label>
+                                <input type="text" id="cname" name="cardname" placeholder="Ricardo fort">
+                                <label for="ccnum">Numero de tarjeta</label>
+                                <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                                <label for="expmonth">Exp Month</label>
+                                <input type="text" id="expmonth" name="expmonth" placeholder="September">
+
+                                <div class="row2">
+                                    <div class="col-50">
+                                        <label for="expyear">Fecha de expiración</label>
+                                        <input type="text" id="expyear" name="expyear" placeholder="2018">
+                                    </div>
+                                    <div class="col-50">
+                                        <label for="cvv">CVV</label>
+                                        <input type="text" id="cvv" name="cvv" placeholder="352">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <label>
+                            <input type="checkbox" checked="checked" name="sameadr"> Enviar seguimiento por email
+                        </label>
+                        <input type="submit" value="Continue to checkout" class="submit-btn">
+                    </form>
+                </div>
+            </div>
+
+        <script src="javascript/_product-car.js"></script>
+</body>
+
+</html>

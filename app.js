@@ -19,13 +19,20 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+/* HOME */
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname,'./views/home.html'))
 })
 app.get('/loginRegistro', (req, res) => {
   res.sendFile(path.join(__dirname,'./views/loginRegistro.html'))
 })
+
+
+/* CARRITO DE COMPRAS */
+app.get('/car', (req, res) => {
+  res.sendFile(path.join(__dirname,'./views/product-car.html'))
+})
+
 
 
 app.listen(port, () => console.log(`Servidor levantado en el puerto ${port}\n http://localhost:${port}` ))
