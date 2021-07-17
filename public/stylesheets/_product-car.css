@@ -1,6 +1,7 @@
 /* -----------------------------------------------------------
                       product-car
 ------------------------------------------------------------ */
+/* Effects on btn */
 
 .detail-btn {
     background-color: #eee;
@@ -9,9 +10,10 @@
     padding: 18px;
     width: 100%;
     border: none;
-    text-align: left;
+    text-align: center;
     outline: none;
     font-size: 15px;
+    
     
   }
 .content {
@@ -90,17 +92,18 @@
 }
 
 .col-25 {
-  -ms-flex: 25%; /* IE10 */
+  display: block;
+  
   flex: 25%;
 }
 
 .col-50 {
-  -ms-flex: 50%; /* IE10 */
+  
   flex: 50%;
 }
 
 .col-75 {
-  -ms-flex: 75%; /* IE10 */
+  
   flex: 75%;
 }
 
@@ -151,4 +154,7 @@ label {
 .submit-btn:hover {
   background-color: #45a049;
 }
+
+
+
 
