@@ -85,7 +85,7 @@
 }
 
 /* CHECKOUT FORM */
-.row2 {  
+.row2-checkout {  
   display: flex;
   flex-wrap: wrap;
   margin: 0 -16px;
