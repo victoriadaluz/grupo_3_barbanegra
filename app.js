@@ -23,6 +23,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname,'./views/home.html'))
 })
+app.get('/loginRegistro', (req, res) => {
+  res.sendFile(path.join(__dirname,'./views/loginRegistro.html'))
+})
+
+app.get('/detalleProducto', (req, res) => {
+  res.sendFile(path.join(__dirname,'./views/detalleProducto.html'))
+})
+
 /* CARRITO DE COMPRAS */
 app.get('/car', (req, res) => {
   res.sendFile(path.join(__dirname,'./views/product-car.html'))

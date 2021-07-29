@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del producto</title>    
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/detalleProducto.css">
+</head>
+<body>
+    <header>
+        <div class='search'>
+            <input class='search-input' type='text' name='' placeholder='Busqueda...'>
+            <a class='search-btn' href='#'><i class='fa fa-search'></i></a>
+        </div>
+        <div class="menu-header-main">
+            <nav class="nav-main">
+                <input type="checkbox" id="check">
+                <label for="check" class="bar-btn">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <ul class="nav-menu">
+                    <li><a class="active1" href="/">Home</a></li>
+                    <li><a href="/detalleProducto">Maquinas</a></li>
+                    <li><a href="/detalleProducto">Equipamiento</a></li>
+                    <li><a href="/detalleProducto">Repuestos</a></li>
+                    <li><a href="/loginRegistro">Registro</a></li>
+                </ul>
+
+            </nav>
+        </div>
+        <div class="logo1"><img src="images/logo.png" alt=""></div>
+        <div class="logo2"><img src="/images/logocompleto.png" alt=""></div>
+
+
+    </header>
+    <nav class="shop-car">
+        <input type="checkbox" id="show-car">
+        <label class="label1" for="show-car"><i class="fas fa-cart-plus"></i></i></label>
+        <div class="item1">
+            <article>
+                <img src="/images/wahl-senior.jpeg" alt="Cortadora de pelos profesional">
+                <h5>WAHL SENIOR CORDLESS SERIE 5 STAR + ACCESORIOS</h5>
+
+                <form action="items-amount" class="items-amount">
+                    <input type="text" value="$8500" class="value">
+                    <!-- use type button por que, si no recargaba la pagina y se iba el carrito -->
+                    <input type="button" value="-">
+                    <!--  lograr interaccion de formularios agregar o quitar -->
+                    <input type="number" name="name" id="number" min=0>
+                    <input type="reset" value="+">
+                </form>
+            </article>
+            <hr>
+            <div class="send-package">
+                <form action="">
+                    <input type="text" name="cp" id="cp" placeholder="Ingrese CP">
+                    <input type="button" value="Calcular">
+                    <input type="reset" value="Cambiar CP">
+                </form>
+            </div>
+            <hr>
+            <div class="sum-total">
+                <h1>TOTAL</h1>
+                <h1>$8500</h1>
+
+            </div>
+            <hr>
+            <div class="car-botton">
+                <a href="/car" class="go-car">Ver carrito</a>
+                <a href="#" class="pay">PAGAR</a>
+            </div>
+        </div>
+
+    </nav>
+    <div class="main-container-master">
+    <div class="all">
+
+    <div class="container-algomas">
+        <ul class="slider-p">
+            <li id="slide1-p"> <img src="images/maquina-1.jpeg" alt="principal"></li>
+            <li id="slide2-p"><img src="images/maquina-2.jpeg" alt="incluye"></li>
+            <li id="slide3-p"><img src="images/maquina-3.jpeg" alt="tercera"></li>
+        </ul>
+
+        <ul class="menu">
+            <li>
+                <a href="#slide1-p"></a>
+            </li>
+            <li>
+                <a href="#slide2-p"></a>
+            </li>
+            <li>
+                <a href="#slide3-p"></a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="product-block">
+        <div class="product-info">
+        <h2>Wahl 5 Star Senior Cordless 8504-400 negra 220V</h2> <hr>
+            <p>La nueva Cortapelos Wahl Senior Cordless cuenta con la última tecnologia en baterías de litio de larga duración sin efecto memoria generando una velocidad alta de cuchilla con un torque mayor que recortará incluso el cabello más grueso con facilidad.</p>
+            <hr>
+            <h2>$21.500</h2>
+            <h4>en 12x 2765 pesos con 26 centavos$2.765,26</h4>
+            <p>
+                <a href="#" class="btnc">Comprar</a>
+            </p>
+
+            <p>  <input type="checkbox" id="show-car">
+                <label class="label1" for="show-car"><a href="#shop-cart" class="btna">Agregar al carrito</a></p></i></i></label>
+        </div>
+    </div>
+
+   </div>
+
+   <table>
+    <tr>
+        <td class="fil1">Batería</td>
+        <td class="fil2">Batería de litio de última generación sin efecto memoria, 70 minutos de duración con sólo 120 minutos de carga</td>
+
+    </tr>
+    <tr>
+        <td class="fil1">Motor</td>
+        <td class="fil2"> <ul>
+            <li>Motor potente de gran durabilidad/6500RPM.</li>
+            <li>Trabaja con cable o batería, inalámbrico.</li>
+            
+        </ul>
+        </td>
+
+    </tr>
+
+    <tr>
+        <td class="fil1">Cuchillas</td>
+        <td class="fil2">cuchilla especial Fade atornillada, ajustable hasta el 0.
+            Cuenta con una cuchilla de perfil fino ajustable para fundidos de precisión, con un fondo plano que permite un corte más cerrado. </td>
+
+    </tr>
+
+    <tr>
+        <td class="fil1">Medidas</td>
+        <td class="fil2">         Peso: 365 gramos. <br>
+            Ancho de corte : 40 mm. / alto de corte: 0.8 – 2.5 mm <br>
+            Voltaje: 100-240v. </td>
+
+    </tr>
+
+</table>
+   
+   <!--
+
+   <div class="caracteristicas">
+       <h2>Especificaciones técnicas</h2>
+       <hr>
+       <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur aut ex doloremque veniam impedit sed consectetur libero beatae aperiam, reiciendis adipisci ratione, voluptatem rerum reprehenderit debitis eveniet non. Suscipit, corrupti.</p>
+
+    </div>
+-->
+
+<div class="inf">
+<section id="sec1">
+    <div class="contenedeor-texto">
+        <h2>Calidad</h2>
+        <p>Una línea profesional de Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus fugiat voluptas enim consequuntur, magnam tempore sapiente reiciendis repellendus aspernatur dolore ab quaerat velit, officiis officia accusamus magni in rem, ea obcaecati illo animi nostrum expedita sequi. Similique temporibus ratione hic reprehenderit assumenda accusantium, ut, a porro veritatis ad, ducimus blanditiis repellat officia ipsam nulla impedit. Quas, officia. Voluptatibus, veritatis tempore. </p>
+        <a href="#sec2">Asesoramiento</a>
+    </div>
+    <img src="images/undraw_barber1.png" alt="">
+</section>
+
+<section id="sec2">
+    <img src="images/undraw_add2.png" alt="">
+    <div class="contenedeor-texto">
+        <h2>Asesoramiento</h2>
+        <p>Asesoramos a nuestros clientes para que Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum dolorem, eveniet deserunt eligendi laborum porro magni excepturi? Aperiam libero quae accusamus est. Sint doloremque vel cumque repellendus cupiditate incidunt voluptas consequuntur ullam voluptates labore exercitationem in, explicabo magni eos fugiat iure suscipit accusamus. Quibusdam veniam debitis soluta nesciunt! Magnam nesciunt exercitationem consequuntur illum eligendi dignissimos doloribus. Ipsam aperiam iure similique. </p>
+        <a href="#sec3">Escríbenos</a>
+    </div>
+    
+    
+</section>
+<section id="sec3">
+    <div class="contenedeor-texto">
+        <h2>Escríbenos</h2>
+        <p>Ponte en contacto para recibir mas información Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis amet voluptates eum maiores quisquam atque nobis tenetur in sed labore similique, id esse enim, minima laborum autem optio excepturi quia natus officia! Praesentium sunt earum fugit dolorum, necessitatibus odio repudiandae distinctio deserunt? Perferendis delectus quae est in qui error perspiciatis ullam quidem aperiam? Totam laboriosam consequatur officiis id nihil molestiae. </p>
+        <a href="#sec4">Somos</a>
+    </div>
+    <img src="images/undraw_text3.png" alt="">
+    
+</section>
+<section id="sec4">
+    <img src="images/logo wahl.png" alt="">
+    <div class="contenedeor-texto">
+        <h2>Somos</h2>
+        <p>Una empresa de mucha reputación Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex ipsa accusantium natus, voluptatibus saepe debitis iste eos excepturi, minima voluptatem incidunt at. Error omnis perferendis aperiam ut molestiae, necessitatibus ex quos eos modi quibusdam itaque, at placeat nulla, animi ad incidunt? Dolore odio saepe corrupti dolor, eum hic ducimus eveniet autem ut assumenda minus, obcaecati nemo ipsum magni nulla voluptas. </p>
+        <a href="#sec1">Calidad</a>
+    </div>
+    
+    
+</section>
+</div>
+
+</div>
+</div>
+</body>
+</html>
