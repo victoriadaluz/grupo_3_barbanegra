@@ -4,6 +4,7 @@ header{
   width: 100%;
   position: fixed; /* header fixeado, dejar el heigh para que no se pise con el main */
   height: fit-content;
+  z-index: 999;
 }
 main{
   margin-top: 150px; /* main necesario para un header fixed  */
