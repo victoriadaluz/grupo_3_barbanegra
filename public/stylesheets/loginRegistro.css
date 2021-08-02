@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('_header.css');
 
 * {
     box-sizing: border-box;
 }
 
-body {
+.body-login {
     font-family:'Poppins', sans-serif;
     background: linear-gradient(135deg, #1B5185, #011528);
     display: flex;
@@ -13,17 +14,18 @@ body {
     align-items: center;
     height: 100vh;
     margin: -20px 0 50px;
-		margin-top: 20px;
+	margin-top: 20px;
 
 }
 
 
-h1 {
+.login-container h1 {
     font-weight: bold;
     margin: 0;
 }
 
-p {
+
+.login-container p {
     font-size: 14px;
     font-weight: 100;
     line-height: 20px;
@@ -31,11 +33,13 @@ p {
     margin: 20px 0 30px;
 }
 
-span {
+
+.login-container span {
     font-size: 12px;
 }
 
-a {
+
+.login-container a {
     color: #333;
     font-size: 14px;
     text-decoration: none;
