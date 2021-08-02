@@ -32,7 +32,7 @@ app.get('/detalleProducto', (req, res) => {
 })
 
 /* CARRITO DE COMPRAS */
-app.get('/car', (req, res) => {
+app.get('/cart', (req, res) => {
   res.sendFile(path.join(__dirname,'./views/product-car.html'))
 })
 
