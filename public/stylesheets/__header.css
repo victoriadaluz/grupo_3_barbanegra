@@ -1,0 +1,17 @@
+/* MAIN */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+  }
+  /* BODY MAIN */
+  body{
+    font-family: 'Poppins', sans-serif;
+  }
+  header{
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: fixed; /* header fixeado, dejar el heigh para que no se pise con el main */
+    height: fit-content;
+}

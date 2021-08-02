@@ -14,7 +14,7 @@
     <!-- Slick slider -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 
-    <!-- Stylesheets -->   \
+    <!-- Stylesheets -->   
     <link rel="stylesheet" href="/stylesheets/home.css">
     <link rel="stylesheet" href="/stylesheets/style.css">    
     <link rel="stylesheet" href="/stylesheets/footer.css">
@@ -28,70 +28,34 @@
 
 <body>
     <header>
-        <div class='search'>
-            <input class='search-input' type='text' name='' placeholder='Busqueda...'>
-            <a class='search-btn' href='#'><i class='fa fa-search'></i></a>
-        </div>
+        
+        
         <div class="menu-header-main">
-            <nav class="nav-main">
-                <input type="checkbox" id="check">
-                <label for="check" class="bar-btn">
-                    <i class="fas fa-bars"></i>
-                </label>
-                <ul class="nav-menu">
-                    <li><a class="active1" href="/">Home</a></li>
-                    <li><a href="/detalleProducto">Maquinas</a></li>
-                    <li><a href="/detalleProducto">Equipamiento</a></li>
-                    <li><a href="/detalleProducto">Repuestos</a></li>
-                    <li><a href="/loginRegistro">Registro</a></li>
-                </ul>
+            <div class='search'>
+                <input class='search-input' type='text' name='' placeholder='Busqueda...'>
+                <a class='search-btn' href='#'><i class='fa fa-search'></i></a>
+            </div>
 
-            </nav>
-        </div>
-        <div class="logo1"><img src="images/logo.png" alt=""></div>
-        <div class="logo2"><img src="/images/logocompleto.png" alt=""></div>
+        <div class="logo1"><a href="/"><img src="images/logo.png" alt=""></a></div>
+        <div class="logo2"><a href="/"><img src="/images/logocompleto.png" alt=""></a></div>
+        <nav class="nav-main">
+            <input type="checkbox" id="check">
+            <label for="check" class="bar-btn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <ul class="nav-menu">
+                <li><a class="active1" href="/">Home</a></li>
+                <li><a href="/detalleProducto">Maquinas</a></li>
+                <li><a href="/detalleProducto">Equipamiento</a></li>
+                <li><a href="/detalleProducto">Repuestos</a></li>
+                <li><a href="/loginRegistro">Registro</a></li>
+            </ul>
 
+        </nav>
+    </div>
 
     </header>
-    <nav class="shop-car">
-        <input type="checkbox" id="show-car">
-        <label class="label1" for="show-car"><i class="fas fa-cart-plus"></i></i></label>
-        <div class="item1">
-            <article>
-                <img src="/images/wahl-senior.jpeg" alt="Cortadora de pelos profesional">
-                <h5>WAHL SENIOR CORDLESS SERIE 5 STAR + ACCESORIOS</h5>
-
-                <form action="items-amount" class="items-amount">
-                    <input type="text" value="$8500" class="value">
-                    <!-- use type button por que, si no recargaba la pagina y se iba el carrito -->
-                    <input type="button" value="-">
-                    <!--  lograr interaccion de formularios agregar o quitar -->
-                    <input type="number" name="name" id="number" min=0>
-                    <input type="reset" value="+">
-                </form>
-            </article>
-            <hr>
-            <div class="send-package">
-                <form action="">
-                    <input type="text" name="cp" id="cp" placeholder="Ingrese CP">
-                    <input type="button" value="Calcular">
-                    <input type="reset" value="Cambiar CP">
-                </form>
-            </div>
-            <hr>
-            <div class="sum-total">
-                <h1>TOTAL</h1>
-                <h1>$8500</h1>
-
-            </div>
-            <hr>
-            <div class="car-botton">
-                <a href="/car" class="go-car">Ver carrito</a>
-                <a href="#" class="pay">PAGAR</a>
-            </div>
-        </div>
-
-    </nav>
+    
 
     <main>
 
@@ -108,9 +72,7 @@
                 <li><img src="/images/banner/banner8.jpg" alt=""></li>
                 <li><img src="/images/banner/banner9.jpg" alt=""></li>
             </ul>
-        </div>
-
-        <!-- Slider end -->
+        </div>       
 
 
         <!-- Our offers -->
