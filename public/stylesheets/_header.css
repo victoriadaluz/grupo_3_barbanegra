@@ -50,7 +50,7 @@ header{
     background: white;
   }  
 
-  .search-btn {
+  .menu-header-main .search-btn {
     color: #fff;
     float : right;
     width: 40px;
@@ -85,7 +85,7 @@ header{
 .menu-header-main .bar-btn{
     font-size: 23px;
     color: #fff;
-    margin-left: 20px;  
+    margin-right: 20px;  
     margin-bottom: 70px;  
     cursor: pointer;
     padding: 10px auto;
@@ -274,6 +274,7 @@ header{
         line-height: 100px;
         margin: 0 10px;
         transition: none;
+        
         
     }
     .menu-header-main .nav-menu li a{
