@@ -10,9 +10,6 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-/* E-J-S  E N G I N E  */
-app.set('view engine','ejs');
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -30,11 +27,9 @@ app.get('/', (req, res) => {
 app.get('/loginRegistro', (req, res) => {
   res.sendFile(path.join(__dirname,'./views/loginRegistro.html'))
 })
-
 app.get('/detalleProducto', (req, res) => {
   res.sendFile(path.join(__dirname,'./views/detalleProducto.html'))
 })
-
 /* CARRITO DE COMPRAS */
 app.get('/cart', (req, res) => {
   res.sendFile(path.join(__dirname,'./views/product-car.html'))
