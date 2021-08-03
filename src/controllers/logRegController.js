@@ -3,5 +3,5 @@ const { name, carousel } = productsDB
 
 module.exports = {
     login: (req,res)=>{
-    res.render('loginRegistro')},
+    res.render('loginRegistro'),{title:'Login-Barbanegra'}},
 }

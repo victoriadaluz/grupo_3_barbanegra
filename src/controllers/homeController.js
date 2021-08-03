@@ -3,13 +3,13 @@ const { name, carousel } = productsDB
 
 module.exports = {
     index: (req, res) => {
-        res.render('home')
+        res.render('home',{title:'Barbanegra'})
     },
     carrito: (req,res)=>{
-        res.render('product-car')
+        res.render('product-car',{title:'Carrito-Barbanegra'})
     },
     detail:(req,res)=>{
-        res.render('detalleProducto')
+        res.render('detalleProducto',{title:'Detalle de producto-Barbanegra'})
     },
 }
         
