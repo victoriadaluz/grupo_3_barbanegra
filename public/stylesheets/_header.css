@@ -1,29 +1,166 @@
-.header-mobile{
-    height: fit-content;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-  /*   background-image: url(/images/frame2.png); */
-   background-image:url(../images/frame2.png) ;
-    background-color:grey ;
-    width: 100%;
+header{
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: fixed; /* header fixeado, dejar el heigh para que no se pise con el main */
+  height: fit-content;
+  z-index: 999;
 }
-.header-mobile .logo-mobile img{
-    height: 90px;
-    width: 90px;
+main{
+  margin-top: 150px; /* main necesario para un header fixed  */
 }
-.header-mobile .barra-desplegable button{
-    background-color: transparent;
-    border:none;
-    margin-top: 45px;
-    height: 25px;
-    width: 35px;
+/* HEADER */
+header .main-header{    
+  height: 150px;
+ /*  background-color: #011528; */   
+  background-image: url(/images/frame2.png);
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: color-burn;
+ 
 }
-.header-mobile .barra-desplegable i{
-    color:white;
-   font-size: 18px;
-    
+/* mobile view */
+.desktop{
+  display: none;
 }
-.header-mobile .barra-desplegable .info-clickeable{
-    display:none
+/* Menu button */
+header .main-header .nav-main{
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  list-style: none;
+  position: absolute;
+  margin-right: 15px;
+}
+/* header .main-header /* 
+  position: absolute; */
+
+header .main-header .nav-main  .nav-menu{
+  position: fixed;
+  width: 100%;
+  height: 0vh;
+  top: 150px;
+  background: rgba(0, 0, 0, .9);
+  text-align: center;
+  transition: all .5s;
+}
+
+header .main-header .nav-main  .nav-menu li{
+  display: none;    
+  margin: 50px 0;
+  transition: all .5s;    
+}
+header .main-header .nav-main  .nav-menu li a{
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+
+}
+header .main-header .nav-main  .nav-menu li a.active, header .main-header .nav-main  .nav-menu li a:hover{
+  color: #5A0B90;
+  transition: .3s;
+}
+#check{
+  display: none;
+}
+#check:checked ~  .nav-menu{
+  height: 100vh;
+}
+#check:checked ~  .nav-menu li{
+  display: block;
+}
+/* Menu icon */
+header .main-header .nav-main .bar-btn{
+  font-size: 35px;
+  color: #fff;
+  margin-right: 20px;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 5%;
+}
+header .main-header .nav-main .bar-btn i{
+  margin: 30px 15px;
+}
+
+/* Images */
+.logo1 img {
+  margin: 30px auto;
+  width: 270px;
+} 
+.logo2 img{
+  width:130px;    
+  position: absolute;
+  top: 2%;
+  left: 5%;
+} 
+/* Search  */
+.search-container form input[type=text] {
+  background-color: white;
+background-image: url('searchicon.png')
+}
+
+
+
+
+
+
+/* media queries */
+/* tablet */
+@media screen and (min-width: 999px){
+  header .main-header .nav-main .bar-btn{
+      display: none;
+      }
+  header .main-header .nav-main{
+      height: 100px;
+  }
+  header .main-header .nav-main  .nav-menu{
+      position: relative;
+      height: 150px;
+      top: 85px;
+      background: none;
+      transition: none;
+      text-align: center;
+      margin-right: 5px;    
+      top: auto;
+      left: 15%;
+      margin: 10%;
+      }
+      header .main-header .nav-main  .nav-menu li{
+      display: inline-block;
+      
+      margin: 0 2%;
+      transition: none;    
+  }
+  header .main-header .nav-main  .nav-menu li a{
+      font-weight: 600;        
+      font-size: 15px;
+      text-decoration: none
+  }
+  header .main-header .nav-main  .nav-menu li:hover a{
+      background-color: #fff;
+      color: #5A0B90;
+  }
+
+ .nav-list{
+     margin: 0 20px;
+     
+ }
+ .nav-main .nav-menu .nav-ul{
+  display: flex;       
+ }
+
+.logo1 img{
+  margin-top: 35px;
+}
+.nav-main .nav-menu .search-desk{
+  width: 35%;
+}
+.nav-main .nav-menu .search-desk .search-container form input{
+  width: 100%;
+}
 }
