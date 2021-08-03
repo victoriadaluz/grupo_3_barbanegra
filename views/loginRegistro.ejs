@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/64d58efce2.js"
-      crossorigin="anonymous"
-    ></script>
     <link rel="stylesheet" href="/stylesheets/loginRegistro.css" />
     <title>Inicie sesión o regístrese</title>
   </head>
+      <!-- HEAD -->
+      <%- include('./partials/head') %> 
   <body>
-    <%- include('partials/header.ejs') %> 
+        <!-- HEADER -->
+        <%- include('./partials/header') %> 
+        <main>
     <div class="lcontainer">
       <div class="forms-lcontainer">
         <div class="signin-signup">
@@ -103,7 +103,9 @@
         </div>
       </div>
     </div>
-
+  </main>  
     <script src="/javascript/script.js"></script>
+    <script src="https://kit.fontawesome.com/64d58efce2.js"
+    crossorigin="anonymous"></script>
   </body>
 </html>

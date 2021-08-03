@@ -1,60 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Font awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <!--  Google font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;1,100;1,200;1,400;1,500&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!--  stylesheets main -->
-    <link rel="stylesheet" href="/stylesheets/style.css">
-
-    <title>Carrito De compra</title>
-</head>
+<%- include('./partials/head') %> 
 
 <body>
-    <!-- HEADER -->
-    <header>
-        <div class="main-header">
-            <nav class="nav-main">
-                <div class="logo2"><a href="/"><img src="/images/LOGOS/logocompleto.png" alt=""></a></div>
-                <input type="checkbox" id="check">
-                <label for="check" class="bar-btn">
-                    <i class="fas fa-bars"></i>
-                </label>
-                <!-- <div class="menu-header-main"> -->
-                <ul class="nav-menu">
-                    <li class="logo1">
-                        <img src="/images/LOGOS/LOGO2SINFONDO.png" alt="">
-                    </li>
-                    <!-- Search bar inside LI -->
-                    <li class='search-desk'>
-                        <!-- <div class='search'> -->
-                        <div class="search-container">
-                            <form action="/">
-                                <input type="text" name="search" placeholder="Search..">
-                            </form>
-                    </li>
-                    <!-- main li -->
-                    <div class="nav-ul">
-                        <li class="nav-list"><a href="/">Home</a></li>
-                        <li class="nav-list"><a href="/detalleProducto">Equipamiento</a></li>
-                        <li class="nav-list"><a href="/cart">Ver Carrito</a></li>
-                        <li class="nav-list"><a href="/loginRegistro">Registro</a></li>
-                        <li class="nav-list"><a href="/about">Nosotros</a></li>
-                    </div>
-                </ul>
-            </nav>
-    </header>
+        <!-- HEADER -->
+    <%- include('./partials/header') %> 
     <main>
         <!--  Checkout payment -->
         <div class="desk-container">
@@ -195,10 +146,10 @@
         </div>
         </div>
     </div>
+    
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+    <%- include('./partials/footer') %> 
+
 </body>
 
 </html>
