@@ -1,145 +1,50 @@
-/* -----------------------------------------------------------
-                      product-car
------------------------------------------------------------- */
-/* Effects on btn */
-
-.detail-btn {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: center;
-    outline: none;
-    font-size: 15px;
-    
-    
-  }
-.content {
-    padding: 0 0px;
-    display: none;
-    overflow: hidden;
-    background-color: #FFFEFE; 
-    position: relative;
-  }
- 
-  .row-main .content .card-collap  img{
-    width: 120px;
-  }
-  .row-main .content .column h1{
-    font-size: 20px;
-  }
-  .active, .collapsible:hover {
-    background-color: #ccc;
-    
-  }
- 
-.card-collap {
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
-  text-align: center;  
-}
-
-.price {
-  color: grey;
-  font-size: 22px;
-}
-
-.card-collap button {
-  border: none;
-  outline: 0;
-  padding: 12px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-}
-
-.card-collap button:hover {
-  opacity: 0.7;
-}
- 
-.column {
-  float: left;
-  width: 50%;
-}
-
-/* Clear floats after the columns */
-.row-main:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.column {
-  float: left;
-}
-
-.left {
-  width: 25%;
-}
-
-.right {
-  width: 75%;
-}
-
 /* CHECKOUT FORM */
-.row2-checkout {  
+.main-form .row2-checkout {  
   display: flex;
   flex-wrap: wrap;
   margin: 0 -16px;
 }
 
-.col-25 {
+.main-form .col-25 {
   display: block;
   
   flex: 25%;
 }
 
-.col-50 {
+.main-form.col-50 {
   
   flex: 50%;
 }
 
-.col-75 {
+.main-form.col-75 {
   
   flex: 75%;
 }
 
-.col-25,
-.col-50,
-.col-75 {
+.main-form.col-25,
+.main-form .col-50,
+.main-form .col-75 {
   padding: 0 16px;
 }
 
-.container-form-master {
+.main-form .container-form-master {
   /* background-color: #f2f2f2; */
   padding: 5px 20px 15px 20px;
   border: 1px solid lightgrey;
   border-radius: 3px;
 }
-
-/* input[type=text] {
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-} */
-
-label {
+.main-form label {
   margin-bottom: 10px;
   display: block;
 }
 
-.icon-container {
+.main-form .icon-container {
   margin-bottom: 20px;
   padding: 7px 0;
   font-size: 24px;
 }
 
-.submit-btn{
+.main-form .submit-btn{
   background-color: #04AA6D;
   color: white;
   padding: 12px;
@@ -151,10 +56,6 @@ label {
   font-size: 17px;
 }
 
-.submit-btn:hover {
+.main-form .submit-btn:hover {
   background-color: #45a049;
 }
-
-
-
-
