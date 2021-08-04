@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Font Awesome -->
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- Slick slider -->
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+    <!-- Stylesheets -->
+
+    <!--    <link rel="stylesheet" href="/stylesheets/home.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/footer.css"> -->
+    <link rel="stylesheet" href="/stylesheets/admin.css">
+
+
+    <title>Barba Negra Admin</title>
+
+
+</head>
+
+
+
+<body>
+
+    <input type="checkbox" id="nav-toggle-adm">
+    <div class="sidebar-adm">
+        <div class="sidebar-brand-adm">
+            <h2><span class="fas fa-home"></span> <span>Barba Negra</span></h2>
+        </div>
+
+        <!-- Secciones del tablero -->
+        <div class="sidebar-menu-adm">
+            <ul>
+                <li>
+                    <a href="" class="active"><span class="far fa-clipboard"></span>
+                        <span>Tablero</span></a>
+                </li>
+                <li>
+                    <a href=""><span class="fab fa-product-hunt"></span>
+                        <span>Productos</span>
+                </li>
+                <li>
+                    <a href=""><span class="fas fa-users"></span>
+                        <span>Usuarios</span>
+                </li>
+                <li>
+                    <a href=""><span class="fas fa-cash-register"></span>
+                        <span>Ventas</span>
+                </li>
+                <li>
+                    <a href=""><span class="fas fa-comments"></span>
+                        <span>Consultas</span>
+                </li>
+                <li>
+                    <a href=""><span class="fas fa-search"></span>
+                        <span>Busqueda</span>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="main-content-adm">
+        <header>
+            <h2>
+                <label for="nav-toogle">
+                    <span class="fas fa-bars"></span>
+                </label>Tablero
+            </h2>
+            <div class="search-wrapper-adm">
+                <span class="fas fa-search"></span>
+                <input type="search" placeholder="Buscar aquí" />
+            </div>
+
+            <div class="user-wrapper-adm">
+                <img src="/images/avatar.jpeg" width="40px" height="40px" alt="">
+                <div>
+                    <h4>Administrador</h4>
+                    <small>Super Admin</small>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="cards-adm">
+                <div class="card-single-adm">
+                    <div>
+                        <h1>5</h1>
+                        <span>Manejo de Usuarios</span>
+                    </div>
+                    <div>
+                        <span class="fas fa-users"></span>
+                    </div>
+                </div>
+                <div class="card-single-adm">
+                    <div>
+                        <h1>12</h1>
+                        <span>Manejo de Productos</span>
+                    </div>
+                    <div>
+                        <span class="fab fa-product-hunt"></span>
+                    </div>
+                </div>
+
+                <div class="card-single-adm">
+                    <div>
+                        <h1>25</h1>
+                        <span>Control de ventas</span>
+                    </div>
+                    <div>
+                        <span class="fas fa-cash-register"></span>
+                    </div>
+                </div>
+
+                <div class="card-single-adm">
+                    <div>
+                        <h1>2</h1>
+                        <span>Nuevas Consultas</span>
+                    </div>
+                    <div>
+                        <span class="fas fa-comments"></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Tabla -->
+            <div class="recent-activity-adm">
+                <div class="projects-adm">
+                    <div class="card-adm">
+                        <div class="card-header-adm">
+                            <h3>Usuarios recientes</h3>
+
+                            <button>Mostrar todo <span class="fas fa-arrow-right">
+                            </span></button>
+                        </div>
+                        <div class="card-body-adm">
+                            <div class="table-responsive-adm">
+                                <table width="100%">
+                                    <thead>
+                                        <tr>
+                                            <td>Nombre</td>
+                                            <td>Apellido</td>
+                                            <td>E-mail</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Federico Daniel</td>
+                                        <td>Corvalan</td>
+                                        <td>federicodanielcorvalan@gmail.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lautaro Joaquin</td>
+                                        <td>Sanchez</td>
+                                        <td>lauSanchez11@gmail.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jorge Rolando</td>
+                                        <td>Gutierrez</td>
+                                        <td>jrgutierrez@gmail.com</td>
+                                    </tr>
+                                </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+
+
+    </div>
+
+</html>

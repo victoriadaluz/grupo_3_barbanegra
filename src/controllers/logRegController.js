@@ -1,4 +1,4 @@
-let productsDB = require('../data/productDB')
+let productsDB = require('../data/dataBase')
 const { name, carousel } = productsDB
 
 module.exports = {

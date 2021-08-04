@@ -43,7 +43,9 @@ app.get('/detalleProducto', (req, res) => {
 app.get('/cart', (req, res) => {
   res.sendFile(path.join(__dirname,'./views/product-car.html'))
 })
-
+app.get('/admin',(req, res) => {
+  res.sendFile(path.join(__dirname, './views/admin.ejs'))
+})
 
 
 app.listen(port, () => console.log(`Servidor levantado en el puerto ${port}\n http://localhost:${port}` ))

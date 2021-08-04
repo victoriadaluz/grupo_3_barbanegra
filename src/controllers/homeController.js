@@ -11,5 +11,8 @@ module.exports = {
     detail:(req,res)=>{
         res.render('detalleProducto',{title:'Detalle de producto-Barbanegra'})
     },
+    admin: (req,res)=>{
+        res.render('admin', {title:'Inicie sesión como administrador'})
+    }
 }
         
