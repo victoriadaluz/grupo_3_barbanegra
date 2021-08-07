@@ -9,10 +9,9 @@
     <main>
         <!--  Checkout payment -->
         <div class="desk-container">
-
             <div class="main-form container grid grid-cols-2 auto-rows-auto gap-2 p-2 ">
                 <div class="shop-cart-main col-span-2 text-center border-2 rounded-lg border-black bg-indigo-200">
-                    <div class="shop-mobile cart grid grid-cols-2">
+                    <div class="shop-mobile cart grid grid-cols-2 p-2">
                         <div class="shop-main-text col-span-2 my-10">
                             <h1 class="border-3 rounded-lg border-black mx-8 bg-gray-100">Resumen de compra</h1>
                         </div>
@@ -37,18 +36,20 @@
                                                 class="cursor-pointer bg-gray-700 hover:bg-gray-600 shadow-xl inline-block text-blue-100 hover:text-white rounded col-span-3">Calcular</a>
                                         </div>
                                     </div>
-                                    <div class="shop-buttons col-span-2 flex items-center justify-around">
-                                        <div class="shop-button-1">
-                                            <button
-                                                class="bg-green-400 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-opacity-50 rounded-full w-full h-auto p-1 text-sm ">
-                                                agregar
-                                            </button>
-                                        </div>
-                                        <div class="shop-button-2">
-                                            <button
-                                                class="bg-green-400 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-opacity-50 rounded-full w-full h-auto p-1 m text-sm ">
-                                                quitar
-                                            </button>
+                                    <div class="shop-buttons col-span-3">
+                                        <div class="grid grid-cols-2">
+                                            <div class="shop-button-1">
+                                                <button
+                                                    class="bg-green-400 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-opacity-50 rounded-full w-full h-auto p-1 text-sm col-span-1">
+                                                    agregar
+                                                </button>
+                                            </div>
+                                            <div class="shop-button-2">
+                                                <button
+                                                    class="bg-green-400 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-opacity-50 rounded-full w-full h-auto p-1 m text-sm ">
+                                                    quitar
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -99,80 +100,47 @@
                     </div>
                 </div>
             </div>
-            <!--                     <div class="row2-checkout col-span-2">
-                        <div class="col-75">
-                            <div class="container-form-master">
-                                <form action="">
-                                    <div class="row2-checkout">
-                                        <div class="col-50">
-                                            <h3>Ingrese su direccion</h3>
-                                            <label for="name"><i class="fa fa-user"></i>Nombre completo</label>
-                                            <input type="text" id="fname" name="firstname" placeholder="Ricardo Fort">
-                                            <label for="email"><i class="fa fa-envelope"></i> Email</label>
-                                            <input type="text" id="email" name="email"
-                                                placeholder="ricardofort@maiameee.usa">
-                                            <label for="adr"><i class="fa fa-address-card-o"></i>Direccion</label>
-                                            <input type="text" id="adr" name="address" placeholder="Miami bulevard 123">
-                                            <label for="city"><i class="fa fa-institution"></i> Ciudad</label>
-                                            <input type="text" id="city" name="city" placeholder="Nordelta">
-
-                                            <div class="row2-checkout">
-                                                <div class="col-50">
-                                                    <label for="state">Provincia</label>
-                                                    <input type="text" id="state" name="state" placeholder="BA">
-                                                </div>
-                                                <div class="col-50">
-                                                    <label for="zip">Codig postal</label>
-                                                    <input type="text" id="zip" name="zip" placeholder="5539">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-50">
-                                            <h3>Forma de pago</h3>
-                                            <label for="name">Tarjetas de credito</label>
-                                            <div class="icon-container">
-                                                <i class="fa fa-cc-visa" style="color:navy;"></i>
-                                                <i class="fa fa-cc-amex" style="color:blue;"></i>
-                                                <i class="fa fa-cc-mastercard" style="color:red;"></i>
-                                                <i class="fa fa-cc-discover" style="color:orange;"></i>
-                                            </div>
-                                            <label for="cname">Nombre titular</label>
-                                            <input type="text" id="cname" name="cardname" placeholder="Ricardo fort">
-                                            <label for="ccnum">Numero de tarjeta</label>
-                                            <input type="text" id="ccnum" name="cardnumber"
-                                                placeholder="1111-2222-3333-4444">
-                                            <label for="expmonth">Exp Month</label>
-                                            <input type="text" id="expmonth" name="expmonth" placeholder="September">
-
-                                            <div class="row2-checkout">
-                                                <div class="col-50">
-                                                    <label for="expyear">Fecha de expiración</label>
-                                                    <input type="text" id="expyear" name="expyear" placeholder="2018">
-                                                </div>
-                                                <div class="col-50">
-                                                    <label for="cvv">CVV</label>
-                                                    <input type="text" id="cvv" name="cvv" placeholder="352">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <label>
-                                        <input type="checkbox" checked="checked" name="sameadr"> Enviar seguimiento por
-                                        email
-                                    </label>
-                                    <input type="submit" value="Finalizar Compra" class="submit-btn">
-                                </form>
-                            </div>
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item ">
+                    <h2 class="accordion-header w-full h-4" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            Continuar con la compra
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <form action="#">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="Nombre">
+                                    <label for="floatingInput">Nombre Completo</label>
+                                  </div>
+                                  <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="Nombre">
+                                    <label for="floatingInput">Domicilio</label>
+                                  </div>
+                                  <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="Nombre">
+                                    <label for="floatingInput">Ciudad</label>
+                                  </div>
+                                  <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="Nombre">
+                                    <label for="floatingInput">Provincia</label>
+                                  </div>
+                                  <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="Nombre">
+                                    <label for="floatingInput">Codigo Postal</label>
+                                  </div>
+                            </form>
                         </div>
-                    </div> -->
-                    
+                    </div>
+                </div>
 
-        </div>
+            </div>
 
     </main>
-    <%- include('./partials/footer') %>
+    <!--  <%- include('./partials/footer') %> -->
 
 </body>
 
