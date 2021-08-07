@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-let controller= require('../src/controllers/logRegController')
+let controller= require('../controllers/logRegController')
 
 router.get('/login', controller.login);
 
