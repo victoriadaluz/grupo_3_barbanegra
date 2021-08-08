@@ -1,5 +1,6 @@
 
 /* INICIO DEL SLIDER */
+
 .slider{
     background-size: cover;
     width: 100%;
@@ -192,9 +193,8 @@
 }
 
 .card:hover .card__img--hover{
-    height: 100%;
-    opacity: 0.3;
-    
+    transform: scale(1.5);
+    top:50px;
 }
 
 
