@@ -30,7 +30,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 
 app.use('/', indexRouter)
-app.use('/user', usersRouter)
+app.use('/users', usersRouter)
 
 
 app.listen(port, () => console.log(`Servidor levantado en el puerto ${port}\n http://localhost:${port}` ))

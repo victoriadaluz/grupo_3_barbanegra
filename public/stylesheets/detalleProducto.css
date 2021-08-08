@@ -1,4 +1,4 @@
-*{
+/* *{
     margin: 0;
     padding: 0;
 }
@@ -135,7 +135,7 @@ table tr :hover{
     font-size: 20px;
     border-radius: 100%;
 }*/
-.menu li a {
+/* .menu li a {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -215,7 +215,7 @@ table tr :hover{
     box-sizing: border-box;
     font-family: "Poppins" , sans-serif;
 }*/
-
+/*
 hr{
     width: 400px;
     color: white;    
@@ -438,4 +438,4 @@ conlumn p{
    .column4{
        margin-top: 40px;
    }
-}
+} */ 

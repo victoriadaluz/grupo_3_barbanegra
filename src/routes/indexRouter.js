@@ -9,8 +9,6 @@ router.get('/', controller.index);
 
 router.get('/cart', controller.carrito);
 
-
-
 router.get('/product-detail', controller.detail);
 
 router.get('/admin', controller.admin)
