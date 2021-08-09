@@ -8,9 +8,9 @@
     <%- include('./partials/header') %>
     <main>
         <!--  Checkout payment -->
-        <div class="desk-container">
-            <div class="main-form container grid grid-cols-2 auto-rows-auto gap-2 p-2 ">
-                <div class="shop-cart-main col-span-2 text-center border-2 rounded-lg border-black bg-indigo-200">
+        <div class="desk-container p-3">
+            <div class="main-form container grid grid-cols-2 auto-rows-auto">
+                <div class="shop-cart-main col-span-2  text-center border-2 rounded-lg border-black bg-gray-100 shadow-lg">
                     <div class="shop-mobile cart grid grid-cols-2 p-2">
                         <div class="shop-main-text col-span-2 my-10">
                             <h1 class="border-3 rounded-lg border-black mx-8 bg-gray-100">Resumen de compra</h1>
@@ -100,8 +100,7 @@
                     </div>
                 </div>
             </div>
-            </div>
-            <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion accordion-flush  m-3.5 " id="accordionFlushExample">
                 <div class="accordion-item ">
                     <h2 class="accordion-header w-full h-4" id="flush-headingOne">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -111,36 +110,80 @@
                     </h2>
                     <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
                         data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">
-                            <form action="#">
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingInput" placeholder="Nombre">
-                                    <label for="floatingInput">Nombre Completo</label>
+                        <div class="accordion-body grid grid-cols-1 md:grid-cols-2">
+                            <form action="#"class='items-stretch col-span-1 md:col-span-2'>
+                                <div class="form-payment-responsive grid grid-cols-2">
+                                <div class="form-name-control col-span-2 md:col-span-1">
+                                    <h5 class="text-xl mt-8 ">Datos Personales</h5>
+                                <div class="form-floating mx-2">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="nombre">
+                                    <label for="floatingInput">Nombre</label>
                                 </div>
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingInput" placeholder="Nombre">
+                                <div class="form-floating mx-2">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="domicilio">
                                     <label for="floatingInput">Domicilio</label>
                                 </div>
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingInput" placeholder="Nombre">
+                                <div class="form-floating mx-2">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="ciudad">
                                     <label for="floatingInput">Ciudad</label>
                                 </div>
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingInput" placeholder="Nombre">
+                                <div class="form-floating mx-2">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="provincia">
                                     <label for="floatingInput">Provincia</label>
                                 </div>
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingInput" placeholder="Nombre">
+                                <div class="form-floating mx-2">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="cp">
                                     <label for="floatingInput">Codigo Postal</label>
                                 </div>
+                                <div class="form-floating mx-2">
+                                    <input type="tel" class="form-control" id="floatingInput" placeholder="tel">
+                                    <label for="floatingInput">Telefono</label>
+                                </div>
+                                </div>
+                                <div class="form-payment-control col-span-2 md:col-span-1">
+                                    <h5 class="mx-3 text-xl">Tarjetas Aceptadas</h5>
+                                        <div class="icon-pack flex justify-center">
+                                        <i class="fab fa-cc-visa text-4xl text-blue-900	"></i>
+                                        <i class="fab fa-cc-amex text-4xl text-blue-700"></i>
+                                        <i class="fab fa-cc-mastercard text-4xl text-red-600"></i>
+                                        <i class="fas fa-handshake text-4xl text-blue-300"></i>
+                                        <i class="fab fa-bitcoin text-4xl text-yellow-400 mx-2"></i>
+                                        </div>
+                                    <div class="form-floating mx-2">
+                                            <input type="text" class="form-control" id="floatingInput" placeholder="Titular">
+                                            <label for="floatingInput">Titular Tarjeta</label>
+                                    </div>
+                                     <div class="form-floating mx-2">
+                                            <input type="tel" class="form-control" id="floatingInput" placeholder="Tarjeta">
+                                            <label for="floatingInput">Numeros</label>
+                                     </div>
+                                     <div class="form-floating mx-2">
+                                        <input type="tel" class="form-control" id="floatingInput" placeholder="Anio">
+                                        <label for="floatingInput">Mes</label>
+                                    </div>
+                                    <div class="form-floating mx-2">
+                                        <input type="tel" class="form-control" id="floatingInput" placeholder="Anio-vencimiento">
+                                        <label for="floatingInput">Año</label>                                        
+                                    </div>
+                                    <div class="form-floating mx-2">
+                                        <input type="tel" class="form-control" id="floatingInput" placeholder="Anio-vencimiento">
+                                        <label for="floatingInput">CCV</label>                                        
+                                    </div>
+                                </div>
+                            </div>
                             </form>
+                            <div class="checkout-form-btn col-span-2 w-full text-center">
+                                <button class="h-10 w-4/5 rounded bg-black top-2 text-sm right-2 px-3 text-white hover:bg-gray-900 ">Finalizar Compra
+                                </button>
+                                                        
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
+        </div>
     </main>
-    <!--  <%- include('./partials/footer') %> -->
+     <!-- <%- include('./partials/footer') %> -->
 
 </body>
 
