@@ -52,11 +52,8 @@ input {
   z-index: 5;
 }
 
-form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+form {  
+ 
   padding: 0rem 5rem;
   transition: all 0.2s 0.7s;
   overflow: hidden;
@@ -123,7 +120,7 @@ form.sign-in-form {
 
 .social-media {
   display: flex;
-  justify-content: center;
+  margin: 10px 0 ;  
 }
 
 .social-icon {
@@ -195,11 +192,7 @@ form.sign-in-form {
 }
 
 .panel {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: space-around;
-  text-align: center;
+
   z-index: 6;
 }
 
@@ -234,7 +227,7 @@ form.sign-in-form {
   margin: 0;
   background: none;
   border: 2px solid #fff;
-  width: 130px;
+  width: 150px;
   height: 41px;
   font-weight: 600;
   font-size: 0.8rem;
@@ -344,7 +337,7 @@ form.sign-in-form {
   }
 
   .btn.transparent {
-    width: 110px;
+    width: 150px;
     height: 35px;
     font-size: 0.7rem;
   }
