@@ -13,6 +13,9 @@ module.exports = {
     },
     admin: (req,res)=>{
         res.render('admin', {title:'Inicie sesión como administrador'})
+    },
+    agregarProducto: (req, res)=>{
+        res.render('agregarProducto', {title: 'agregar un producto'})
     }
 }
         

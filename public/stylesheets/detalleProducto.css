@@ -237,14 +237,14 @@ section p{
     margin-bottom: 15px;
 }
 
-section{
+section #sec1{
     margin: 20px;
     border-radius: 20px;
     padding: 0 40px;
     align-items: center;
 }
 
-section img {
+section img #sec1{
     width: 400px;
     height: 300px;
     margin: 60px 40px;
@@ -252,7 +252,7 @@ section img {
     border-radius: 100px;
 }
 
-section a{
+section #sec1 a{
     display: inline-block;
     padding: 7px 0;
     color: white;

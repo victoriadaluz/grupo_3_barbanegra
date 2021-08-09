@@ -12,4 +12,6 @@ router.get('/cart', controller.carrito);
 router.get('/product-detail', controller.detail);
 
 router.get('/admin', controller.admin)
+
+ router.get('/agregarProducto', controller.agregarProducto)
 module.exports = router;
