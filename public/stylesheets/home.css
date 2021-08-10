@@ -1,3 +1,10 @@
+body{
+    background: linear-gradient(135deg, #011528, #1b5185);
+    width: 100%;
+   
+    
+}
+
 
 /* INICIO DEL SLIDER */
 
@@ -193,8 +200,11 @@
 }
 
 .card:hover .card__img--hover{
-    transform: scale(1.5);
-    top:50px;
+    /* height: 100%; */
+    opacity: 0.3;
+    transform: scale(1.6, 1.6);
+    top: 50px;
+    
 }
 
 
