@@ -158,7 +158,11 @@ table tr :hover{
     max-width: 800px;
 }
 
-
+/* .product-block, h2 ,p{
+    padding-bottom: 40px;   este es lo que rompia el footer! !!
+    padding-top: 3px;
+    width: 400px;
+} */
 
 .product-info{
     max-width: 50%;
