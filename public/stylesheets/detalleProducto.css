@@ -289,7 +289,7 @@ section:nth-child(4){
     }}
 
 
-    footer {
+/*     footer {
     width: 100%;
     background-color: #001428;
     color: #ffffff;
@@ -422,7 +422,7 @@ conlumn p{
 .information a{
     text-decoration: none;
     color: #c7c7c7;
-}
+} */
 
 @media screen and (max-width: 1300px) {
    .container-body{
