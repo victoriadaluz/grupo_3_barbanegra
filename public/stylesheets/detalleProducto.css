@@ -347,6 +347,11 @@ body {
         height: 100%;
     }
 
+    .slider-p{
+        height: 280px;
+        margin: 10% 0 10% 19%;
+    }
+
     .inf {
         margin-top: 20%;
         margin-left: -17px;
