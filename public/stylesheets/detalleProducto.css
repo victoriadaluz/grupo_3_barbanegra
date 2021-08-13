@@ -349,6 +349,7 @@ body {
 
     .inf {
         margin-top: 20%;
+        margin-left: -17px;
     }
     .inf section{
         flex-direction: column;
@@ -362,8 +363,7 @@ body {
         height: 210px;
         opacity: 1;
         border-radius: 100px;
-        margin-top: 30px;
-        margin-left: 10px;
+        margin: 30px auto;
     }
     .contenedeor-texto h2{
         font-size: 24px;
@@ -371,7 +371,7 @@ body {
     }
 
     .contenedeor-texto{
-        margin: 30% 15% 5% 2%;
+        margin: 30% auto 5%;
         padding: 0;
         max-width: 290px;
     }
@@ -383,7 +383,7 @@ body {
         padding: 0;
     }
     .inf section a{
-        margin: 15px 15px;
+        margin: 15% 24%;
         width: 50%;
 
     }
@@ -416,6 +416,10 @@ body {
         width: 100%;
         flex-direction: column;
         padding: 0;
+    }
+
+    .inf{
+        margin: 20px;
     }
 
     .inf section img{
@@ -456,6 +460,10 @@ body {
         margin: 15px 15px;
         width: 30%;
 
+    }
+
+    .inf {
+        margin: -13px;
     }
 
 
