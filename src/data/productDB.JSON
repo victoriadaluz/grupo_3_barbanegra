@@ -4,8 +4,10 @@
         "brand": "WAHL",
         "price": "$21.500",
         "description": "La nueva Cortapelos Wahl Senior Cordless cuenta con la última tecnologia en baterías de litio de larga duración sin efecto memoria generando una velocidad alta de cuchilla con un torque mayor que recortará incluso el cabello más grueso con facilidad.",
-        "discount": "25%",
+        "discount": "25",
         "category": "Máquinas",
+        "subcategory": "Clippers",
+        "condition": "inSale",
         "image": "maquina2-1.jpeg"
     },
     {
@@ -14,8 +16,10 @@
         "brand": "WAHL",
         "price": "$10.999",
         "description": "Trimmer Profesional inalámbrico fabricado en Estados Unidos. Liviano y ergonómico, provee al profesional de balance y control perfectos para un trabajo de la más alta calidad. Las Cuchillas en T que se ajustan al corte 0' son ideales para un trabajo preciso y detalles perfectos. Las Máquinas Wahl, diseñadas con los más altos estándares de calidad, proporcionan la seguridad de una alta performance, sin objeciones.",
-        "discount": "40%",
+        "discount": "40",
         "category": "Máquinas",
+        "condition": "inSale",
+        "subcategory": "Trimmers",
         "image": "trimmer1-1.jpeg"
     },
     {
@@ -24,8 +28,10 @@
         "brand": "WAHL",
         "price": "$15.999",
         "description": "Su utilización es sencilla, gracias a su uso con o sin cable. La batería de litio de última generación permite 80 minutos de autonomía tras 120 minutos de carga.Además, sus hojas son hipoalergénicas doradas, para que afeitarte no sea sinónimo de irritación.",
-        "discount": "35%",
+        "discount": "35",
         "category": "Máquinas",
+        "subcategory": "Afeitadoras",
+        "condition": "inSale",
         "image": "shaver1-1.jpeg"
     },
     {
@@ -34,9 +40,11 @@
         "brand": "JAGUAR",
         "price": "$2.500",
         "description": "La Tijera Filo Navaja JAY2 6''se amolda bien a la mano. Ideal para un trabajo cómodo, relajado por su forma ergonómica. Apropiada para todas las técnicas de corte y de capear, filos afilado, suave acción de corte.",
-        "discount": "50%",
+        "discount": "50",
         "category": "Accesorios",
-        "image": "til_jay2-1.jpeg"
+        "subcategory": "Tijeras",
+        "condition": "inSale",
+        "image": "tijeraJay2.jpeg"
     },
     {
         "id": 5,
@@ -44,8 +52,10 @@
         "brand": "BABYLISS PRO",
         "price": "$35.000",
         "description": "RoseFX es una maquina de corte profesional inalámbrica, equipada con un motor diseñado por Ferrari. Una herramienta perfecta para cortar todas las texturas del cabello con potencia, velocidad y precisión.",
-        "discount": "30%",
+        "discount": "30",
         "category": "Máquinas",
+        "subcategory": "Clippers",
+        "condition": "inSale",
         "image": "combo1-1.jpeg"
     },
     {
@@ -54,8 +64,10 @@
         "brand": "TEKNIKSTYLE",
         "price": "$110.000",
         "description": "Exclusivo sillón de barbería estilo retro con tapicería Simil Chesterfield. Generosas dimensiones mancomunadas en una estructura metálica cromada con amplios apoya brazos que aportan mayor comodidad. Reclinable en su totalidad, es ideal para que el barbero trabaje a una altura óptima permitiendo que el cliente prácticamente quede acostado sobre el sillón. Apoya pies reclinable con superficie flotante tapizada para que el cliente descanse sus pies una vez acostado. Base circular metálica de gran tamaño que aporta solidez y firmeza a todo el sillón. Apoya cabezas tapizado y regulable en altura",
-        "discount": "30%",
+        "discount": "30",
         "category": "Equipamiento",
+        "subcategory": "Sillones",
+        "condition": "inSale",
         "image": "sillon1-1.jpeg"
     },
     {
@@ -64,8 +76,10 @@
         "brand": "BABYLISS PRO",
         "price": "$3.000",
         "description": "Spray lubricante y desinfectante en Aerosol. Desinfecta, lubrica, enfría, limpia y es anticorrosivo. Elimina Virus, hongos y bacterias. Brinda una lubricación suave de las cuchillas que reduce la fricción, suaviza los cortes y alaga la vida útil de las máquinas.",
-        "discount": "40%",
+        "discount": "40",
         "category": "repuestos",
+        "subcategory": "Mantenimiento",
+        "condition": "inSale",
         "image": "lubricanteBL.jpeg"
     },
     {
@@ -74,9 +88,11 @@
         "brand": "WAHL",
         "price": "$4.999",
         "description": "Diseñado para obtener el afeitado más cercano posible sin ser doloroso o irritante, el paquete de reemplazo incluye lámina de oro hipoalergénica que evita los golpes y el conjunto de la barra de corte para una afeitadora como nueva. Compatible solo con la máquina de afeitar de 5 estrellas",
-        "discount": "15%",
+        "discount": "15",
         "category": "repuestos",
-        "image": "respuesto.5.jpeg"
+        "subcategory": "Cabezales",
+        "condition": "inSale",
+        "image": "repuesto-5.jpeg"
     },
     {
         "id": 9,
@@ -84,8 +100,10 @@
         "brand": "TEKNIKSTYLE",
         "price": "$125.000",
         "description": "Diseño Ergonómico. Tapizado de Simil Cuero. Bacha de Cerámica. Terminaciones bordadas en hilo blanco que aportan elegancia.",
-        "discount": "25%",
+        "discount": "25",
         "category": "Equipamiento",
+        "subcategory": "Lavacabezas",
+        "condition": "inSale",
         "image": "lavacabeza4-1.jpeg"
     },
     {
@@ -94,8 +112,10 @@
         "brand": "BABYLISS PRO",
         "price": "$25.999",
         "description": "La experiencia de BaByliss®PRO y la excelencia de FERRARI han desarrollado juntas una herramienta de diseño exclusivo con excepcionales prestaciones. El VOLARE esta especialmente construido para obtener un flujo de aire máximo con un mínimo peso y vibración, para un óptimo y rápido secado y asegurar un estilismo duradero.",
-        "discount": "35%",
+        "discount": "35",
         "category": "Accesorios",
+        "subcategory": "Secadores",
+        "condition": "inSale",
         "image": "secador1.jpeg"
     },
     {
@@ -104,8 +124,10 @@
         "brand": "BABYLISS PRO",
         "price": "$1.999",
         "description": "Kit de Peines Profesionales Nano Titanium BaByliss PRO. Hechos de carbono. Resistentes al calor. Evitan el frizz.",
-        "discount": "50%",
+        "discount": "50",
         "category": "Accesorios",
+        "subcategory": "Peines",
+        "condition": "inSale",
         "image": "peines1-2.jpeg"
     },
     {
@@ -114,8 +136,10 @@
         "brand": "TEKNIKSTYLE",
         "price": "25.000",
         "description": "1 Lavacabezas Black FG TeknikStyle. Posee una Bacha de Fibre Glass resistente y duradera de excelente calidad.  +  1 Sillón Hidráulico Peluqueria JPN. Base cromada regulable en altura. Líneas puras y elegantes de diseño ergonómico en apoya brazos cromados. Apoya pies removible.",
-        "discount": "40%",
+        "discount": "40",
         "category": "Equipamiento",
+        "subcategory": "Lavacabezas",
+        "condition": "inSale",
         "image": "supercombo1.jpeg"
     }
 ]

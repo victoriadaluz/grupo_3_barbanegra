@@ -21,11 +21,8 @@
     
         <link rel="stylesheet" href="/stylesheets/home.css">
         <link rel="stylesheet" href="/stylesheets/style.css">
-        <link rel="stylesheet" href="/stylesheets/footer.css">
        
-    
         <title>Barba Negra</title>
-    
     
     </head>
 <body>
@@ -57,25 +54,25 @@
 
 
         <section class="cards">
-
+        <% productsInSale.forEach(product => { %> 
             <article class="card card--1">
 
                 <div class="card__info-hover">
                     <div class="card__offer-info">
-                        <span class="card__discount">25% OFF</span>
+                        <span class="card__discount"><%- product.discount !== 0 ? `${product.discount}%OFF`:"" %></span>
                     </div>
                 </div>
 
                 <div class="card__img"></div>
                 <a href="/detalleProducto" class="card_link">
                     <div class="card__img--hover">
-                        <img src="/images/productos/maquina2-1.jpeg" alt="">
+                        <img src="/images/productos/<%- product.image %>" alt="">
                     </div>
                 </a>
                 <div class="card__info">
-                    <span class="card__brand">Wahl</span>
-                    <h3 class="card__by">SENIOR CORDLESS</h3>
-                    <span class="card__by">$25.999
+                    <span class="card__brand"><%- product.brand %></span>
+                    <h3 class="card__by"><%- product.name %></h3>
+                    <span class="card__by"><%- product.price %>
                         <i class="fas fa-truck"></i>
                         <a href="/cart" class="card__cart" title="Cart"><i class="fas fa-cart-plus"></i></a>
 
@@ -83,293 +80,7 @@
                     </span>
                 </div>
             </article>
-
-            <article class="card card--2">
-
-                <div class="card__info-hover">
-                    <div class="card__offer-info">
-                        <span class="card__discount">40% OFF</span>
-                    </div>
-                </div>
-                <div class="card__img"></div>
-                <a href="#" class="card_link">
-                    <div class="card__img--hover">
-                        <img src="/images/productos/trimmer1-1.jpeg" alt="">
-                    </div>
-                </a>
-                <div class="card__info">
-                    <span class="card__brand">Wahl</span>
-                    <h3 class="card__by">DETAILER CORDLESS</h3>
-                    <span class="card__by">$10.999
-                        <i class="fas fa-truck"></i>
-                        <a href="" class="card__cart" title="Cart"><i class="fas fa-cart-plus"></i></a>
-
-                    </span>
-                </div>
-            </article>
-
-
-            <article class="card card--3">
-
-                <div class="card__info-hover">
-                    <div class="card__offer-info">
-                        <span class="card__discount">35% OFF</span>
-                    </div>
-                </div>
-
-                <div class="card__img"></div>
-                <a href="#" class="card_link">
-                    <div class="card__img--hover">
-                        <img src="/images/productos/shaver1-1.jpeg" alt="">
-                    </div>
-                </a>
-                <div class="card__info">
-                    <span class="card__brand">Wahl</span>
-                    <h3 class="card__by">SHAVER FINALE</h3>
-                    <span class="card__by">$15.999
-                        <i class="fas fa-truck"></i>
-                        <a href="" class="card__cart" title="Cart"><i class="fas fa-cart-plus"></i></a>
-
-                    </span>
-                </div>
-            </article>
-
-
-            <article class="card card--4">
-
-                <div class="card__info-hover">
-                    <div class="card__offer-info">
-                        <span class="card__discount">50% OFF</span>
-                    </div>
-                </div>
-
-                <div class="card__img"></div>
-                <a href="#" class="card_link">
-                    <div class="card__img--hover">
-                        <img class="w-full h-auto" src="/images/productos/tij_jay2-1.jpeg" alt="">
-                    </div>
-                </a>
-                <div class="card__info">
-                    <span class="card__brand">Jaguar</span>
-                    <h3 class="card__by">TIJERA JAY2 6"</h3>
-                    <span class="card__by">$2.500
-                        <i class="fas fa-truck"></i>
-                        <a href="" class="card__cart" title="Cart"><i class="fas fa-cart-plus"></i></a>
-                </div>
-            </article>
-
-
-            <article class="card card--5">
-
-                <div class="card__info-hover">
-                    <div class="card__offer-info">
-                        <span class="card__discount">25% OFF</span>
-                    </div>
-                </div>
-                <div class="card__img"></div>
-                <a href="#" class="card_link">
-                    <div class="card__img--hover">
-                        <img src="/images/productos/combo1-1.jpeg" alt="">
-                    </div>
-                </a>
-                <div class="card__info">
-                    <span class="card__brand">BabyLissPRO</span>
-                    <h3 class="card__by">TRIMMER+ CLIPPER ROSÉ</h3>
-                    <span class="card__by">$35.000
-                        <i class="fas fa-truck"></i>
-                        <a href="" class="card__cart" title="Cart"><i class="fas fa-cart-plus"></i></a>
-
-                    </span>
-                </div>
-            </article>
-
-
-
-            <article class="card card--6">
-
-                <div class="card__info-hover">
-                    <div class="card__offer-info">
-                        <span class="card__discount">30% OFF</span>
-                    </div>
-                </div>
-
-                <div class="card__img"></div>
-                <a href="#" class="card_link">
-                    <div class="card__img--hover">
-                        <img src="/images/productos/sillon1-1.jpeg" alt="">
-                    </div>
-                </a>
-                <div class="card__info">
-                    <span class="card__brand">TeknikStyle</span>
-                    <h3 class="card__by">SILLÓN CHESTER NEGRO</h3>
-                    <span class="card__by">$110.000
-                        <i class="fas fa-truck"></i>
-                        <a href="" class="card__cart" title="Cart"><i class="fas fa-cart-plus"></i></a>
-
-                    </span>
-                </div>
-            </article>
-
-
-
-            <article class="card card--7">
-
-                <div class="card__info-hover">
-                    <div class="card__offer-info">
-                        <span class="card__discount">40% OFF</span>
-                    </div>
-                </div>
-
-                <div class="card__img"></div>
-                <a href="#" class="card_link">
-                    <div class="card__img--hover">
-                        <img src="/images/productos/lubricanteBL.jpeg" alt="">
-                    </div>
-                </a>
-                <div class="card__info">
-                    <span class="card__brand">Wahl</span>
-                    <h3 class="card__by">LUBRICANTE</h3>
-                    <span class="card__by">$3.000
-                        <i class="fas fa-truck"></i>
-                        <a href="" class="card__cart" title="Cart"><i class="fas fa-cart-plus"></i></a>
-                    </span>
-                </div>
-            </article>
-
-
-
-            <article class="card card--8">
-
-                <div class="card__info-hover">
-                    <div class="card__offer-info">
-                        <span class="card__discount">15% OFF</span>
-                    </div>
-                </div>
-
-                <div class="card__img"></div>
-                <a href="#" class="card_link">
-                    <div class="card__img--hover">
-                        <img src="/images/productos/repuesto.5.jpeg" alt="">
-                    </div>
-                </a>
-                <div class="card__info">
-                    <span class="card__brand">Wahl</span>
-                    <h3 class="card__by">CABEZAL SHAVER FINALE</h3>
-                    <span class="card__by">$4.999
-                        <i class="fas fa-truck"></i>
-                        <a href="" class="card__cart" title="Cart"><i class="fas fa-cart-plus"></i></a>
-
-                    </span>
-                </div>
-            </article>
-
-
-
-            <article class="card card--9">
-
-                <div class="card__info-hover">
-                    <div class="card__offer-info">
-                        <span class="card__discount">25% OFF</span>
-                    </div>
-                </div>
-
-                <div class="card__img"></div>
-                <a href="#" class="card_link">
-                    <div class="card__img--hover">
-                        <img src="/images/productos/lavacabeza4-1.jpeg" alt="">
-                    </div>
-                </a>
-                <div class="card__info">
-                    <span class="card__brand">TeknikStyle</span>
-                    <h3 class="card__by">LAVACABEZA PREMIER</h3>
-                    <span class="card__by">$125.000
-                        <i class="fas fa-truck"></i>
-                        <a href="" class="card__cart" title="Cart"><i class="fas fa-cart-plus"></i></a>
-
-                    </span>
-                </div>
-            </article>
-
-
-
-            <article class="card card--10">
-
-                <div class="card__info-hover">
-                    <div class="card__offer-info">
-                        <span class="card__discount">35% OFF</span>
-                    </div>
-
-                </div>
-
-                <div class="card__img"></div>
-                <a href="#" class="card_link">
-                    <div class="card__img--hover">
-                        <img src="/images/productos/secador1.jpeg" alt="">
-                    </div>
-                </a>
-                <div class="card__info">
-                    <span class="card__brand">BabyLissPRO</span>
-                    <h3 class="card__by">SECADOR VOLARE</h3>
-                    <span class="card__by">$25.999
-                        <i class="fas fa-truck"></i>
-                        <a href="" class="card__cart" title="Cart"><i class="fas fa-cart-plus"></i></a>
-
-                    </span>
-                </div>
-            </article>
-
-
-
-            <article class="card card--11">
-
-                <div class="card__info-hover">
-                    <div class="card__offer-info">
-                        <span class="card__discount">50% OFF</span>
-                    </div>
-                </div>
-
-                <div class="card__img"></div>
-                <a href="#" class="card_link">
-                    <div class="card__img--hover">
-                        <img src="/images/productos/peines1-2.jpeg" alt="">
-                    </div>
-                </a>
-                <div class="card__info">
-                    <span class="card__brand">BabyLissPRO</span>
-                    <h3 class="card__by">SET x 6 PEINES</h3>
-                    <span class="card__by">$1.999
-                        <i class="fas fa-truck"></i>
-                        <a href="" class="card__cart" title="Cart"><i class="fas fa-cart-plus"></i></a>
-
-                    </span>
-                </div>
-            </article>
-
-            <article class="card card--12">
-
-                <div class="card__info-hover">
-                    <div class="card__offer-info">
-                        <span class="card__discount">40% OFF</span>
-                    </div>
-                </div>
-
-                <div class="card__img"></div>
-                <a href="#" class="card_link">
-                    <div class="card__img--hover">
-                        <img src="/images/productos/supercombo1.jpeg" alt="">
-                    </div>
-                </a>
-                <div class="card__info">
-                    <span class="card__brand">TeknikStyle</span>
-                    <h3 class="card__by">COMBO SILLÓN + LAVACABEZA</h3>
-                    <span class="card__by">$25.000
-                        <i class="fas fa-truck"></i>
-                        <a href="" class="card__cart" title="Cart"><i class="fas fa-cart-plus"></i></a>
-
-                    </span>
-                </div>
-            </article>
-
+            <% }) %> 
 
         </section>
 
