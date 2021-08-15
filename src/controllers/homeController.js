@@ -16,6 +16,7 @@ module.exports = {
     },
     agregarProducto: (req, res)=>{
         res.render('agregarProducto', {title: 'agregar un producto'})
+       
     }
 }
         
