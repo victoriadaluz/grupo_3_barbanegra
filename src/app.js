@@ -5,10 +5,11 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const port = 3100;
 
+
+//Routes
 var indexRouter = require('./routes/indexRouter');
-
-
 var usersRouter = require('./routes/users');
+var adminRouter = require('./routes/adminRouter');
 
 
 var app = express();
@@ -31,6 +32,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 app.use('/', indexRouter)
 app.use('/users', usersRouter)
+app.use('/admin', adminRouter)
 
 
 app.listen(port, () => console.log(`Servidor levantado en el puerto ${port}\n http://localhost:${port}` ))
