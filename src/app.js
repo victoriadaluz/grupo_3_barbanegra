@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const port = 3300;
+const port = 3100;
 
 var indexRouter = require('./routes/indexRouter');
 
