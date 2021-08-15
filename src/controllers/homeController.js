@@ -1,9 +1,15 @@
-let productsDB = require('../data/productDB')
-const { name, carousel } = productsDB
+const fs = require('fs');
+const path = require('path');
 
-module.exports = {
+const productsFilePath = path.join(__dirname, '../data/productDB.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+const controller = {
     index: (req, res) => {
-        res.render('home',{title:'Barbanegra'})
+        let productsInSale = products.filter(product => product.condition === "inSale")
+        res.render('home',{
+            productsInSale
+        })
     },
     carrito: (req,res)=>{
         res.render('product-car',{title:'Carrito-Barbanegra'})
@@ -18,4 +24,5 @@ module.exports = {
         res.render('agregarProducto', {title: 'agregar un producto'})
     }
 }
+module.exports = controller;
         

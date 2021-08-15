@@ -1,6 +1,4 @@
- /* INICIO DE FOOTER */
-
- footer{
+footer{
     bottom: 0px;
     color: #fffefe;
     width: 100%;
@@ -28,8 +26,6 @@
         text-transform: uppercase;
         color: #92c1e9;
     }
-    
-    
 
     .box-d .content-d{
         margin: 20px 0 0 0;
@@ -73,7 +69,7 @@
         font-size: 30px;
         
     }
-     .content-d .social-d a span{
+    .content-d .social-d a span{
         text-align: center;
         color: #92c1e9;
         height: 40px;
@@ -106,25 +102,22 @@
 
 
     /* FIN FOOTER */
-
-
-    /* VERSIÓN TABLET */
-
-@media (min-width: 768px){
-    .main-content-d{
-        grid-template-columns: repeat(3, 1fr);
-           
-       }
-    
-       .social-d{
-        margin: 0;
-          margin-top: 20px;}
-}
-
-/* VERSIÓN DESKTOP */
- 
-@media (min-width: 1024px){
-    .main-content-d{
-        grid-template-columns: repeat(3, 1fr);
+    @media (min-width: 768px){
+        .main-content-d{
+            grid-template-columns: repeat(3, 1fr);
+               
+           }
+        
+           .social-d{
+            margin: 0;
+              margin-top: 20px;}
     }
-}
+    
+    /* VERSIÓN DESKTOP */
+     
+    @media (min-width: 1024px){
+        .main-content-d{
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    
