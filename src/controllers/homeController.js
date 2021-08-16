@@ -23,6 +23,10 @@ const controller = {
     },
     agregarProducto: (req, res)=>{
         res.render('agregarProducto', {title: 'agregar un producto'})
+    },
+    productos: (req, res)=>{
+        let productsInSale = products.filter(product => product.condition === "inSale")
+        res.render('productos', {productsInSale ,title : 'productos'})
     }
 }
 module.exports = controller;
