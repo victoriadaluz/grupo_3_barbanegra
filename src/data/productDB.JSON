@@ -259,7 +259,7 @@
         "discount": "",
         "category": "Repuestos",
         "subcategory": "Cabezales",
-        "condition": "inSale",
+        "condition": "",
         "image": "repuesto2.jpeg"
     }
 ]

@@ -10,6 +10,8 @@ var indexRouter = require('./routes/indexRouter');
 
 var usersRouter = require('./routes/users');
 
+var productsRouter = require('./routes/products');
+
 
 var app = express();
 
@@ -31,6 +33,8 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 app.use('/', indexRouter)
 app.use('/users', usersRouter)
+app.use('/products', productsRouter)
+
 
 
 app.listen(port, () => console.log(`Servidor levantado en el puerto ${port}\n http://localhost:${port}` ))
