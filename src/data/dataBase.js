@@ -6,5 +6,4 @@ addProduct : (dataBase) => {
     fs.writeFileSync('./src/data/productDB.json', JSON.stringify(dataBase), "utf-8")
 }
 
-
 module.exports = dbParseado;
