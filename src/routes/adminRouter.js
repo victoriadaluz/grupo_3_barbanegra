@@ -13,11 +13,6 @@ router.get('/', index)
 router.get ('/productos',listarProductos)
 /* 
 
-router.get('/productos', productos)
-
-
-router.get('/producto/:id', producto) 
-
 
 router.get('/agregarProducto', formAgregarProducto);
 
