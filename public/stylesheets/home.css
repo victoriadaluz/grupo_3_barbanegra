@@ -188,13 +188,13 @@
    float: right;
 }
 
-.card:hover{
+.card-de:hover{
 
     box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
     transform: scale(1.10, 1.10);
 }
 
-.card:hover .card__img--hover{
+.card-de:hover .card__img--hover{
     /* height: 100%; */
     opacity: 0.3;
     transform: scale(1.6, 1.6);
@@ -204,30 +204,30 @@
 
 
 
-.card:hover .card__info{
+.card-de:hover .card__info{
     background-color: transparent;
     position: relative;
 }
 
-.card:hover .card__info-hover{
+.card-de:hover .card__info-hover{
     opacity: 1;
 }
 
-.card:hover h3{
+.card-de:hover h3{
     color: #fffefe;
 }
 
-.card:hover .card__by{
+.card-de:hover .card__by{
     color: #fffefe;
 }
 
-.card:hover .card__brand{
+.card-de:hover .card__brand{
     color: #92c1e9;
 }
-.card:hover .card__cart{
+.card-de:hover .card__cart{
     color: #92c1e9;
 }
-.card:hover .fa-truck{
+.card-de:hover .fa-truck{
     color: #7D2AE8 ;
 }
 
