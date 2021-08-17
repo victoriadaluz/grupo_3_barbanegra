@@ -1,12 +1,11 @@
 // ************ Require's ************
 const express = require('express');
 const router = express.Router();
-
-/* Require Controller */
-
-const {listar} = require('../controllers/productsController');
+let {listar, producto} = require('../controllers/productsController')
 
 /* GET Products */
 router.get('/', listar);
+
+router.get('/detalle/:id', producto) 
 
 module.exports = router;
