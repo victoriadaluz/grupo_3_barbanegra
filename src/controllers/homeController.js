@@ -1,11 +1,11 @@
 let {
-    dbParseado
+    products
 } = require('../data/dataBase');
 
 
 module.exports = {
     index: (req, res) => {
-        let productsInSale = dbParseado.filter(product => product.condition === "inSale")
+        let productsInSale = products.filter(product => product.condition === "inSale")
         res.render('home', {
             productsInSale
         })
@@ -17,7 +17,7 @@ module.exports = {
         })
     },
     productos: (req, res) => {
-        let productsInSale = dbParseado.filter(product => product.condition === "inSale")
+        let productsInSale = products.filter(product => product.condition === "inSale")
         res.render('productos', {
             productsInSale,
             title: 'productos'

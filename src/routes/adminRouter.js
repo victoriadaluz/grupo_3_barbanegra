@@ -6,11 +6,14 @@ let { producto,
     agregarProducto, 
     index,
     editForm,
-    editarProducto } = require('../controllers/adminController')
+    editarProducto, deleteProduct } = require('../controllers/adminController')
 
 /* GET Index / Index del admin */
 router.get('/', index)
 router.get ('/productos',listarProductos)
+
+/*ELIMINAR producto */
+router.delete('/eliminarProducto:id', deleteProduct)
 /* 
 
 router.get('/productos', productos)

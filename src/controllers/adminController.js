@@ -1,10 +1,8 @@
-const {
-    Router
-} = require('express');
+const {    Router} = require('express');
 const router = Router();
 const fs = require('fs');
 let {
-    dbParseado
+    products
 } = require('../data/dataBase');
 
 module.exports = {
@@ -15,7 +13,18 @@ module.exports = {
     },
     listarProductos: (req, res) => {
         res.render('admin/adminProductos', {
-            dbParseado
+            products
         })
+    },
+    delete: (req, res) => {
+        products.forEach(product => {
+            if(product.id === +req.params.id){
+                let productDestroyer = products.indexOf(products);
+                productDestroyer.splice(productDestroyer, 1)
+            }
+        })
+        writeJSON(products);
+
+        res.redirect('/productos')
     }
 }

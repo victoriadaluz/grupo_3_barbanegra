@@ -1,11 +1,11 @@
 let {
-    dbParseado
+    products
 } = require('../data/dataBase'); //requiero base de datos parseada
 
 let productController = {
     listar: (req, res) => {
         res.render('productos', {
-            dbParseado
+            products
         })
     },
     producto: (req, res) => {
