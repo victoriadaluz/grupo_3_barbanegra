@@ -16,11 +16,6 @@ router.get ('/productos',listarProductos)
 router.delete('/eliminarProducto:id', deleteProduct)
 /* 
 
-router.get('/productos', productos)
-
-
-router.get('/producto/:id', producto) 
-
 
 router.get('/agregarProducto', formAgregarProducto);
 
