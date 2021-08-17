@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
     <!-- HEAD -->
-    <%- include('./partials/head') %> 
+    <%- include('./partials/head') %>
 <body>
     <!-- HEADER -->
-    <%- include('./partials/header') %> 
-    <div class="main-container-master">
-    <div class="all">
+    <%- include('./partials/header') %>
+<div class="main-container-master">
 
     <div class="container-algomas">
         <ul class="slider-p">
@@ -30,23 +29,26 @@
 
     <div class="product-block">
         <div class="product-info">
-        <h2>Wahl 5 Star Senior Cordless 8504-400 negra 220V</h2> <hr>
-            <p>La nueva Cortapelos Wahl Senior Cordless cuenta con la última tecnologia en baterías de litio de larga duración sin efecto memoria generando una velocidad alta de cuchilla con un torque mayor que recortará incluso el cabello más grueso con facilidad.</p>
-            <hr>
-            <h2>$21.500</h2>
-            <h4>en 12x 2765 pesos con 26 centavos$2.765,26</h4>
+        <h1 class="product-titulo">Wahl 5 Star Senior Cordless 8504-400 negra 220V</h1> 
+            <hr class="hr-class">
+            <p class="product-parrafo">La nueva Cortapelos Wahl Senior Cordless cuenta con la última tecnologia en baterías de litio de larga duración sin efecto memoria generando una velocidad alta de cuchilla con un torque mayor que recortará incluso el cabello más grueso con facilidad.</p>
+            <hr class="hr-class">
+            <h2 class="product-precio">$21.500</h2>
+            <h4 class="product-cuotas">en 12x 2765 pesos con 26 centavos$2.765,26</h4>
             <p>
                 <a href="/car" class="btnc">Comprar</a>
             </p>
 
-            <p>  <input type="checkbox" id="show-car">
+            <!--<p>  <input type="checkbox" id="show-car"> -->
                 <label class="label1" for="show-car"><a href="#shop-cart" class="btna">Agregar al carrito</a></p></i></i></label>
         </div>
     </div>
 
    </div>
 
-   <table>
+
+
+<table class="tablaproducto">
     <tr>
         <td class="fil1">Batería</td>
         <td class="fil2">Batería de litio de última generación sin efecto memoria, 70 minutos de duración con sólo 120 minutos de carga</td>
@@ -79,16 +81,6 @@
     </tr>
 
 </table>
-   
-   <!--
-
-   <div class="caracteristicas">
-       <h2>Especificaciones técnicas</h2>
-       <hr>
-       <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur aut ex doloremque veniam impedit sed consectetur libero beatae aperiam, reiciendis adipisci ratione, voluptatem rerum reprehenderit debitis eveniet non. Suscipit, corrupti.</p>
-
-    </div>
--->
 
 <div class="inf">
 <section id="sec1">
@@ -133,6 +125,10 @@
 
 </div>
 </div>
-    <%- include('./partials/footer') %> 
+
+
+<%- include('./partials/scripts') %>
+<%- include('./partials/footer') %>
+
 </body>
 </html>

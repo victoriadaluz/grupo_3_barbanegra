@@ -1,6 +1,6 @@
-var express = require('express');
-var router = express.Router();
-let controller= require('../controllers/homeController')
+const express = require('express');
+const router = express.Router();
+const controller= require('../controllers/homeController')
 
 
 /* GET - Home */
@@ -8,6 +8,8 @@ let controller= require('../controllers/homeController')
 router.get('/', controller.index);
 
 router.get('/cart', controller.carrito);
+
+router.get('/products', controller.productos);
 
 router.get('/product-detail', controller.detail);
 

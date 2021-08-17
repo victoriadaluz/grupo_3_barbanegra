@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
 <<<<<<< HEAD
@@ -434,4 +435,100 @@
 </div>
 </body>
 
+=======
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('./partials/head') %> 
+<body>
+    <div class="contGral">
+    <!-- HEADER -->
+    <%- include('./partials/header') %> 
+    <main>
+        <!-- HOME -->
+        <!-- Slider -->
+        <div class="slider">
+            <ul>
+                <li><img src="/images/banner/banner.jpg" alt=""></li>
+                <li><img src="/images/banner/banner2.jpg" alt=""></li>
+                <li><img src="/images/banner/banner3.jpg" alt=""></li>
+                <li><img src="/images/banner/banner4.jpg" alt=""></li>
+                <li><img src="/images/banner/banner5.jpg" alt=""></li>
+                <li><img src="/images/banner/banner6.jpg" alt=""></li>
+                <li><img src="/images/banner/banner7.jpg" alt=""></li>
+                <li><img src="/images/banner/banner8.jpg" alt=""></li>
+                <li><img src="/images/banner/banner9.jpg" alt=""></li>
+            </ul>
+        </div>       
+
+
+        <!-- Our offers -->
+        <div class="sectionTitle">
+            <h3>NUESTRAS OFERTAS</h3>
+        </div>
+
+
+        <section class="cards">
+        <% productsInSale.forEach(product => { %> 
+            <article class="card-de card--1">
+
+                <div class="card__info-hover">
+                    <div class="card__offer-info">
+                        <span class="card__discount"><%- product.discount !== 0 ? `${product.discount}%OFF`:"" %></span>
+                    </div>
+                </div>
+
+                <div class="card__img"></div>
+                <a href="/detalleProducto" class="card_link">
+                    <div class="card__img--hover">
+                        <img src="/images/productos/<%- product.image %>" alt="">
+                    </div>
+                </a>
+                <div class="card__info">
+                    <span class="card__brand"><%- product.brand %></span>
+                    <h3 class="card__by"><%- product.name %></h3>
+                    <span class="card__by"><%- product.price %>
+                        <i class="fas fa-truck"></i>
+                        <a href="/cart" class="card__cart" title="Cart"><i class="fas fa-cart-plus"></i></a>
+
+
+                    </span>
+                </div>
+            </article>
+            <% }) %> 
+
+        </section>
+
+        <!-- Our offers end -->
+
+
+
+        <!-- Popular brands-->
+
+        <div class="popular-brands">
+            <div class="text-center brand-header">
+                <h3>TRABAJAMOS CON LAS MEJORES MARCAS</h3>
+            </div>
+
+            <div class="brands-grid">
+                <img src="/images/LOGOS/logowahl.jpeg" alt="">
+                <img src="/images/LOGOS/logots.jpeg" alt="">
+                <img src="/images/LOGOS/logoBaby.jpeg" alt="">
+            </div>
+        </div>
+
+        <!-- Popular brand end -->
+
+    
+
+    <!-- HOME END -->
+
+    <!-- FOOTER -->
+    <%- include('./partials/footer') %> 
+</main>
+</div>
+  <%- include('./partials/scripts') %> 
+  
+</body>
+
+>>>>>>> 66e8d6afe14991a9837ddfd66100ff798f076a9b
 </html>
