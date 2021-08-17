@@ -1,15 +1,15 @@
-const fs = require('fs');
-const path = require('path');
+let{dbParseado} = require('../data/dataBase'); //requiero base de datos parseada
 
-const productsFilePath = path.join(__dirname, '../data/productDB.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-const productsController = {
+let productController = {
     listar: (req,res)=>{
-        res.render('products',{
-            products,
+        res.render('productos',{dbParseado})
+    },
+    producto: (req,res)=>{
+        let producto = dbParseado.find(producto =>{  
+            return producto.id === +req.params.id 
         })
+        res.render('product-detail',{producto})
     }
-};
+}
 
-module.exports = productsController;
+module.exports = productController

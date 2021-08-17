@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('./partials/head') %> 
+<body>
+    <div class="contGral">
+    <!-- HEADER -->
+    <%- include('./partials/header') %> 
+    <main>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <%= producto.name %> / <%= producto.brand %>
+                </div>
+                <img src="/images/productos/<%= producto.image %>" class="card-img-top" alt="">
+                <div class="card-body">
+                    <p><%= producto.description %></p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-danger">
+                        comprar
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <%- include('./partials/footer') %> 
+    </main>
+    </div>
+      <%- include('./partials/scripts') %> 
+    </body>
+    
+    </html>
