@@ -17,12 +17,10 @@
                 </div>
                 <img src="/images/productos/<%= producto.image %>" class="card-img-top" alt="">             
                 <div class="card-footer">
-                    <button class="btn btn-danger">
-                        eliminar
-                    </button>
-                    <button class="btn btn-primary">
-                        editar
-                    </button>
+                    <form action="/admin/productos/delete/<%- producto.id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="btn btn-primary">Eliminar</button>
+
+                        <button class="btn btn-primary">Editar</button>
                 </div>
             </div>
         </div>
