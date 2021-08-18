@@ -59,12 +59,13 @@ module.exports = {
     deleteProduct: (req, res) => {
         products.forEach(product => {
             if(product.id === +req.params.id){
-                let productDestroyer = products.indexOf(products);
-                productDestroyer.splice(productDestroyer, 1)
+                let productToDelete = products.indexOf(product);
+                products.splice(productToDelete, 1);
             }
-        })
-        writeJSON(products);
-
-        res.redirect('/productos')
+        })            
+        addProduct(products);
+        res.redirect('/admin')
+        
+       
     }
 }
