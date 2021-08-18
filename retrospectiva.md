@@ -65,3 +65,37 @@
 
 ## Dejar de hacer
 -Repetir código innecesario
+
+
+
+# Tercer sprint (13/08 - 20/08)
+## Seguir haciendo
+-Mantener actualizada la rama dev
+-Apoyarnos con lo que nos cuesta o hacer llamadas para darnos una mano entre nosotros.
+-Tener buena onda
+-Hablar tanto por Discord como por Whatsapp.
+-Decir nuestra opinión sin miedo.
+-Reuniones semanales
+-Tener trello actualizado
+-Practicar EJS
+
+
+## Hacer mas
+-Pactar horarios/dias fijos
+-Reuniones semanales
+-Comunicarnos más entre nosotros cuando surgen problemas
+-Reunirnos más seguido
+-Hacer bien la división de tareas
+
+
+## Empezar a hacer
+-Agendar reuniones por Google Calendar
+
+
+## Hacer menos
+-Colgar
+-No decir lo que pensamos, sentimos
+
+
+## Dejar de hacer
+-Trabajar sin avisar ni explicar que se hizo
