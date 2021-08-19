@@ -4,10 +4,15 @@
     <%- include('../partials/head') %> 
 <body>
   <%- include('../partials/headerAdmin') %> 
-<main>  
-</main>
 </body>
-<h1>listado de productos disponibles en base de de datoasdasdas</h1>
+<div>
+<h1>LISTADO DE PRODUCTOS</h1>
+</div>
+<div class="btn-toolbar mb-2 mb-md-0">
+    <div class="btn-group me-2">
+      <a href="/admin/agregarProducto" class="btn btn-sm btn-outline-secondary">Agregar</a>
+    </div>
+  </div>
 <div class="container p-4">
     <% products.forEach(producto => { %>
         <div class="col-md-4">
