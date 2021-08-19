@@ -7,7 +7,7 @@ let { producto,
     index,
     editForm,
     editarProducto,
-     deleteProduct } = require('../controllers/adminController')
+    deleteProduct } = require('../controllers/adminController')
 
 /* GET Index / Index del admin */
 router.get('/', index)
@@ -20,7 +20,7 @@ router.get('/agregarProducto', addProducts)
 router.post('/agregarProducto', uploadNewProduct)
 
 /*ELIMINAR producto */
-router.delete('/eliminarProducto:id', deleteProduct)
+router.delete('/eliminarProducto/:id', deleteProduct)
 /* 
 
 

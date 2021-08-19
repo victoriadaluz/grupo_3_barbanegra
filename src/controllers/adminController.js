@@ -2,7 +2,7 @@ const {    Router} = require('express');
 const router = Router();
 const fs = require('fs');
 let {
-    products,addProduct
+    products, addProduct
 } = require('../data/dataBase');
 
 module.exports = {
@@ -59,12 +59,12 @@ module.exports = {
     deleteProduct: (req, res) => {
         products.forEach(product => {
             if(product.id === +req.params.id){
-                let productDestroyer = products.indexOf(products);
-                productDestroyer.splice(productDestroyer, 1)
+                let productDestroyer = products.indexOf(product);
+                products.splice(productDestroyer, 1)
             }
         })
-        writeJSON(products);
+        /* addProduct(products); */
 
-        res.redirect('/productos')
+        res.redirect('/admin/adminProductos')
     }
 }

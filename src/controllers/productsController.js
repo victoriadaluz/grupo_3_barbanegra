@@ -9,7 +9,7 @@ let productController = {
         })
     },
     producto: (req, res) => {
-        let producto = dbParseado.find(producto => {
+        let producto = product.find(producto => {
             return producto.id === +req.params.id
         })
         res.render('product-detail', {
