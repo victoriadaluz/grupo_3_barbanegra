@@ -4,11 +4,16 @@
     <%- include('../partials/head') %> 
 <body>
   <%- include('../partials/headerAdmin') %> 
-<main>  
-</main>
 </body>
-<h1>listado de productos disponibles en base de de datos</h1>
-<div class="container">
+<div>
+<h1>LISTADO DE PRODUCTOS</h1>
+</div>
+<div class="btn-toolbar mb-2 mb-md-0">
+    <div class="btn-group me-2">
+      <a href="/admin/agregarProducto" class="btn btn-sm btn-outline-secondary">Agregar</a>
+    </div>
+  </div>
+<div class="container p-4">
     <% products.forEach(producto => { %>
         <div class="col-md-4">
             <div class="card">
@@ -16,12 +21,12 @@
                     <%= producto.name %> / <%= producto.brand %>
                 </div>
                 <img src="/images/productos/<%= producto.image %>" class="card-img-top" alt="">             
-                <div class="card-footer">
-                    <form action="/admin/productos/delete/<%- producto.id %>?_method=DELETE" method="POST">
-                        <button type="submit" class="btn btn-primary">Eliminar</button>
-
-                        <button class="btn btn-primary">Editar</button>
-                </div>
+                <div class="containerBtns">                    
+                    <form action="/admin/eliminarproducto/<%= producto.id %>?_method=DELETE" method="POST">
+                      <button type="submit">Eliminar</button>
+                    </form>
+                   
+                  </div>
             </div>
         </div>
     <% }) %>

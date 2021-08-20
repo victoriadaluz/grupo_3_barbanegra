@@ -20,7 +20,7 @@ router.get('/agregarProducto', addProducts)
 router.post('/agregarProducto', uploadNewProduct)
 
 /*ELIMINAR producto */
-router.delete('/eliminarProducto:id', deleteProduct)
+router.delete('/eliminarProducto/:id', deleteProduct)
 /* 
 
 
