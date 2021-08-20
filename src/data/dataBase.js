@@ -1,8 +1,9 @@
 let fs = require('fs');
+const path = require('path');
 module.exports = {
 
-    products: JSON.parse(fs.readFileSync('./src/data/productDB1.JSON', 'utf-8')),
+    products: JSON.parse(fs.readFileSync('/src/data/productDB3.json', 'utf-8')),
     addProduct: (dataBase) => {
-        fs.writeFileSync('./src/data/productDB1.json', JSON.stringify(dataBase), "utf-8")
+        fs.writeFileSync(path.join(__dirname, "../data/productDB3.json"), JSON.stringify(dataBase), "utf-8")
     }
 }
