@@ -53,7 +53,7 @@ module.exports = {
     
     products.push(newProduct)
     addProduct(products)
-    res.redirect('/admin/adminProductos')
+    res.redirect('/admin/productos')
     },
 
     deleteProduct: (req, res) => {
