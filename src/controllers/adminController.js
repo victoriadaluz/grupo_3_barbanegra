@@ -60,11 +60,12 @@ module.exports = {
         products.forEach(product => {
             if(product.id === +req.params.id){
                 let productToDelete = products.indexOf(product);
-                products.splice(productToDelete, 1);
+                products.splice(productToDelete, 1); 
+                
             }
         })            
         addProduct(products);
-        res.redirect('/admin')
+        res.redirect('/admin/productos')
         
        
     }
