@@ -5,7 +5,7 @@ let { producto,
     addProducts, 
     uploadNewProduct, 
     index,
-    editForm,
+    editarProductoID,
     editarProducto,
     deleteProduct } = require('../controllers/adminController')
 
@@ -21,17 +21,11 @@ router.post('/agregarProducto', uploadNewProduct)
 
 /*ELIMINAR producto */
 router.delete('/eliminarProducto/:id', deleteProduct)
-/* 
 
+//EDITAR PRODUCTO
+router.get('/productos/editar/:id', editarProducto); //traigo de bd el item que requiere por :id
+router.put('/productos/editar/:id',editarProductoID); //de tocar boton editar se activa PUT ojo con eso!
 
-router.get('/agregarProducto', formAgregarProducto);
-
-router.post('/agregarProducto', agregarProducto);
-
-
-router.get('/editarSucursal/:id', editForm); */
-/* PUT - Recibe los datos de edicion */
-/* router.put('/editarSucursal/:id', editarProducto); */
 
 
 module.exports = router;

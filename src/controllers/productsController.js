@@ -8,8 +8,9 @@ let productController = {
             products
         })
     },
+    //este metodo lista y permite las vistas parametrizadas al hacer click en el producto
     producto: (req, res) => {
-        let producto = product.find(producto => {
+        let producto = products.find(producto => {
             return producto.id === +req.params.id
         })
         res.render('product-detail', {

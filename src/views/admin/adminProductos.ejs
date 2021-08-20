@@ -6,7 +6,7 @@
   <%- include('../partials/headerAdmin') %> 
 </body>
 <div>
-<h1>LISTADO DE PRODUCTOS</h1>
+<h1>LISTADO DE PRODUCTOS222222</h1>
 </div>
 <div class="btn-toolbar mb-2 mb-md-0">
     <div class="btn-group me-2">
@@ -25,7 +25,8 @@
                     <form action="/admin/eliminarproducto/<%= producto.id %>?_method=DELETE" method="POST">
                       <button type="submit" class="btn btn-primary">Eliminar</button>
                     </form>
-                   
+                   <a href="/admin/productos/editar/<%= producto.id %>">
+                  <button type="submit" class="btn btn-primary">EDITAR</button></a>
                   </div>
             </div>
         </div>

@@ -16,6 +16,7 @@ module.exports = {
             
         })
     },
+    //este es para el slider (y poner ofertas con la condicion "inSale")
     productos: (req, res) => {
         let productsInSale = products.filter(product => product.condition === "inSale")
         res.render('productos', {
