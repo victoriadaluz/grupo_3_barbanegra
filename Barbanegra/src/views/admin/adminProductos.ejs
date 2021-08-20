@@ -25,8 +25,9 @@
                     <form action="/admin/eliminarproducto/<%= producto.id %>?_method=DELETE" method="POST">
                       <button type="submit" class="btn btn-primary">Eliminar</button>
                     </form>
-                   <a href="/admin/productos/editar/<%= producto.id %>">
-                  <button type="submit" class="btn btn-primary">EDITAR</button></a>
+                    <form action="/admin/productos/editar<%= producto.id %>?_method=DELETE" method="POST">
+                      <button type="submit" class="btn btn-primary">Editar</button>
+                    </form>
                   </div>
             </div>
         </div>
