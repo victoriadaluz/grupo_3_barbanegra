@@ -34,8 +34,13 @@ module.exports = {
             if(product.id > lastID){
                 lastID = product.id
             }
-        })
-
+        });
+        let arrayImages = [];
+        if (req.files){
+            req.files.forEach(image => {
+                arrayImages.push(image.filename)
+            })
+        }
         let{name, 
             brand,
             price,
@@ -56,7 +61,7 @@ module.exports = {
             category,
             subcategory,
             condition,
-            imagen : "default-image.png"
+            image : arrayImages.length > 0 ? arrayImages: ['default-image.png']
         }
         
     
@@ -83,7 +88,16 @@ module.exports = {
             category,
             subcategory,
             condition
-           } = req.body;//agarramos todos los datos del formulario
+           } = req.body;
+           //agarramos todos los datos del formulario
+           let arrayImages = [];
+            if(req.files){
+                req.files.forEach(image => {
+                    arrayImages.push(image.filename)
+                })
+            }
+
+        
            
         products.forEach(product=>{
             if(product.id === +req.params.id){
@@ -96,7 +110,7 @@ module.exports = {
                 product.category = category,
                 product.subcategory = subcategory,
                 product.condition = condition,
-                product.image = "default-img.jpg" 
+                product.image = arrayImages.length > 0 ? arrayImages: product.image
             }
         })
         //recogo todos los datos que coincida con el id pasado por ruta
