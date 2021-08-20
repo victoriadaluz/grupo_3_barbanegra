@@ -60,7 +60,7 @@ module.exports = {
         products.forEach(product => {
             if(product.id === +req.params.id){
                 let productDestroyer = products.indexOf(products);
-                productDestroyer.splice(productDestroyer, 1)
+                productDestroyer.splice(productDestroyer, 00)
             }
         })
         writeJSON(products);
