@@ -21,13 +21,12 @@
                     <%= producto.name %> / <%= producto.brand %>
                 </div>
                 <img src="/images/productos/<%= producto.image %>" class="card-img-top" alt="">             
-                <div class="containerBtns">                    
+                <div class="containerBtns">              
                     <form action="/admin/eliminarproducto/<%= producto.id %>?_method=DELETE" method="POST">
-                      <button type="submit" class="btn btn-primary">Eliminar</button>
-                    </form>
-                    <form action="/admin/productos/editar<%= producto.id %>?_method=DELETE" method="POST">
-                      <button type="submit" class="btn btn-primary">Editar</button>
-                    </form>
+                      <button type="submit" class="btn btn-primary">ELIMINAR</button>
+                    </form>    
+                  <a href="/admin/productos/editar/<%= producto.id %>">
+                      <button type="submit" class="btn btn-primary">EDITAR</button></a>
                   </div>
             </div>
         </div>
