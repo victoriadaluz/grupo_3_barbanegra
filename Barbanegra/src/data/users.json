@@ -1,0 +1,145 @@
+[ { 
+    "id": 1,
+    "Nombre": "Jonatan",
+    "Apellido": "Meers",
+    "Email": "umeers5@seesaa.net",
+    "Contraseña": "xRjBhW",
+    "Categoría": "administrador",
+    "image": "user.jpg"
+ },
+ {
+    "id": 2,
+    "Nombre": "Pearla",
+    "Apellido": "Matieu",
+    "Email": "pmatieu16@github.com",
+    "Contraseña": "QdrrsRW",
+    "Categoría": "administrador",
+    "image": "user.jpg"
+ },
+ { 
+    "id": 3,
+    "Nombre": "Fernando",
+    "Apellido": "Tomato",
+    "Email": "fertomato@unmail.com",
+    "Contraseña": "password",
+    "Categoría": "administrador",
+    "image": "user.jpg"
+ },
+ {
+    "id": 4,
+    "Nombre": "Aline",
+    "Apellido": "Lawrance",
+    "Email": "alawrancev@dailymotion.com",
+    "Contraseña": "SAAqwdpl",
+    "Categoría": "administrador",
+    "image": "user.jpg"
+ },
+ { 
+    "id": 5,
+    "Nombre": "Eba",
+    "Apellido": "Stilliard",
+    "Email": "estilliardr@ehow.com",
+    "Contraseña": "callefalsa123",
+    "Categoría": "client",
+    "image": "user.jpg"
+ },
+ {
+    "id": 6,
+    "Nombre": "Immanuel",
+    "Apellido": "Ovell",
+    "Email": "iovellq@java.com",
+    "Contraseña": "pardkkd",
+    "Categoría": "client",
+    "image": "user.jpg"
+ },
+ { 
+    "id": 7,
+    "Nombre": "Clarine",
+    "Apellido": "Lowle",
+    "Email": "clowlem@domainmarket.com",
+    "Contraseña": "appwifhhg",
+    "Categoría": "client",
+    "image": "user.jpg"
+ },
+ {
+    "id": 8,
+    "Nombre": "Noah",
+    "Apellido": "Harbin",
+    "Email": "nharbink@goo.ne.jp",
+    "Contraseña": "masionww",
+    "Categoría": "client",
+    "image": "user.jpg"
+ },
+ { 
+    "id": 9,
+    "Nombre": "Penelope",
+    "Apellido": "Gaddesby",
+    "Email": "pgaddesbyj@harvard.edu",
+    "Contraseña": "asd5w8",
+    "Categoría": "client",
+    "image": "user.jpg"
+ },
+ {
+    "id": 10,
+    "Nombre": "Toddy",
+    "Apellido": "Swinden",
+    "Email": "tswindend@youku.com",
+    "Contraseña": "a5f456af",
+    "Categoría": "client",
+    "image": "user.jpg"
+ },
+ { 
+    "id": 11,
+    "Nombre": "Janifer",
+    "Apellido": "McGilvray",
+    "Email": "jmcgilvrayb@baidu.com",
+    "Contraseña": "a8ht47k",
+    "Categoría": "client",
+    "image": "user.jpg"
+ },
+ {
+    "id": 12,
+    "Nombre": "Luis",
+    "Apellido": "Twaite",
+    "Email": "ltwaite6@mac.com",
+    "Contraseña": "asd11w8",
+    "Categoría": "client",
+    "image": "user.jpg"
+ },
+ { 
+    "id": 13,
+    "Nombre": "Ursa",
+    "Apellido": "Gomez",
+    "Email": "ursa.go@outlook.com",
+    "Contraseña": "pad8w8d8d",
+    "Categoría": "client",
+    "image": "user.jpg"
+ },
+ {
+    "id": 14,
+    "Nombre": "Kala",
+    "Apellido": "Burstowe",
+    "Email": "kburstowes@slate.com",
+    "Contraseña": "pa4h8g4",
+    "Categoría": "client",
+    "image": "user.jpg"
+ },
+ { 
+    "id": 15,
+    "Nombre": "Rubie",
+    "Apellido": "villalba",
+    "Email": "villalbie@gmail.com",
+    "Contraseña": "s8w8f4",
+    "Categoría": "client",
+    "image": "user.jpg"
+ },
+ {
+    "id": 16,
+    "Nombre": "Denise",
+    "Apellido": "Perez",
+    "Email": "denii.pe@gmail.com",
+    "Contraseña": "as588wdf",
+    "Categoría": "client",
+    "image": "user.jpg"
+ }
+]
