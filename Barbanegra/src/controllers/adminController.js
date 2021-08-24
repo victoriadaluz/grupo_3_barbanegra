@@ -1,6 +1,5 @@
 const {    Router} = require('express');
-const router = Router();
-const fs = require('fs');
+
 let {
     products, addProduct,categories
 } = require('../data/dataBase');
@@ -61,12 +60,12 @@ module.exports = {
             category,
             subcategory,
             condition,
-            image : arrayImages.length > 0 ? arrayImages: ['default-image.png']
-        }
+            image : arrayImages.length > 0 ? arrayImages: ['default-image.jpg']
+        };
         
     
-    products.push(newProduct)
-    addProduct(products)
+    products.push(newProduct);
+    addProduct(products);
     res.redirect('/admin/productos')
     },
     editarProducto: (req, res) =>{        

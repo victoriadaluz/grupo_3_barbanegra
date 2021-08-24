@@ -7,8 +7,8 @@ let { producto,
     index,
     editarProductoID,
     editarProducto,
-    deleteProduct } = require('../controllers/adminController')
-    let upload = require('../middlewares/uploadFiles')
+    deleteProduct } = require('../controllers/adminController');
+    let upload = require('../middlewares/uploadFiles');
 
 /* GET Index / Index del admin */
 router.get('/', index)
