@@ -8,5 +8,9 @@ module.exports = {
     categories: JSON.parse(fs.readFileSync(path.join(__dirname, "/subcategories.json"), "utf-8")),
     addProduct: (dataBase) => {
         fs.writeFileSync(path.join(__dirname, "../data/productDB3.json"), JSON.stringify(dataBase), "utf-8")
+    },
+    /*creo variable para requerir a la database de usuarios*/
+    newUser: (dataBase) => {
+        fs.writeFileSync(path.join(__dirname, "../data/users.json"), JSON.stringify(dataBase), "utf-8")
     }
 }
