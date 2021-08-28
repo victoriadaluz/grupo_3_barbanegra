@@ -10,27 +10,5 @@
     "direccion": "",
     "telefono": "",
     "avatar": "default-user.png"
-  },
-  {
-    "id": 2,
-    "user": "aime",
-    "email": "aime@vino.com",
-    "pass": "$2a$10$d5OJFNnbv2RZdLHrtaIt4OVBiL9YJtDcZnnUerKjRNTJRFPetqDWK",
-    "rol": "ROL_USER",
-    "nombre": "",
-    "direccion": "",
-    "telefono": "",
-    "avatar": "default-user.png"
-  },
-  {
-    "id": 3,
-    "user": "aime2",
-    "email": "aime2@vino.com",
-    "pass": "$2a$10$BffHrLoec0NWxrwRB.Aki.OP8uuOLrJ/UWSmopp3HQMXEOlrl53mq",
-    "rol": "ROL_USER",
-    "nombre": "",
-    "direccion": "",
-    "telefono": "",
-    "avatar": "default-user.png"
-  }
+  } 
 ]
