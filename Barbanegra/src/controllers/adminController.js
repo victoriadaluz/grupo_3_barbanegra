@@ -60,7 +60,7 @@ module.exports = {
             category,
             subcategory,
             condition,
-            image : arrayImages.length > 0 ? arrayImages: ['default-image.jpg']
+            image : arrayImages.length > 0 ? arrayImages: ['default-img.jpg']
         };
         
     
