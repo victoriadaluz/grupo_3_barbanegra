@@ -9,7 +9,7 @@
     <div class="lcontainer">
       <div class="forms-lcontainer">
         <div class="signin-signup">
-          <form action="#" class="sign-in-form">
+<!--           <form action="#" class="sign-in-form">
             <h2 class="title">Iniciar sesión</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
@@ -35,24 +35,38 @@
                 <i class="fab fa-linkedin-in"></i>
               </a>
             </div>
-          </form>
-          <form action="#" class="sign-up-form">
+          </form> -->
+          <form action="/users/login" method="POST" class="sign-up-form">
             <h2 class="title">Registro</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Usuario" />
-            </div>
+              <input name ="user" value="<%= locals.old && old.user %> " type="text" placeholder="Usuario" />
+             </div>
+             
+             <% if (locals.errors && errors.user) { %>
+              <small>
+                <%= errors.user.msg %> <!-- cambiar color de mensaje -->
+              </small>
+            <%}%>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Correo electrónico" />
+              <input name ="email" value="<%= locals.old && old.email %>" type="email" placeholder="Correo electrónico" />
             </div>
+            <% if (locals.errors && errors.email) { %>
+              <small>
+                <%= errors.email.msg %> <!-- cambiar color de mensaje -->
+              </small>
+            <%}%>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Contraseña" />
+              <input name="pass" type="password" placeholder="Contraseña" />
             </div>
+            <% if (locals.errors && errors.pass1) { %>
+              <small><%= errors.pass1.msg %> </small>
+          <% } %>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Repetir Contraseña" />
+              <input name="pass1" type="password" placeholder="Repetir Contraseña" />
             </div>
             <a href="/users/login/userProfile">
               <input type="submit" class="btn" value="Sign up" />

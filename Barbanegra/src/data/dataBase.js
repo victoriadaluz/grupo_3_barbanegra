@@ -10,6 +10,7 @@ module.exports = {
         fs.writeFileSync(path.join(__dirname, "../data/productDB3.json"), JSON.stringify(dataBase), "utf-8")
     },
     /*creo variable para requerir a la database de usuarios*/
+    users: JSON.parse(fs.readFileSync(path.join(__dirname,"/users.json"), "utf-8")),
     newUser: (dataBase) => {
         fs.writeFileSync(path.join(__dirname, "../data/users.json"), JSON.stringify(dataBase), "utf-8")
     }
