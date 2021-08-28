@@ -7,12 +7,14 @@ module.exports = {
     index: (req, res) => {
         let productsInSale = products.filter(product => product.condition === "inSale")
         res.render('home', {
-            productsInSale
+            productsInSale,
+            session: req.session
         })
     },
     carrito: (req, res) => {
         res.render('product-cart', {
             title: 'Carrito-Barbanegra',
+            session: req.session
             
         })
     },
@@ -21,7 +23,8 @@ module.exports = {
         let productsInSale = products.filter(product => product.condition === "inSale")
         res.render('productos', {
             productsInSale,
-            title: 'productos'
+            title: 'productos',
+            session: req.session
         })
     }
 }

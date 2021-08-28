@@ -16,16 +16,21 @@ products.forEach(product => {
 module.exports = {
     index: (req, res) => {
         res.render('admin/admin', {
-            title: 'Admin-Barbanegra'
+            title: 'Admin-Barbanegra',
+            session: req.session
         })
     },
     listarProductos: (req, res) => {
         res.render('admin/adminProductos', {
-            products
+            products,
+            session: req.session
         })
     },
     addProducts: (req,res) =>{
-        res.render('admin/agregarProducto')
+        res.render('admin/agregarProducto',{
+            session: req.session
+        })
+        
     },
     uploadNewProduct: (req,res) =>{
         let lastID = 1
@@ -73,7 +78,8 @@ module.exports = {
         res.render('admin/adminEditarProductos', {
             productoAEditar,
             categories,
-            subcategories
+            subcategories,
+            session: req.session
         })
         
         

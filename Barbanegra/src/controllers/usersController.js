@@ -1,5 +1,5 @@
-let {users,newUser} = require('../data/dataBase');
-const {validationResult} = require('express-validator');
+let { users, newUser } = require('../data/dataBase');
+const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 
 module.exports = {
@@ -11,36 +11,71 @@ module.exports = {
     },
 
     userRegister: (req, res) => {
-        let errors = validationResult(req);        
-        if(errors.isEmpty()){
-            let lastId= 1;            
-            users.forEach(user=>{
-                if(user.id > lastId){
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+            let lastId = 1;
+            users.forEach(user => {
+                if (user.id > lastId) {
                     lastId = user.id;
                 }
             })
             let userNew = {
-                id:lastId + 1,
-                user: req.body.user.trim(),
-                email : req.body.email.trim(),
-                pass : bcrypt.hashSync(req.body.pass,10),
+                id: lastId + 1,
+                user: req.body.usuario.trim(),
+                email: req.body.email.trim(),
+                pass: bcrypt.hashSync(req.body.pass, 10),
                 rol: "ROL_USER",
                 nombre: "",
                 direccion: "",
                 telefono: "",
-                avatar : "default-user.png"
-            }            
+                avatar: "default-user.png"
+            }
             users.push(userNew);
             newUser(users);
             res.redirect('/')
-        }else{
-            res.render('loginRegistro',{
+        } else {
+            res.render('loginRegistro', {
                 title: 'Login-Barbanegra',
-                errors : errors.mapped(),
+                errors: errors.mapped(),
                 old: req.body,
                 session: req.session
             })
         }
+    },
+
+    userLogin: (req, res) => {
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+            let user = users.find(user => user.email === req.body.email);            
+            req.session.user = {
+                id: user.id,
+                user: user.user,
+                email: user.email,
+                avatar: user.avatar,
+                rol: user.rol
+            }
+
+            /*    si hacemos un checkbok poner
+               if(req.body.nameimput)  */
+            res.cookie('cookieNegra', req.session.user, { maxAge: 1000 * 60 * 3 })
+            /** guardamos el usuario en locals */
+            res.locals.user = req.session.user
+            /**redireccionamos al home si todo esta ok */
+            res.redirect('/productos')
+        } else {
+            res.render('loginRegistro', {
+                title: 'Login-Barbanegra',
+                errors: errors.mapped(),
+                session: req.session
+            })
+        }
+    },
+    userLogout: (req, res) => {
+        req.session.destroy();
+        if (req.cookies.cookieNegra) {
+            res.cookie('cookieNegra', '', { maxAge: -1 })
+        }
+        res.redirect('/');
     }
-    
+
 }
