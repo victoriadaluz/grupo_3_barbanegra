@@ -31,7 +31,7 @@ module.exports = [
                 return true
             } else{return false}
         })
-        .withMessage('aime tenia razon'),
+        .withMessage('El usuario ya existe'),
         
         
         

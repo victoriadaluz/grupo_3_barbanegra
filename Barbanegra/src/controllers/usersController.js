@@ -9,7 +9,7 @@ module.exports = {
             session: req.session
         })
     },
-
+  
     userRegister: (req, res) => {
         let errors = validationResult(req);
         if (errors.isEmpty()) {
