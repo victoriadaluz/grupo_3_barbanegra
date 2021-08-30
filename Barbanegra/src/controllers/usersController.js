@@ -57,7 +57,9 @@ module.exports = {
 
             /*    si hacemos un checkbok poner
                if(req.body.nameimput)  */
+               if(req.body.remember){ /* si seleccionan recordar creo la cookie */
             res.cookie('cookieNegra', req.session.user, { maxAge: 1000 * 60 * 3 })
+                }
             /** guardamos el usuario en locals */
             res.locals.user = req.session.user
             /**redireccionamos al home si todo esta ok */
