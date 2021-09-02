@@ -32,7 +32,7 @@ module.exports = {
             }
             users.push(userNew);
             newUser(users);
-            res.redirect('/')
+            res.redirect('/users/profile')
         } else {
             res.render('loginRegistro', {
                 title: 'Login-Barbanegra',
@@ -41,6 +41,14 @@ module.exports = {
                 session: req.session
             })
         }
+    },
+    userProfile: (req, res) => {
+        let user1 = users.find(user => user.email === req.body.email);
+        res.render('/userProfile2', {
+            users,
+            session: req.session,
+            
+        })
     },
 
     userLogin: (req, res) => {
@@ -54,6 +62,7 @@ module.exports = {
                 avatar: user.avatar,
                 rol: user.rol
             }
+
 
             /*    si hacemos un checkbok poner
                if(req.body.nameimput)  */
