@@ -13,7 +13,7 @@ router.get('/login', login);
 router.post('/login', loginValidator, userLogin)
 
 router.get('/profile', userSession, userProfile)
-router.post('/profile')
+/* router.post('/profile') */
 
 /* LOGOUT */
 router.get('/logout', userLogout)

@@ -1,6 +1,6 @@
 let { users, newUser } = require('../data/dataBase');
 const { validationResult } = require('express-validator');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 module.exports = {
     login: (req, res) => {
@@ -18,7 +18,7 @@ module.exports = {
                 if (user.id > lastId) {
                     lastId = user.id;
                 }
-            })
+            });
             let userNew = {
                 id: lastId + 1,
                 user: req.body.usuario.trim(),
@@ -32,7 +32,7 @@ module.exports = {
             }
             users.push(userNew);
             newUser(users);
-            res.redirect('/users/profile')
+            res.redirect('/users/login')
         } else {
             res.render('loginRegistro', {
                 title: 'Login-Barbanegra',
@@ -43,10 +43,10 @@ module.exports = {
         }
     },
     userProfile: (req, res) => {
-        let user1 = users.find(user => user.email === req.body.email);
-        res.render('/userProfile2', {
-            users,
+        let user = users.find(user=> user.id === req.session.user.id);
+        res.render('userProfile2', {
             session: req.session,
+            user
             
         })
     },
@@ -70,9 +70,10 @@ module.exports = {
             res.cookie('cookieNegra', req.session.user, { maxAge: 1000 * 60 * 3 })
                 }
             /** guardamos el usuario en locals */
-            res.locals.user = req.session.user
+            res.locals.user = req.session.user;
             /**redireccionamos al home si todo esta ok */
-            res.redirect('/productos')
+            res.redirect('/')
+
         } else {
             res.render('loginRegistro', {
                 title: 'Login-Barbanegra',
