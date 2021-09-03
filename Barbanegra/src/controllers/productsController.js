@@ -14,7 +14,7 @@ let productController = {
         let producto = products.find(producto => {
             return producto.id === +req.params.id
         })
-        res.render('product-detail', {
+        res.render('detalleProducto', {
             producto,
             session: req.session
         })

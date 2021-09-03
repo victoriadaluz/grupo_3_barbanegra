@@ -9,9 +9,9 @@
 
     <div class="container-algomas">
         <ul class="slider-p">
-            <li id="slide1-p"> <img src="images/maquina-1.jpeg" alt="principal"></li>
-            <li id="slide2-p"><img src="images/maquina-2.jpeg" alt="incluye"></li>
-            <li id="slide3-p"><img src="images/maquina-3.jpeg" alt="tercera"></li>
+            <li id="slide1-p"><img src="/images/productos/<%- producto.image %>" alt=""></li>
+           <!--  <li id="slide2-p"><img src="images/maquina-2.jpeg" alt="incluye"></li>
+            <li id="slide3-p"><img src="images/maquina-3.jpeg" alt="tercera"></li> -->
         </ul>
 
         <ul class="menu">
@@ -29,11 +29,11 @@
 
     <div class="product-block">
         <div class="product-info">
-        <h1 class="product-titulo">Wahl 5 Star Senior Cordless 8504-400 negra 220V</h1> 
+        <h1 class="product-titulo"><%= producto.name %></h1> 
             <hr class="hr-class">
-            <p class="product-parrafo">La nueva Cortapelos Wahl Senior Cordless cuenta con la última tecnologia en baterías de litio de larga duración sin efecto memoria generando una velocidad alta de cuchilla con un torque mayor que recortará incluso el cabello más grueso con facilidad.</p>
+            <p class="product-parrafo"><%= producto.description %></p>
             <hr class="hr-class">
-            <h2 class="product-precio">$21.500</h2>
+            <h2 class="product-precio"><%= producto.price %></h2>
             <h4 class="product-cuotas">en 12x 2765 pesos con 26 centavos$2.765,26</h4>
             <p>
                 <a href="/car" class="btnc">Comprar</a>
@@ -48,7 +48,7 @@
 
 
 
-<table class="tablaproducto">
+<!-- <table class="tablaproducto">
     <tr>
         <td class="fil1">Batería</td>
         <td class="fil2">Batería de litio de última generación sin efecto memoria, 70 minutos de duración con sólo 120 minutos de carga</td>
@@ -80,7 +80,7 @@
 
     </tr>
 
-</table>
+</table> -->
 
 <div class="inf">
 <section id="sec1">
@@ -89,11 +89,11 @@
         <p>Una línea profesional de Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus fugiat voluptas enim consequuntur, magnam tempore sapiente reiciendis repellendus aspernatur dolore ab quaerat velit, officiis officia accusamus magni in rem, ea obcaecati illo animi nostrum expedita sequi. Similique temporibus ratione hic reprehenderit assumenda accusantium, ut, a porro veritatis ad, ducimus blanditiis repellat officia ipsam nulla impedit. Quas, officia. Voluptatibus, veritatis tempore. </p>
         <a href="#sec2">Asesoramiento</a>
     </div>
-    <img src="images/undraw_barber1.png" alt="">
+    <img src="/images/undraw_barber1.png" alt="">
 </section>
 
 <section id="sec2">
-    <img src="images/undraw_add2.png" alt="">
+    <img src="/images/undraw_add2.png" alt="">
     <div class="contenedeor-texto">
         <h2>Asesoramiento</h2>
         <p>Asesoramos a nuestros clientes para que Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum dolorem, eveniet deserunt eligendi laborum porro magni excepturi? Aperiam libero quae accusamus est. Sint doloremque vel cumque repellendus cupiditate incidunt voluptas consequuntur ullam voluptates labore exercitationem in, explicabo magni eos fugiat iure suscipit accusamus. Quibusdam veniam debitis soluta nesciunt! Magnam nesciunt exercitationem consequuntur illum eligendi dignissimos doloribus. Ipsam aperiam iure similique. </p>
@@ -108,11 +108,11 @@
         <p>Ponte en contacto para recibir mas información Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis amet voluptates eum maiores quisquam atque nobis tenetur in sed labore similique, id esse enim, minima laborum autem optio excepturi quia natus officia! Praesentium sunt earum fugit dolorum, necessitatibus odio repudiandae distinctio deserunt? Perferendis delectus quae est in qui error perspiciatis ullam quidem aperiam? Totam laboriosam consequatur officiis id nihil molestiae. </p>
         <a href="#sec4">Somos</a>
     </div>
-    <img src="images/undraw_text3.png" alt="">
+    <img src="/images/undraw_text3.png" alt="">
     
 </section>
 <section id="sec4">
-    <img src="images/logo wahl.png" alt="">
+    <img src="/images/logo wahl.png" alt="">
     <div class="contenedeor-texto">
         <h2>Somos</h2>
         <p>Una empresa de mucha reputación Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex ipsa accusantium natus, voluptatibus saepe debitis iste eos excepturi, minima voluptatem incidunt at. Error omnis perferendis aperiam ut molestiae, necessitatibus ex quos eos modi quibusdam itaque, at placeat nulla, animi ad incidunt? Dolore odio saepe corrupti dolor, eum hic ducimus eveniet autem ut assumenda minus, obcaecati nemo ipsum magni nulla voluptas. </p>
