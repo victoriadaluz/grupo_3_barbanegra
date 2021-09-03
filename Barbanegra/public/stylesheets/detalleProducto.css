@@ -22,6 +22,10 @@ body {
 /* SLIDER PRODUCTO Y MENU*/
 /* PRODUCTO-PRECIO CONTIENE SLIDER DEL PRODUCTO Y CARACTERISTICAS*/
 
+.col-md-4{
+    margin-top: 100px;
+}/* agrego para la vista de prueba de productdetail para que el header no pise */
+
 .container-algomas {
     height: 100%;
     display: flex;

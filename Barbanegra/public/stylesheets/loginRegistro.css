@@ -21,6 +21,7 @@ input {
 }
 
 .lcontainer {
+  margin-top: 100px;/* agrego para que el header no pise */
   position: relative;
   width: 100%;
   background-color: #1B5185;
