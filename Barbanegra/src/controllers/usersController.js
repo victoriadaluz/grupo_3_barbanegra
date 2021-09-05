@@ -32,7 +32,7 @@ module.exports = {
             }
             users.push(userNew);
             newUser(users);
-            res.redirect('/users/login')
+            res.render("userProfile2")  
         } else {
             res.render('loginRegistro', {
                 title: 'Login-Barbanegra',
@@ -40,8 +40,10 @@ module.exports = {
                 old: req.body,
                 session: req.session
             })
+            
         }
     },
+    /* USER PROFILE */
     userProfile: (req, res) => {
         let user = users.find(user=> user.id === req.session.user.id);
         res.render('userProfile2', {
@@ -49,6 +51,15 @@ module.exports = {
             user
             
         })
+        res.render("/users/profile",
+        {title:"Perfil",
+        user:user})
+    },
+    processLogin: (req, res) => {
+
+    },
+    processRegister: (req, res) => {
+
     },
 
     userLogin: (req, res) => {
@@ -63,7 +74,7 @@ module.exports = {
                 rol: user.rol
             }
 
-
+            res.render('userProfile2') 
             /*    si hacemos un checkbok poner
                if(req.body.nameimput)  */
                if(req.body.remember){ /* si seleccionan recordar creo la cookie */
