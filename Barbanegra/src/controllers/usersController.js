@@ -6,7 +6,8 @@ module.exports = {
     login: (req, res) => {
         res.render('loginRegistro', {
             title: 'Login-Barbanegra',
-            session: req.session
+            session:req.session.user?req.session.user:""
+
         })
     },
   
@@ -33,14 +34,14 @@ module.exports = {
             users.push(userNew);
             newUser(users);
             res.render("userProfile2",{
-                session:req.session               
+                session:req.session.user?req.session.user:""             
             })  
         } else {
             res.render('loginRegistro', {
                 title: 'Login-Barbanegra',
                 errors: errors.mapped(),
                 old: req.body,
-                session: req.session
+                session:req.session.user?req.session.user:""
             })
             
         }
@@ -49,7 +50,7 @@ module.exports = {
     userProfile: (req, res) => {
         let user = users.find(user=> user.id === req.session.user.id);
         res.render('userProfile2', {
-            session: req.session,
+            session:req.session.user?req.session.user:"",
             user
             
         })/* 
@@ -57,13 +58,6 @@ module.exports = {
         {title:"Perfil",
         user:user}) */
     },
-    processLogin: (req, res) => {
-
-    },
-    processRegister: (req, res) => {
-
-    },
-
     userLogin: (req, res) => {
         let errors = validationResult(req);
         if (errors.isEmpty()) {
@@ -90,7 +84,7 @@ module.exports = {
             res.render('loginRegistro', {
                 title: 'Login-Barbanegra',
                 errors: errors.mapped(),
-                session: req.session
+                session:req.session.user?req.session.user:""
             })
         }
     },

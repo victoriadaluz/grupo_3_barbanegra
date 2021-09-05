@@ -17,18 +17,18 @@ module.exports = {
     index: (req, res) => {
         res.render('admin/admin', {
             title: 'Admin-Barbanegra',
-            session: req.session
+            session:req.session.user?req.session.user:""
         })
     },
     listarProductos: (req, res) => {
         res.render('admin/adminProductos', {
             products,
-            session: req.session
+            session:req.session.user?req.session.user:""
         })
     },
     addProducts: (req,res) =>{
         res.render('admin/agregarProducto',{
-            session: req.session
+            session:req.session.user?req.session.user:""
         })
         
     },
@@ -79,7 +79,7 @@ module.exports = {
             productoAEditar,
             categories,
             subcategories,
-            session: req.session
+            session:req.session.user?req.session.user:""
         })
         
         

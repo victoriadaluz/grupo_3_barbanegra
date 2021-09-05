@@ -21,9 +21,11 @@
           </ul>
       </li>
         <li>
-          <% if () { %>
-           
-          <% } %>
+          <% if (session != "") { %>
+           <a href="/users/profile">Mi perfil</a>
+          <%} else{%> 
+            <a href="/users/login">Login</a>
+            <%}%>           
         </li>
         <li><a href="/cart">IR AL CARRITO</a></li>
         <li><a href="/admin">ADMIN</a></li>

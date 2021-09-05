@@ -8,13 +8,13 @@ module.exports = {
         let productsInSale = products.filter(product => product.condition === "inSale")
         res.render('home', {
             productsInSale,
-            session: req.session
+            session:req.session.user?req.session.user:""
         })
     },
     carrito: (req, res) => {
         res.render('product-cart', {
             title: 'Carrito-Barbanegra',
-            session: req.session
+            session:req.session.user?req.session.user:""
             
         })
     },
@@ -24,7 +24,7 @@ module.exports = {
         res.render('productos', {
             productsInSale,
             title: 'productos',
-            session: req.session
+            session:req.session.user?req.session.user:""
         })
     }
 }
