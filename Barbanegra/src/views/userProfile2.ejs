@@ -31,7 +31,7 @@
                     <img alt="Image placeholder" src="https://demos.creative-tim.com/argon-dashboard/assets/img/theme/team-4.jpg">
                   </span>
                   <div class="media-body ml-2 d-none d-lg-block">
-                    <span class="mb-0 text-sm  font-weight-bold"><%- user.name %></span>
+                    <span class="mb-0 text-sm  font-weight-bold"><%= user.nombre %></span>
                   </div>
                 </div>
               </a>
@@ -71,9 +71,9 @@
         <div class="container-fluid d-flex align-items-center">
           <div class="row">
             <div class="col-lg-7 col-md-10">
-              <h1 class="display-2 text-white">Hello <%- user.name %></h1>
+              <h1 class="display-2 text-white">Hello <%= user.nombre %></h1>
               <p class="text-white mt-0 mb-5">Este es tu perfil. Aquí están sus productos favoritos y datos personales.</p>
-              <a href="/users/profile/edit/<%- user.id %>" class="btn btn-info">Editar perfil</a>
+              <a href="/users/profile/edit/<%= user.id %>" class="btn btn-info">Editar perfil</a>
             </div>
           </div>
         </div>
@@ -114,7 +114,7 @@
                     <%= user.name %><span class="font-weight-light"></span>
                   </h3>
                   <div class="h5 font-weight-300">
-                    <i class="ni location_pin mr-2"></i><%- user.province ? user.province : "------" %>%>
+                    <i class="ni location_pin mr-2"></i><%= user.provincia ? user.province : "------" %>%>
                   </div>
                   <hr class="my-4">
                   <p>Agregue una descripción</p>
@@ -156,13 +156,13 @@
                     <div class="row">
                       <div class="col-lg-6">
                         <div class="form-group focused">
-                          <label class="form-control-label" for="input-first-name">Nombre: <%- user.name %></label>
+                          <label class="form-control-label" for="input-first-name">Nombre: <%= user.nombre %></label>
                           <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" value="Lucky">
                         </div>
                       </div>
                       <div class="col-lg-6">
                         <div class="form-group focused">
-                          <label class="form-control-label" for="input-last-name">Email: <%- user.email %></label>
+                          <label class="form-control-label" for="input-last-name">Email: <%= user.email %></label>
                           <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" value="Jesse">
                         </div>
                       </div>
@@ -175,7 +175,7 @@
                     <div class="row">
                       <div class="col-md-12">
                         <div class="form-group focused">
-                          <label class="form-control-label" for="input-address"> <%- user.address ? user.address : "------" %></label>
+                          <label class="form-control-label" for="input-address"> <%= user.direccion ? user.direccion : "------" %></label>
                           <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" type="text">
                         </div>
                       </div>
@@ -183,13 +183,13 @@
                     <div class="row">
                       <div class="col-lg-4">
                         <div class="form-group focused">
-                          <label class="form-control-label" for="input-city"><%- user.province ? user.province : "------" %></label>
+                          <label class="form-control-label" for="input-city"><%= user.provincia ? user.provincia : "------" %></label>
                           <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="City" value="New York">
                         </div>
                       </div>
                       <div class="col-lg-4">
                         <div class="form-group focused">
-                          <label class="form-control-label" for="input-country">Localidad: <%- user.city ? user.city : "------" %></label>
+                          <label class="form-control-label" for="input-country">Localidad: <%= user.city ? user.city : "------" %></label>
                           <input type="text" id="input-country" class="form-control form-control-alternative" placeholder="Country" value="United States">
                         </div>
                       </div>
