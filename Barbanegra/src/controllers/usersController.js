@@ -52,10 +52,10 @@ module.exports = {
             session: req.session,
             user
             
-        })
+        })/* 
         res.render("/users/profile",
         {title:"Perfil",
-        user:user})
+        user:user}) */
     },
     processLogin: (req, res) => {
 
@@ -76,7 +76,6 @@ module.exports = {
                 rol: user.rol
             }
 
-            res.render('userProfile2') 
             /*    si hacemos un checkbok poner
                if(req.body.nameimput)  */
                if(req.body.remember){ /* si seleccionan recordar creo la cookie */
@@ -85,7 +84,7 @@ module.exports = {
             /** guardamos el usuario en locals */
             res.locals.user = req.session.user;
             /**redireccionamos al home si todo esta ok */
-            res.redirect('/')
+            res.render('userProfile2')
 
         } else {
             res.render('loginRegistro', {
