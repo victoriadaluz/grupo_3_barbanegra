@@ -32,7 +32,9 @@ module.exports = {
             }
             users.push(userNew);
             newUser(users);
-            res.render("userProfile2")  
+            res.render("userProfile2",{
+                session:req.session               
+            })  
         } else {
             res.render('loginRegistro', {
                 title: 'Login-Barbanegra',
