@@ -5,7 +5,8 @@ let {
 let productController = {
     listar: (req, res) => {
         res.render('productos', {
-            products
+            products,
+            session:req.session.user?req.session.user:""
         })
     },
     //este metodo lista y permite las vistas parametrizadas al hacer click en el producto
@@ -13,8 +14,9 @@ let productController = {
         let producto = products.find(producto => {
             return producto.id === +req.params.id
         })
-        res.render('product-detail', {
-            producto
+        res.render('detalleProducto', {
+            producto,
+            session:req.session.user?req.session.user:""
         })
     }
 }

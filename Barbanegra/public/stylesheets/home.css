@@ -1,13 +1,20 @@
-
+.userProfileC{
+    margin-top: 100px;
+    background-size: contain;
+}
 
 
 /* INICIO DEL SLIDER */
+.cardsProductsB{
+    margin-top: 100px;/* agrego a la vista productos para que el header no pise */
+}
 
 .slider{
     background-size: cover;
     width: 100%;
     margin: auto;
     overflow:hidden;
+    margin-top: 100px;/* agrego para que el header no pise */
 }
 
 .slider img{

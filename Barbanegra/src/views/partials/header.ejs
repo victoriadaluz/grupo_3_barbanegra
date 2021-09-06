@@ -1,33 +1,83 @@
 <header>
-    <div class="main-header">
-        <nav class="nav-main">
-            <div class="logo2"><a href="/"><img src="/images/LOGOS/logocompleto.png" alt=""></a></div>
-            <input type="checkbox" id="check">
-            <label for="check" class="bar-btn">
-                <i class="fas fa-bars"></i>
-            </label>
-            <!-- <div class="menu-header-main"> -->
-            <ul class="nav-menu">
-                <li class="logo1">
-                    <img src="/images/LOGOS/LOGO2SINFONDO.png" alt="">
-                </li>
-                <!-- Search bar inside LI -->
-                <li class='search-desk'>
-                    <!-- <div class='search'> -->
-                    <div class="search-container">
-                        <form action="/">
-                            <input type="text" name="search" placeholder="Search..">
-                        </form>
-                </li>
-                <!-- main li -->
-                <div class="nav-ul">
-                    <li class="nav-list"><a href="/">Home</a></li>
-                    <li class="nav-list"><a href="/productos">Productos</a></li>
-                    <li class="nav-list"><a href="/product-detail">Equipamiento</a></li>
-                    <li class="nav-list"><a href="/cart">Ver Carrito</a></li>
-                    <li class="nav-list"><a href="/users/login">Registro</a></li>
-                    <li class="nav-list"><a href="/admin">Admin</a></li>
-                </div>
-            </ul>
-        </nav>
+  <main>
+<div class="wrapperH">
+  <nav>
+    <input type="checkbox" id="show-search">
+    <input type="checkbox" id="show-menu">
+    <label for="show-menu" class="menu-iconH"><i class="fas fa-bars"></i></label>
+    <div class="contentH">
+    <div class="logoH"><a href="/"> <img src="/images/LOGOS/logocompleto.png" alt=""> </a></div>
+      <ul class="linksH">
+        <li><a href="/">HOME</a></li>
+        <li>
+          <a href="#" class="desktop-linkH">PRODUCTOS</a>
+          <input type="checkbox" id="show-products">
+          <label for="show-products">PRODUCTOS</label>
+          <ul>
+           <li><a href="/productos">Máquinas</a></li>
+             <li><a href="/productos">Equipamiento</a></li>
+            <li><a href="/productos">Accesorios</a></li>
+            <li><a href="/productos">Repuestos</a></li> 
+          </ul>
+      </li>
+        <li>
+          <% if (session != "") { %>
+           <a href="/users/profile">MI PERFIL</a>
+          <%} else{%> 
+            <a href="/users/login">INICIAR SESIÓN</a>
+            <%}%>           
+        </li>
+        <li>
+          <% if (session != "") { %>
+           <a href="/users/logout">CERRAR SESIÓN</a>
+          <%}
+          %>           
+        </li>
+        <li><a href="/cart">IR AL CARRITO</a></li>
+        <li><a href="/admin">ADMIN</a></li>
+      </ul>
+    </div>
+    <label for="show-search" class="searchH"><i class="fas fa-search"></i></label>
+    <form action="#" class="search-boxH">
+      <input type="text" placeholder="¿Qué estás buscando?" required name="search">
+      <button type="submit" class="go-iconH"><i class="fas fa-long-arrow-alt-right"></i></button>
+    </form>
+  </nav>
+</div>
+</main>
 </header>
+
+<!-- <header>
+  <div class="main-header">
+      <nav class="nav-main">
+          <div class="logo2"><a href="/"><img src="/images/LOGOS/logocompleto.png" alt=""></a></div>
+          <input type="checkbox" id="check">
+          <label for="check" class="bar-btn">
+              <i class="fas fa-bars"></i>
+          </label>
+          <!-- <div class="menu-header-main"> 
+          <ul class="nav-menu">
+              <li class="logo1">
+                  <img src="/images/LOGOS/LOGO2SINFONDO.png" alt="">
+              </li>
+              <!-- Search bar inside LI 
+              <li class='search-desk'>
+                  <!-- <div class='search'> 
+                  <div class="search-container">
+                      <form action="/">
+                          <input type="text" name="search" placeholder="Search..">
+                      </form>
+              </li>
+              <!-- main li 
+              <div class="nav-ul">
+                  <li class="nav-list"><a href="/">Home</a></li>
+                  <li class="nav-list"><a href="/productos">Productos</a></li>
+                  <li class="nav-list"><a href="/product-detail">Equipamiento</a></li>
+                  <li class="nav-list"><a href="/cart">Ver Carrito</a></li>
+                  <li class="nav-list"><a href="/users/login">Iniciar sesión</a></li>
+                  <li class="nav-list"><a href="/admin">Admin</a></li>
+              </div>
+          </ul>
+      </nav>
+
+</header> -->

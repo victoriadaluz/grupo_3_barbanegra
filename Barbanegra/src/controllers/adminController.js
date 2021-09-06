@@ -1,6 +1,5 @@
 const {    Router} = require('express');
-const router = Router();
-const fs = require('fs');
+
 let {
     products, addProduct,categories
 } = require('../data/dataBase');
@@ -17,16 +16,21 @@ products.forEach(product => {
 module.exports = {
     index: (req, res) => {
         res.render('admin/admin', {
-            title: 'Admin-Barbanegra'
+            title: 'Admin-Barbanegra',
+            session:req.session.user?req.session.user:""
         })
     },
     listarProductos: (req, res) => {
         res.render('admin/adminProductos', {
-            products
+            products,
+            session:req.session.user?req.session.user:""
         })
     },
     addProducts: (req,res) =>{
-        res.render('admin/agregarProducto')
+        res.render('admin/agregarProducto',{
+            session:req.session.user?req.session.user:""
+        })
+        
     },
     uploadNewProduct: (req,res) =>{
         let lastID = 1
@@ -61,12 +65,12 @@ module.exports = {
             category,
             subcategory,
             condition,
-            image : arrayImages.length > 0 ? arrayImages: ['default-image.png']
-        }
+            image : arrayImages.length > 0 ? arrayImages: ['default-img.jpg']
+        };
         
     
-    products.push(newProduct)
-    addProduct(products)
+    products.push(newProduct);
+    addProduct(products);
     res.redirect('/admin/productos')
     },
     editarProducto: (req, res) =>{        
@@ -74,7 +78,8 @@ module.exports = {
         res.render('admin/adminEditarProductos', {
             productoAEditar,
             categories,
-            subcategories
+            subcategories,
+            session:req.session.user?req.session.user:""
         })
         
         

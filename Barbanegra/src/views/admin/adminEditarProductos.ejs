@@ -7,7 +7,7 @@
         <h3 class="text-center">Editar producto</h3>
 <section class="edit-container">
     <div class="edit-container-form">
-        <form action="/admin/productos/editar/<%= productoAEditar.id %>?_method=PUT" method="POST">
+        <form action="/admin/productos/editar/<%= productoAEditar.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
             <div>
                 <label for="inputName" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="inputName" name="name" value="<%= productoAEditar.name %>">

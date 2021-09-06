@@ -1,0 +1,18 @@
+[
+    {
+        "id" : 1,
+        "name" : "Maquinas"    
+    },
+    {
+        "id" : 2,
+        "name" : "Equipamiento"     
+    },
+    {
+        "id" : 3,
+        "name" : "Accesorios"
+    },
+    {
+        "id" : 4,
+        "name" : "Repuestos"  
+    }
+]

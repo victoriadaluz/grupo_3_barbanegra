@@ -9,15 +9,19 @@
     <div class="lcontainer">
       <div class="forms-lcontainer">
         <div class="signin-signup">
-          <form action="#" class="sign-in-form">
+          <form action="/users/login" method="POST" class="sign-in-form">
             <h2 class="title">Iniciar sesión</h2>
             <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" placeholder="Usuario" />
+              <i class="fas fa-envelope"></i>
+              <input type="email" name='email' placeholder="email" />
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Contraseña" />
+              <input type="password" name='pass' placeholder="Contraseña" />
+            </div>
+            <div class="form-ad-input_check"> <!-- agrego check de recordar -->
+              <input type="checkbox" name="remember" id="check-c">
+              <label for="check">Recordar</label>
             </div>
             <input type="submit" value="Iniciar sesión" class="btn solid" />
             <p class="social-text">O inicie sesión con</p>
@@ -35,22 +39,40 @@
                 <i class="fab fa-linkedin-in"></i>
               </a>
             </div>
-          </form>
-          <form action="#" class="sign-up-form">
+          </form> 
+          <form action="/users/register" method="POST" class="sign-up-form">
             <h2 class="title">Registro</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Usuario" />
-            </div>
+              <input name ="usuario" value="<%= locals.old && old.user %> " type="text" placeholder="Usuario" />
+             </div>
+             
+             <% if (locals.errors && errors.user) { %>
+              <small>
+                <%= errors.user.msg %> <!-- cambiar color de mensaje -->
+              </small>
+            <%}%>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Correo electrónico" />
+              <input name ="email" value="<%= locals.old && old.email %>" type="email" placeholder="Correo electrónico" />
             </div>
+            <% if (locals.errors && errors.email) { %>
+              <small>
+                <%= errors.email.msg %> <!-- cambiar color de mensaje -->
+              </small>
+            <%}%>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Contraseña" />
+              <input name="pass" type="password" placeholder="Contraseña" />
             </div>
-            <input type="submit" class="btn" value="Sign up" />
+            <% if (locals.errors && errors.pass1) { %>
+              <small><%= errors.pass1.msg %> </small>
+          <% } %>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input name="pass1" type="password" placeholder="Repetir Contraseña" />
+            </div>          
+            <a href="/users/profile"><input type="submit" class="btn" value="Sign up"/></a>          
             <p class="social-text">O inicie sesión con</p>
             <div class="social-media">
               <a href="#" class="social-icon">
@@ -78,7 +100,7 @@
               Unite a la comunidad BarberShop con un solo paso
             </p>
             <button class="btn transparent" id="sign-up-btn">
-              Registrarme
+            Registrarme
             </button>
           </div>
           <img src="/img/log.svg" class="image" alt="" />
