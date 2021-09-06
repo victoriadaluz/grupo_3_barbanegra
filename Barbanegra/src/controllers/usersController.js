@@ -70,7 +70,7 @@ module.exports = {
                 rol: user.rol
             }
 
-            /*    si hacemos un checkbok poner
+            /*    si hacemos un checkbox poner
                if(req.body.nameimput)  */
                if(req.body.remember){ /* si seleccionan recordar creo la cookie */
             res.cookie('cookieNegra', req.session.user, { maxAge: 1000 * 60 * 3 })
@@ -78,7 +78,7 @@ module.exports = {
             /** guardamos el usuario en locals */
             res.locals.user = req.session.user;
             /**redireccionamos al home si todo esta ok */
-            res.render('userProfile2')
+            res.redirect('/');
 
         } else {
             res.render('loginRegistro', {
@@ -94,6 +94,9 @@ module.exports = {
             res.cookie('cookieNegra', '', { maxAge: -1 })
         }
         res.redirect('/');
+    },
+    editProfile: (req, res) => {
+        
     }
 
 }

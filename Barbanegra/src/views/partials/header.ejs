@@ -22,10 +22,16 @@
       </li>
         <li>
           <% if (session != "") { %>
-           <a href="/users/profile">Mi perfil</a>
+           <a href="/users/profile">MI PERFIL</a>
           <%} else{%> 
-            <a href="/users/login">Login</a>
+            <a href="/users/login">INICIAR SESIÓN</a>
             <%}%>           
+        </li>
+        <li>
+          <% if (session != "") { %>
+           <a href="/users/logout">CERRAR SESIÓN</a>
+          <%}
+          %>           
         </li>
         <li><a href="/cart">IR AL CARRITO</a></li>
         <li><a href="/admin">ADMIN</a></li>
