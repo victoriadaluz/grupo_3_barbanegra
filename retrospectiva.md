@@ -82,14 +82,13 @@
 
 ## Hacer mas
 -Pactar horarios/dias fijos
--Reuniones semanales
--Comunicarnos más entre nosotros cuando surgen problemas
--Reunirnos más seguido
 -Hacer bien la división de tareas
+-Front para mejorar las vistas de las páginas
 
 
 ## Empezar a hacer
 -Agendar reuniones por Google Calendar
+-Ir migrando a sql a medida que vamos avanzando
 
 
 ## Hacer menos
@@ -99,3 +98,38 @@
 
 ## Dejar de hacer
 -Trabajar sin avisar ni explicar que se hizo
+
+
+# Cuarto sprint (23/08 - 06/09)
+## Seguir haciendo
+-Mantener actualizada la rama dev
+-Apoyarnos con lo que nos cuesta o hacer llamadas para darnos una mano entre nosotros.
+-Tener buena onda
+-Hablar tanto por Discord como por Whatsapp.
+-Decir nuestra opinión sin miedo.
+-Reuniones semanales
+-Practicar EJS
+-Reuniones semanales
+
+
+## Hacer mas
+-Pactar horarios/dias fijos
+-Reuniones semanales
+-Comunicarnos más entre nosotros cuando surgen problemas
+-Reunirnos más seguido
+-Hacer bien la división de tareas
+-Pedir feedback a compañeros y conocidos (fuera del grupo)
+-Hablar con los profes y pedir ayuda cuando estamos perdidos o confundidos
+-Tener trello actualizado
+
+## Empezar a hacer
+-Agendar reuniones por Google Calendar
+
+
+## Hacer menos
+-No decir lo que pensamos, sentimos
+
+
+## Dejar de hacer
+-Frustrarnos
+-Esperar hasta último momento para algunas cosas
