@@ -34,7 +34,10 @@
           %>           
         </li>
         <li><a href="/cart">IR AL CARRITO</a></li>
-        <li><a href="/admin">ADMIN</a></li>
+        <li>
+          <% if (session.rol == "ROL_ADMIN") { %>
+           <a href="/admin">ADMIN</a>
+          <%}%> 
       </ul>
     </div>
     <label for="show-search" class="searchH"><i class="fas fa-search"></i></label>
