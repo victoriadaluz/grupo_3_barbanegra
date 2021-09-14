@@ -6,7 +6,8 @@ module.exports = {
     login: (req, res) => {
         res.render('loginRegistro', {
             title: 'Login-Barbanegra',
-            session:req.session.user?req.session.user:""
+            session:req.session.user?req.session.user:"",
+            login: 1            
 
         })
     },
@@ -84,7 +85,8 @@ module.exports = {
             res.render('loginRegistro', {
                 title: 'Login-Barbanegra',
                 errors: errors.mapped(),
-                session:req.session.user?req.session.user:""
+                session:req.session.user?req.session.user:"",
+                login: 1
             })
         }
     },

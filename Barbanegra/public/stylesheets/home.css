@@ -3,10 +3,17 @@
     background-size: contain;
 }
 
+.sliderVideo{
+    width: 100%;
+    margin-top: 76px;       
+    opacity: 0.8;   
+    
+}
+
 
 /* INICIO DEL SLIDER */
-.cardsProductsB{
-    margin-top: 100px;/* agrego a la vista productos para que el header no pise */
+/* .cardsProductsB{
+    margin-top: 100px;
 }
 
 .slider{
@@ -14,7 +21,7 @@
     width: 100%;
     margin: auto;
     overflow:hidden;
-    margin-top: 100px;/* agrego para que el header no pise */
+    margin-top: 100px;
 }
 
 .slider img{
@@ -37,11 +44,11 @@
     
     animation: cambio 30s infinite alternate;
     animation-timing-function: ease-in ;
-}
+} */
 
 
 
-@keyframes cambio{
+/* @keyframes cambio{
     0% {margin-left: 0;}
     8% {margin-left: 0;}
 
@@ -68,7 +75,7 @@
 
     92% {margin-left: -800%;}
     100% {margin-left: -800%;}
-}
+} */
 
 /* FIN DE SLIDER */
 

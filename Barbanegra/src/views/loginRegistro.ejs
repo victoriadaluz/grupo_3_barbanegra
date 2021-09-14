@@ -5,8 +5,13 @@
 <body>
     <!-- HEADER -->
     <%- include('./partials/header') %> 
-        <main>
-    <div class="lcontainer">
+    <main>
+<% if ( locals.login  && login === 1)  { %>
+  <div class="lcontainer">
+<% }else{ %>
+  <div class="lcontainer sign-up-mode">
+  <% } %>
+    
       <div class="forms-lcontainer">
         <div class="signin-signup">
           <form action="/users/login" method="POST" class="sign-in-form">
@@ -40,59 +45,61 @@
               </a>
             </div>
           </form> 
-          <form action="/users/register" method="POST" class="sign-up-form">
-            <h2 class="title">Registro</h2>
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input name ="usuario" value="<%= locals.old && old.user %> " type="text" placeholder="Usuario" />
-             </div>
-             
-             <% if (locals.errors && errors.user) { %>
-              <small>
-                <%= errors.user.msg %> <!-- cambiar color de mensaje -->
-              </small>
-            <%}%>
-            <div class="input-field">
-              <i class="fas fa-envelope"></i>
-              <input name ="email" value="<%= locals.old && old.email %>" type="email" placeholder="Correo electrónico" />
-            </div>
-            <% if (locals.errors && errors.email) { %>
-              <small>
-                <%= errors.email.msg %> <!-- cambiar color de mensaje -->
-              </small>
-            <%}%>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input name="pass" type="password" placeholder="Contraseña" />
-            </div>
-            <% if (locals.errors && errors.pass1) { %>
-              <small><%= errors.pass1.msg %> </small>
-          <% } %>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input name="pass1" type="password" placeholder="Repetir Contraseña" />
-            </div>          
-            <a href="/users/profile"><input type="submit" class="btn" value="Sign up"/></a>          
-            <p class="social-text">O inicie sesión con</p>
-            <div class="social-media">
-              <a href="#" class="social-icon">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-google"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </div>
-          </form>
+
+            <form action="/users/register" method="POST" class="sign-up-form">
+              <h2 class="title">Registro</h2>
+              <div class="input-field">
+                <i class="fas fa-user"></i>
+                <input name ="usuario" value="<%= locals.old && old.user %> " type="text" placeholder="Usuario" />
+               </div>
+               
+               <% if (locals.errors && errors.user) { %>
+                <small>
+                  <%= errors.user.msg %> <!-- cambiar color de mensaje -->
+                </small>
+              <%}%>
+              <div class="input-field">
+                <i class="fas fa-envelope"></i>
+                <input name ="email" value="<%= locals.old && old.email %>" type="email" placeholder="Correo electrónico" />
+              </div>
+              <% if (locals.errors && errors.email) { %>
+                <small>
+                  <%= errors.email.msg %> <!-- cambiar color de mensaje -->
+                </small>
+              <%}%>
+              <div class="input-field">
+                <i class="fas fa-lock"></i>
+                <input name="pass" type="password" placeholder="Contraseña" />
+              </div>
+              <% if (locals.errors && errors.pass1) { %>
+                <small><%= errors.pass1.msg %> </small>
+            <% } %>
+              <div class="input-field">
+                <i class="fas fa-lock"></i>
+                <input name="pass1" type="password" placeholder="Repetir Contraseña" />
+              </div>          
+              <a href="/users/profile"><input type="submit" class="btn" value="Sign up"/></a>          
+              <p class="social-text">O inicie sesión con</p>
+              <div class="social-media">
+                <a href="#" class="social-icon">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-icon">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-icon">
+                  <i class="fab fa-google"></i>
+                </a>
+                <a href="#" class="social-icon">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+            </form>
+
         </div>
       </div>
 
-      <div class="panels-lcontainer">
+      <div class="panels-lcontainer ">
         <div class="panel left-panel">
           <div class="content">
             <h3>¿Nuevo aquí?</h3>
