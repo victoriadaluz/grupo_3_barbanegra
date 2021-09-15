@@ -143,7 +143,7 @@ form.sign-in-form {
   border-color: #4481eb;
 }
 
-.btn {
+.btn-log {
   width: 150px;
   background-color: #5995fd;
   border: none;
@@ -158,7 +158,7 @@ form.sign-in-form {
   transition: 0.5s;
 }
 
-.btn:hover {
+.btn-log:hover {
   background-color: #5A0B90;
 }
 .panels-lcontainer {
@@ -237,7 +237,7 @@ form.sign-in-form {
   padding: 0.7rem 0;
 }
 
-.btn.transparent {
+.btn-log.transparent {
   margin: 0;
   background: none;
   border: 2px solid #fff;
@@ -350,7 +350,7 @@ form.sign-in-form {
     padding: 0.5rem 0;
   }
 
-  .btn.transparent {
+  .btn-log.transparent {
     width: 150px;
     height: 35px;
     font-size: 0.7rem;
