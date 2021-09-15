@@ -9,6 +9,7 @@ Si elijo la ruta sin las comillas funciona.  */
 @import url(/stylesheets/footer.css);
 @import url(/stylesheets/detalleProducto.css);
 @import url(/stylesheets/loginRegistro.css);
+@import url(/stylesheets/admin.css);
 
 
 /* ================================================================= */
