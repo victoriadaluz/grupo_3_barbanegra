@@ -20,9 +20,17 @@
               <i class="fas fa-envelope"></i>
               <input type="email" name='email' placeholder="email" />
             </div>
+            <% if (locals.errors && errors.email) { %>
+              <small>
+                <%= errors.email.msg %> <!-- cambiar color de mensaje -->
+              </small>
+            <%}%>
             <div class="input-field">
               <i class="fas fa-lock"></i>
               <input type="password" name='pass' placeholder="Contraseña" />
+              <% if (locals.errors && errors.pass1) { %>
+                <small><%= errors.pass1.msg %> </small>
+            <% } %>
             </div>
             <div class="form-ad-input_check"> <!-- agrego check de recordar -->
               <input type="checkbox" name="remember" id="check-c">
