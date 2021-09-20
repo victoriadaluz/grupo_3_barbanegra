@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="es">
     <!-- HEAD -->
     <%- include('../partials/head') %> 
 <body>
   <%- include('../partials/headerAdmin') %> 
 </body>
-<div>
+<!-- <div>
 <h1>LISTADO DE PRODUCTOS</h1>
 </div>
 <div class="btn-toolbar mb-2 mb-md-0">
@@ -31,6 +31,64 @@
             </div>
         </div>
     <% }) %>
+</div> -->
+<div class="adminM">
+  <div class="titleAdminP">
+  <h1>LISTADO DE PRODUCTOS</h1> <button><a href="/admin/agregarProducto">Agregar</a></button>
+</div>
+  <table class="tableAd">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>NOMBRE</th>
+        <th>MARCA</th>
+        <th>PRECIO</th>
+        <th>DESCRIPCIÓN</th>
+        <th>DESCUENTO</th>
+        <th>CATEGORÍA</th>
+        <th>SUBCATEGORÍA</th>
+        <th>CONDICIÓN</th>
+        <th>IMAGEN</th>
+        <th>EDITAR</th>
+        <th>BORRAR</th>
+      </tr>
+
+    </thead>
+    <tbody>
+      <% products.forEach(producto => { %>
+      <tr>
+        <td data-label="ID"><%= producto.id %></td>
+        <td data-label="NOMBRE"><%= producto.name %></td>
+        <td data-label="MARCA"><%= producto.brand %></td>
+        <td data-label="PRECIO"><%= producto.price %></td>
+        <td data-label="DESCRIPCIÓN"> 
+          <% if(producto.description.length > 10) { %>
+          <% let descriptionSlice = producto.description.slice(0,10) + "..." %>
+          <%= descriptionSlice %> 
+          <% }else{ %>
+          <%= producto.description %>
+        <% } %></td>
+        <td data-label="DESCUENTO"><%= producto.discount %></td>
+        <td data-label="CATEGORÍA"><%= producto.category %></td>
+        <td data-label="SUBCATEGORÍA"><%= producto.subcategory %></td>
+        <td data-label="CONDICIÓN"><%= producto.condition %></td>
+        <td data-label="IMAGEN"><img src="/images/productos/<%= producto.image[0] %>" alt=""> </td>
+        <!-- <td>
+          <a href="/admin/eliminarproducto/<%= producto.id %>?_method=DELETE" method="POST">
+            <button>ELIMINAR</button>
+          </a> 
+          <a href="/admin/productos/editar/<%= producto.id %>">
+            <button>EDITAR</button></a>
+          </a>
+        </td> -->
+        <td><a href="/admin/productos/editar/<%= producto.id %> "> <i class="fas fa-pen"></i></a></td>
+        <form action=/admin/eliminarproducto/<%= producto.id %>?_method=DELETE" method="POST">
+          <td><button type="submit" style="border: none; background: none;"><i class="fas fa-trash"></i></td>
+        </form>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
 </div>
 
 </html>
