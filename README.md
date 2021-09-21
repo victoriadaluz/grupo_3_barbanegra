@@ -18,7 +18,7 @@ Apuntamos principalmente a cadenas de barberías, barberos independientes y loca
 Devora Alvarez, Gonzalo Alcocer, Paulo Ardiles, Victoria Da Luz
 
 #### Gonzalo Alcocer:
-Gonzalo Matías Alcocer : Nací en las Heras, Mendoza. Ingrese al mundo tecnológico por pasión, me considero una persona autónoma y fue algo que me inspiro a la programación. Busco  adquirir experiencias que contribuyan a mi desarrollo personal para finalmente profesionalizarme como Desarrollador Web Full Stack.
+Gonzalo Alcocer : Nací en las Heras, Mendoza. Ingrese al mundo tecnológico por pasión, me considero una persona autónoma y fue algo que me inspiro a la programación. Busco  adquirir experiencias que contribuyan a mi desarrollo personal para finalmente profesionalizarme como Desarrollador Web Full Stack.
 
 #### Devora Alvarez: 
 Soy una ex barbera, que colgó "las máquinas" para comenzar a codear e iniciarse en este mundo de la informática. Tengo 30 años, vivo en Córdoba Capiiiital y soy futura Desarrolladora Web Full Stack y Analista de Sistemas Informáticos.
