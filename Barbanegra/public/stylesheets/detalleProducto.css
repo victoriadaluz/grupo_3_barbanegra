@@ -1,6 +1,7 @@
 body {
     font-family: "Poppins" , sans-serif;
-    background: linear-gradient(135deg, #1B5185, #011528);
+    background: linear-gradient(135deg, #011528, #1b5185, #011528);
+    background-attachment: fixed;
     margin: 0;
     padding: 0;
     }

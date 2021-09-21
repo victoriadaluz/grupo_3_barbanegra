@@ -1,10 +1,55 @@
 /* 
  */
- .titleAdminP{
-     background-color: #08354F;
-     color: white;
+ .adminMain,
+ .adminM{
+    margin-top: 150px;
+    margin-bottom: 50px;
+    width: 100%;
+ }
+
+ .adminMain h1{
+    width: 100%;
+     color: #FFFEFE;
      text-align: center;
-     display: flex;
+     font-size: 30px;
+ }
+ .adminMain div{
+     margin-bottom: 20px;
+ }
+ .adminMain form{
+     width: 600px;
+     margin: auto;
+     background: rgba(0, 0, 1, 0.3);
+     padding: 10px 20px;
+     box-sizing: border-box;
+     margin-top: 20px;
+     border-radius: 7px;
+ }
+
+ .adminMain h2{
+     color: #FFFEFE;
+     text-align: center;
+     margin: 0;
+     font-size: 30px;
+     text-transform: uppercase;
+     margin-bottom: 20px;
+ }
+ .adminMain input,
+ .adminMain textarea{
+     width: 100%;
+     margin-bottom: 20px;
+     padding: 7px;
+     box-sizing: border-box;
+     font-size: 17px;
+     border: none;
+ }
+ .adminMain textarea{
+    min-height: 100px;
+    max-height: 200px;
+    max-width: 100%;
+ }
+ .adminMain label{
+     color: #92c1e9 ;
  }
  .titleAdminP a{
      flex-direction: inherit;
@@ -45,7 +90,7 @@ tr:hover{
     border: 1px solid #08354F;
 }
 
-@media screen  and (max-width: 600px){
+@media screen  and (max-width: 480px){
     .tableAd{
         border: 0px;
     }
@@ -76,5 +121,8 @@ tr:hover{
         font-weight: bold;
         text-transform: uppercase;
         float: left;
+    }
+    .adminMain form{
+        width: 100%;
     }
 }
