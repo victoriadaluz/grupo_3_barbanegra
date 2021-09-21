@@ -34,7 +34,9 @@
               <textarea name="description" id="textDescription"><%= productoAEditar.description %></textarea>
               <label for="inputImage">Imagen</label>
               <input type="file" name="image" id="inputImage" value="<%= productoAEditar.image %>" multiple>
-              <input class="btn-log" type="button" value="GUARDAR">
+              <button type="submit" class="btn-log">
+                GUARDAR
+            </button>
         </form>
         <!-- <form action="/admin/productos/editar/<%= productoAEditar.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
             <div>
