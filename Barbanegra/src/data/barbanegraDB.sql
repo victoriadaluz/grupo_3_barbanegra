@@ -28,7 +28,9 @@ CREATE TABLE `adresses` (
   `city` varchar(50) NOT NULL,
   `street` varchar(100) NOT NULL,
   `postal_code` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
+  `userId` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `adresses_FK` FOREIGN KEY (`id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -150,13 +152,12 @@ CREATE TABLE `product` (
   `description` text NOT NULL,
   `price` int(11) NOT NULL,
   `discount` int(11) DEFAULT NULL,
-  `image_id` varchar(255) DEFAULT NULL,
   `brand_id` int(11) NOT NULL,
   `subcategory_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `product_FK` FOREIGN KEY (`id`) REFERENCES `subcategory` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `product_FK_1` FOREIGN KEY (`id`) REFERENCES `brand` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `product_FK_2` FOREIGN KEY (`id`) REFERENCES `product_image` (`id`)
+  CONSTRAINT `product_FK_2` FOREIGN KEY (`id`) REFERENCES `product_image` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -279,13 +280,11 @@ CREATE TABLE `user` (
   `password` varchar(70) NOT NULL,
   `first_name` varchar(50) DEFAULT NULL,
   `last_name` varchar(50) DEFAULT NULL,
-  `adresses_id` int(11) DEFAULT NULL,
   `tel` varchar(20) DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
   `rol_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  CONSTRAINT `user_FK` FOREIGN KEY (`id`) REFERENCES `rol` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `user_FK_1` FOREIGN KEY (`id`) REFERENCES `adresses` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `user_FK` FOREIGN KEY (`id`) REFERENCES `rol` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -311,4 +310,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-09-22  9:51:36
+-- Dump completed on 2021-09-22 10:51:16

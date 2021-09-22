@@ -44,16 +44,12 @@ module.exports = (sequelize, DataTypes) => {
             Product.belongsTo(models.Subcategory, {
                 as: 'subcategory',
                 foreignKey: 'subcategory_id'
-            })
-        }
-        Product.associate = models => {
+            })        
             Product.belongsTo(models.Brand, {
                 as: 'brand',
                 foreignKey: 'brand_id'
-            })
-        }
-        Product.associate = models =>{
-            Product.belongsToMany(models.Image,{
+            })        
+                Product.hasMany(models.Image,{
                 as:'image',
                 foreignKey: 'image_id'
             })
