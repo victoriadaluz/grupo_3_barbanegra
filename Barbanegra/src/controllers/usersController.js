@@ -34,8 +34,8 @@ module.exports = {
             }
             users.push(userNew);
             newUser(users);
-            res.render("userProfile2",{
-                session:req.session.user?req.session.user:""             
+            res.render("loginRegistro",{
+                session:req.session.user?req.session.user:"" ,            
             })  
         } else {
             res.render('loginRegistro', {
@@ -49,7 +49,7 @@ module.exports = {
     },
     /* USER PROFILE */
     userProfile: (req, res) => {
-        let user = users.find(user=> user.id === req.session.user.id);
+        let user = users.find(user=> user.email === req.session.user.email);
         res.render('userProfile2', {
             session:req.session.user?req.session.user:"",
             user
