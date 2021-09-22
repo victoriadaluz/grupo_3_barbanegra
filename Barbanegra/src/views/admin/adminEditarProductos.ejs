@@ -3,11 +3,42 @@
     <%- include('../partials/head.ejs')  %> 
 <body>
     <%- include('../partials/headerAdmin.ejs')  %> 
-    <main class="container">
-        <h3 class="text-center">Editar producto</h3>
-<section class="edit-container">
-    <div class="edit-container-form">
+    <main class="adminMain">
         <form action="/admin/productos/editar/<%= productoAEditar.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <h2>Editar producto</h2>
+            <label for="inputName">Nombre</label>
+            <input type="text" name="name" id="inputName" value="<%= productoAEditar.name %>">
+            <label for="inputBrand">Marca</label>
+            <input type="text" name="brand" id="inputBrand" value="<%= productoAEditar.brand %>">
+            <label for="inputPrice">Precio</label>
+            <input type="text" name="price" id="inputPrice" value="<%= productoAEditar.price %>">
+            <label for="inputDiscount">Descuento</label>
+            <input type="text" name="discount" id="inputDiscount" value="<%= productoAEditar.discount %>">
+            <label for="selectCategory">Categoría</label>
+            <div>
+            <select id="selectCategory">
+                <% categories.forEach(category => { %>
+                    <option value="<%- category.id %>" <%- category.id == productoAEditar.category ? `selected` : ""  %>><%- category.name %></option>
+                 <% }) %>
+              </select>
+            </div>
+            <label for="selectSubcategory">Subcategoría</label>
+            <div>
+              <select id="selectSubcategory">
+                <% subcategories.forEach(subcategory => { %>
+                    <option value="<%- subcategory%>" <%- subcategory == productoAEditar.subcategory ? `selected` : ""  %>><%- subcategory %></option>
+                 <% }) %>
+              </select>
+            </div>
+            <label for="textDescription">Descripción</label>
+              <textarea name="description" id="textDescription"><%= productoAEditar.description %></textarea>
+              <label for="inputImage">Imagen</label>
+              <input type="file" name="image" id="inputImage" value="<%= productoAEditar.image %>" multiple>
+              <button type="submit" class="btn-log">
+                GUARDAR
+            </button>
+        </form>
+        <!-- <form action="/admin/productos/editar/<%= productoAEditar.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
             <div>
                 <label for="inputName" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="inputName" name="name" value="<%= productoAEditar.name %>">
@@ -62,7 +93,7 @@
             <div>
                 <button type="submit" class="btn btn-primary">GUARDAR</button>
             </div>
-        </form>
+        </form> -->
 
     
 </section>

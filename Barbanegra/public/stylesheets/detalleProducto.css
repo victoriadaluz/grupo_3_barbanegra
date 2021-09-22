@@ -1,6 +1,7 @@
 body {
     font-family: "Poppins" , sans-serif;
-    background: linear-gradient(135deg, #1B5185, #011528);
+    background: linear-gradient(135deg, #011528, #1b5185, #011528);
+    background-attachment: fixed;
     margin: 0;
     padding: 0;
     }
@@ -50,6 +51,9 @@ body {
     margin-top: 20px;
     
 }
+
+
+
 
 .slider-p li{
     position: absolute;
@@ -274,21 +278,20 @@ body {
 }
 
 
-.inf section{
+.inf section {
     display: flex;
     justify-content: space-between;
     width: 98%;
     height: 25%;
-    margin: 20px;
     border-radius: 20px;
-
+    margin-top: 30px;
 }
 
-.contenedeor-texto{
-    padding: 10px;
-    height: auto;
-    margin-top: 5%;
-    width: 100%;
+.contenedeor-texto {
+    padding: 30px;
+    height: 450px;
+    margin-top: 2%;
+    width: 1000px;
 }
 
 .contenedeor-texto h2{
@@ -297,11 +300,11 @@ body {
     font-weight: 500;
 }
 
-.contenedeor-texto p{
+.contenedeor-texto p {
     margin-bottom: 15px;
     width: 100%;
+    font-size: unset;
 }
-
 .inf section #sec1{
     padding: 0 40px;
     align-items: center;
@@ -315,12 +318,13 @@ body {
     border-radius: 100px;
 }
 
-.inf section a{
+.inf section a {
     display: inline-block;
     padding: 7px 0;
     color: white;
     text-decoration: none;
-    width: 60px;
+    width: 200px;
+    height: 40px;
     text-align: center;
     border: 1px solid purple;
     border-radius: 50px;
@@ -354,35 +358,38 @@ body {
         height: 100%;
     }
 
-    .slider-p{
-        height: 280px;
-        margin: 10% 0 10% 19%;
+    .body {
+        width: 465px;
     }
 
-    .inf {
-        margin-top: 20%;
+    .slider-p{
+        height: 280px;
     }
+
+    
     .inf section{
         flex-direction: column;
         justify-content: center;
         max-width: 480px;
         max-height: 100%;
+        margin: 0px 0px 20px 0px;
     }
 
-    .inf section img{
-        width: 250px;
-        height: 210px;
+    .inf section img {
+        width: 270px;
+        height: 215px;
         opacity: 1;
         border-radius: 100px;
-        margin: 30px auto;
+        margin-left: auto;
+        margin-right: auto;
     }
     .contenedeor-texto h2{
         font-size: 24px;
         margin-bottom: 10%;
     }
 
-    .contenedeor-texto{
-        margin: 30% auto 5%;
+    .contenedeor-texto {
+        margin: 10% auto 30%;
         padding: 0;
         max-width: 290px;
     }
@@ -409,37 +416,40 @@ body {
         left: 0;
         top: 0;
         width: 80%;
+        margin: 0 0 0 45px;
     }
+
+
+
 }
-
-
-
 
 
 
 
 /*----------------TABLET -----------------------*/
 
-@media screen and (min-width: 768px) and (max-width: 1000px){
+@media screen and (min-width: 768px) and (max-width: 1023px){
+
 
     .product-info {
         max-width: 100%;
         width: 100%;
         flex-direction: column;
-        padding: 0;
+        padding: 0px 10px;
     }
 
-    .inf{
-        margin: 20px;
+    .container-algomas {
+        height: 600px;
+        margin-top: 10%;
     }
 
-    .inf section img{
-        width: 50%;
-        height: 310px;
+
+    .inf section img {
+        width: 300px;
+        height: 320px;
         opacity: 1;
         border-radius: 100px;
-        margin-top: 30px;
-        margin-left: 10px;
+        margin: 50px 10px;
     }
 
     .inf section a{
@@ -448,24 +458,51 @@ body {
 
     }
 
-    .inf section{
+    .inf section {
         justify-content: center;
-        max-width: 90%;
+        max-width: 95%;
         max-height: 100%;
+        margin: 16px 0px 0px 18px;
     }
     .contenedeor-texto h2{
         font-size: 24px;
     }
+
+    .slider-p li{
+        position: absolute;
+        left: 12%;
+        top: 0;
+        opacity: 0;
+        width: 80%;
+        height: inherit;
+        background-color: white;
+        transition: opacity .5s;
+        border-radius: 40px;
+        animation-duration: 6.5s;
+        transition: all 600ms;
+    }
+
+    .inf {
+        margin-top: 10%;
+    }
+
+    .contenedeor-texto p {
+        margin-bottom: 0px;
+        width: 100%;
+        font-size: unset;
+    }
+
+
 }
 
 /* ---------------- LAPTOP----------------------*/
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1024px) and (max-width:1900px){
     .product-info {
         max-width: 100%;
         width: 100%;
         flex-direction: column;
-        padding: 0;
+        padding: 0px 10px;
     }
     .inf section a{
         margin: 15px 15px;
@@ -474,8 +511,44 @@ body {
     }
 
     .inf {
-        margin: -13px;
+        margin-top: 70px;
     }
 
+    .main-container-master {
+        margin-bottom: 40px;
+    }
+
+
+    .inf section img {
+        width: 400px;
+    height: 300px;
+    margin: 60px 40px;
+    opacity: 1;
+    border-radius: 100px;
+    }
+
+    .inf section {
+        margin: 20px 0px 0px 10px;
+
+    }
+
+    .slider-p li {
+    position: absolute;
+    left: 12%;
+    top: 0;
+    opacity: 0;
+    width: 80%;
+    height: inherit;
+    background-color: white;
+    transition: opacity .5s;
+    border-radius: 40px;
+    animation-duration: 6.5s;
+    transition: all 600ms;
+    }
+
+    .container-algomas {
+        height: 600px;
+        margin-top: 10%;
+    }
 
 }
