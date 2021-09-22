@@ -32,11 +32,12 @@
         </div>
     <% }) %>
 </div> -->
-<main class="adminMain">
-  <h1>LISTADO DE PRODUCTOS</h1> 
-  <button class="btn-log"><a href="/admin/agregarProducto">Agregar</a></button>
+<div class="adminMain">
+  
   <table class="tableAd">
     <thead>
+      <h1>LISTADO DE PRODUCTOS</h1> 
+  <button class="btn-log btn-log-adm"><a href="/admin/agregarProducto">Agregar</a></button>
       <tr>
         <th>ID</th>
         <th>NOMBRE</th>
@@ -71,7 +72,7 @@
         <td data-label="CATEGORÍA"><%= producto.category %></td>
         <td data-label="SUBCATEGORÍA"><%= producto.subcategory %></td>
         <td data-label="CONDICIÓN"><%= producto.condition %></td>
-        <td data-label="IMAGEN"><img src="/images/productos/<%= producto.image[0] %>" alt=""> </td>
+        <td data-label="IMAGEN"><img class="imgPrAdm" src="/images/productos/<%= producto.image[0] %>"></td>
         <!-- <td>
           <a href="/admin/eliminarproducto/<%= producto.id %>?_method=DELETE" method="POST">
             <button>ELIMINAR</button>
@@ -80,15 +81,15 @@
             <button>EDITAR</button></a>
           </a>
         </td> -->
-        <td><a href="/admin/productos/editar/<%= producto.id %> "> <i class="fas fa-pen"></i></a></td>
+        <td data-label="EDITAR"><a href="/admin/productos/editar/<%= producto.id %> "> <i class="fas fa-pen"></i></a></td>
         <form action="/admin/eliminarProducto/<%- producto.id %>?_method=DELETE" method="POST">
-          <td><button type="submit" style="border: none; background: none;"><i class="fas fa-trash"></i></td>
-        </form>
+          <td data-label="BORRAR"><button type="submit" style="border: none; background: none;"><i class="fas fa-trash"></i></td>
+        </form> 
       </tr>
       <% }) %>
     </tbody>
   </table>
-</main>
+</div>
 </div>
 </body>
 </html>
