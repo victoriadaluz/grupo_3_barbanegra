@@ -1,7 +1,7 @@
 let {
     products
 } = require('../data/dataBase');
-
+const {Product} = require('../database/models')
 
 module.exports = {
     index: (req, res) => {

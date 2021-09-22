@@ -2,7 +2,10 @@ let {
     products
 } = require('../data/dataBase'); //requiero base de datos parseada
 
+
+
 let productController = {
+
     listar: (req, res) => {
         res.render('productos', {
             products,
