@@ -1,11 +1,20 @@
 let {
     products
 } = require('../data/dataBase'); //requiero base de datos parseada
+const {Product} = require('../database/models')
 
 
 
 let productController = {
-
+    prueba: (req,res)=>{
+        Product.findAll({
+            include:[{association:'productImage'},{association:"brand"},
+            {association:"subcategory"}]
+        })
+        .then(prueba =>{
+            res.send(prueba)
+        })
+    },
     listar: (req, res) => {
         res.render('productos', {
             products,

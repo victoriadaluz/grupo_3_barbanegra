@@ -1,4 +1,4 @@
-/* module.exports = (sequelize, Datatypes) =>{
+ module.exports = (sequelize, Datatypes) =>{
     let alias= 'Subcategory';
     let cols={
         id : {
@@ -15,14 +15,22 @@
             type: Datatypes.STRING,
             allowNull:false,
         }
+    } 
+     let config = {
+        tableName: 'subcategory',
+        timestamps: false
     }
-    const Subcategory = sequelize.define(alias,cols);
+    const Subcategory = sequelize.define(alias,cols,config);
     //relaciones
     Subcategory.associate = models=>{
         Subcategory.hasMany(models.Product,{
-            as:'Products',//tiene muchos productos
+            as:'products',//tiene muchos productos
             foreignKey:'subcategoryId'//recibe la fk de products (de donde viene la fk)
         })
+        Subcategory.belongsTo(models.Category,{
+            as:'category',
+            foreignKey:'categoryId'
+        })
     }
-    return Subcategory;
-} */
+     return Subcategory;
+    }

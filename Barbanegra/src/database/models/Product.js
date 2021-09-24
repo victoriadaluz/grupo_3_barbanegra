@@ -1,4 +1,4 @@
-module.exports = (sequelize, ataTypes) => {
+module.exports = (sequelize, DataTypes) => {
     let alias = 'Product';
     let cols = {
         id: {
@@ -21,10 +21,7 @@ module.exports = (sequelize, ataTypes) => {
         },
         discount: {
             type: DataTypes.INTEGER,
-        },
-        imageId: {
-            type: DataTypes.INTEGER,
-        },
+        },        
         brandId: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -45,14 +42,15 @@ module.exports = (sequelize, ataTypes) => {
                     as: 'subcategory',
                     foreignKey: 'subcategoryId'
                 })        
-                Product.belongsTo(models.Brand, {
+                 Product.belongsTo(models.Brand, {
                     as: 'brand',
                     foreignKey: 'brandId'
-                })        
-                    Product.hasMany(models.Image,{
-                    as:'images',//muchas imagenes en el mismo producto
-                    foreignKey: 'imageId' 
-                })
+                })   
+                Product.hasMany(models.ProductImage, {
+                    as: "productImage",
+                    foreignKey: "productId"
+                })     
+
             } 
     return Product;
 }
