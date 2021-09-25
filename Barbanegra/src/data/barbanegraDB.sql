@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.5.62, for Win64 (AMD64)
 --
--- Host: localhost    Database: barbanegraDB
+-- Host: localhost    Database: barbanegradb
 -- ------------------------------------------------------
 -- Server version	5.5.5-10.4.20-MariaDB
 
@@ -16,54 +16,56 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `adresses`
+-- Table structure for table `addresses`
 --
 
-DROP TABLE IF EXISTS `adresses`;
+DROP TABLE IF EXISTS `addresses`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `adresses` (
+CREATE TABLE `addresses` (
   `id` int(11) NOT NULL,
   `province` varchar(50) NOT NULL,
   `city` varchar(50) NOT NULL,
   `street` varchar(100) NOT NULL,
   `postal_code` int(11) NOT NULL,
   `userId` int(11) NOT NULL,
+  `number` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `adresses_FK` FOREIGN KEY (`id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `adresses`
+-- Dumping data for table `addresses`
 --
 
-LOCK TABLES `adresses` WRITE;
-/*!40000 ALTER TABLE `adresses` DISABLE KEYS */;
-/*!40000 ALTER TABLE `adresses` ENABLE KEYS */;
+LOCK TABLES `addresses` WRITE;
+/*!40000 ALTER TABLE `addresses` DISABLE KEYS */;
+/*!40000 ALTER TABLE `addresses` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `brand`
+-- Table structure for table `brands`
 --
 
-DROP TABLE IF EXISTS `brand`;
+DROP TABLE IF EXISTS `brands`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `brand` (
+CREATE TABLE `brands` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `brand`
+-- Dumping data for table `brands`
 --
 
-LOCK TABLES `brand` WRITE;
-/*!40000 ALTER TABLE `brand` DISABLE KEYS */;
-/*!40000 ALTER TABLE `brand` ENABLE KEYS */;
+LOCK TABLES `brands` WRITE;
+/*!40000 ALTER TABLE `brands` DISABLE KEYS */;
+INSERT INTO `brands` VALUES (1,'MarcaPrueba');
+/*!40000 ALTER TABLE `brands` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -104,7 +106,7 @@ CREATE TABLE `category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -113,6 +115,7 @@ CREATE TABLE `category` (
 
 LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
+INSERT INTO `category` VALUES (1,'Maquinas');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -152,12 +155,11 @@ CREATE TABLE `product` (
   `description` text NOT NULL,
   `price` int(11) NOT NULL,
   `discount` int(11) DEFAULT NULL,
-  `brand_id` int(11) NOT NULL,
-  `subcategory_id` int(11) NOT NULL,
+  `brandId` int(11) NOT NULL,
+  `subcategoryId` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `product_FK` FOREIGN KEY (`id`) REFERENCES `subcategory` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `product_FK_1` FOREIGN KEY (`id`) REFERENCES `brand` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `product_FK_2` FOREIGN KEY (`id`) REFERENCES `product_image` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `product_FK_1` FOREIGN KEY (`id`) REFERENCES `brands` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -167,54 +169,34 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
+INSERT INTO `product` VALUES (1,'ProductoPrueba','unadescripciondeprueba',123123,10,1,1);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `product_image`
+-- Table structure for table `productimage`
 --
 
-DROP TABLE IF EXISTS `product_image`;
+DROP TABLE IF EXISTS `productimage`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `product_image` (
+CREATE TABLE `productimage` (
   `id` int(11) NOT NULL,
-  `nombre` varchar(50) DEFAULT NULL,
-  `product_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
+  `image` varchar(100) DEFAULT NULL,
+  `productId` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `products_images_FK` FOREIGN KEY (`id`) REFERENCES `product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `product_image`
+-- Dumping data for table `productimage`
 --
 
-LOCK TABLES `product_image` WRITE;
-/*!40000 ALTER TABLE `product_image` DISABLE KEYS */;
-/*!40000 ALTER TABLE `product_image` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `rol`
---
-
-DROP TABLE IF EXISTS `rol`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `rol` (
-  `id` int(11) NOT NULL,
-  `name` varchar(10) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `rol`
---
-
-LOCK TABLES `rol` WRITE;
-/*!40000 ALTER TABLE `rol` DISABLE KEYS */;
-/*!40000 ALTER TABLE `rol` ENABLE KEYS */;
+LOCK TABLES `productimage` WRITE;
+/*!40000 ALTER TABLE `productimage` DISABLE KEYS */;
+INSERT INTO `productimage` VALUES (1,'user.jpg',1);
+/*!40000 ALTER TABLE `productimage` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -227,7 +209,7 @@ DROP TABLE IF EXISTS `subcategory`;
 CREATE TABLE `subcategory` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
-  `category_id` int(11) NOT NULL,
+  `categoryId` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `subcategory_FK` FOREIGN KEY (`id`) REFERENCES `category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -239,6 +221,7 @@ CREATE TABLE `subcategory` (
 
 LOCK TABLES `subcategory` WRITE;
 /*!40000 ALTER TABLE `subcategory` DISABLE KEYS */;
+INSERT INTO `subcategory` VALUES (1,'MaquinasSubcategory',1);
 /*!40000 ALTER TABLE `subcategory` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -278,13 +261,12 @@ CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(70) NOT NULL,
-  `first_name` varchar(50) DEFAULT NULL,
-  `last_name` varchar(50) DEFAULT NULL,
+  `firstName` varchar(50) NOT NULL,
+  `lastName` varchar(50) NOT NULL,
   `tel` varchar(20) DEFAULT NULL,
-  `image` varchar(255) DEFAULT NULL,
-  `rol_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  CONSTRAINT `user_FK` FOREIGN KEY (`id`) REFERENCES `rol` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  `image` varchar(100) DEFAULT NULL,
+  `rol` int(2) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -298,7 +280,7 @@ LOCK TABLES `user` WRITE;
 UNLOCK TABLES;
 
 --
--- Dumping routines for database 'barbanegraDB'
+-- Dumping routines for database 'barbanegradb'
 --
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -310,4 +292,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-09-22 10:51:16
+-- Dump completed on 2021-09-25  4:58:37
