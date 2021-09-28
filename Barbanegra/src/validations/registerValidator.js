@@ -1,42 +1,49 @@
-const {check , body} = require('express-validator');
-const {users} = require('../data/dataBase');
+const { check, body } = require('express-validator');
+//const { users } = require('../data/dataBase')
+const db = require('../database/models')
 
 module.exports = [
-        check('usuario')
-        .notEmpty()
-        .withMessage('El usuario es obligatorio')
-        .isLength({min:3, max:12})
-        .withMessage('Debe tener entre 3 a 12 caracteres'),        
-        
-        check('email')  
-        .isEmail()     
-        .withMessage('Debes ingresar un mail valido'),
-        //chequeamos el email no este en la base de datos.
+    check('name')
+    .notEmpty()
+    .withMessage('El nombre es requerido'),
 
-        body('email').custom(value=>{
-            let user = users.filter(user=>{             
-                return user.email == value
-            })
-            if(user == false) {
-                return true
-            } else{return false}
+    check('last_name')
+    .notEmpty()
+    .withMessage('El apellido es requerido'),
+
+    check('email')
+    .isEmail()
+    .withMessage('Debes ingresar un email válido'),
+
+    body('email').custom(value => {
+      /*   let user = users.filter(user=>{ 
+            return user.email == value 
+        }) */
+        return db.Users.findOne({
+            where : {
+                email : value
+            }
         })
-        .withMessage('El email ya existe en la base de datos.'),
-
-        body('usuario').custom(value=>{
-            let user = users.filter(user=>{             
-                return user.user == value
-            })
-            if(user == false) {
-                return true
-            } else{return false}
+        .then(user => {
+            if(user){
+                return Promise.reject('Este email ya está registrado')
+            }
         })
-        .withMessage('El usuario ya existe'),
-        
-        
-        
-        //comparamos contraseñas
-        body('pass1').custom((value,{req})=> value != req.body.pass ? false : true)
-        .withMessage('Las contraseñas no coinciden')
+    }),
 
+    check('pass1')
+    .notEmpty()
+    .withMessage('Debes escribir tu contraseña')
+    .isLength({
+        min: 6,
+        max: 12
+    })
+    .withMessage('La contraseña debe tener entre 6 y 12 caracteres'),
+
+    body('pass2').custom((value, {req}) => value !== req.body.pass1 ? false : true)
+    .withMessage('Las contraseñas no coinciden'),
+
+    check('terms')
+    .isString('on')
+    .withMessage('Debes aceptar las bases y condiciones')
 ]

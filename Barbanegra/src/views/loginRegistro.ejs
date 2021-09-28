@@ -27,7 +27,7 @@
             <%}%>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" name='pass' placeholder="Contraseña" />
+              <input type="password" name='password' placeholder="Contraseña" />
               <% if (locals.errors && errors.pass1) { %>
                 <small><%= errors.pass1.msg %> </small>
             <% } %>
@@ -58,7 +58,7 @@
               <h2 class="title">Registro</h2>
               <div class="input-field">
                 <i class="fas fa-user"></i>
-                <input name ="usuario" value="<%= locals.old && old.user %> " type="text" placeholder="Usuario" />
+                <input name ="firstName" value="<%= locals.old && old.user %>" type="text" placeholder="Usuario" />
                </div>
                
                <% if (locals.errors && errors.user) { %>
@@ -77,7 +77,7 @@
               <%}%>
               <div class="input-field">
                 <i class="fas fa-lock"></i>
-                <input name="pass" type="password" placeholder="Contraseña" />
+                <input name="password" type="password" placeholder="Contraseña" />
               </div>
               <% if (locals.errors && errors.pass1) { %>
                 <small><%= errors.pass1.msg %> </small>
