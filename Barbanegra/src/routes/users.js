@@ -8,7 +8,7 @@ let userSession= require('../middlewares/userSession'); //validador de rutas
 
 router.get('/prueba',prueba)
 
-router.get('/register', login);
+router.get('/register',loginValidator, login);
 router.post('/register',registerValidator,userRegister);
 
 router.get('/login',login);
