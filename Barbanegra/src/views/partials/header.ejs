@@ -35,7 +35,7 @@
         </li>
         <li><a href="/cart">IR AL CARRITO</a></li>
         <li>
-          <% if (session.rol == "ROL_ADMIN") { %>
+          <% if (session.rol == 1) { %>
            <a href="/admin">ADMIN</a>
           <%}%> 
       </ul>

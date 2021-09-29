@@ -13,7 +13,7 @@ module.exports = [
 
     body('custom')
         .custom((value, {req})=> {
-            return db.User.findOne({
+            return db.Users.findOne({
                 where:{
                     email: req.body.email
                 }
