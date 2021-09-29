@@ -12,7 +12,7 @@ router.get('/register', login);
 router.post('/register',registerValidator,userRegister);
 
 router.get('/login',login);
-router.post('/login', loginValidator, userLogin)
+router.post('/login',  userLogin)
 
 router.get('/profile', userSession, userProfile)
 router.post('/profile', uploadAvatar.single("image"), editProfile)

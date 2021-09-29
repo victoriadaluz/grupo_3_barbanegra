@@ -1,46 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
-    <%- include('./partials/head.ejs')  %> 
-    
+<%- include('./partials/head.ejs')  %>
+
 <body>
-    <%- include('./partials/header.ejs')  %> 
+    <%- include('./partials/header.ejs')  %>
 
 
     <main class="container userProfileC">
-        <h2 class="text-center">Perfil de usuario</h2>
-<section class="edit-container">
-    <div class="edit-container-form">
-        <form >
-            <div>
-                <label for="inputName" class="form-label">Nombre: </label>
-                <input type="text" class="form-control" id="inputName" name="name" >
-            </div>
-            <div>
-                <label for="inputName" class="form-label">Apellido: </label>
-                <input type="text" class="form-control" id="inputName" name="lastName" >
-            </div>
-            <div>
-                <label for="inputPrice" class="form-label">Dirección: </label>
-                <input type="number" class="form-control" id="inputPrice" name="price">
-            </div>
-            <div >
-                <label for="inputDiscount" class="form-label">Telefono: </label>
-                <input type="number" class="form-control" id="inputDiscount" name="tel">
-            </div>
-            
-                <label for="inputImage" class="form-label">Avatar: </label>
-                <input type="file" name="image" class="form-control" aria-label="file example" id="inputImage" multiple>
-            <div>
-                <button type="submit" class="btn btn-primary">GUARDAR: </button>
-            </div>
-        </form>
-</section>
+        <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg mt-16">
+           <p>Hola <%= user.firstName %> </p> 
+           <p>tu email : <%= user.email %> </p>
+           <p>tu telefono es  : <%= user.tel %> </p>
+           <p>Tus direcciones</p>
+           <P><%= address.id %>  </P>
+        </div>
 
 
-</main>
 
-<%- include('./partials/footer') %>
-   
-<%- include('./partials/scripts.ejs')  %> 
+    </main>
+
+    <%- include('./partials/footer') %>
+
+    <%- include('./partials/scripts.ejs')  %>
 </body>
+
 </html>
