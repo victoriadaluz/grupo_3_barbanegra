@@ -4,17 +4,12 @@ const {
 const bcrypt = require('bcryptjs');
 const {
     Users,
-    Addresses
 } = require('../database/models');
 
 module.exports = {
     //Vista login por GET
     prueba: (req, res) => {
-        Users.findAll({
-                include: [{
-                    association: 'Addresses'
-                }]
-            })
+        Users.findAll()
             .then(prueba => {
                 res.send(prueba)
             })
@@ -43,7 +38,7 @@ module.exports = {
                         id: user.id,
                         user: user.user,
                         email: user.email,
-                        avatar: user.avatar,
+                        image: user.imagee,
                         rol: user.rol
                     };
                     /*    si hacemos un checkbox poner
@@ -51,7 +46,7 @@ module.exports = {
                     if (req.body.remember) {
                         /* si seleccionan recordar creo la cookie */
                         res.cookie('cookieNegra', req.session.user, {
-                            maxAge: 100000 * 60 * 3
+                            maxAge: 100000 * 60 * 60
                         })
                     }
                     /** guardamos el usuario en locals */
@@ -85,7 +80,7 @@ module.exports = {
                 firstName,
                 email,
                 password: bcrypt.hashSync(password, 10),
-                avatar: "default-user.png",
+                image: "default-user.png",
                 rol: 0,
                 nombre: "",
                 direccion: "",
@@ -104,31 +99,71 @@ module.exports = {
     },
     /* USER PROFILE */
     userProfile: (req, res) => {
-        Users.findByPk(req.session.user.id, {
-                include: [{
-                    association: 'Addresses'
-                }]
-            })
+        Users.findByPk(req.session.user.id)
             .then((user) => {
-                Addresses.findOne({
-                    where: {
-                        userId: user.id
-                    }
-                }).then((address) => {
-                    res.render("editUserProfile", {
-                        session: req.session,
-                        user,
-                        address,
-                    })
+                res.render("editUserProfile", {
+                    session: req.session,
+                    user,
                 })
-
-
             })
+
+
+
     },
     editProfile: (req, res) => {
-
+        Users.findByPk(req.session.user.id)
+            .then((user) => {
+                res.render("UserProfile2", {
+                    session: req.session,
+                    user,
+                })
+            })
     },
 
+    updateProfile: (req, res) => {
+        let errors = validationResult(req);
+        const {
+            firstName,
+            lastName,
+            tel,
+            street,
+            city,
+            province,
+            number,
+            postalCode
+        } = req.body
+        if(errors.isEmpty()){
+            Users.update({
+                firstName: firstName,
+                lastName: lastName,
+                tel: tel,
+                street: street,
+                city: city,
+                province: province,
+                number: number,
+                postalCode: postalCode,
+                image: req.file && req.file.filename,
+            }, {
+                where: {
+                    id: req.session.user.id
+                }
+            })
+            .then(() => {
+                Users.findByPk(req.params.id)
+                .then(()=>{res.redirect('/users/profile')})
+            }).catch(err => console.log(err))
+        }/* else{
+            res.render('UserProfile2', {
+                session: req.session,
+                old: req.body,
+                errors : errors.mapped()
+            })
+        } */
+        
+       
+
+
+    },
     userLogout: (req, res) => {
         req.session.destroy();
         if (req.cookies.cookieNegra) {

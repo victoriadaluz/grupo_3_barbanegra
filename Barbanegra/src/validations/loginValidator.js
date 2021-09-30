@@ -1,11 +1,11 @@
-const {check , body} = require('express-validator');
+const { check, body } = require('express-validator');
 const bcrypt = require('bcryptjs')
 const db = require('../database/models')
 
 module.exports = [
     check('email')
     .isEmail()
-    .withMessage('Ingrese un email válido'),
+    .withMessage('Debes ingresar un email válido'),
 
     check('pass')
     .notEmpty()
