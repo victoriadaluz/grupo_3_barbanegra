@@ -8,7 +8,7 @@
     <div class="uTitle text-center">
       <h4>Perfil de <%= user.firstName %> <%= user.lastName %> </h4>
     </div>
-    <div class="wrapper">
+    <div class="wrapper text-black">
       <form action="/users/profile/edit/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
         <figure class="figureAvatar">
           <img id="userAvatar" src="/images/users/<%= user.image %>" alt="" width="200px" height="200px"
