@@ -13,7 +13,7 @@ let session = require('../middlewares/userSession');
 let upload = require('../middlewares/uploadFiles');
 
 /* GET Index / Index del admin */
-router.get('/',session,adminUser, index)
+router.get('/',session,adminUser, listarProductos)
 router.get ('/productos',session,adminUser,listarProductos)
 
 /* GET- FORMULARIO DE AGREGAR PRODUCTO*/

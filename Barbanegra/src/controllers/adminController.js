@@ -1,17 +1,7 @@
-const {    Router} = require('express');
-
-let {
-    products, addProduct,categories
-} = require('../data/dataBase');
-
-//array de subcategorias
-let subcategories = [];
-products.forEach(product => {
-    if(!subcategories.includes(product.subcategory)){
-        subcategories.push(product.subcategory)
-    }  
-});
-
+let { products, addProduct,categories} = require('../data/dataBase');
+const { validationResult } = require('express-validator');
+const fs = require('fs')
+const {Product} = require('../database/models')
 
 module.exports = {
     index: (req, res) => {
@@ -21,9 +11,16 @@ module.exports = {
         })
     },
     listarProductos: (req, res) => {
-        res.render('admin/adminProductos', {
-            products,
-            session:req.session.user?req.session.user:""
+        Product.findAll({
+            include:[{association:'productImage'},{association:"brand"},
+            {association:"subcategory"}]
+        })
+        .then(producto =>{
+          res.render('admin/adminProductos',{
+            producto,
+              session:req.session,
+             
+          })
         })
     },
     addProducts: (req,res) =>{
