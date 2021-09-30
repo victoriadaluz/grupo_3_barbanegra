@@ -154,7 +154,6 @@ module.exports = {
             }).catch(err => console.log(err))
         }/* else{
             res.render('UserProfile2', {
-                title:"Cuenta",
                 session: req.session,
                 old: req.body,
                 errors : errors.mapped()
