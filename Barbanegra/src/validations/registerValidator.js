@@ -17,7 +17,7 @@ module.exports = [
     body('email').custom(value => {
         return db.User.findOne({
                 where: {
-                    email: value
+                    email: req.body.email
                 }
             })
             .then(user => {
@@ -31,7 +31,7 @@ module.exports = [
     .notEmpty()
     .withMessage('Por favor, ingrese su contraseña')
     .isLength({
-        min: 8,
+        min: 6,
         max: 12
     })
     .withMessage("La contraseña debe contener entre 6 y 12 caracteres"),
