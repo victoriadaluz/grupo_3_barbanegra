@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const {index,
-        carrito,}= require('../controllers/homeController')
+        carrito,
+        aboutUs,}= require('../controllers/homeController')
  const loginValidator = require('../validations/loginValidator');
  let userSession= require('../middlewares/userSession');
 
@@ -10,6 +11,8 @@ const {index,
 router.get('/', index);
 
 router.get('/cart', userSession, carrito);
+
+router.get('/aboutUs', aboutUs);
 
 
 

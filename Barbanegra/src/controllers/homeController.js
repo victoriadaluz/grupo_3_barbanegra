@@ -25,5 +25,11 @@ module.exports = {
             title: 'productos',
             session:req.session.user?req.session.user:""
         })
+    },
+    aboutUs: (req, res) => {
+        res.render('aboutUs', {
+            title: 'Sobre nosotros',
+            session:req.session.user?req.session.user:""
+        })
     }
 }
