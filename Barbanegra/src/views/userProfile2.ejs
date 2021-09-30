@@ -1,117 +1,99 @@
 <!DOCTYPE html>
 <html lang="es">
 <%- include('./partials/head') %>
+
 <body class="userProfile">
   <%- include('./partials/header') %>
   <main class="uProfile">
-    <div class="uTitle">
-      <h4>Perfil de <%= user.user %> <%= user.apellido %> </h4>
+    <div class="uTitle text-center">
+      <h4>Perfil de <%= user.firstName %> <%= user.lastName %> </h4>
     </div>
     <div class="wrapper">
-      <figure class="figureAvatar">
-        <img id="userAvatar" src="/images/users/<%= user.avatar %>" alt="" width="200px" height="200px"
-          class="rounded-circle avatar">
-      </figure>
-      <div class="form">
-        <form action="/users/profile<%= user.id %>?_method=PUT" id="profile" method="POST"
-          enctype="multipart/form-data">
-          <div class="inputfield">
-            <label>Nombre</label>
-            <input type="text" class="input"
-              value="<%= (typeof old != 'undefined' && old.nombre)?old.nombre:user.nombre %>" id="unombre" name="nombre"
-              placeholder="Nombre">
-            <small id="errorsNombre"
-              class="text-danger"><%= (typeof errors != 'undefined' && errors.nombre)?errors.nombre.msg: "" %>
-            </small>
-          </div>
-          <div class="inputfield">
-            <label>Apellido</label>
-            <input type="text" class="input"
-              value="<%= (typeof old != 'undefined' && old.apellido)?old.apellido:user.apellido %>" id="papellido"
-              name="apellido" placeholder="Apellido" %>">
-            <small id="errorsApellido"
-              class="text-danger"><%= (typeof errors != 'undefined' && errors.apellido)?errors.apellido.msg: "" %>
-            </small>
-          </div>
-          <div class="inputfield">
-            <label>DNI</label>
-            <input class="input" id="DNI" type="number"
-              value="<%= (typeof old != 'undefined' && old.dni)?old.dni:user.dni %>" name="dni" placeholder="DNI">
-            <small id="errorsDNI"
-              class="text-danger"><%= (typeof errors != 'undefined' && errors.dni)?errors.dni.msg: "" %>
-            </small>
-          </div>
-          <div class="inputfield">
-            <label>Contraseña</label>
-            <input type="password" class="input" placeholder="Contraseña">
-          </div>
-          <div class="inputfield">
-            <label>Confirmar contraseña</label>
-            <input type="password" class="input" placeholder="Confirmar contraseña">
-          </div>
-          <div class="inputfield">
-            <label>Género</label>
-            <div class="custom_select">
-              <select>
-                <option value="">Seleccione</option>
-                <option value="male">Hombre</option>
-                <option value="female">Mujer</option>
-                <option value="non-binary">Prefiero no decirlo</option>
-              </select>
-            </div>
-          </div>
-          <div class="inputfield">
-            <label>Correo electrónico</label>
-            <input type="email" class="input"
-              value="<%= (typeof old != 'undefined' && old.email)?old.email:user.email %>" id="pemail" name="email"
-              placeholder="Correo electrónico">
-            <small id="errorsEmail"
-              class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %>
-            </small>
-          </div>
-          <div class="inputfield">
-            <label>Teléfono</label>
-            <input type="number" class="input" id="telefono"
-              value="<%= (typeof old != 'undefined' && old.telefono)?old.telefono:user.telefono %>" name="telefono"
-              placeholder="Teléfono">
-              <small id="errorsTelefono"
-              class="text-danger"><%= (typeof errors != 'undefined' && errors.telefono)?errors.telefono.msg: "" %>
-            </small>
-          </div>
-          <div class="inputfield">
-            <label>Dirección</label>
-            <input id="direccion" type="number" class="input"
-              value="<%= (typeof old != 'undefined' && old.direccion)?old.direccion:user.direccion %>" name="direccion"
-              placeholder="Dirección">
-            <small id="errorsDireccion" class="text-danger"><%= (typeof errors != 'undefined' && errors.direccion)?errors.direccion.msg: "" %>
-            </small>
-          </div>
-          <div class="inputfield">
-            <label>Ciudad</label>
-            <input type="text" class="input" value="<%=user.ciudad%>" name="ciudad"
-              placeholder="<%= (typeof errors != 'undefined' && errors.ciudad)?errors.ciudad.msg: "ciudad" %>">
-          </div>
-          <div class="inputfield">
-            <label>Provincia</label>
-            <input type="text" class="input" value="<%=user.provincia%>" name="provincia"
-              placeholder="<%= (typeof errors != 'undefined' && errors.provincia)?errors.provincia.msg: "Escriba su provincia" %>">
-          </div>
-          <div class="inputfield">
-            <label>Código postal</label>
-            <input type="text" class="input" placeholder="Ejemplo: 1823">
-          </div>
-          <div class="inputfield terms">
-            <label class="check">
-              <input type="checkbox">
-              <span class="checkmark"></span>
-            </label>
-            <p>Acepto los términos y condiciones de BarbaNegra</p>
-          </div>
-          <div class="inputfield">
-            <input type="submit" value="Actualizar datos" class="btn">
-          </div>
-      </div>
+      <form action="/users/profile/edit/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <figure class="figureAvatar">
+          <img id="userAvatar" src="/images/users/<%= user.image %>" alt="" width="200px" height="200px"
+            class="rounded-circle avatar">
+        </figure>
+        <div class="input-file">
+          <input  class="buttonForm" type="file" id="file" name="image"><br><br>
+          <p>Cambiar foto de perfil</p>
+        </div>
+        <div class="inputfield">
+          <label>Nombre </label>
+          <input type="text" class="input"
+            value="<%= (typeof old != 'undefined' && old.firstName)?old.nombre:user.firstName %>" id="unombre"
+            name="firstName" placeholder="Nombre">
+          <small id="errorsNombre"
+            class="text-danger"><%= (typeof errors != 'undefined' && errors.nombre)?errors.nombre.msg: "" %>
+          </small>
+        </div>
+        <div class="inputfield">
+          <label>Apellido </label>
+          <input type="text" class="input"
+            value="<%= (typeof old != 'undefined' && old.lastName)?old.lastName:user.lastName %>" id="papellido"
+            name="lastName" placeholder="Apellido" %>">
+          <small id="errorsApellido"
+            class="text-danger"><%= (typeof errors != 'undefined' && errors.lastName)?errors.lastName.msg: "" %>
+          </small>
+        </div>
+        <div class="inputfield">
+          <label>Correo electrónico </label>
+          <input type="email" class="input"
+            value="<%= (typeof old != 'undefined' && old.email)?old.email:user.email %>" id="pemail" name="email"
+            placeholder="Correo electrónico">
+          <small id="errorsEmail"
+            class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %>
+          </small>
+        </div>
+        <div class="inputfield">
+          <label>Teléfono </label>
+          <input type="text" class="input" id="telefono"
+            value="<%= (typeof old != 'undefined' && old.tel)?old.tel:user.tel %>" name="tel" placeholder="Teléfono">
+          <small id="errorsTelefono"
+            class="text-danger"><%= (typeof errors != 'undefined' && errors.tel)?errors.tel.msg: "" %>
+          </small>
+        </div>
+        <div class="inputfield">
+          <label>Dirección </label>
+          <input id="direccion" type="text" class="input"
+            value="<%= (typeof old != 'undefined' && old.street)?old.street:user.street %>" name="street"
+            placeholder="Dirección">
+          <small id="errorsDireccion"
+            class="text-danger"><%= (typeof errors != 'undefined' && errors.direccion)?errors.direccion.msg: "" %>
+          </small>
+        </div>
+        <div class="inputfield">
+          <label>Numeracion </label>
+          <input id="numeracion" type="text" class="input"
+            value="<%= (typeof old != 'undefined' && old.number)?old.number:user.number %>" name="number"
+            placeholder="numeracion">
+          <small id="errorsDireccion"
+            class="text-danger"><%= (typeof errors != 'undefined' && errors.number)?errors.number.msg: "" %>
+          </small>
+        </div>
+        <div class="inputfield">
+          <label>Ciudad </label>
+          <input type="text" class="input" value="<%=user.city%>" name="city"
+            placeholder="<%= (typeof errors != 'undefined' && errors.city)?errors.city.msg: "ciudad" %>">
+        </div>
+        <div class="inputfield">
+          <label>Provincia </label>
+          <input type="text" class="input" value="<%=user.province%>" name="province"
+            placeholder="<%= (typeof errors != 'undefined' && errors.province)?errors.province.msg: "Escriba su provincia" %>">
+        </div>
+        <div class="inputfield">
+          <label>Código postal </label>
+          <input type="text" class="input" value="<%=user.postalCode%>" name="postalCode" placeholder="Ejemplo: 1823">
+        </div>
+        <button type="submit"
+        class="text-center bg-blue-400 font-bold text-white px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-500 rounded-full py-3 px-6">
+        Actualizar datos
+      </button>
+
+
+      </form>
     </div>
+ 
   </main>
   <%- include('./partials/footer') %>
 </body>

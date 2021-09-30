@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    let alias = "User"
+    let alias = "Users"
     let cols={
         id:{
             type: DataTypes.INTEGER,
@@ -16,13 +16,11 @@ module.exports = (sequelize, DataTypes) => {
             type:DataTypes.STRING,
             allowNull:false
         },
-        name: {
+        firstName: {
             type: DataTypes.STRING,
-            allowNull: false
         },
-        last_name: {
+        lastName: {
             type: DataTypes.STRING,
-            allowNull: false
         },
         tel:{
             type: DataTypes.STRING,
@@ -33,17 +31,28 @@ module.exports = (sequelize, DataTypes) => {
         rol:{
             type: DataTypes.INTEGER,
             allowNull:false
-        }
+        },
+        street: {
+            type: DataTypes.STRING,
+        },
+        city: {
+            type: DataTypes.STRING,
+        },
+        province: {
+            type: DataTypes.STRING,
+        },
+        number: {
+            type: DataTypes.INTEGER,
+        },
+        postalCode: {
+            type: DataTypes.INTEGER,
+        },       
     }
      let config = {
-        tableName: "users"
+        tableName: "user",
+        timestamps: false,
     }
-    const User = sequelize.define(alias,cols,config)
-    User.associate = models =>{
-        User.hasMany(models.Addresses,{
-            as:'Addresses',
-            foreignKey:"userId"
-        })
-    }
+    const User = sequelize.define(alias,cols,config)   
+    
     return User;
 }

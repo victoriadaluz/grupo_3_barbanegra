@@ -30,8 +30,7 @@ CREATE TABLE `addresses` (
   `postal_code` int(11) NOT NULL,
   `userId` int(11) NOT NULL,
   `number` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  CONSTRAINT `adresses_FK` FOREIGN KEY (`id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -41,6 +40,7 @@ CREATE TABLE `addresses` (
 
 LOCK TABLES `addresses` WRITE;
 /*!40000 ALTER TABLE `addresses` DISABLE KEYS */;
+INSERT INTO `addresses` VALUES (0,'mendoza','las heras','unacalle',123,0,666);
 /*!40000 ALTER TABLE `addresses` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -259,15 +259,20 @@ DROP TABLE IF EXISTS `user`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `password` varchar(70) NOT NULL,
-  `firstName` varchar(50) NOT NULL,
-  `lastName` varchar(50) NOT NULL,
-  `tel` varchar(20) DEFAULT NULL,
-  `image` varchar(100) DEFAULT NULL,
+  `email` varchar(100) CHARACTER SET utf8mb4 NOT NULL,
+  `password` varchar(70) CHARACTER SET utf8mb4 NOT NULL,
+  `firstName` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `lastName` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `tel` varchar(20) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `image` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
   `rol` int(2) NOT NULL DEFAULT 0,
+  `street` varchar(100) DEFAULT NULL,
+  `city` varchar(100) DEFAULT NULL,
+  `province` varchar(100) DEFAULT NULL,
+  `postalCode` int(11) DEFAULT NULL,
+  `number` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=ujis;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -276,6 +281,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (0,'gonza@gonza.com','$2a$10$a0ToBEFbL2NtVH.z3dNDg.FpMGlN5igIqgKPVV2tra7xPr0uaW.Me','gonzalito','messi','222222','1632994240037_img_.png',1,'messitetraelacopa','argentina','mendoza',123,2022);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -292,4 +298,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-09-25  4:58:37
+-- Dump completed on 2021-09-30  6:34:10
