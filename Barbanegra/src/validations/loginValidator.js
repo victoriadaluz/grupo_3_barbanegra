@@ -9,7 +9,7 @@ module.exports = [
 
     check('pass')
     .notEmpty()
-    .withMessage('Debes escribir tu contraseña'),
+    .withMessage('Por favor, ingrese su contraseña'),
 
     body('custom')
         .custom((value, {req})=> {

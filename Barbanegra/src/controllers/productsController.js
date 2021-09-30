@@ -18,6 +18,7 @@ let productController = {
     listar: (req, res) => {
         res.render('productos', {
             products,
+            productImage,
             session:req.session.user?req.session.user:""
         })
     },
