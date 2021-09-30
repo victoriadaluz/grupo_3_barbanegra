@@ -31,18 +31,28 @@ module.exports = (sequelize, DataTypes) => {
         rol:{
             type: DataTypes.INTEGER,
             allowNull:false
-        }
+        },
+        street: {
+            type: DataTypes.STRING,
+        },
+        city: {
+            type: DataTypes.STRING,
+        },
+        province: {
+            type: DataTypes.STRING,
+        },
+        number: {
+            type: DataTypes.INTEGER,
+        },
+        postalCode: {
+            type: DataTypes.INTEGER,
+        },       
     }
      let config = {
         tableName: "user",
         timestamps: false,
     }
-    const User = sequelize.define(alias,cols,config)
-    User.associate = models =>{
-        User.hasMany(models.Addresses,{
-            as:'Addresses',
-            foreignKey:"userId"
-        })
-    }
+    const User = sequelize.define(alias,cols,config)   
+    
     return User;
 }

@@ -1,27 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include('./partials/head.ejs')  %>
-
-<body>
-    <%- include('./partials/header.ejs')  %>
-
-
-    <main class="container userProfileC">
-        <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg mt-16">
-           <p>Hola <%= user.firstName %> </p> 
-           <p>tu email : <%= user.email %> </p>
-           <p>tu telefono es  : <%= user.tel %> </p>
-           <p>Tus direcciones</p>
-           <P><%= address.id %>  </P>
-        </div>
-
-
-
-    </main>
-
-    <%- include('./partials/footer') %>
-
-    <%- include('./partials/scripts.ejs')  %>
+<%- include('./partials/head') %>
+<body class="userProfile">
+  <%- include('./partials/header') %>
+  <main class="uProfile">
+    <div class="uTitle text-center">
+      <h4>Perfil de <%= user.firstName %> <%= user.lastName %> </h4>
+    </div>
+    <div class="wrapper">
+      <figure class="figureAvatar">
+        <img id="userAvatar" src="/images/users/<%= user.image %>" alt="" width="200px" height="200px"
+          class="rounded-circle avatar">
+      </figure>
+      <section class="personal-date text-center">
+          <h1 class="first-name">Tu nombre: <%= user.firstName %></h1>
+          <h1 class="last-name">Tu apellido:<%= user.lastName %></h1>
+          <h1 class="email">Correo Electronico : <%= user.email %></h1>
+          <h1 class="tel">Telefono : <%= user.tel ? user.tel : "------" %></h1>
+      </section>
+      <section class="personal-date-adress text-center">
+          <div class="container-address">
+              Datos de Envio
+          </div>
+          <h1 class="street">Direccion : <%=  user.street ? user.street : "---------" %> </h1>
+          <h1 class="street">Numeracion : <%=  user.number ? user.number : "---------" %> </h1>
+          <h1 class="street">Codigo postal : <%=  user.postalCode ? user.postalCode : "---------" %> </h1>
+          <h1 class="street">Provincia : <%=  user.province ? user.province : "---------" %> </h1>
+      </section>
+      <section class="edit-profile text-center m-5 ">
+        <a href="/users/profile/edit/<%= user.id %> " class="bg-blue-400 font-bold text-white px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-500 rounded-full py-3 px-6">
+            Editar Perfil
+        </a>
+      </section>
+    </div>
+  </main>
+  <%- include('./partials/footer') %>
 </body>
 
 </html>

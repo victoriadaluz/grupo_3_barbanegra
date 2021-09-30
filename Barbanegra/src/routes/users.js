@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-let {login,userRegister,userLogin,userLogout, userProfile, editProfile,prueba} = require('../controllers/usersController')
+let {login,userRegister,userLogin,userLogout, userProfile, editProfile,prueba , updateProfile} = require('../controllers/usersController')
 const uploadAvatar = require('../middlewares/uploadAvatar')
 const registerValidator = require('../validations/registerValidator');
 const loginValidator = require('../validations/loginValidator')
@@ -15,7 +15,9 @@ router.get('/login',login);
 router.post('/login',  userLogin)
 
 router.get('/profile', userSession, userProfile)
-router.post('/profile', uploadAvatar.single("image"), editProfile)
+//edit profile, form
+router.get('/profile/edit/:id',userSession, editProfile)
+router.put('/profile/edit/:id', uploadAvatar.single("image"), updateProfile)
 
 /* LOGOUT */
 router.get('/logout', userLogout)
