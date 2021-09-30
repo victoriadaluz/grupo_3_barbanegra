@@ -23,8 +23,13 @@ hr{
   color: #fff;
   margin-top: 100px;
   opacity: 0.8;
-  font-size: 140%;
+  font-size: 122%;
   font-weight: bolder ;
+}
+
+/*  no funca!   */
+.quienes-somos-p {
+ font-size: 50px;
 }
 
 .btn-au {
