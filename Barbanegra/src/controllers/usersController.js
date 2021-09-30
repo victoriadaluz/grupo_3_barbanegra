@@ -4,7 +4,6 @@ const {
 const bcrypt = require('bcryptjs');
 const {
     Users,
-    Addresses
 } = require('../database/models');
 
 module.exports = {
@@ -47,7 +46,7 @@ module.exports = {
                     if (req.body.remember) {
                         /* si seleccionan recordar creo la cookie */
                         res.cookie('cookieNegra', req.session.user, {
-                            maxAge: 100000 * 60 * 3
+                            maxAge: 100000 * 60 * 60
                         })
                     }
                     /** guardamos el usuario en locals */
@@ -143,6 +142,7 @@ module.exports = {
                 province: province,
                 number: number,
                 postalCode: postalCode,
+                image: req.file && req.file.filename,
             }, {
                 where: {
                     id: req.session.user.id
