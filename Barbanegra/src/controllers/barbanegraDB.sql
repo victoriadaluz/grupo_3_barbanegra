@@ -258,7 +258,7 @@ DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(100) CHARACTER SET utf8mb4 NOT NULL,
   `password` varchar(70) CHARACTER SET utf8mb4 NOT NULL,
   `firstName` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
@@ -272,7 +272,7 @@ CREATE TABLE `user` (
   `postalCode` int(11) DEFAULT NULL,
   `number` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=ujis;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=ujis;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -281,7 +281,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (0,'gonza@gonza.com','$2a$10$a0ToBEFbL2NtVH.z3dNDg.FpMGlN5igIqgKPVV2tra7xPr0uaW.Me','gonzalito','messi','222222','1632994240037_img_.png',1,'messitetraelacopa','argentina','mendoza',123,2022);
+INSERT INTO `user` VALUES (1,'gonza@gonza.com','$2a$10$a0ToBEFbL2NtVH.z3dNDg.FpMGlN5igIqgKPVV2tra7xPr0uaW.Me','gonzalo','messi','222222','1633038155436_img_.png',1,'messitetraelacopa','argentina','mendoza',123,2022),(2,'vic2@vic.com','$2a$10$5R0VUK/6AHoeFE9ucumuk.XXcAH2GzkHp2IifhCkcVcnffnVSLWZ2','vicky',NULL,NULL,'default-user.png',0,NULL,NULL,NULL,NULL,NULL),(3,'vic@vic.com','$2a$10$ARUnBcr.ikjHGbxDWrZOQ.7bpI5a2zptIz10BTDueQSWgoY5CKe9W','vicky',NULL,NULL,'default-user.png',0,NULL,NULL,NULL,NULL,NULL),(4,'devo@devo.com','$2a$10$Kp9fXD10ca3u/5wC5ukv5eGO.wkgfKHCEL3KuzcOxKxspOXXgaP1y','devo',NULL,NULL,'default-user.png',0,NULL,NULL,NULL,NULL,NULL),(5,'paulo@paulo.com','$2a$10$0mw0e/PaCsry5REpdPU2/uK05ZoMfdIDPflwIk2Zq0sM6lQbK/Lsm','paulo',NULL,NULL,'default-user.png',0,NULL,NULL,NULL,NULL,NULL),(6,'messi@messi.com','$2a$10$gsrItwEcASGgBB88nYh41e.spmLEdX.IUEMv.ppNUT0xxiEJj22t.','messi',NULL,NULL,'default-user.png',0,NULL,NULL,NULL,NULL,NULL),(7,'gonza@gonza.com','$2a$10$zpuPGAOv7LfomHA1C1goFOz3OfudGDWnx73We0Ap2w8ZptMxRgdz6','',NULL,NULL,'default-user.png',0,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -298,4 +298,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-09-30  6:34:10
+-- Dump completed on 2021-09-30 19:26:47
