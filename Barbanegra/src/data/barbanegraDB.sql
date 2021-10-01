@@ -115,7 +115,7 @@ CREATE TABLE `category` (
 
 LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (1,'Maquinas');
+INSERT INTO `category` VALUES (1,'Maquinas'),(2,'Equipamientos'),(3,'Accesorios'),(4,'Repuestos');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -158,8 +158,8 @@ CREATE TABLE `product` (
   `brandId` int(11) NOT NULL,
   `subcategoryId` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  CONSTRAINT `product_FK` FOREIGN KEY (`id`) REFERENCES `subcategory` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `product_FK_1` FOREIGN KEY (`id`) REFERENCES `brands` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `subcategoria` FOREIGN KEY (`subcategoryId`) REFERENCES `subcategory` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `marcas` FOREIGN KEY (`brandsId`) REFERENCES `brands` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -185,7 +185,7 @@ CREATE TABLE `productimage` (
   `image` varchar(100) DEFAULT NULL,
   `productId` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  CONSTRAINT `products_images_FK` FOREIGN KEY (`id`) REFERENCES `product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `products_images_FK` FOREIGN KEY (`productId`) REFERENCES `product` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -211,7 +211,7 @@ CREATE TABLE `subcategory` (
   `name` varchar(50) NOT NULL,
   `categoryId` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  CONSTRAINT `subcategory_FK` FOREIGN KEY (`id`) REFERENCES `category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `categoria` FOREIGN KEY (`categoryId`) REFERENCES `category` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -221,7 +221,7 @@ CREATE TABLE `subcategory` (
 
 LOCK TABLES `subcategory` WRITE;
 /*!40000 ALTER TABLE `subcategory` DISABLE KEYS */;
-INSERT INTO `subcategory` VALUES (1,'MaquinasSubcategory',1);
+INSERT INTO `subcategory` VALUES (1,'Clippers',1),(2,'Trimmers',1),(3,'Shavers',1),(4,'Sillones',2),(5,'Lavacabezas',2),(6,'Tijeras',3),(7,'Peines',3),(8,'Secadores',3),(9,'Mantenimiento',4),(10,'Cabezales',4);
 /*!40000 ALTER TABLE `subcategory` ENABLE KEYS */;
 UNLOCK TABLES;
 
