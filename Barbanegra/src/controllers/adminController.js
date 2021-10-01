@@ -16,6 +16,7 @@ module.exports = {
             {association:"subcategory"}]
         })
         .then(producto =>{
+          
             
           res.render('admin/adminProductos',{
             producto,

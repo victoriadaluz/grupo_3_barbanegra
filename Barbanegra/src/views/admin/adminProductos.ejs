@@ -41,7 +41,7 @@
         <% } %></td>
             <td data-label="DESCUENTO"><%= producto.discount %></td>        
         <td data-label="SUBCATEGORÍA"><%= producto.subcategory.name %></td>
-        <td data-label="Imagen"><img src="/images/<%= producto.productImage[0].image%>" alt=""></td>  
+        <td data-label="Imagen"><img id='imagenAdmin' src="/images/productos/<%= producto.productImage.length > 0 ? producto.productImage[0].image : 'default-image.png'%>" alt=""></td>  
 
         <!-- <td>
           <a href="/admin/eliminarproducto/<%= producto.id %>?_method=DELETE" method="POST">
