@@ -12,7 +12,7 @@
             allowNull:false,
         },
         categoryId:{
-            type: Datatypes.STRING,
+            type: Datatypes.INTEGER,
             allowNull:false,
         }
     } 
