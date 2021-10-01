@@ -1,12 +1,12 @@
-/* 
- */
+
  .adminMain,
  .adminM{
     margin-top: 150px;
     margin-bottom: 50px;
     width: 100%;
+    
  }
- #imagenAdmin{width: 100%; height: 100%;}
+
  .adminMain h1{
     width: 100%;
      color: #FFFEFE;
@@ -17,6 +17,7 @@
      margin-bottom: 20px;
  }
  .adminMain form{
+    max-width: 1440px;
      width: 600px;
      margin: auto;
      background: rgba(0, 0, 1, 0.3);
@@ -57,13 +58,23 @@
  .titleAdminP h1{
     margin: 8px 0px;
     font-size: 50px;
+    box-sizing: border-box;
  }
 
  .tableAd{
     width: 100%;
-    background-color: #FFFEFE;
+    background-color: #011528;
     text-align: left;
  }
+ .tableAd td i{
+     color: #92c1e9;
+ }
+ .tableAd td i:hover{
+     color: #7D2AE8;
+ }
+ 
+
+ 
  /* .tableAd td{
      overflow: hidden;
      white-space: nowrap;
@@ -80,8 +91,9 @@ thead{
 }
 
 tr:nth-child(even){
-    background-color: #f0f0f0;
+    background-color:#08354F;
 }
+
 tr:hover{
     background-color: #1B5185;
     color: #FFFEFE;
@@ -89,6 +101,8 @@ tr:hover{
 .tableAd tr{
     border: 1px solid #08354F;
 }
+
+
 
 @media screen  and (max-width: 480px){
     .tableAd{
