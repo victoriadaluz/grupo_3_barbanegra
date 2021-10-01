@@ -7,6 +7,9 @@
     <!-- HEADER -->
     <%- include('./partials/header') %>
     <main>
+        <div class="sectionTitle titleCategory">
+            <h3><%- category.name %></h3>
+        </div>
         <section class="cards cardsProductsB">
             <% products.forEach(product => { %> 
                 <article class="card-de card--1">

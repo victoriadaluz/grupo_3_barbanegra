@@ -76,7 +76,7 @@ module.exports = {
                 email,
                 password
             } = req.body
-            User.create({
+            Users.create({
                 firstName,
                 email,
                 password: bcrypt.hashSync(password, 10),
@@ -85,7 +85,9 @@ module.exports = {
                 nombre: "",
                 direccion: "",
                 telefono: "",
-            })
+            }).then(() => {
+                res.redirect('/users/login')
+            }).catch(err => console.log(err))
         } else {
             res.render('loginRegistro', {
                 title: 'Login-Barbanegra',
@@ -132,35 +134,38 @@ module.exports = {
             number,
             postalCode
         } = req.body
-        if(errors.isEmpty()){
+        if (errors.isEmpty()) {
             Users.update({
-                firstName: firstName,
-                lastName: lastName,
-                tel: tel,
-                street: street,
-                city: city,
-                province: province,
-                number: number,
-                postalCode: postalCode,
-                image: req.file && req.file.filename,
-            }, {
-                where: {
-                    id: req.session.user.id
-                }
-            })
-            .then(() => {
-                Users.findByPk(req.params.id)
-                .then(()=>{res.redirect('/users/profile')})
-            }).catch(err => console.log(err))
-        }/* else{
-            res.render('UserProfile2', {
-                session: req.session,
-                old: req.body,
-                errors : errors.mapped()
-            })
-        } */
-        
-       
+                    firstName: firstName,
+                    lastName: lastName,
+                    tel: tel,
+                    street: street,
+                    city: city,
+                    province: province,
+                    number: number,
+                    postalCode: postalCode,
+                    image: req.file && req.file.filename,
+                }, {
+                    where: {
+                        id: req.session.user.id
+                    }
+                })
+                .then(() => {
+                    Users.findByPk(req.params.id)
+                        .then(() => {
+                            res.redirect('/users/profile')
+                        })
+                }).catch(err => console.log(err))
+        }
+        /* else{
+                    res.render('UserProfile2', {
+                        session: req.session,
+                        old: req.body,
+                        errors : errors.mapped()
+                    })
+                } */
+
+
 
 
     },

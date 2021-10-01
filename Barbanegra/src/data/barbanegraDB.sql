@@ -115,7 +115,7 @@ CREATE TABLE `category` (
 
 LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (1,'Maquinas');
+INSERT INTO `category` VALUES (1,'Maquinas'),(2,'Equipamientos'),(3,'Accesorios'),(4,'Repuestos');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -158,8 +158,8 @@ CREATE TABLE `product` (
   `brandId` int(11) NOT NULL,
   `subcategoryId` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  CONSTRAINT `product_FK` FOREIGN KEY (`id`) REFERENCES `subcategory` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `product_FK_1` FOREIGN KEY (`id`) REFERENCES `brands` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `subcategoria` FOREIGN KEY (`subcategoryId`) REFERENCES `subcategory` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `marcas` FOREIGN KEY (`brandsId`) REFERENCES `brands` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -185,7 +185,7 @@ CREATE TABLE `productimage` (
   `image` varchar(100) DEFAULT NULL,
   `productId` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  CONSTRAINT `products_images_FK` FOREIGN KEY (`id`) REFERENCES `product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `products_images_FK` FOREIGN KEY (`productId`) REFERENCES `product` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -211,7 +211,7 @@ CREATE TABLE `subcategory` (
   `name` varchar(50) NOT NULL,
   `categoryId` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  CONSTRAINT `subcategory_FK` FOREIGN KEY (`id`) REFERENCES `category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `categoria` FOREIGN KEY (`categoryId`) REFERENCES `category` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -221,7 +221,7 @@ CREATE TABLE `subcategory` (
 
 LOCK TABLES `subcategory` WRITE;
 /*!40000 ALTER TABLE `subcategory` DISABLE KEYS */;
-INSERT INTO `subcategory` VALUES (1,'MaquinasSubcategory',1);
+INSERT INTO `subcategory` VALUES (1,'Clippers',1),(2,'Trimmers',1),(3,'Shavers',1),(4,'Sillones',2),(5,'Lavacabezas',2),(6,'Tijeras',3),(7,'Peines',3),(8,'Secadores',3),(9,'Mantenimiento',4),(10,'Cabezales',4);
 /*!40000 ALTER TABLE `subcategory` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -258,7 +258,7 @@ DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(100) CHARACTER SET utf8mb4 NOT NULL,
   `password` varchar(70) CHARACTER SET utf8mb4 NOT NULL,
   `firstName` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
@@ -272,7 +272,7 @@ CREATE TABLE `user` (
   `postalCode` int(11) DEFAULT NULL,
   `number` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=ujis;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=ujis;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -281,7 +281,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (0,'gonza@gonza.com','$2a$10$a0ToBEFbL2NtVH.z3dNDg.FpMGlN5igIqgKPVV2tra7xPr0uaW.Me','gonzalito','messi','222222','1632994240037_img_.png',1,'messitetraelacopa','argentina','mendoza',123,2022);
+INSERT INTO `user` VALUES (1,'gonza@gonza.com','$2a$10$a0ToBEFbL2NtVH.z3dNDg.FpMGlN5igIqgKPVV2tra7xPr0uaW.Me','gonzalo','messi','222222','1633038155436_img_.png',1,'messitetraelacopa','argentina','mendoza',123,2022),(2,'vic2@vic.com','$2a$10$5R0VUK/6AHoeFE9ucumuk.XXcAH2GzkHp2IifhCkcVcnffnVSLWZ2','vicky',NULL,NULL,'default-user.png',0,NULL,NULL,NULL,NULL,NULL),(3,'vic@vic.com','$2a$10$ARUnBcr.ikjHGbxDWrZOQ.7bpI5a2zptIz10BTDueQSWgoY5CKe9W','vicky',NULL,NULL,'default-user.png',0,NULL,NULL,NULL,NULL,NULL),(4,'devo@devo.com','$2a$10$Kp9fXD10ca3u/5wC5ukv5eGO.wkgfKHCEL3KuzcOxKxspOXXgaP1y','devo',NULL,NULL,'default-user.png',0,NULL,NULL,NULL,NULL,NULL),(5,'paulo@paulo.com','$2a$10$0mw0e/PaCsry5REpdPU2/uK05ZoMfdIDPflwIk2Zq0sM6lQbK/Lsm','paulo',NULL,NULL,'default-user.png',0,NULL,NULL,NULL,NULL,NULL),(6,'messi@messi.com','$2a$10$gsrItwEcASGgBB88nYh41e.spmLEdX.IUEMv.ppNUT0xxiEJj22t.','messi',NULL,NULL,'default-user.png',0,NULL,NULL,NULL,NULL,NULL),(7,'gonza@gonza.com','$2a$10$zpuPGAOv7LfomHA1C1goFOz3OfudGDWnx73We0Ap2w8ZptMxRgdz6','',NULL,NULL,'default-user.png',0,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -298,4 +298,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-09-30  6:34:10
+-- Dump completed on 2021-09-30 19:26:47
