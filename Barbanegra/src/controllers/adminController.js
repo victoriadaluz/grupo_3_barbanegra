@@ -1,7 +1,7 @@
 let { products, addProduct,categories} = require('../data/dataBase');
 const { validationResult } = require('express-validator');
 const fs = require('fs')
-const {Product} = require('../database/models')
+const {Product,Subcategory,Category} = require('../database/models')
 
 module.exports = {
     index: (req, res) => {
@@ -26,10 +26,20 @@ module.exports = {
         })
     },
     addProducts: (req,res) =>{
-        res.render('admin/agregarProducto',{
-            session:req.session.user?req.session.user:""
-        })
-        
+             
+            let category =Category.findAll()
+            let subcategory =Subcategory.findAll()
+            Promise.all([category,subcategory])
+            .then( ([category, subcategory ])=>{
+                res.render('admin/agregarProducto', {
+                    title:"carga-productos",
+                    category,
+                    subcategory,
+                    session:req.session.user?req.session.user:""
+                })}
+                )
+                .catch(err => console.log(err))     
+
     },
     uploadNewProduct: (req,res) =>{
         let lastID = 1
