@@ -45,19 +45,26 @@ module.exports = {
                 })
         },
         addProducts: (req, res) => {
-            let category = Category.findAll()
-            let subcategory = Subcategory.findAll()
-            Promise.all([category, subcategory])
-                .then(([category, subcategory]) => {
-                    res.render('admin/agregarProducto', {
-                        title: "carga-productos",
-                        category,
-                        subcategory,
-                        session: req.session.user ? req.session.user : ""
+            Category.findAll({
+                include: [{
+                    association: "subcategory"
+                }]
+            })
+            .then(categories => {
+                let subcategories = []
+                categories.forEach(category => {
+                    category.subcategory.forEach(subcategory => {
+                        subcategories.push(subcategory)
                     })
                 })
-                .catch(err => console.log(err))
-
+                
+                res.render('admin/agregarProducto', {
+                    categories,
+                    subcategories,
+                    session: req.session.user ? req.session.user : ""
+                })
+            })
+            .catch(err => console.log(err))
         },
         uploadNewProduct: (req, res) => {
             let arrayImages = [];
