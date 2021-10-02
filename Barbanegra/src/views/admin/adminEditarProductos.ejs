@@ -7,9 +7,18 @@
         <form action="/admin/productos/editar/<%= productoAEditar.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
             <h2>Editar producto</h2>
             <label for="inputName">Nombre </label>
-            <input type="text" name="name" id="inputName" value='<%= productoAEditar.name %>'>
-            <label for="inputBrand">Marca</label>
-            <input type="text" name="brand" id="inputBrand" value="<%= productoAEditar.brand.name %>">
+            <input type="text" name="name" value = "<%= productoAEditar.name %> "> 
+            <br>
+            <div class=""> 
+                <label for="categoryInput">Marca</label>
+                <br>
+                <select class="form-select w-full" id="specificSizeSelect" name="brand">
+                  <option selected hidden value=""><%- productoAEditar.brand.name %></option>
+                 <% brand.forEach(brand => { %>
+                    <option value="<%- brand.id %>" <%= locals.old && old.category == subcategory.id ? "selected" : "" %> ><%- brand.name %></option>
+                 <% }) %>
+                </select>
+            </div>
             <label for="inputPrice">Precio</label>
             <input type="text" name="price" id="inputPrice" value="<%= productoAEditar.price %>">
             <label for="inputDiscount">Descuento</label>
@@ -30,7 +39,7 @@
             <div class=''>
                 <label for="categoryInput">Categorias</label>
                 <br>
-                <select class="form-select w-full" id="specificSizeSelect" name="subcategory">
+                <select class="form-select w-full" id="specificSizeSelect" name="category">
                   <option selected hidden value=""><%- productoAEditar.subcategory.categoryId %></option>
                  <% category.forEach(category => { %>
                     <option value="<%- category.id %>" <%= locals.old && old.category == category.id ? "selected" : "" %> ><%-category.id %>:<%-category.name %></option>
