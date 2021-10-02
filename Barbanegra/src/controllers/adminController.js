@@ -67,21 +67,45 @@ module.exports = {
             .catch(err => console.log(err))
         },
         uploadNewProduct: (req, res) => {
-            let arrayImages = [];
-            if (req.files) {
-                req.files.forEach(imagen => {
-                    arrayImages.push(imagen.filename)
-                })
-            }
             let {
                 name,
                 description,
                 brand,
                 price,
-                discount,
-                category,
-                image
-            } = req.body
+                discount,                    
+                subcategory,
+            } = req.body;
+            
+        let arrayImages = []
+        if (req.files.length > 0) {
+            req.files.forEach(imagen =>{
+                
+                arrayImages.push(imagen.filename)
+            })
+            
+        }else{
+            arrayImages.push("default-image.png")
+        }
+        Product.create({
+            name,
+            description,
+            brandId:brand,
+            price,
+            discount,                    
+            subcategoryId:subcategory 
+        })
+            .then((producto)=> {
+                
+                let images = arrayImages.map(imagen => {
+                    return {
+                        imgName:imagen,
+                        productId:producto.id
+                    }
+                })
+                ProductImage.bulkCreate(images)
+                res.redirect("/admin")
+            })
+            .catch(err => console.log(err))
 
 
 
