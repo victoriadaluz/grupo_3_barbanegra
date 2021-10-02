@@ -7,9 +7,12 @@
 <div>
 
 <main class="adminMain">
+  <div class="admin-btn">
   <h1>LISTADO DE PRODUCTOS</h1> 
-  <button class="btn-log"><a href="/admin/agregarProducto">Agregar</a></button>
+  <button class="btn-log btn-admin"><a href="/admin/agregarProducto">Agregar</a></button>
+  </div>
   <table class="tableAd">
+    
     <thead>
       <tr>
         <th>ID</th>
@@ -25,13 +28,13 @@
       </tr>
 
     </thead>
-    <tbody class="bg-black" >
+    <tbody>
       <% producto.forEach(producto => { %>
       <tr  >
         <td data-label="ID"><%= producto.id %></td>
         <td data-label="NOMBRE"><%= producto.name %></td>
         <td data-label="MARCA"><%= producto.brand.name %></td>
-        <td data-label="PRECIO"><%= producto.price %></td>
+        <td data-label="PRECIO">$<%= producto.price %></td>
         <td data-label="DESCRIPCIÓN"> 
           <% if(producto.description.length > 10) { %>
           <% let descriptionSlice = producto.description.slice(0,10) + "..." %>
@@ -39,7 +42,7 @@
           <% }else{ %>
           <%= producto.description %>
         <% } %></td>
-            <td data-label="DESCUENTO"><%= producto.discount %></td>        
+            <td data-label="DESCUENTO"><%= producto.discount %>%</td>        
         <td data-label="SUBCATEGORÍA"><%= producto.subcategory.name %></td>
         <td data-label="Imagen"><img id='imagenAdmin' src="/images/productos/<%= producto.productImage.length > 0 ? producto.productImage[0].image : 'default-image.png'%>" alt=""></td>  
 

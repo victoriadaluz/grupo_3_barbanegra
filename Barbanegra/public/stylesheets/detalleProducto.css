@@ -544,6 +544,9 @@ body {
     border-radius: 40px;
     animation-duration: 6.5s;
     transition: all 600ms;
+
+    animation: cambio 30s infinite alternate;
+    animation-timing-function: ease-in ;
     }
 
     .container-algomas {
