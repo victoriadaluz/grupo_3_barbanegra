@@ -23,13 +23,13 @@
                     <div class="card__img"></div>
                     <a href="/productos/detalle/<%- product.id %> " class="card_link">
                         <div class="card__img--hover">
-                            <img src="/images/productos/<%- product.image %>" alt="">
+                            <img src="/images/productos/<%= product.productImage.length > 0 ? product.productImage[0].image : 'default-image.png'%>"alt="">
                         </div>
                     </a>
                     <div class="card__info">
                         <span class="card__brand"><%- product.brand %></span>
                         <h3 class="card__by"><%- product.name %></h3>
-                        <span class="card__by"><%- product.price %>
+                        <span class="card__by">$<%- product.price %>
                             <i class="fas fa-truck"></i>
                             <a href="/cart" class="card__cart" title="Cart"><i class="fas fa-cart-plus"></i></a>
     

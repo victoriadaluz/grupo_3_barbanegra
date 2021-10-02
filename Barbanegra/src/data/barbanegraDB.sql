@@ -196,7 +196,7 @@ CREATE TABLE `productimage` (
 
 LOCK TABLES `productimage` WRITE;
 /*!40000 ALTER TABLE `productimage` DISABLE KEYS */;
-INSERT INTO `productimage` VALUES (1,'maquina2-1.jpeg',1);
+INSERT INTO `productimage` VALUES (1,'maquina2-1.jpeg',1),(2,'trimmer1-1.jpeg',2),(3,'shaver1-1.jpeg',3),(4,'tijeraJay2.jpeg',4),(5,'combo1-1.jpeg',5),(6,'sillon1-1.jpeg',6),(7,'lubricanteBL.jpeg',7),(8,'repuesto-5.jpeg',8),(9,'lavacabeza4-1.jpeg',9),(10,'secador1.jpeg',10),(11,'peines1-2.jpeg',11),(12,'supercombo1.jpeg',12),(13,'trimmer4-1.jpeg',13),(14,'lubricanteW.jpeg',14),(15,'maquina3-1.jpeg',15),(16,'sillon2-1.jpeg',16),(17,'tij_safari_5,5.jpeg',17),(18,'maquina4-1.jpeg',18),(19,'beret.jpeg',19),(20,'secador2.jpeg',20),(21,'shaver2.jpeg',21),(22,'repuesto2.jpeg',22);
 /*!40000 ALTER TABLE `productimage` ENABLE KEYS */;
 UNLOCK TABLES;
 
