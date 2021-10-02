@@ -1,13 +1,24 @@
 let {
     products
 } = require('../data/dataBase');
+const { validationResult } = require('express-validator');
+const fs = require('fs');
+const {Product,Subcategory,Category} = require('../database/models');
 
 module.exports = {
     index: (req, res) => {
-        let productsInSale = products.filter(product => product.condition === "inSale")
-        res.render('home', {
-            productsInSale,
+        Product.findAll({
+            include:[{association:'productImage'},{association:"brand"},
+            {association:"subcategory"}]
+        })
+        .then(producto =>{
+          
+            
+          res.render('home',{
+            producto,
             session:req.session.user?req.session.user:""
+             
+          })
         })
     },
     carrito: (req, res) => {
