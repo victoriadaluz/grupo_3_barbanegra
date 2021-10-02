@@ -196,17 +196,15 @@ module.exports = {
 
 
                     
-                 deleteProduct: (req, res) => {
-                        products.forEach(product => { //buscamos el producto a eliminar
-                            if (product.id === +req.params.id) {
-                                let productToDelete = products.indexOf(product);
-                                products.splice(productToDelete, 1); //una vez que lo encontramos ubicamos en el array principal y cortamos desde la posicion hasta el siguiente ([array] de 0 a 1)
 
-                            }
-                        })
-                        addProduct(products); //pusheamos sin el elemento encontrado 
-                        res.redirect('/admin/productos')
+          deleteProduct: (req, res) => {
+            Product.destroy({
+                 where : {
+                      id : +req.params.id
+                        }
+                  })
+                  res.redirect("/admin")
 
+                 }
 
-                    }
                 }
