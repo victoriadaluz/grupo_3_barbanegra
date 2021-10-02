@@ -3,67 +3,66 @@
     <%- include('../partials/head.ejs')  %> 
 <body>
     <%- include('../partials/headerAdmin.ejs')  %> 
-    <main class="container">
-        <h3 class="text-center">Editar producto</h3>
-<section class="edit-container">
-    <div class="edit-container-form">
+    <main class="adminMain text-black">
         <form action="/admin/productos/editar/<%= productoAEditar.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-            <div>
-                <label for="inputName" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="inputName" name="name" value="<%= productoAEditar.name %>">
-            </div>
-            <div>
-                <label for="inputName" class="form-label">Marca</label>
-                <input type="text" class="form-control" id="inputName" name="brand" value="<%= productoAEditar.brand %>">
-            </div>
-            <div>
-                <label for="inputPrice" class="form-label">Precio</label>
-                <input type="number" class="form-control" id="inputPrice" name="price" value="<%= productoAEditar.price %>">
-            </div>
-            <div >
-                <label for="inputDiscount" class="form-label">Descuento</label>
-                <input type="number" class="form-control" id="inputDiscount" name="discount" value="<%= productoAEditar.discount %>">
-            </div>
-            <div >
-                <label for="validationTextarea" class="form-label">Descripción</label>
-                <textarea class="form-control" id="validationTextarea" name="description"><%= productoAEditar.description %></textarea>
-            </div>
-            <div> 
-                <div>
-                <label for="inputCategory" class="form-label">Categoría</label>
-            </div>
-                <select id="specificSizeSelect" name="category">
-                  <option selected hidden value="">Categorias</option>
-                 <% categories.forEach(category => { %>
-                    <option value="<%- category.id %>" <%- category.id == productoAEditar.category ? `selected` : ""  %>><%- category.name %></option>
+            <h2>Editar producto</h2>
+            <label for="inputName">Nombre </label>
+            <input type="text" name="name" value = "<%= productoAEditar.name %> "> 
+            <br>
+            <div class=""> 
+                <label for="categoryInput">Marca</label>
+                <br>
+                <select class="form-select w-full" id="specificSizeSelect" name="brand">
+                  <option selected hidden value=""><%- productoAEditar.brand.name %></option>
+                 <% brand.forEach(brand => { %>
+                    <option value="<%- brand.id %>" <%= locals.old && old.category == subcategory.id ? "selected" : "" %> ><%- brand.name %></option>
                  <% }) %>
                 </select>
             </div>
-            <div> 
-                <div>
-                <label for="inputCategory" class="form-label">Sub Categoría</label>
-            </div>
-                <select id="specificSizeSelect" name="subcategory">
-                  <option selected hidden value="">Subcategorias</option>
-                 <% subcategories.forEach(subcategory => { %>
-                    <option value="<%- subcategory%>" <%- subcategory == productoAEditar.subcategory ? `selected` : ""  %>><%- subcategory %></option>
+            <label for="inputPrice">Precio</label>
+            <input type="text" name="price" id="inputPrice" value="<%= productoAEditar.price %>">
+            <label for="inputDiscount">Descuento</label>
+            <input type="text" name="discount" id="inputDiscount" value="<%= productoAEditar.discount %>">
+            <div class=""> 
+                <label for="categoryInput">Subcategorias</label>
+                <br>
+                <select class="form-select w-full" id="specificSizeSelect" name="subcategory">
+                  <option selected hidden value=""><%- productoAEditar.subcategory.name %></option>
+                 <% subcategory.forEach(subcategory => { %>
+                    <option value="<%- subcategory.id %>" <%= locals.old && old.category == subcategory.id ? "selected" : "" %> ><%- subcategory.name %></option>
                  <% }) %>
                 </select>
+                <% if (locals.errors && errors.category) { %>
+                    <small class="text-danger"><%= errors.category.msg %></small>
+                <% } %>
             </div>
-
-            <div>
+            <div class=''>
+                <label for="categoryInput">Categorias</label>
+                <br>
+                <select class="form-select w-full" id="specificSizeSelect" name="category">
+                  <option selected hidden value=""><%- productoAEditar.subcategory.categoryId %></option>
+                 <% category.forEach(category => { %>
+                    <option value="<%- category.id %>" <%= locals.old && old.category == category.id ? "selected" : "" %> ><%-category.id %>:<%-category.name %></option>
+                 <% }) %>
+                </select>
+                <% if (locals.errors && errors.category) { %>
+                    <small class="text-danger"><%= errors.category.msg %></small>
+                <% } %>
+            </div>
+            <label for="textDescription">Descripción</label>
+              <textarea name="description" id="textDescription"><%= productoAEditar.description %></textarea>
+              <figure class="text-center">
+                <img id="userAvatar" src="/images/productos/<%= productoAEditar.productImage.length > 0 ? productoAEditar.productImage[0].image : 'default-image.png'%>" alt="" width="200px" height="200px"
+                  class="rounded-circle avatar">
+              </figure>
+              <div class="">
                 <label for="inputImage" class="form-label">Imagen</label>
-                <input type="file" name="image" class="form-control" aria-label="file example" id="inputImage" multiple>
+                <input type="file" name="image" class="form-control" aria-label="file example" id="inputImage" multiple>               
             </div>
-            <div>
-                <label for="inputName" class="form-label">Condición</label>
-                <input type="text" class="form-control" id="inputName" name="condition" value="<%= productoAEditar.condition %>">
-            </div>
-            <div>
-                <button type="submit" class="btn btn-primary">GUARDAR</button>
-            </div>
+              <button type="submit" class="btn-log">
+                GUARDAR
+            </button>
         </form>
-
     
 </section>
 </main>

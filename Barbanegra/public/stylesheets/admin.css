@@ -1,10 +1,252 @@
-.column-mobile {
-    display: none;
+
+ .adminMain,
+ .adminM{
+    margin-top: 150px;
+    margin-bottom: 50px;
+    width: 100%;
+    
+ }
+
+ .adminMain h1{
+    width: 100%;
+     color: #FFFEFE;
+     text-align: center;
+     font-size: 30px;
+ }
+ .adminMain div{
+     margin-bottom: 20px;
+ }
+ .adminMain form{
+    max-width: 1440px;
+     width: 600px;
+     margin: auto;
+     background: rgba(0, 0, 1, 0.3);
+     padding: 10px 20px;
+     box-sizing: border-box;
+     margin-top: 20px;
+     border-radius: 7px;
+ }
+
+ .adminMain h2{
+     color: #FFFEFE;
+     text-align: center;
+     margin: 0;
+     font-size: 30px;
+     text-transform: uppercase;
+     margin-bottom: 20px;
+ }
+ .adminMain input,
+ .adminMain textarea{
+     width: 100%;
+     margin-bottom: 20px;
+     padding: 7px;
+     box-sizing: border-box;
+     font-size: 17px;
+     border: none;
+ }
+ .adminMain textarea{
+    min-height: 100px;
+    max-height: 200px;
+    max-width: 100%;
+ }
+ .adminMain label{
+     color: #92c1e9 ;
+ }
+ .titleAdminP a{
+     flex-direction: inherit;
+ }
+ .titleAdminP h1{
+    margin: 8px 0px;
+    font-size: 50px;
+    box-sizing: border-box;
+ }
+
+ .tableAd{
+    width: 100%;
+    background-color: #011528;
+    text-align: left;
+ }
+ .tableAd td i{
+     color: #92c1e9;
+ }
+ .tableAd td i:hover{
+     color: #7D2AE8;
+ }
+ 
+
+ 
+ /* .tableAd td{
+     overflow: hidden;
+     white-space: nowrap;
+     text-overflow: ellipsis;
+ } */
+ td,th{
+     padding: 10px;
+     text-align: center;
+ }
+thead{
+    background-color: #1B5185;
+    border-bottom: solid 5px #08354F;
+    color: white;
 }
 
-@media only screen and (max-width: 560px){
-    .column-mobile{
-        display: table-cell;
+tr:nth-child(even){
+    background-color:#08354F;
+}
+
+tr:hover{
+    background-color: #1B5185;
+    color: #FFFEFE;
+}
+.tableAd tr{
+    border: 1px solid #08354F;
+}
+
+
+
+@media screen  and (max-width: 480px){
+    .tableAd{
+        border: 0px;
+    }
+    .titleAdminP h1{
+        font-size: 30px;
+    }
+    .tableAd thead{
+        display: none;
+    }
+    .tableAd tr{
+        margin-bottom: 8px;
+        border-bottom: 4px solid #08354F;
+        display: block;
+    }
+    .tableAd th, .tableAd td{
+        font-size: 12px;
+    }
+    .tableAd td{
+        display: block;
+        border-bottom: 1px solid #ddd ;
+        text-align: right;
+    }
+    .tableAd td:last-child{
+        border-bottom: 0px;
+    }
+    .tableAd td::before{
+        content: attr(data-label);
+        font-weight: bold;
+        text-transform: uppercase;
+        float: left;
+    }
+    .adminMain form{
+        width: 100%;
     }
 }
 
+@media screen  and (max-width: 1024px){
+    .adminMain,
+ .adminM{
+    margin-top: 150px;
+    margin-bottom: 50px;
+    width: 100%;
+ }
+ #imagenAdmin{width: 100%; height: 100%;}
+ .adminMain h1{
+    width: 100%;
+     color: #FFFEFE;
+     text-align: center;
+     font-size: 30px;
+ }
+ .adminMain div{
+     margin-bottom: 20px;
+ }
+ .adminMain form{
+     width: 600px;
+     margin: auto;
+     background: rgba(0, 0, 1, 0.3);
+     padding: 10px 20px;
+     box-sizing: border-box;
+     margin-top: 20px;
+     border-radius: 7px;
+ }
+
+ .adminMain h2{
+     color: #FFFEFE;
+     text-align: center;
+     margin: 0;
+     font-size: 30px;
+     text-transform: uppercase;
+     margin-bottom: 20px;
+ }
+ .adminMain input,
+ .adminMain textarea{
+     width: 100%;
+     margin-bottom: 20px;
+     padding: 7px;
+     box-sizing: border-box;
+     font-size: 17px;
+     border: none;
+ }
+ .adminMain textarea{
+    min-height: 100px;
+    max-height: 200px;
+    max-width: 100%;
+ }
+ .adminMain label{
+     color: #92c1e9 ;
+ }
+ .titleAdminP a{
+     flex-direction: inherit;
+ }
+ .titleAdminP h1{
+    margin: 8px 0px;
+    font-size: 50px;
+ }
+
+ .tableAd{
+    width: 100%;
+    background-color: #011528;
+    text-align: left;
+ }
+ /* .tableAd td{
+     overflow: hidden;
+     white-space: nowrap;
+     text-overflow: ellipsis;
+ } */
+ td,th{
+     padding: 10px;
+     text-align: center;
+ }
+thead{
+    background-color: #1B5185;
+    border-bottom: solid 5px #08354F;
+    color: white;
+}
+
+tr:nth-child(even){
+    background-color: #08354F;
+}
+tr:hover{
+    background-color: #1B5185;
+    color: #FFFEFE;
+}
+.tableAd tr{
+    border: 1px solid #08354F;
+}
+}
+
+@media screen  and (min-width: 1024px){
+
+    .tableAd{
+       width: 60%;
+       background-color: #011528;
+       text-align: left;
+       margin: 0 auto;
+    }
+
+    .btn-admin {
+        margin: 0 20%;
+    }
+   
+tr:nth-child(even){
+    background-color: #08354F;
+}
+}

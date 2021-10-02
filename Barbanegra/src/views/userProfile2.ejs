@@ -1,228 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
-    <%- include('./partials/head')%>
-<body>
-    <%- include('./partials/header')%>
-    <div class ="userImage">
-    <div class="main-content">
-      <!-- Top navbar -->
-      <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
-        <div class="container-fluid">
-          <!-- Brand -->
-          <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="https://www.creative-tim.com/product/argon-dashboard" target="_blank">PERFIL DE USUARIO</a>
-          <form action="/users/profile?_method=PUT" method="POST" enctype="multipart/form-data">
-            <div class="profile-img">
-                <img src="/images/users/<%= session.avatar ? session.avatar:"default-user.png"%>" alt="avatar">
-                <input class="imput-avatar" type="file" name="avatar">
-            </div>
-            </form>
-          <!-- Form -->
-         <!--  <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
-            <div class="form-group mb-0">
-              <div class="input-group input-group-alternative">
-                <div class="input-group-prepend">
-                  <span class="input-group-text"><i class="fas fa-search"></i></span>
-                </div>
-                <input class="form-control" placeholder="Search" type="text">
-              </div>
-            </div>
-          </form> -->
-          <!-- User -->
-          <ul class="navbar-nav align-items-center d-none d-md-flex">
-            <li class="nav-item dropdown">
-              <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <!-- <div class="media align-items-center">
-                  <span class="avatar avatar-sm rounded-circle">
-                    <img src="/images/users/<%= session ? session.avatar : "default-user.png" %> " alt="">
-                  </span>
-                  <div class="media-body ml-2 d-none d-lg-block">
-                    <span class="mb-0 text-sm  font-weight-bold"><%= session.nombre %></span>
-                  </div>
-                </div> -->
-              </a>
-              <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
-                <div class=" dropdown-header noti-title">
-                  <h6 class="text-overflow m-0">Bienvenido!</h6>
-                </div>
-                <a href="../examples/profile.html" class="dropdown-item">
-                  <i class="ni ni-single-02"></i>
-                  <span>Mi perfil</span>
-                </a>
-                <a href="../examples/profile.html" class="dropdown-item">
-                  <i class="ni ni-settings-gear-65"></i>
-                  <span>Configuración</span>
-                </a>
-                <a href="../examples/profile.html" class="dropdown-item">
-                  <i class="ni ni-calendar-grid-58"></i>
-                  <span>Actividad</span>
-                </a>
-                <a href="../examples/profile.html" class="dropdown-item">
-                  <i class="ni ni-support-16"></i>
-                  <span>Ayuda</span>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#!" class="dropdown-item">
-                  <i class="ni ni-user-run"></i>
-                  <span>Cerrar sesión</span>
-                </a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </nav>
-        <!-- Mask -->
-        <span class="mask bg-gradient-default opacity-8"></span>
-        <!-- Header container -->
-        <div class="container-fluid d-flex align-items-center">
-          <div class="row">
-            <div class="col-lg-7 col-md-10">
-              <h1 class="display-2 text-white">HOLA <%= session.user %> !</h1>
-              <p class="text-white mt-0 mb-5">Este es tu perfil. Aquí están sus productos favoritos y datos personales.</p>
-              <a href="/users/profile/edit/<%=session.id %>" class="btn btn-info">Editar perfil</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Page content -->
-      <div class="container-fluid mt--7">
-        <div class="row">
-          <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
-            <div class="card card-profile shadow">
-              <div class="row justify-content-center">
-                <div class="col-lg-3 order-lg-2">
-                  <div class="card-profile-image">
-                    <a href="#">
-                      <img src="https://demos.creative-tim.com/argon-dashboard/assets/img/theme/team-4.jpg" class="rounded-circle">
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
-                <div class="d-flex justify-content-between">
-                  <a href="#" class="btn btn-sm btn-info mr-4">Conectar</a>
-                  <a href="#" class="btn btn-sm btn-default float-right">Mensaje</a>
-                </div>
-              </div>
-              <div class="card-body pt-0 pt-md-4">
-                <div class="row">
-                  <div class="col">
-                    <div class="card-profile-stats d-flex justify-content-center mt-md-5">
-                      <div>
-                        <span class="heading">5</span>
-                        <span class="description">Productos que te han gustado</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="text-center">
-                  <h3>
-                    <%=session.user %><span class="font-weight-light"></span>
-                  </h3>
-                  <div class="h5 font-weight-300">
-                    <i class="ni location_pin mr-2"></i><%= session.provincia ? session.province : "------" %>
-                  </div>
-                  <hr class="my-4">
-                  <p>Agregue una descripción</p>
-                  <a href="#">Ver más</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-8 order-xl-1">
-            <div class="card bg-secondary shadow">
-              <div class="card-header bg-white border-0">
-                <div class="row align-items-center">
-                  <div class="col-8">
-                    <h3 class="mb-0">Editar Perfil</h3>
-                  </div>
-                  <div class="col-4 text-right">
-                    <a href="#!" class="btn btn-sm btn-primary">Guardar</a>
-                  </div>
-                </div>
-              </div>
-              <div class="card-body">
-                <form>
-                  <h6 class="heading-small text-muted mb-4">Información de usuario</h6>
-                  <div class="pl-lg-4">
-                    <div class="row">
-                      <div class="col-lg-6">
-                        <div class="form-group focused">
-                          <label class="form-control-label" for="input-username">Nombre de usuario</label>
-                          <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="user" value="<%= session.user %>">
-                        </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <div class="form-group">
-                          <label class="form-control-label" for="input-email">Nombre</label>
-                          <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="nombre" value= "<%= session.nombre %>">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-lg-6">
-                        <div class="form-group focused">
-                          <label class="form-control-label" for="input-first-name">Apellido</label>
-                          <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="apellido" value= "<%= session.apellido %>"">
-                        </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <div class="form-group focused">
-                          <label class="form-control-label" for="input-last-name">Email</label>
-                          <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="email" value= "<%= session.email %>">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <hr class="my-4">
-                  <!-- Address -->
-                  <h6 class="heading-small text-muted mb-4">Información de contacto</h6>
-                  <div class="pl-lg-4">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="form-group focused">
-                          <label class="form-control-label" for="input-address">Dirección</label>
-                          <input id="input-address" class="form-control form-control-alternative" placeholder="direccion" value="<%= session.direccion ?session.direccion : "------" %>" type="text">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-lg-4">
-                        <div class="form-group focused">
-                          <label class="form-control-label" for="input-city">Provincia</label>
-                          <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="province" value="<%= session.province ?session.province : "------" %>">
-                        </div>
-                      </div>
-                      <div class="col-lg-4">
-                        <div class="form-group focused">
-                          <label class="form-control-label" for="input-country">Localidad</label>
-                          <input type="text" id="input-country" class="form-control form-control-alternative" placeholder="city" value="<%= session.city ?session.city : "------" %>">
-                        </div>
-                      </div>
-                      <div class="col-lg-4">
-                        <div class="form-group">
-                          <label class="form-control-label" for="input-country">Código postal</label>
-                          <input type="number" id="input-postal-code" class="form-control form-control-alternative" placeholder="pc" value= "<%= session.pc ? session.pc : "------" %>">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <hr class="my-4">
-                  <!-- Description -->
-                  <h6 class="heading-small text-muted mb-4">Sobre mi</h6>
-                  <div class="pl-lg-4">
-                   <!--  <div class="form-group focused">
-                      <label>Sobre mi</label>
-                      <textarea rows="4" class="form-control form-control-alternative" placeholder="Algunas palabras sobre mí ..."></textarea>
-                    </div> -->
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<html lang="es">
+<%- include('./partials/head') %>
+
+<body class="userProfile">
+  <%- include('./partials/header') %>
+  <main class="uProfile">
+    <div class="uTitle text-center">
+      <h4>Perfil de <%= user.firstName %> <%= user.lastName %> </h4>
     </div>
-  </div>
-    <%- include('partials/footer')%>
-    </body>
+    <div class="wrapper text-black">
+      <form action="/users/profile/edit/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <figure class="figureAvatar">
+          <img id="userAvatar" src="/images/users/<%= user.image %>" alt="" width="200px" height="200px"
+            class="rounded-circle avatar">
+        </figure>
+        <div class="input-file">
+          <input  class="buttonForm" type="file" id="file" name="image"><br><br>
+          <p>Cambiar foto de perfil</p>
+        </div>
+        <div class="inputfield">
+          <label>Nombre </label>
+          <input type="text" class="input"
+            value="<%= (typeof old != 'undefined' && old.firstName)?old.nombre:user.firstName %>" id="unombre"
+            name="firstName" placeholder="Nombre">
+          <small id="errorsNombre"
+            class="text-danger"><%= (typeof errors != 'undefined' && errors.nombre)?errors.nombre.msg: "" %>
+          </small>
+        </div>
+        <div class="inputfield">
+          <label>Apellido </label>
+          <input type="text" class="input"
+            value="<%= (typeof old != 'undefined' && old.lastName)?old.lastName:user.lastName %>" id="papellido"
+            name="lastName" placeholder="Apellido" %>">
+          <small id="errorsApellido"
+            class="text-danger"><%= (typeof errors != 'undefined' && errors.lastName)?errors.lastName.msg: "" %>
+          </small>
+        </div>
+        <div class="inputfield">
+          <label>Correo electrónico </label>
+          <input type="email" class="input"
+            value="<%= (typeof old != 'undefined' && old.email)?old.email:user.email %>" id="pemail" name="email"
+            placeholder="Correo electrónico">
+          <small id="errorsEmail"
+            class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %>
+          </small>
+        </div>
+        <div class="inputfield">
+          <label>Teléfono </label>
+          <input type="text" class="input" id="telefono"
+            value="<%= (typeof old != 'undefined' && old.tel)?old.tel:user.tel %>" name="tel" placeholder="Teléfono">
+          <small id="errorsTelefono"
+            class="text-danger"><%= (typeof errors != 'undefined' && errors.tel)?errors.tel.msg: "" %>
+          </small>
+        </div>
+        <div class="inputfield">
+          <label>Dirección </label>
+          <input id="direccion" type="text" class="input"
+            value="<%= (typeof old != 'undefined' && old.street)?old.street:user.street %>" name="street"
+            placeholder="Dirección">
+          <small id="errorsDireccion"
+            class="text-danger"><%= (typeof errors != 'undefined' && errors.direccion)?errors.direccion.msg: "" %>
+          </small>
+        </div>
+        <div class="inputfield">
+          <label>Numeracion </label>
+          <input id="numeracion" type="text" class="input"
+            value="<%= (typeof old != 'undefined' && old.number)?old.number:user.number %>" name="number"
+            placeholder="numeracion">
+          <small id="errorsDireccion"
+            class="text-danger"><%= (typeof errors != 'undefined' && errors.number)?errors.number.msg: "" %>
+          </small>
+        </div>
+        <div class="inputfield">
+          <label>Ciudad </label>
+          <input type="text" class="input" value="<%=user.city%>" name="city"
+            placeholder="<%= (typeof errors != 'undefined' && errors.city)?errors.city.msg: "ciudad" %>">
+        </div>
+        <div class="inputfield">
+          <label>Provincia </label>
+          <input type="text" class="input" value="<%=user.province%>" name="province"
+            placeholder="<%= (typeof errors != 'undefined' && errors.province)?errors.province.msg: "Escriba su provincia" %>">
+        </div>
+        <div class="inputfield">
+          <label>Código postal </label>
+          <input type="text" class="input" value="<%=user.postalCode%>" name="postalCode" placeholder="Ejemplo: 1823">
+        </div>
+        <button type="submit"
+        class="text-center bg-blue-400 font-bold text-white px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-500 rounded-full py-3 px-6">
+        Actualizar datos
+      </button>
+
+
+      </form>
+    </div>
+ 
+  </main>
+  <%- include('./partials/footer') %>
+</body>
+
 </html>

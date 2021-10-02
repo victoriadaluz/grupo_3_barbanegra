@@ -1,19 +1,47 @@
-<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark" style="background-color: #92c1e9;">
-    <a class="navbar-brand" href="/"><img class="img-fluid" src="/images/LOGOS/LOGO2SINFONDO.png" alt=""></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="../admin/productos">Productos<span class="sr-only">(current)</span></a>
+  <header>
+    <main>
+  <div class="wrapperH">
+    <nav>
+      <input type="checkbox" id="show-search">
+      <input type="checkbox" id="show-menu">
+      <label for="show-menu" class="menu-iconH"><i class="fas fa-bars"></i></label>
+      <div class="contentH">
+      <div class="logoH"><a href="/"> <img src="/images/LOGOS/logocompleto.png" alt=""> </a></div>
+        <ul class="linksH">
+          <li><a href="/">HOME</a></li>
+          <li>
+            <a href="#" class="desktop-linkH">PRODUCTOS</a>
+            <input type="checkbox" id="show-products">
+            <label for="show-products">PRODUCTOS</label>
+            <ul>
+             <li><a href="/admin/productos">Máquinas</a></li>
+               <li><a href="/admin/productos">Equipamiento</a></li>
+              <li><a href="/admin/productos">Accesorios</a></li>
+              <li><a href="/admin/productos">Repuestos</a></li> 
+            </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/admin">Inicio</a>
-        </li>
-      </ul>
-      <span class="navbar-text">
-        BARBA NEGRA ADMIN
-      </span>
-    </div>
-  </nav>
+          <li>
+            <% if (session != "") { %>
+             <a href="/users/profile">MI PERFIL</a>
+            <%} else{%> 
+              <a href="/users/login">INICIAR SESIÓN</a>
+              <%}%>           
+          </li>
+          <li>
+            <% if (session != "") { %>
+             <a href="/users/logout">CERRAR SESIÓN</a>
+            <%}
+            %>           
+          </li>
+          <li><a href="#">USUARIOS</a></li>
+        </ul>
+      </div>
+      <label for="show-search" class="searchH"><i class="fas fa-search"></i></label>
+      <form action="#" class="search-boxH">
+        <input type="text" placeholder="¿Qué estás buscando?" required name="search">
+        <button type="submit" class="go-iconH"><i class="fas fa-long-arrow-alt-right"></i></button>
+      </form>
+    </nav>
+  </div>
+  </main>
+  </header>
