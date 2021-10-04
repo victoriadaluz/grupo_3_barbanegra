@@ -4,10 +4,16 @@ let {
 const { validationResult } = require('express-validator');
 const fs = require('fs');
 const {Product,Subcategory,Category} = require('../database/models');
+const {Op} = require("sequelize");
 
 module.exports = {
     index: (req, res) => {
         Product.findAll({
+            where: {
+                discount: {
+                    [Op.gte]: 0
+                }
+            },
             include:[{association:'productImage'},{association:"brand"},
             {association:"subcategory"}]
         })
