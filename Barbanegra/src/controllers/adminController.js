@@ -67,21 +67,45 @@ module.exports = {
             .catch(err => console.log(err))
         },
         uploadNewProduct: (req, res) => {
-            let arrayImages = [];
-            if (req.files) {
-                req.files.forEach(imagen => {
-                    arrayImages.push(imagen.filename)
-                })
-            }
             let {
                 name,
                 description,
                 brand,
                 price,
-                discount,
-                category,
-                image
-            } = req.body
+                discount,                    
+                subcategory,
+            } = req.body;
+            
+        let arrayImages = []
+        if (req.files.length > 0) {
+            req.files.forEach(imagen =>{
+                
+                arrayImages.push(imagen.filename)
+            })
+            
+        }else{
+            arrayImages.push("default-image.png")
+        }
+        Product.create({
+            name,
+            description,
+            brandId:brand,
+            price,
+            discount,                    
+            subcategoryId:subcategory 
+        })
+            .then((producto)=> {
+                
+                let images = arrayImages.map(imagen => {
+                    return {
+                        imgName:imagen,
+                        productId:producto.id
+                    }
+                })
+                ProductImage.bulkCreate(images)
+                res.redirect("/admin")
+            })
+            .catch(err => console.log(err))
 
 
 
@@ -115,11 +139,15 @@ module.exports = {
                 })
         },
         editarProductoID: (req, res) => {
-            ProductImage.destroy({
+       /*      ProductImage.destroy({
                      where: {
                          productId: req.params.id,
                      }
-                 }) 
+                 })  */
+                 let arrayImage = []
+                 if (req.files) {
+                     req.files.forEach(img =>{arrayImage.push(img.filename)})
+                 }
                 let {
                     name,
                     description,
@@ -139,9 +167,18 @@ module.exports = {
                     
                 }, {
                     where: {
-                        id: req.params.id
+                        id: req.params.id,
+                        include: [{
+                            association: 'productImage'
+                        }, {
+                            association: "brand"
+                        },
+                        {
+                            association: "subcategory"
+                        }
+                    ]
                     }
-                }).then((productUpdate) => {
+                })/* .then((productUpdate) => {
                         res.send(productUpdate)
                         let images = [];
                         let nameImages = req.files.map((image) => image.filename);
@@ -152,28 +189,46 @@ module.exports = {
                             };
                             images.push(newImage);
                         })
-                        ProductImage.bulkCreate(images)
-                        .then((result)=>{
-                            res.redirect('/admin/productos')
+                        ProductImage.bulkCreate(images) */
+                        .then((producto)=> {
+                            if(req.files){
+                                if (arrayImage.length = 1) {
+                                    ProductImages.update({image:arrayImage[0]},{where:{id:+req.params.id}})
+                                }else if (arrayImage.length > 2){
+                                    ProductImages.destroy({where:{id:+req.params.id}})
+                                        .then(()=>{
+                                             let images = imgProd.map(imagen => {
+                                                return {
+                                                    image:imagen,
+                                                    id:+req.params.id
+                                                    }})
+                                    ProductImages.bulkCreate(images)
+                                        })
+                                }
+                        
+                                
+                                
+                                
+                            }
+            
+            
+                            res.redirect("/admin/index")
                         })
                         .catch(err => console.log(err))
                     
-                    })
                 },
 
 
                     
-                 deleteProduct: (req, res) => {
-                        products.forEach(product => { //buscamos el producto a eliminar
-                            if (product.id === +req.params.id) {
-                                let productToDelete = products.indexOf(product);
-                                products.splice(productToDelete, 1); //una vez que lo encontramos ubicamos en el array principal y cortamos desde la posicion hasta el siguiente ([array] de 0 a 1)
 
-                            }
-                        })
-                        addProduct(products); //pusheamos sin el elemento encontrado 
-                        res.redirect('/admin/productos')
+          deleteProduct: (req, res) => {
+            Product.destroy({
+                 where : {
+                      id : +req.params.id
+                        }
+                  })
+                  res.redirect("/admin")
 
+                 }
 
-                    }
                 }
