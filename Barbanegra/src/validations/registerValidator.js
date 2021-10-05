@@ -27,7 +27,7 @@ module.exports = [
             })
     }),
 
-    check('password1')
+    check('password')
     .notEmpty()
     .withMessage('Por favor, ingrese su contraseña')
     .isLength({
@@ -38,6 +38,6 @@ module.exports = [
 
 
 
-    body('password2').custom((value, {req}) => value !== req.body.password ? false : true)
+    body('password').custom((value, {req}) => value !== req.body.password ? false : true)
     .withMessage("las contraseñas no coinciden")
 ]
