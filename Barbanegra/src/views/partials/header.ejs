@@ -14,29 +14,30 @@
           <input type="checkbox" id="show-products">
           <label for="show-products">PRODUCTOS</label>
           <ul>
-           <li><a href="/productos">Máquinas</a></li>
-             <li><a href="/productos">Equipamiento</a></li>
-            <li><a href="/productos">Accesorios</a></li>
-            <li><a href="/productos">Repuestos</a></li> 
+           <li><a href="/productos/category/1">Máquinas</a></li>
+             <li><a href="/productos/category/2">Equipamiento</a></li>
+            <li><a href="/productos/category/3">Accesorios</a></li>
+            <li><a href="/productos/category/4">Repuestos</a></li> 
           </ul>
       </li>
+      <li><a href="/aboutUs">SOBRE NOSOTROS</a></li>
         <li>
           <% if (session != "") { %>
-           <a href="/users/profile">MI PERFIL</a>
+           <a href="/users/profile"><i class="fas fa-user"></i></i></a>
           <%} else{%> 
             <a href="/users/login">INICIAR SESIÓN</a>
             <%}%>           
         </li>
         <li>
           <% if (session != "") { %>
-           <a href="/users/logout">CERRAR SESIÓN</a>
+           <a href="/users/logout"><i class="fas fa-sign-out-alt"></i></a>
           <%}
           %>           
         </li>
-        <li><a href="/cart">IR AL CARRITO</a></li>
+        <li><a href="/cart"><i class="fas fa-shopping-cart"></i></a></li>
         <li>
-          <% if (session.rol == "ROL_ADMIN") { %>
-           <a href="/admin">ADMIN</a>
+          <% if (session.rol == 1) { %>
+           <a href="/admin"><i class="fas fa-user-shield"></i></a>
           <%}%> 
       </ul>
     </div>
