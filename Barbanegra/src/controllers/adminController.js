@@ -98,15 +98,18 @@ module.exports = {
             
         })
             .then((producto)=> {
-                res.send(producto)
+                
                 let image = arrayImages.map(image => {
                     return {
                         image:image,
                         productId:producto.id
+                        
                     }
-                    
+                    res.send(image)
                 })
+                
                 ProductImage.bulkCreate(image)
+                
                .then(()=>{
                 
                 res.redirect("/admin")
