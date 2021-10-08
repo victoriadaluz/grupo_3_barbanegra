@@ -9,9 +9,9 @@
     opacity: 0.8;   
     
 }
-.cardsProductsB{
+/* .cardsProductsB{
     margin-top: 100px;
-}
+} */
 .titleCategory{
     margin-top: 100px;
 }
@@ -87,16 +87,17 @@
 /* INICIO SECTION CARDS */
 
 .sectionTitle h3{
-    background: linear-gradient(135deg, #011528, #1b5185, #011528);
+    /* background: linear-gradient(135deg, #011528, #1b5185, #011528); */
     width: 100%;
     font-size: 1rem;
     color: #92c1e9;
     margin-bottom: 0.1rem;
     text-align: center;
+    text-transform:uppercase;
 }
 .cards{
-    background: linear-gradient(135deg, #011528, #1b5185, #011528);
-    display: grid;
+    /* background: linear-gradient(135deg, #011528, #1b5185, #011528);*/
+    display: grid; 
     justify-content:space-evenly;
     align-items: center;
     max-width: 100%;

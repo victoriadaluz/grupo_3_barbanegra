@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const {index,
         carrito,
+        productos,
         aboutUs,}= require('../controllers/homeController')
  const loginValidator = require('../validations/loginValidator');
  let userSession= require('../middlewares/userSession');
