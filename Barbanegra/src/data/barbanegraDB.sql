@@ -5,7 +5,7 @@
 -- Server version	5.5.5-10.4.20-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_CHARACTER_SET_RESUasdLTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
@@ -55,7 +55,7 @@ CREATE TABLE `brands` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -106,7 +106,7 @@ CREATE TABLE `category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -150,7 +150,7 @@ DROP TABLE IF EXISTS `product`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `product` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   `description` text NOT NULL,
   `price` int(11) NOT NULL,
@@ -158,9 +158,11 @@ CREATE TABLE `product` (
   `brandId` int(11) NOT NULL,
   `subcategoryId` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  CONSTRAINT `subcategoria` FOREIGN KEY (`subcategoryId`) REFERENCES `subcategory` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `marcas` FOREIGN KEY (`brandId`) REFERENCES `brands` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  KEY `subcategoria` (`subcategoryId`),
+  KEY `marcas` (`brandId`),
+  CONSTRAINT `marcas` FOREIGN KEY (`brandId`) REFERENCES `brands` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `subcategoria` FOREIGN KEY (`subcategoryId`) REFERENCES `subcategory` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -170,7 +172,6 @@ CREATE TABLE `product` (
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 INSERT INTO `product` VALUES (1,'Senior Cordless','La nueva Cortapelos Wahl Senior Cordless cuenta con la última tecnologia en baterías de litio de larga duración sin efecto memoria generando una velocidad alta de cuchilla con un torque mayor que recortará incluso el cabello más grueso con facilidad.',21500,25,1,1),(2,'Detailer Cordless','Trimmer Profesional inalámbrico fabricado en Estados Unidos. Liviano y ergonómico, provee al profesional de balance y control perfectos para un trabajo de la más alta calidad. Las Cuchillas en T que se ajustan al corte. Son ideales para un trabajo preciso y detalles perfectos. Las Máquinas Wahl, diseñadas con los más altos estándares de calidad, proporcionan la seguridad de una alta performance, sin objeciones.',10999,40,1,2),(3,'Afeitadora Finale','Su utilización es sencilla, gracias a su uso con o sin cable. La batería de litio de última generación permite 80 minutos de autonomía tras 120 minutos de carga.Además, sus hojas son hipoalergénicas doradas, para que afeitarte no sea sinónimo de irritación.',15999,35,1,3),(4,'Tijera Jay2','La Tijera Filo Navaja JAY2 de 6 pulgadas se amolda bien a la mano. Ideal para un trabajo cómodo, relajado por su forma ergonómica. Apropiada para todas las técnicas de corte y de capear, filos afilado, suave acción de corte.',2500,50,2,6),(5,'Trimmer+ Clipper Rosé','RoseFX es una maquina de corte profesional inalámbrica, equipada con un motor diseñado por Ferrari. Una herramienta perfecta para cortar todas las texturas del cabello con potencia, velocidad y precisión.',35000,30,3,1),(6,'Sillon Chester Negro','Exclusivo sillón de barbería estilo retro con tapicería Simil Chesterfield. Generosas dimensiones mancomunadas en una estructura metálica cromada con amplios apoya brazos que aportan mayor comodidad. Reclinable en su totalidad, es ideal para que el barbero trabaje a una altura óptima permitiendo que el cliente prácticamente quede acostado sobre el sillón. Apoya pies reclinable con superficie flotante tapizada para que el cliente descanse sus pies una vez acostado. Base circular metálica de gran tamaño que aporta solidez y firmeza a todo el sillón. Apoya cabezas tapizado y regulable en altura',110000,30,4,4),(7,'Spray Lubricante','Spray lubricante y desinfectante en Aerosol. Desinfecta, lubrica, enfría, limpia y es anticorrosivo. Elimina Virus, hongos y bacterias. Brinda una lubricación suave de las cuchillas que reduce la fricción, suaviza los cortes y alaga la vida útil de las máquinas.',3000,40,3,9),(8,'Cabezal Shaver Finale','Diseñado para obtener el afeitado más cercano posible sin ser doloroso o irritante, el paquete de reemplazo incluye lámina de oro hipoalergénica que evita los golpes y el conjunto de la barra de corte para una afeitadora como nueva. Compatible solo con la máquina de afeitar de 5 estrellas',4999,15,1,10),(9,'Lavacabeza Premier','Diseño Ergonómico. Tapizado de Simil Cuero. Bacha de Cerámica. Terminaciones bordadas en hilo blanco que aportan elegancia.',125000,25,4,5),(10,'Secador Volare','La experiencia de BaByliss®PRO y la excelencia de FERRARI han desarrollado juntas una herramienta de diseño exclusivo con excepcionales prestaciones. El VOLARE esta especialmente construido para obtener un flujo de aire máximo con un mínimo peso y vibración, para un óptimo y rápido secado y asegurar un estilismo duradero.',25999,35,3,8),(11,'Set x 6 Peines','Kit de Peines Profesionales Nano Titanium BaByliss PRO. Hechos de carbono. Resistentes al calor. Evitan el frizz.',1999,50,3,7),(12,'Combo Sillón + Lavacabeza','1 Lavacabezas Black FG TeknikStyle. Posee una Bacha de Fibre Glass resistente y duradera de excelente calidad.  +  1 Sillón Hidráulico Peluqueria JPN. Base cromada regulable en altura. Líneas puras y elegantes de diseño ergonómico en apoya brazos cromados. Apoya pies removible.',25000,40,4,5),(13,'Patillera USB K42','Trimmer profesional ideal para detalles, terminaciones y dibujos. Se carga por USB. Tiene un motor de 6800 rpm y una potencia de 6,5w. El tiempo de carga es de 2 hs y de uso 4 hs',5990,NULL,4,2),(14,'Aceite lubricante','Aceite Wahl  Clipper Oil Para Cuchillas Cortadoras De Pelo. Lubricante para cortadoras. Recubre las cuchillas con una película ultrafina que evita la corrosión. Para uso en todo tipo de cuchillas. Presentación:118 ml',699,NULL,1,9),(15,'Magic Clip Cordless','Liviana y confortable, posee cuchillas intercaladas para un corte más preciso y suave. Cortadora profesional con o sin cable. Liviana y poderosa, fácil de manipular. Poderoso motor de 5.500 rpm',24999,NULL,1,1),(16,'Sillón Senior Marrón','La impronta de un clásico reflejada en todos sus detalles. Exclusivo sillón de barbería estilo retro con tapicería Simil Chesterfield. Generosas dimensiones mancomunadas en una estructura metálica cromada con amplios apoya brazos que aportan mayor comodidad. Reclinable en su totalidad, es ideal para que el barbero trabaje a una altura óptima permitiendo que el cliente prácticamente quede acostado sobre el sillón.',79990,NULL,4,4),(17,'Tijera Safari','Tijera de corte profesional de 5,5 pulgadas. Elegancia y alta calidad. Artesanía de precisión combinada con el uso de máquinas y tecnologías de vanguardia. Cada par de tijeras se comprueba y controla individualmente antes de la entrega. Revestimiento de alta tecnología, innovadora, resistente y prestigioso para un diseño individual e inconfundible de las tijeras. Protección contra la alergia al níquel. Diseño Offset para una posición ergonómica de los dedos y para un trabajo relajado.',5000,NULL,2,6),(18,'Super Taper Profesional','Maquina Cortadora De Pelo Wahl Super Taper Profesional. Motor vibratorio profesional V5000 para durabilidad. Ideal para grandes exigencias. Trabaja con cable, ideal para uso continuo. Gran potencia, alta precisión con cuchillas profesionales. Sólo utilizando el pulgar se gradúa el nivel o la textura del corte.',7999,NULL,1,1),(19,'Trimmer Beret profesional','Para contornos exactos: Chrom Blade, el juego de cuchillas de precisión cromado que corta con confianza e increíblemente cerca de la piel. Para una comodidad excepcional: Ultra-fina, ergonómica, ligera y silenciosa. Con acabado cromado pulido. Tiempo de carga 60 min. LED indicador de control de carga. Baterías de litio sin efecto memoria. Práctico soporte de carga.',7599,NULL,1,2),(20,'Secador Super Dry','El Secador de pelo WAHL cuenta con tecnología turmalina y flujo de iones integrados para reducir la electricidad estática del cabello. Además posee flujo de aire frío instantáneo más 3 posiciones de temperatura y 2 velocidades. A su vez, tiene mango ergonómico para estabilidad y control. Motor CA profesional de peso reducido con amortiguación de ruidos. También cuenta con filtro extraible de acero para una fácil limpieza, chorro de aire frío con flujo de aire frío instantáneo y 3 posiciones de temperatura y dos velocidades. Con un filtro extraíble de acero para una fácil limpieza.',5700,NULL,1,8),(21,'Afeitadora Fading & Shaving','Máquina afeitadora para barbas Fading & Shaving Teknikpro, para cargar vía USB. Exclusiva máquina para rapar y afeitar. Liviana y maniobrable, con rodillos de alto desempeño. Exclusivo recortador de patillas. Rapados suaves y parejos.',6499,NULL,4,3),(22,'Cabezal + Cuchillas Teknikpro','Cabezal + 2 Cuchillas Para Afeitadora Fading & Shaving',1999,NULL,4,10);
-   
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -182,12 +183,13 @@ DROP TABLE IF EXISTS `productimage`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `productimage` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `image` varchar(100) DEFAULT NULL,
   `productId` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  CONSTRAINT `products_images_FK` FOREIGN KEY (`productId`) REFERENCES `product` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  KEY `productimage_FK` (`productId`),
+  CONSTRAINT `productimage_FK` FOREIGN KEY (`productId`) REFERENCES `product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -212,6 +214,7 @@ CREATE TABLE `subcategory` (
   `name` varchar(50) NOT NULL,
   `categoryId` int(11) NOT NULL,
   PRIMARY KEY (`id`),
+  KEY `categoria` (`categoryId`),
   CONSTRAINT `categoria` FOREIGN KEY (`categoryId`) REFERENCES `category` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -273,7 +276,7 @@ CREATE TABLE `user` (
   `postalCode` int(11) DEFAULT NULL,
   `number` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=ujis;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=ujis;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -282,7 +285,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'gonza@gonza.com','$2a$10$a0ToBEFbL2NtVH.z3dNDg.FpMGlN5igIqgKPVV2tra7xPr0uaW.Me','gonzalo','messi','222222','1633038155436_img_.png',1,'messitetraelacopa','argentina','mendoza',123,2022),(2,'vic2@vic.com','$2a$10$5R0VUK/6AHoeFE9ucumuk.XXcAH2GzkHp2IifhCkcVcnffnVSLWZ2','vicky',NULL,NULL,'default-user.png',0,NULL,NULL,NULL,NULL,NULL),(3,'vic@vic.com','$2a$10$ARUnBcr.ikjHGbxDWrZOQ.7bpI5a2zptIz10BTDueQSWgoY5CKe9W','vicky',NULL,NULL,'default-user.png',0,NULL,NULL,NULL,NULL,NULL),(4,'devo@devo.com','$2a$10$Kp9fXD10ca3u/5wC5ukv5eGO.wkgfKHCEL3KuzcOxKxspOXXgaP1y','devo',NULL,NULL,'default-user.png',0,NULL,NULL,NULL,NULL,NULL),(5,'paulo@paulo.com','$2a$10$0mw0e/PaCsry5REpdPU2/uK05ZoMfdIDPflwIk2Zq0sM6lQbK/Lsm','paulo',NULL,NULL,'default-user.png',0,NULL,NULL,NULL,NULL,NULL),(6,'messi@messi.com','$2a$10$gsrItwEcASGgBB88nYh41e.spmLEdX.IUEMv.ppNUT0xxiEJj22t.','messi',NULL,NULL,'default-user.png',0,NULL,NULL,NULL,NULL,NULL),(7,'gonza@gonza.com','$2a$10$zpuPGAOv7LfomHA1C1goFOz3OfudGDWnx73We0Ap2w8ZptMxRgdz6','',NULL,NULL,'default-user.png',0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `user` VALUES (1,'gonza@gonza.com','$2a$10$a0ToBEFbL2NtVH.z3dNDg.FpMGlN5igIqgKPVV2tra7xPr0uaW.Me','Gonzalo','Alcocer','1234567890','1633449118989_img_.jpeg',1,'messitetraelacopa','argentina','mendoza',123,2022),(9,'barbanegra@barbanegra.com','$2a$10$VtTKjIzkLWUXnf3CctGNG.ElGybC2PGFXw0beX19N4dcRdhly3Vw.','Barba','Negra','1123456789','1633530392332_img_.png',1,'Calle ','La pampa','La pampa',2345,123);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -299,4 +302,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-09-30 19:26:47
+-- Dump completed on 2021-10-09 22:19:06
