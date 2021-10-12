@@ -9,7 +9,7 @@ hr{
     margin: 10px 0;
 }
 
-.boxImage-p , h1 {
+.quienes-somos {
   font-size: 350%;
 }
 
@@ -115,7 +115,7 @@ hr{
 
 
   /* Mobil */
-@media (max-width: 700px) {
+@media (max-width: 900px) {
 
   .boxImage-p{
     font-size: 104%;
@@ -137,6 +137,7 @@ hr{
   
     .cartas-au {
       grid-template-columns: repeat(2, 1fr);
+      margin: 0% 8%;
     }
   
     .banner1-au .content-au{
