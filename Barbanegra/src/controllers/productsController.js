@@ -16,22 +16,51 @@ let productController = {
         })
     },
     listar: (req, res) => {
-        res.render('productos', {
-            products,
-            productImage,
-            session:req.session.user?req.session.user:""
+        Product.findAll({
+            include: [{
+                    association: 'productImage'
+                }, {
+                    association: "brand"
+                },
+                {
+                    association: "subcategory"
+                }
+            ]
         })
-    },
+        .then(producto => {
+
+
+            res.render('listadoProductos', {
+                producto,
+                session:req.session.user?req.session.user:""
+
+            })
+        })
+},
     //este metodo lista y permite las vistas parametrizadas al hacer click en el producto
     producto: (req, res) => {
-        let producto = products.find(producto => {
-            return producto.id === +req.params.id
+        Product.findOne({
+            where: {
+                id: +req.params.id
+            },
+            include: [{
+                association: "productImage"
+            }]
         })
-        res.render('detalleProducto', {
-            producto,
-            session:req.session.user?req.session.user:""
-        })
-    },
+            .then(producto => {
+                Product.findAll({
+                        where: {
+                            subcategoryId: producto.subcategoryId
+                        }
+                    })
+                    .then(products => {
+                        res.render('detalleProducto', {
+                            producto,
+                            session:req.session.user?req.session.user:""
+                        })
+                    })
+            })
+    }, 
     category: (req, res) => {
         Category.findOne({
             where: {
