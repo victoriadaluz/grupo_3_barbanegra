@@ -39,7 +39,7 @@ module.exports = {
 
                 res.render('admin/adminProductos', {
                     producto,
-                    session: req.session,
+                    session:req.session.user?req.session.user:""
 
                 })
             })
