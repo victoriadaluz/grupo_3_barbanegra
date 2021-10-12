@@ -215,13 +215,13 @@
 .card-de:hover{
 
     box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
-    transform: scale(1.10, 1.10);
+    transform: scale(1.10, 1.10); /* si comentamos esto ya no se agranda la caja de la card */
 }
 
 .card-de:hover .card__img--hover{
     /* height: 100%; */
     opacity: 0.3;
-    transform: scale(1.6, 1.6);
+    transform: scale(1.6, 1.6); 
     top: 50px;
     
 }
@@ -303,6 +303,7 @@
 @media (min-width: 768px){
     .cards{
      grid-template-columns: repeat(2, 1fr);
+     padding-right: 1px;
     }
  
     .card-de{
@@ -343,6 +344,7 @@
  
      .cards{
          grid-template-columns: repeat(4, 1fr);
+         padding-right: 50px;
         }
 
     .card-de{
