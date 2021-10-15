@@ -48,5 +48,5 @@ module.exports = {
             title: 'Sobre nosotros',
             session:req.session.user?req.session.user:""
         })
-    }
+    },
 }

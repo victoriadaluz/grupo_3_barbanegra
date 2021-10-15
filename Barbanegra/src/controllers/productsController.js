@@ -61,6 +61,21 @@ let productController = {
         })
         .catch(err => console.log(err))
 
+    },
+    
+    search : (req,res) =>{
+        let search = req.query.buscador.trim().toLowerCase();
+        Product.findAll({
+            include: [{
+                    association: 'productImage'
+                }, {
+                    association: "brand"
+                },
+                {
+                    association: "subcategory"
+                }
+            ], where:{[Op.like]: `%${search}`}
+        })
     }
 }
 
