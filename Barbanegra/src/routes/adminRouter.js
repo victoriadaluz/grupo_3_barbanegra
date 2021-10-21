@@ -14,11 +14,11 @@ let upload = require('../middlewares/uploadFiles');
 
 /* GET Index / Index del admin */
 //COMENTE LAS SESIONES PARA SEGUIR PROBANDO EL EDIT PRODUCT
-router.get('/'/* ,session,adminUser */, listarProductos)
-router.get ('/productos'/* ,session,adminUser */,listarProductos)
+router.get('/' ,session,adminUser , listarProductos)
+router.get ('/productos',session,adminUser,listarProductos)
 
 /* GET- FORMULARIO DE AGREGAR PRODUCTO*/
-router.get('/agregarProducto'/* ,session,adminUser */, addProducts)
+router.get('/agregarProducto',session,adminUser, addProducts)
 
 /* POST- FORMULARIO DE PRODUCTO  */
 router.post('/agregarProducto', upload.array('image'), uploadNewProduct)
@@ -27,7 +27,7 @@ router.post('/agregarProducto', upload.array('image'), uploadNewProduct)
 router.delete('/eliminarProducto/:id', deleteProduct)
 
 //EDITAR PRODUCTO
-router.get('/productos/editar/:id'/* ,session,adminUser */, editarProducto); //traigo de bd el item que requiere por :id
+router.get('/productos/editar/:id',session,adminUser , editarProducto); //traigo de bd el item que requiere por :id
 router.put('/productos/editar/:id', upload.array('image'), editarProductoID); //de tocar boton editar se activa PUT ojo con eso!
 
 
