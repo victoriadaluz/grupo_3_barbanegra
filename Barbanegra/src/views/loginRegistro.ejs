@@ -14,22 +14,22 @@
     
       <div class="forms-lcontainer">
         <div class="signin-signup">
-          <form action="/users/login" method="POST" class="sign-in-form">
+          <form action="/users/login" method="POST" class="sign-in-form" id="form1">
             <h2 class="title">Iniciar sesión</h2>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="email" name='email' placeholder="email" />
+              <input type="email" name='email' placeholder="email" id="email1" />
             </div>
             <% if (locals.errors && errors.email) { %>
-              <small>
+              <small id="errorsEmail">
                 <%= errors.email.msg %> <!-- cambiar color de mensaje -->
               </small>
             <%}%>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" name='password' placeholder="Contraseña" />
+              <input type="password" name='password' placeholder="Contraseña" id="pass1" />
               <% if (locals.errors && errors.pass1) { %>
-                <small><%= errors.pass1.msg %> </small>
+                <small id="errorsPass1"><%= errors.pass1.msg %> </small>
             <% } %>
             </div>
             <div class="form-ad-input_check"> <!-- agrego check de recordar -->
@@ -54,33 +54,33 @@
             </div>
           </form> 
 
-            <form action="/users/register" method="POST" class="sign-up-form">
+            <form action="/users/register" method="POST" class="sign-up-form" id="form2">
               <h2 class="title">Registro</h2>
               <div class="input-field">
                 <i class="fas fa-user"></i>
-                <input name ="firstName" value="<%= locals.old && old.user %>" type="text" placeholder="Usuario" />
+                <input name ="username" value="<%= locals.old && old.user %>" type="text" placeholder="Usuario" id="username" />
                </div>
                
                <% if (locals.errors && errors.user) { %>
-                <small>
+                <small id="usernameErrors">
                   <%= errors.user.msg %> <!-- cambiar color de mensaje -->
                 </small>
               <%}%>
               <div class="input-field">
                 <i class="fas fa-envelope"></i>
-                <input name ="email" value="<%= locals.old && old.email %>" type="email" placeholder="Correo electrónico" />
+                <input name ="email" value="<%= locals.old && old.email %>" type="email" placeholder="Correo electrónico" id="email2" />
               </div>
               <% if (locals.errors && errors.email) { %>
-                <small>
+                <small id="errorsEmail2">
                   <%= errors.email.msg %> <!-- cambiar color de mensaje -->
                 </small>
               <%}%>
               <div class="input-field">
                 <i class="fas fa-lock"></i>
-                <input name="password" type="password" placeholder="Contraseña" />
+                <input name="password" type="password" placeholder="Contraseña" id="pass2"/>
               </div>
               <% if (locals.errors && errors.pass1) { %>
-                <small><%= errors.pass1.msg %> </small>
+                <small id="errorsPass2"><%= errors.pass1.msg %> </small>
             <% } %>
               <div class="input-field">
                 <i class="fas fa-lock"></i>
@@ -136,6 +136,7 @@
     </div>
   </main>  
     <script src="/javascript/script.js"></script>
+    <script src="/javascript/validations.js"></script>
     <script src="https://kit.fontawesome.com/64d58efce2.js"
     crossorigin="anonymous"></script>
   </body>
