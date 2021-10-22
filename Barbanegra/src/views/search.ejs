@@ -6,12 +6,9 @@
 <body>
     <!-- HEADER -->
     <%- include('./partials/header') %>
-    <main>
-        <div class="sectionTitle titleCategory">
-            <h3>Todos nuestros productos</h3>
-        </div>
-        <section class="cards cardsProductsB">
-            <% producto.forEach(product => { %> 
+    <main >
+        <section class="cards cardsProductsB search-result ">
+            <% db.forEach(product => { %> 
                 <article class="card-de card--1">
     
                     <div class="card__info-hover">
@@ -39,9 +36,8 @@
                 </article>
                 <% }) %> 
     
-            </section> 
+            </section>
     </main>
-    
-
 </body>
 <%- include('./partials/footer') %> 
+</html>

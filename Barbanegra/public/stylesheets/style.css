@@ -36,3 +36,6 @@ Si elijo la ruta sin las comillas funciona.  */
 body{
   font-family: 'Poppins', sans-serif;
 }
+.search-result{
+  margin-top: 100px;
+}
