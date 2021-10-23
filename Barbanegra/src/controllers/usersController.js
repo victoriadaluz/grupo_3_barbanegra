@@ -16,7 +16,7 @@ module.exports = {
     },
 
     login: (req, res) => {
-        res.render('loginRegistro', {
+        res.render('login-register', {
             title: 'Login-Barbanegra',
             session: req.session.user ? req.session.user : "",
             login: 1
@@ -103,7 +103,7 @@ module.exports = {
     userProfile: (req, res) => {
         Users.findByPk(req.session.user.id)
             .then((user) => {
-                res.render("editUserProfile", {
+                res.render("profile", {
                     session: req.session,
                     user,
                 })
@@ -115,7 +115,7 @@ module.exports = {
     editProfile: (req, res) => {
         Users.findByPk(req.session.user.id)
             .then((user) => {
-                res.render("UserProfile2", {
+                res.render("editProfile", {
                     session: req.session,
                     user,
                 })
