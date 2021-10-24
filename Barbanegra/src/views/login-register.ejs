@@ -54,38 +54,41 @@
             </div>
           </form> 
 
-            <form action="/users/register" method="POST" class="sign-up-form" id="form2">
+            <form action="/users/register" method="POST" class="sign-up-form" id="registerForm">
               <h2 class="title">Registro</h2>
-              <div class="input-field">
+              <div class="input-field border-2" id="userInput">
                 <i class="fas fa-user"></i>
-                <input name ="username" value="<%= locals.old && old.user %>" type="text" placeholder="Usuario" id="username" />
+                <input name ="username" value="<%= locals.old && old.user %>" type="text" placeholder="Nombre" id="username" />
                </div>
-               
+               <span id="usernameErrors"></span>               
                <% if (locals.errors && errors.user) { %>
-                <small id="usernameErrors">
+                <span id="usernameErrors">
                   <%= errors.user.msg %> <!-- cambiar color de mensaje -->
-                </small>
+                </span>
               <%}%>
-              <div class="input-field">
+              <div class="input-field border-2" id="email2Input">
                 <i class="fas fa-envelope"></i>
                 <input name ="email" value="<%= locals.old && old.email %>" type="email" placeholder="Correo electrónico" id="email2" />
               </div>
+              <span id="emailErrors2"></span>
               <% if (locals.errors && errors.email) { %>
                 <small id="errorsEmail2">
                   <%= errors.email.msg %> <!-- cambiar color de mensaje -->
                 </small>
               <%}%>
-              <div class="input-field">
+              <div class="input-field border-2" id="passContainer">
                 <i class="fas fa-lock"></i>
-                <input name="password" type="password" placeholder="Contraseña" id="pass2"/>
+                <input name="password" type="password" placeholder="Contraseña" id="password"/>
               </div>
+              <span id="pass2Errors"></span>
               <% if (locals.errors && errors.pass1) { %>
                 <small id="errorsPass2"><%= errors.pass1.msg %> </small>
             <% } %>
-              <div class="input-field">
+              <div class="input-field border-2" id="passContainer2">
                 <i class="fas fa-lock"></i>
-                <input name="pass1" type="password" placeholder="Repetir Contraseña" />
-              </div>          
+                <input name="pass1" type="password" placeholder="Repetir Contraseña" id="password2"/>
+              </div>
+              <span id="pass2Errors2"></span>          
               <a href="/users/profile"><input type="submit" class="btn-log" value="Sign up"/></a>          
               <p class="social-text">O inicie sesión con</p>
               <div class="social-media">
@@ -136,7 +139,7 @@
     </div>
   </main>  
     <script src="/javascript/script.js"></script>
-    <script src="/javascript/validations.js"></script>
+    <script src="/javascript/register-loginValidation.js"></script>
     <script src="https://kit.fontawesome.com/64d58efce2.js"
     crossorigin="anonymous"></script>
   </body>

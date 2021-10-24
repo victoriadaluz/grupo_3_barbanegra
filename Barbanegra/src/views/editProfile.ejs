@@ -6,7 +6,7 @@
   <%- include('./partials/header') %>
   <main class="uProfile">
     <div class="uTitle text-center">
-      <h4>Perfil de <%= user.firstName %> <%= user.lastName %> </h4>
+      <h4>Editando perfil de: <br> <%= user.firstName %> <%= user.lastName %> </h4>
     </div>
     <div class="wrapper text-black">
       <form action="/users/profile/edit/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
