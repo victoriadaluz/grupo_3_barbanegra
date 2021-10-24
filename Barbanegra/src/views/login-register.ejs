@@ -14,28 +14,31 @@
     
       <div class="forms-lcontainer">
         <div class="signin-signup">
-          <form action="/users/login" method="POST" class="sign-in-form" id="form1">
+          <form action="/users/login" method="POST" class="sign-in-form" id="form-login">
             <h2 class="title">Iniciar sesión</h2>
-            <div class="input-field">
+            <div class="input-field border-2" id="login-email">
               <i class="fas fa-envelope"></i>
               <input type="email" name='email' placeholder="email" id="email1" />
             </div>
+            <span id="emailLoginErrors"></span>
             <% if (locals.errors && errors.email) { %>
               <small id="errorsEmail">
                 <%= errors.email.msg %> <!-- cambiar color de mensaje -->
               </small>
-            <%}%>
-            <div class="input-field">
+            <%}%>          
+            <div class="input-field border-2" id="loginPass">
               <i class="fas fa-lock"></i>
-              <input type="password" name='password' placeholder="Contraseña" id="pass1" />
-              <% if (locals.errors && errors.pass1) { %>
-                <small id="errorsPass1"><%= errors.pass1.msg %> </small>
-            <% } %>
+              <input type="password" name='password' placeholder="Contraseña" id="loginPassInput" />
             </div>
+            <span id="loginPassErrors"></span>
+            <% if (locals.errors && errors.pass1) { %>
+              <small id="errorsPass1"><%= errors.pass1.msg %> </small>
+          <% } %>
             <div class="form-ad-input_check"> <!-- agrego check de recordar -->
               <input type="checkbox" name="remember" id="check-c">
               <label for="check">Recordar</label>
             </div>
+            <span id="submitErrors"></span><br> 
             <input type="submit" value="Iniciar sesión" class="btn-log solid" />
             <p class="social-text">O inicie sesión con</p>
             <div class="social-media">
@@ -94,10 +97,9 @@
                 <label for="check">Aceptar <a href="#" class="text-blue-600">terminos y condiciones</a></label>
               </div>  -->  
               <span id="termsErrors"></span>
-              <div class="submit-cointainer">
-                
+              <div class="submit-cointainer">                
               <a href="/users/profile"><input type="submit" class="btn-log" value="Sign up"/></a> <br>
-              <span id="submitErrors"></span><br> 
+              
               </div>          
               <p class="social-text">O inicie sesión con</p>
               <div class="social-media">
