@@ -17,12 +17,19 @@ window.addEventListener("load", () => {
         $passwordContainer2 = qs('#passContainer2'),
         $passRegister2 = qs('#password2'),
         $passErrors2 = qs('#pass2Errors2'),
-        $formReg = qs("registerForm"),
+        $formReg = qs("#registerForm"),
+        //term register input
+        $termsCointainer= qs('#termsCointainer'),
+        $termsInput = qs('#terms-check'),
+        $termsErrors = qs('#termsErrors'),
+        //submit register 
+        $submitErrors = qs('#submitErrors'),
+
         /* 
          $form2 = qs("form2"); */
         regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
         regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
-        regExPass = /^(?=.*\d)(?=.*[a-z]).{8,12}$/;
+        regExPass = /^(?=.*\d)(?=.*[a-z]).{6,12}$/;
 
     $inputName.addEventListener('blur', () => {
         switch (true) {
@@ -86,8 +93,8 @@ window.addEventListener("load", () => {
                 $passwordContainer.classList.add('border-red-600');
                 break;
             case !regExPass.test($passRegister.value):
-                $passErrors.innerHTML = 'La contraseña deber ser alfanumerica y tener entre 8 a 12 caracteres'
-                $passErrors.classList.add('text-red-600', 'ml-10', 'font-medium');
+                $passErrors.innerHTML = 'La contraseña deber ser alfanumerica <br> y tener entre 6 a 12 caracteres'
+                $passErrors.classList.add('text-red-600','ml-10','font-medium');
                 passwordContainer.classList.remove('border-green-600');
                 $passwordContainer.classList.add('border-red-600');
                 break;
@@ -123,14 +130,25 @@ window.addEventListener("load", () => {
         }
     })
 
+
+
+
     $formReg.addEventListener('submit',(e)=>{
         let error=false;
-        e.preventDefault();
-        let formEl=$formReg.element;
-        for(let i=0; i<formEl.length; i++) {
-            if(formEl[i] == ""){
-                formEl[i].classList.add('')
+        e.preventDefault();        
+        let elementsForm=$formReg.elements;
+        console.log(elementsForm)
+        for(let i=0; i<elementsForm.length; i++) {
+            if(elementsForm[i].value == ""){
+                elementsForm[i].classList.add('text-red-600', 'ml-10', 'font-medium')
+                $submitErrors.innerHTML = 'Quedaron campos sin completar!'
+                $submitErrors.classList.add('text-red-600', 'ml-10', 'font-medium')
+                error=true;
             }
         }
+        if(!error){
+            console.log('ok');
+            $formReg.submit()
+        };
     })
 })
