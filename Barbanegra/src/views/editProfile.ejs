@@ -9,7 +9,7 @@
       <h4>Editando perfil de: <br> <%= user.firstName %> <%= user.lastName %> </h4>
     </div>
     <div class="wrapper text-black">
-      <form action="/users/profile/edit/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+      <form action="/users/profile/edit/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data" id="formEditUser">
         <figure class="figureAvatar">
           <img id="userAvatar" src="/images/users/<%= user.image %>" alt="" width="200px" height="200px"
             class="rounded-circle avatar">
@@ -18,16 +18,16 @@
           <input  class="buttonForm" type="file" id="file" name="image"><br><br>
           <p>Cambiar foto de perfil</p>
         </div>
-        <div class="inputfield">
+        <div class="inputfield" id="editName">
           <label>Nombre </label>
           <input type="text" class="input"
             value="<%= (typeof old != 'undefined' && old.firstName)?old.nombre:user.firstName %>" id="unombre"
-            name="firstName" placeholder="Nombre">
+            name="firstName" placeholder="Nombre"/>
           <small id="errorsNombre"
             class="text-danger"><%= (typeof errors != 'undefined' && errors.nombre)?errors.nombre.msg: "" %>
           </small>
         </div>
-        <div class="inputfield">
+        <div class="inputfield" id="editLastName">
           <label>Apellido </label>
           <input type="text" class="input"
             value="<%= (typeof old != 'undefined' && old.lastName)?old.lastName:user.lastName %>" id="papellido"
@@ -85,6 +85,7 @@
           <label>Código postal </label>
           <input type="text" class="input" value="<%=user.postalCode%>" name="postalCode" placeholder="Ejemplo: 1823">
         </div>
+        <span id="submitErrors"></span><br> 
         <button type="submit"
         class="text-center bg-blue-400 font-bold text-white px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-500 rounded-full py-3 px-6">
         Actualizar datos
@@ -95,6 +96,7 @@
     </div>
  
   </main>
+  <script src="/javascript/editProfileValidation.js"></script>
   <%- include('./partials/footer') %>
 </body>
 

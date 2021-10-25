@@ -7,14 +7,26 @@
     <main class="adminMain text-black">
         <form action="agregarProducto" method="POST" enctype="multipart/form-data">
             <h2>Agregar producto</h2>
+            <div>
             <label for="inputName">Nombre</label>
             <input type="text" name="name" id="inputName">
+            <span class="error" id="productNameErrors"></span>
+            </div>
+            <div>
             <label for="inputBrand">Marca</label>
             <input type="text" name="brand" id="inputBrand">
+            <span class="error" id="productBrandErrors"></span>
+            </div>
+            <div>
             <label for="inputPrice">Precio</label>
             <input type="text" name="price" id="inputPrice">
+            <span class="error" id="priceErrors"></span>
+            </div>
+            <div>
             <label for="inputDiscount">Descuento</label>
-            <input type="text" name="discount" id="inputPrice">
+            <input type="text" name="discount" id="inputDiscount">
+            <span class="error" id="discountErrors"></span>
+            </div>
             <div class="categories-subcategories-column grid  gap-4 grid-cols-2">
                 <div class=''>
                     <label for="categoryInput">Categorias</label>
@@ -47,6 +59,7 @@
             <div class="description-input">
                 <label for="validationTextarea" class="form-label">Descripción</label>
                 <textarea class="form-control" id="validationTextarea" name="description"><%= locals.old && old.description %></textarea>
+                <span class="error" id="descriptionErrors"></span>
             </div>
             <div class="">
                 <label for="inputImage" class="form-label">Imagen</label>
@@ -59,7 +72,7 @@
         </form>
 
     </main>
-
+    <script src="/javascript/addProductValidation.js"></script>
     <%- include('../partials/scripts.ejs')  %>
 </body>
 

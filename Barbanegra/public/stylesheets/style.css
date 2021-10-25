@@ -12,7 +12,8 @@ Si elijo la ruta sin las comillas funciona.  */
 @import url(/stylesheets/userProfile2.css);
 @import url(/stylesheets/admin.css);
 @import url(/stylesheets/aboutUs.css);
-
+@import url(/stylesheets/admin.css);
+@import url(/stylesheets/validations.css);
 
 /* ================================================================= */
 /*@import url(/stylesheets/loginRegistro.css);*/
