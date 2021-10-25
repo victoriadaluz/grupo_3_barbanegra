@@ -6,8 +6,11 @@
     <main class="adminMain text-black">
         <form action="/admin/productos/editar/<%= productoAEditar.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
             <h2>Editar producto</h2>
+            <div id="editProductName">
             <label for="inputName">Nombre </label>
-            <input type="text" name="name" value = "<%= productoAEditar.name %> "> 
+            <input type="text" name="name" value = "<%= productoAEditar.name %> " id="productName"> 
+            <span class="error" id="productNameErrors"></span>
+            </div>
             <br>
             <div class=""> 
                 <label for="categoryInput">Marca</label>
@@ -19,10 +22,16 @@
                  <% }) %>
                 </select>
             </div>
+            <div>
             <label for="inputPrice">Precio</label>
-            <input type="text" name="price" id="inputPrice" value="<%= productoAEditar.price %>">
+            <input  type="text" name="price" id="inputPrice" value="<%= productoAEditar.price %>">
+            <span class="error" id="priceErrors"></span>
+            </div>
+            <div>
             <label for="inputDiscount">Descuento</label>
             <input type="text" name="discount" id="inputDiscount" value="<%= productoAEditar.discount %>">
+            <span class="error" id="discountErrors"></span>
+            </div>
             <div class=""> 
                 <label for="categoryInput">Subcategorias</label>
                 <br>
@@ -51,6 +60,7 @@
             </div>
             <label for="textDescription">Descripción</label>
               <textarea name="description" id="textDescription"><%= productoAEditar.description %></textarea>
+              <span class="error" id="descriptionErrors"></span>
               <figure class="text-center">
                 <img id="userAvatar" src="/images/productos/<%= productoAEditar.productImage.length > 0 ? productoAEditar.productImage[0].image : 'default-image.png'%>" alt="" width="200px" height="200px"
                   class="rounded-circle avatar">
@@ -66,7 +76,7 @@
     
 </section>
 </main>
-   
+<script src="/javascript/editProductValidation.js"></script>
 <%- include('../partials/scripts.ejs')  %> 
 </body>
 </html>
