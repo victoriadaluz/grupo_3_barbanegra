@@ -42,7 +42,7 @@
      padding: 7px;
      box-sizing: border-box;
      font-size: 17px;
-     border: none;
+     /* border: none; */
  }
  .adminMain textarea{
     min-height: 100px;
@@ -183,7 +183,7 @@ tr:hover{
      padding: 7px;
      box-sizing: border-box;
      font-size: 17px;
-     border: none;
+     /* border: none; */
  }
  .adminMain textarea{
     min-height: 100px;
