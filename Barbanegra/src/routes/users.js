@@ -8,11 +8,11 @@ let userSession= require('../middlewares/userSession'); //validador de rutas
 
 router.get('/prueba',prueba)
 
-router.get('/register',loginValidator, login);
+router.get('/register', login);
 router.post('/register',registerValidator,userRegister);
 
 router.get('/login',login);
-router.post('/login',  userLogin)
+router.post('/login',loginValidator,  userLogin)
 
 router.get('/profile', userSession, userProfile)
 //edit profile, form

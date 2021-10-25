@@ -2,7 +2,7 @@
     let alias= 'Subcategory';
     let cols={
         id : {
-            type : Datatypes.INTEGER,
+            type : Datatypes.INTEGER(11),
             primaryKey: true,
             autoIncrement: true,
             allowNull: false,

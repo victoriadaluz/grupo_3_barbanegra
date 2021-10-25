@@ -6,7 +6,7 @@ const db = require('../database/models')
 /* const {users} = require("../data/usersDB") */
 
 module.exports = [
-    check("name")
+    check("username")
     .notEmpty()
     .withMessage("Ingrese un nombre"),
 
@@ -14,15 +14,15 @@ module.exports = [
     .isEmail()
     .withMessage("Ingrese un email válido"),
 
-    body('email').custom(value => {
-        return db.User.findOne({
+    body('email').custom((value,{req}) => {
+        return db.Users.findOne({
                 where: {
                     email: req.body.email
                 }
             })
             .then(user => {
                 if (user) {
-                    return Promise.reject("Este email ya está registrado. Ingrese un nuevo email")
+                    return Promise.reject("Este email ya está registrado.")
                 }
             })
     }),
@@ -38,6 +38,10 @@ module.exports = [
 
 
 
+<<<<<<< HEAD
     body('password').custom((value, {req}) => value !== req.body.password ? false : true)
+=======
+    body('pass1').custom((value, {req}) => value !== req.body.password ? false : true)
+>>>>>>> models
     .withMessage("las contraseñas no coinciden")
 ]

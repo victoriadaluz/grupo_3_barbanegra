@@ -30,10 +30,10 @@ app.use(methodOverride('_method'));
 
 /*session */
 app.use(session({ 
-  secret: "mySecret", 
+  secret: "mySecret",/*  
   resave: false, 
   saveUninitialized: true,
-  cookie:{maxAge: 60000*5}
+  cookie:{maxAge: 60000*5} */
 }));
 
 /* Vistas renderizadas */

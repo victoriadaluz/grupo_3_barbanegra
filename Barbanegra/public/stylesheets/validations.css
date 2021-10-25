@@ -1,0 +1,11 @@
+.errorV{
+    color: red;
+    
+}
+.errorVI{
+    border: 2px solid red;
+}
+
+.checkV{
+    border: 2px solid rgb(32, 245, 43);
+}

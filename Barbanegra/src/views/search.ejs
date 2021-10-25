@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('./partials/head') %>
+
+<body>
+    <!-- HEADER -->
+    <%- include('./partials/header') %>
+    <main >
+        <section class="cards cardsProductsB search-result ">
+            <% db.forEach(product => { %> 
+                <article class="card-de card--1">
+    
+                    <div class="card__info-hover">
+                        <div class="card__offer-info">
+                            <span class="card__discount"><%- product.discount > 0 ? `${product.discount}%OFF`:"" %></span>
+                        </div>
+                    </div>
+    
+                    <div class="card__img"></div>
+                    <a href="/productos/detalle/<%- product.id %> " class="card_link">
+                        <div class="card__img--hover">
+                            <img src="/images/productos/<%= product.productImage.length > 0 ? product.productImage[0].image : 'default-image.png'%>"alt="">
+                        </div>
+                    </a>
+                    <div class="card__info">
+                        <span class="card__brand"><%- product.brand.name %></span>
+                        <h3 class="card__by"><%- product.name %></h3>
+                        <span class="card__by">$<%- product.price %>
+                            <i class="fas fa-truck"></i>
+                            <a href="/cart" class="card__cart" title="Cart"><i class="fas fa-cart-plus"></i></a>
+    
+    
+                        </span>
+                    </div>
+                </article>
+                <% }) %> 
+    
+            </section>
+
+            <img src="https://giphy.com/gifs/funimation-computer-l3vRmVv5P01I5NDAA">
+    </main>
+</body>
+<%- include('./partials/footer') %> 
+</html>

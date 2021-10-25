@@ -14,6 +14,7 @@
           <input type="checkbox" id="show-products">
           <label for="show-products">PRODUCTOS</label>
           <ul>
+            <li><a href="/productos/">Ver todos</a></li>
            <li><a href="/productos/category/1">Máquinas</a></li>
              <li><a href="/productos/category/2">Equipamiento</a></li>
             <li><a href="/productos/category/3">Accesorios</a></li>
@@ -42,7 +43,7 @@
       </ul>
     </div>
     <label for="show-search" class="searchH"><i class="fas fa-search"></i></label>
-    <form action="#" class="search-boxH">
+    <form action="/productos/search" class="search-boxH" method="GET">
       <input type="text" placeholder="¿Qué estás buscando?" required name="search">
       <button type="submit" class="go-iconH"><i class="fas fa-long-arrow-alt-right"></i></button>
     </form>

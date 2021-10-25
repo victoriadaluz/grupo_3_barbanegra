@@ -12,7 +12,8 @@ Si elijo la ruta sin las comillas funciona.  */
 @import url(/stylesheets/userProfile2.css);
 @import url(/stylesheets/admin.css);
 @import url(/stylesheets/aboutUs.css);
-
+@import url(/stylesheets/admin.css);
+@import url(/stylesheets/validations.css);
 
 /* ================================================================= */
 /*@import url(/stylesheets/loginRegistro.css);*/
@@ -35,4 +36,7 @@ Si elijo la ruta sin las comillas funciona.  */
 }
 body{
   font-family: 'Poppins', sans-serif;
+}
+.search-result{
+  margin-top: 100px;
 }

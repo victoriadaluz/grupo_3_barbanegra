@@ -7,24 +7,24 @@ module.exports = [
     .isEmail()
     .withMessage('Debes ingresar un email válido'),
 
-    check('pass')
+    check('passwordlog')
     .notEmpty()
     .withMessage('Por favor, ingrese su contraseña'),
 
-    body('custom')
-        .custom((value, {req})=> {
+    body('passwordlog')
+        .custom((value, {req})=> {            
             return db.Users.findOne({
                 where:{
-                    email: req.body.email
+                    email: req.body.email,
                 }
             })
-            .then(user => {
-                if(!bcrypt.compareSync(req.body.password, user.dataValues.password)){
-                    return Promise.reject()
+            .then((user) => {
+               
+                if(!bcrypt.compareSync(req.body.passwordlog, user.password)){
+                    
+                    return Promise.reject("Email o contraseña incorrectos")
                 }
             })
-            .catch((err) => {
-                return Promise.reject("Email o contraseña incorrectos")
-            })
+            
         })
 ]    
