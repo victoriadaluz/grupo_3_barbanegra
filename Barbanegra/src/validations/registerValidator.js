@@ -38,10 +38,6 @@ module.exports = [
 
 
 
-<<<<<<< HEAD
-    body('password').custom((value, {req}) => value !== req.body.password ? false : true)
-=======
     body('pass1').custom((value, {req}) => value !== req.body.password ? false : true)
->>>>>>> models
     .withMessage("las contraseñas no coinciden")
 ]
