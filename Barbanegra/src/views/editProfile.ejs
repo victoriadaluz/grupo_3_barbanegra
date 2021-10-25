@@ -23,6 +23,7 @@
           <input type="text" class="input"
             value="<%= (typeof old != 'undefined' && old.firstName)?old.nombre:user.firstName %>" id="unombre"
             name="firstName" placeholder="Nombre"/>
+            <br>
           <small id="errorsNombre"
             class="text-danger"><%= (typeof errors != 'undefined' && errors.nombre)?errors.nombre.msg: "" %>
           </small>
@@ -31,7 +32,8 @@
           <label>Apellido </label>
           <input type="text" class="input"
             value="<%= (typeof old != 'undefined' && old.lastName)?old.lastName:user.lastName %>" id="papellido"
-            name="lastName" placeholder="Apellido" %>">
+            name="lastName" placeholder="Apellido">
+            <br>
           <small id="errorsApellido"
             class="text-danger"><%= (typeof errors != 'undefined' && errors.lastName)?errors.lastName.msg: "" %>
           </small>
@@ -41,6 +43,7 @@
           <input type="email" class="input"
             value="<%= (typeof old != 'undefined' && old.email)?old.email:user.email %>" id="pemail" name="email"
             placeholder="Correo electrónico">
+            <br>
           <small id="errorsEmail"
             class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %>
           </small>
@@ -49,6 +52,7 @@
           <label>Teléfono </label>
           <input type="text" class="input" id="telefono"
             value="<%= (typeof old != 'undefined' && old.tel)?old.tel:user.tel %>" name="tel" placeholder="Teléfono">
+            <br>
           <small id="errorsTelefono"
             class="text-danger"><%= (typeof errors != 'undefined' && errors.tel)?errors.tel.msg: "" %>
           </small>
@@ -58,6 +62,7 @@
           <input id="direccion" type="text" class="input"
             value="<%= (typeof old != 'undefined' && old.street)?old.street:user.street %>" name="street"
             placeholder="Dirección">
+            <br>
           <small id="errorsDireccion"
             class="text-danger"><%= (typeof errors != 'undefined' && errors.direccion)?errors.direccion.msg: "" %>
           </small>
@@ -67,23 +72,30 @@
           <input id="numeracion" type="text" class="input"
             value="<%= (typeof old != 'undefined' && old.number)?old.number:user.number %>" name="number"
             placeholder="numeracion">
-          <small id="errorsDireccion"
+            <br>
+          <small id="errorsNumber"
             class="text-danger"><%= (typeof errors != 'undefined' && errors.number)?errors.number.msg: "" %>
           </small>
         </div>
         <div class="inputfield">
           <label>Ciudad </label>
-          <input type="text" class="input" value="<%=user.city%>" name="city"
+          <input id="ciudad" type="text" class="input" value="<%=user.city%>" name="city"
             placeholder="<%= (typeof errors != 'undefined' && errors.city)?errors.city.msg: "ciudad" %>">
+            <br>
+            <span class="error" id="cityErrors"></span>
         </div>
         <div class="inputfield">
           <label>Provincia </label>
-          <input type="text" class="input" value="<%=user.province%>" name="province"
+          <input id="provincia" type="text" class="input" value="<%=user.province%>" name="province"
             placeholder="<%= (typeof errors != 'undefined' && errors.province)?errors.province.msg: "Escriba su provincia" %>">
+            <br>
+            <span class="error" id="provinceErrors"></span>
         </div>
         <div class="inputfield">
           <label>Código postal </label>
-          <input type="text" class="input" value="<%=user.postalCode%>" name="postalCode" placeholder="Ejemplo: 1823">
+          <input id="codigoPostal" type="text" class="input" value="<%=user.postalCode%>" name="postalCode" placeholder="Ejemplo: 1823">
+          <br>
+          <span class="error" id="prostalCodeErrors"></span>
         </div>
         <span id="submitErrors"></span><br> 
         <button type="submit"
