@@ -22,7 +22,7 @@ module.exports = [
             })
             .then(user => {
                 if (user) {
-                    return Promise.reject("Este email ya está registrado. Ingrese un nuevo email")
+                    return Promise.reject("Este email ya está registrado.")
                 }
             })
     }),

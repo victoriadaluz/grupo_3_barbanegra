@@ -68,9 +68,8 @@ module.exports = {
     //metodo register por post  
 
     userRegister: (req, res) => {
-        /*         let errors = validationResult(req); */
-        let errors = []
-        if (errors) {
+      let errors = validationResult(req);        
+        if (errors.isEmpty()) {
             let {
                 firstName,
                 email,
