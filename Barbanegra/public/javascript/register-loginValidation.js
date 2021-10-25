@@ -31,7 +31,7 @@ window.addEventListener("load", () => {
         $emailLoginPassContainer = qs('#loginPass'),
         $emailLoginPassErrors = qs('#loginPassErrors'),
         //submit password
-        $submitLoginErrors = qs('#submitErrors'),
+        $submitLoginErrors = qs('#submitErrors2'),
         $formLogin = qs('#form-login'),
         //expresiones regulares
         regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
