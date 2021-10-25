@@ -18,22 +18,22 @@ window.addEventListener("load", () => {
         $passRegister2 = qs('#password2'),
         $passErrors2 = qs('#pass2Errors2'),
         //form
-        $formReg = qs("#registerForm"),        
+        $formReg = qs("#registerForm"),
         //submit register 
         $submitErrors = qs('#submitErrors'),
         //LOGIN
         //login email
         $emailLogin = qs('#email1'),
-        $emailLoginContainer=qs('#login-email'),
+        $emailLoginContainer = qs('#login-email'),
         $emailLoginErrors = qs('#emailLoginErrors'),
-       //login password
-       $emailLoginPass = qs('#loginPassInput'),
-       $emailLoginPassContainer=qs('#loginPass'),
-       $emailLoginPassErrors = qs('#loginPassErrors'),
-       //submit password
-       $submitLoginErrors=qs('#submitErrors'),
-       $formLogin=qs('#form-login'),
-       //expresiones regulares
+        //login password
+        $emailLoginPass = qs('#loginPassInput'),
+        $emailLoginPassContainer = qs('#loginPass'),
+        $emailLoginPassErrors = qs('#loginPassErrors'),
+        //submit password
+        $submitLoginErrors = qs('#submitErrors'),
+        $formLogin = qs('#form-login'),
+        //expresiones regulares
         regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
         regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
         regExPass = /^(?=.*\d)(?=.*[a-z]).{6,12}$/;
@@ -62,7 +62,7 @@ window.addEventListener("load", () => {
             default:
                 $inputNameContainer.classList.remove('border-red-600')
                 $inputNameContainer.classList.add('border-green-600')
-                $nameError.removeAttribute('class')
+                z
                 $nameError.innerHTML = ''
                 break;
         }
@@ -101,7 +101,7 @@ window.addEventListener("load", () => {
                 break;
             case !regExPass.test($passRegister.value):
                 $passErrors.innerHTML = 'La contraseña deber ser alfanumerica <br> y tener entre 6 a 12 caracteres'
-                $passErrors.classList.add('text-red-600','ml-10','font-medium');
+                $passErrors.classList.add('text-red-600', 'ml-10', 'font-medium');
                 passwordContainer.classList.remove('border-green-600');
                 $passwordContainer.classList.add('border-red-600');
                 break;
@@ -137,19 +137,19 @@ window.addEventListener("load", () => {
         }
     })
 
-    $formReg.addEventListener('submit',(e)=>{
-        let error=false;
-        e.preventDefault();        
-        let elementsForm=$formReg.elements;
-        for(let i=0; i<elementsForm.length; i++) {
-            if(elementsForm[i].value == ""){
+    $formReg.addEventListener('submit', (e) => {
+        let error = false;
+        e.preventDefault();
+        let elementsForm = $formReg.elements;
+        for (let i = 0; i < elementsForm.length; i++) {
+            if (elementsForm[i].value == "") {
                 elementsForm[i].classList.add('text-red-600', 'ml-10', 'font-medium')
                 $submitErrors.innerHTML = 'Quedaron campos sin completar!'
                 $submitErrors.classList.add('text-red-600', 'ml-10', 'font-medium')
-                error=true;
+                error = true;
             }
         }
-        if(!error){
+        if (!error) {
             console.log('ok');
             $formReg.submit()
         };
@@ -157,7 +157,7 @@ window.addEventListener("load", () => {
 
 
     //LOGIN
-    $emailLogin.addEventListener('blur',()=>{
+    $emailLogin.addEventListener('blur', () => {
         switch (true) {
             case !$emailLogin.value.trim():
                 $emailLoginErrors.innerHTML = 'El campo no puede estar vacio'
@@ -190,7 +190,7 @@ window.addEventListener("load", () => {
                 break;
             case !regExPass.test($emailLoginPass.value):
                 $emailLoginPassErrors.innerHTML = 'La contraseña tiene que tener mas de 6 caracteres'
-                $emailLoginPassErrors.classList.add('text-red-600','ml-10','font-medium');
+                $emailLoginPassErrors.classList.add('text-red-600', 'ml-10', 'font-medium');
                 $passwordContainer.classList.remove('border-green-600');
                 $emailLoginPassContainer.classList.add('border-red-600');
                 break;
@@ -203,19 +203,19 @@ window.addEventListener("load", () => {
         }
     })
 
-    $formLogin.addEventListener('submit',(e)=>{
-        let error=false;
-        e.preventDefault();        
-        let elementsForm=$formLogin.elements;
-        for(let i=0; i<elementsForm.length; i++) {
-            if(elementsForm[i].value == ""){
+    $formLogin.addEventListener('submit', (e) => {
+        let error = false;
+        e.preventDefault();
+        let elementsForm = $formLogin.elements;
+        for (let i = 0; i < elementsForm.length; i++) {
+            if (elementsForm[i].value == "") {
                 elementsForm[i].classList.add('text-red-600', 'ml-10', 'font-medium')
                 $submitLoginErrors.innerHTML = 'Quedaron campos sin completar!'
                 $submitLoginErrors.classList.add('text-red-600', 'ml-10', 'font-medium')
-                error=true;
+                error = true;
             }
         }
-        if(!error){
+        if (!error) {
             console.log('ok');
             $formLogin.submit()
         };
