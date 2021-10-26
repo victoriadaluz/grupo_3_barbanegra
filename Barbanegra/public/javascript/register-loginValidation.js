@@ -62,7 +62,6 @@ window.addEventListener("load", () => {
             default:
                 $inputNameContainer.classList.remove('border-red-600')
                 $inputNameContainer.classList.add('border-green-600')
-                z
                 $nameError.innerHTML = ''
                 break;
         }
