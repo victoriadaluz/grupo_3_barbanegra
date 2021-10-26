@@ -1,4 +1,4 @@
-function qs(element){
+/* function qs(element){
     return document.querySelector(element)
 }
 window.addEventListener('load', function (){
@@ -179,4 +179,4 @@ window.addEventListener('load', function (){
                     break;
         }
     })
-})
+}) */
