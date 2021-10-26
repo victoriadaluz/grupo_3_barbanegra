@@ -3,23 +3,23 @@ function qs(element){
 }
 window.addEventListener('load', function (){
     let $inputName = qs('#unombre'),
-    $nameErrors = qs('#errorsNombre'),
+    $nameErrors = qs('#errorNombre'),
     $inputLastName = qs('#papellido'),
-    $lastNameErrors = qs('#errorsApellido'),
+    $lastNameErrors = qs('#errorApellido'),
     $inputEmail = qs('#pemail'),
-    $emailErrors = qs('#errorsEmail'),
+    $emailErrors = qs('#errorEmail'),
     $inputTel = qs('#telefono'),
-    $telErrors = qs('#errorsTelefono'),
+    $telErrors = qs('#errorTelefono'),
     $inputAdress = qs('#direccion'),
-    $adressErrors = qs('#errorsDireccion'),
+    $adressErrors = qs('#errorDireccion'),
     $inputNumeration = qs('#numeracion'),
-    $numerationErrors = qs('#errorsNumber'),
+    $numerationErrors = qs('#errorNumber'),
     $inputCity = qs('#ciudad'),
-    $cityErrors= qs('#cityErrors'),
+    $cityErrors= qs('#errorCity'),
     $inputProvince = qs('#provincia'),
-    $provinceErrors = qs('#provinceErrors'),
+    $provinceErrors = qs('#errorProvince'),
     $inputPostalCode = qs('#codigoPostal'),
-    $postalCodeErrors = qs('#postalCodeErrors');
+    $postalCodeErrors = qs('#errorPostalCode');
     regExp = /^[A-Za-z\s ]+$/g; 
     regExp2 = /^[A-Za-z0-9\s ]+$/g; 
     regExp3 = /^[0-9]*$/;
@@ -29,9 +29,9 @@ window.addEventListener('load', function (){
     $inputName.addEventListener('blur', ()=>{
         switch (true) {
            case !regExp.test($inputName.value):
-                $nameErrors.innerHTML = 'El nombre es incorrecto'
-                $nameErrors.classList.add('errorV')
-                $inputName.classList.add('errorVI')
+               $nameErrors.innerHTML = 'El nombre es incorrecto'
+               $nameErrors.classList.add('errorV')
+               $inputName.classList.add('errorVI')
                 break;
              
         
@@ -46,10 +46,10 @@ window.addEventListener('load', function (){
     $inputLastName.addEventListener('blur', ()=>{
         switch (true) {
            case !regExp.test($inputLastName.value):
-                $lastNameErrors.innerHTML = 'El apellido es incorrecto'
-                $lastNameErrors.classList.add('errorV')
-                $inputLastName.classList.add('errorVI')
-                break;
+               $lastNameErrors.classList.add('errorV')
+               $inputLastName.classList.add('errorVI')
+               $lastNameErrors.innerHTML = 'El apellido es incorrecto'
+               break;
              
         
                 default:

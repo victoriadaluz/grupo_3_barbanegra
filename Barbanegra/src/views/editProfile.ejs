@@ -23,79 +23,85 @@
           <input type="text" class="input"
             value="<%= (typeof old != 'undefined' && old.firstName)?old.nombre:user.firstName %>" id="unombre"
             name="firstName" placeholder="Nombre"/>
-            <br>
-          <small id="errorsNombre"
+             <small id="errorsNombre"
             class="text-danger"><%= (typeof errors != 'undefined' && errors.nombre)?errors.nombre.msg: "" %>
-          </small>
+          </small> 
+          <br>
+          <span class="error" id="errorNombre"></span>
         </div>
         <div class="inputfield" id="editLastName">
           <label>Apellido </label>
           <input type="text" class="input"
             value="<%= (typeof old != 'undefined' && old.lastName)?old.lastName:user.lastName %>" id="papellido"
             name="lastName" placeholder="Apellido">
-            <br>
           <small id="errorsApellido"
             class="text-danger"><%= (typeof errors != 'undefined' && errors.lastName)?errors.lastName.msg: "" %>
           </small>
+          <br>
+          <span class="error" id="errorApellido"></span>
         </div>
         <div class="inputfield">
           <label>Correo electrónico </label>
           <input type="email" class="input"
             value="<%= (typeof old != 'undefined' && old.email)?old.email:user.email %>" id="pemail" name="email"
             placeholder="Correo electrónico">
-            <br>
           <small id="errorsEmail"
             class="text-danger"><%= (typeof errors != 'undefined' && errors.email)?errors.email.msg: "" %>
           </small>
+          <br>
+          <span class="error" id="errorEmail"></span>
         </div>
         <div class="inputfield">
           <label>Teléfono </label>
           <input type="text" class="input" id="telefono"
             value="<%= (typeof old != 'undefined' && old.tel)?old.tel:user.tel %>" name="tel" placeholder="Teléfono">
-            <br>
           <small id="errorsTelefono"
             class="text-danger"><%= (typeof errors != 'undefined' && errors.tel)?errors.tel.msg: "" %>
           </small>
+          <br>
+          <span class="error" id="errorTelefono"></span>
         </div>
         <div class="inputfield">
           <label>Dirección </label>
           <input id="direccion" type="text" class="input"
             value="<%= (typeof old != 'undefined' && old.street)?old.street:user.street %>" name="street"
             placeholder="Dirección">
-            <br>
           <small id="errorsDireccion"
             class="text-danger"><%= (typeof errors != 'undefined' && errors.direccion)?errors.direccion.msg: "" %>
           </small>
+          <br>
+          <span class="error" id="errorDireccion"></span>
         </div>
         <div class="inputfield">
           <label>Numeracion </label>
           <input id="numeracion" type="text" class="input"
             value="<%= (typeof old != 'undefined' && old.number)?old.number:user.number %>" name="number"
             placeholder="numeracion">
-            <br>
           <small id="errorsNumber"
             class="text-danger"><%= (typeof errors != 'undefined' && errors.number)?errors.number.msg: "" %>
           </small>
+          <br>
+          <span class="error" id="errorNumber"></span>
         </div>
         <div class="inputfield">
           <label>Ciudad </label>
           <input id="ciudad" type="text" class="input" value="<%=user.city%>" name="city"
             placeholder="<%= (typeof errors != 'undefined' && errors.city)?errors.city.msg: "ciudad" %>">
             <br>
-            <span class="error" id="cityErrors"></span>
+            <span class="error" id="errorCity"></span>
         </div>
         <div class="inputfield">
           <label>Provincia </label>
           <input id="provincia" type="text" class="input" value="<%=user.province%>" name="province"
             placeholder="<%= (typeof errors != 'undefined' && errors.province)?errors.province.msg: "Escriba su provincia" %>">
             <br>
-            <span class="error" id="provinceErrors"></span>
+            <span class="error" id="errorProvince"></span>
         </div>
         <div class="inputfield">
           <label>Código postal </label>
           <input id="codigoPostal" type="text" class="input" value="<%=user.postalCode%>" name="postalCode" placeholder="Ejemplo: 1823">
           <br>
-          <span class="error" id="prostalCodeErrors"></span>
+          <span class="error" id="errorPostalCode"></span>
         </div>
         <span id="submitErrors"></span><br> 
         <button type="submit"
