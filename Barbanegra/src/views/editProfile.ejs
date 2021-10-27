@@ -10,13 +10,14 @@
     </div>
     <div class="wrapper text-black">
       <form action="/users/profile/edit/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data" id="formEditUser">
-        <figure class="figureAvatar">
+        <figure class="figureAvatar" id="img-preview">
           <img id="userAvatar" src="/images/users/<%= user.image %>" alt="" width="200px" height="200px"
             class="rounded-circle avatar">
         </figure>
         <div class="input-file">
           <input  class="buttonForm" type="file" id="file" name="image"><br><br>
           <p>Cambiar foto de perfil</p>
+          <span class="error" id="fileErrors"></span>
         </div>
         <div class="inputfield" id="editName">
           <label>Nombre </label>

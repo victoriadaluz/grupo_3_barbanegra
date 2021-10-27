@@ -146,7 +146,7 @@ module.exports = {
                     image: req.file && req.file.filename,
                 }, {
                     where: {
-                        id: req.session.user.id
+                        id:req.params.id
                     }
                 })
                 .then(() => {
