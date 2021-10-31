@@ -125,7 +125,7 @@ module.exports = {
                         session: req.session.user ? req.session.user : ""
                     })
                 }).catch(err => console.log(err))
-        }
+        }//chequar array de imagenes
     },
     editarProducto: (req, res) => {
         let productoAEditar = Product.findByPk(req.params.id, {
