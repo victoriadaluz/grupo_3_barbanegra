@@ -39,7 +39,7 @@ module.exports = {
 
                 res.render('admin/adminProductos', {
                     producto,
-                    session:req.session.user?req.session.user:""
+                    session: req.session.user ? req.session.user : ""
 
                 })
             })
@@ -71,56 +71,61 @@ module.exports = {
             })
     },
     uploadNewProduct: (req, res) => {
-
-        let {
-            name,
-            description,
-            brand,
-            price,
-            discount,
-            subcategory,
-        } = req.body;
-
-        let arrayImages = []
-        if (req.files.length > 0) {
-            req.files.forEach(imagen => {
-
-                arrayImages.push(imagen.filename)
-
-            })
-
-        } else {
-            arrayImages.push("default-image.png")
-        }
-        Product.create({
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+            let arrayImages = [];
+            if (req.files) {
+                req.files.forEach(image => {
+                    arrayImages.push(image.filename)
+                })
+            }
+            let {
                 name,
-                description,
-                brandId: brand,
+                brand,
                 price,
                 discount,
-                subcategoryId: subcategory,
-
-            })
-            .then((producto) => {
-
-                let image = arrayImages.map(image => {
-                    return {
-                        image: image,
-                        productId: producto.id
-                    }
-
-                })
-                ProductImage.bulkCreate(image)
-                    .then(() => {
-                        res.redirect("/admin")
-                    }).catch(err => console.log(err))
-
-            })
-            .catch(err => console.log(err))
-
-
-
-
+                category,
+                subcategory,
+                description
+            } = req.body
+            Product.create({
+                name,
+                brandId:brand,
+                price,
+                discount,
+                category,
+                subcategoryId:subcategory,
+                description
+            }).then(product => {
+                if (arrayImages.length > 0) {
+                    let images = arrayImages.map(image => {
+                        return {
+                            image: image,
+                            productId: product.id,
+                        }
+                    })
+                    ProductImage.bulkCreate(images)
+                        .then(() => res.redirect('/admin'))
+                        .catch(err => console.log(err))
+                }
+            }).catch(err => console.log(err))
+        } else {
+            res.send(errors)
+            let category = Category.findAll()
+            let subcategory = Subcategory.findAll()
+            let brand = Brand.findAll()
+            Promise.all([category, subcategory, brand])
+                .then(([category, subcategory, brand]) => {
+                   
+                    res.render('admin/agregarProducto', {
+                        category,
+                        subcategory,
+                        brand,
+                        errors: errors.errors,
+                        session: req.session.user ? req.session.user : ""
+                    })
+                }).catch(err => console.log(err))
+        }
     },
     editarProducto: (req, res) => {
         let productoAEditar = Product.findByPk(req.params.id, {
@@ -156,7 +161,7 @@ module.exports = {
                 arrayImage.push(img.filename)
             })
         }
-        
+
         let {
             name,
             description,
@@ -165,7 +170,7 @@ module.exports = {
             discount,
             subcategory,
         } = req.body;
-        
+
         Product.update({
                 name,
                 description,
@@ -176,19 +181,19 @@ module.exports = {
 
             }, {
                 where: {
-                    id: req.params.id, 
+                    id: req.params.id,
                 },
                 include: [{
-                    association: 'productImage'
-                }, {
-                    association: "brand"
-                },
-                {
-                    association: "subcategory"
-                }
-            ]
+                        association: 'productImage'
+                    }, {
+                        association: "brand"
+                    },
+                    {
+                        association: "subcategory"
+                    }
+                ]
             })
-            .then((producto) => {                
+            .then((producto) => {
                 if (req.files) {
                     if (arrayImage.length = 1) {
                         ProductImage.update({
@@ -206,17 +211,19 @@ module.exports = {
                             })
                             .then(() => {
                                 let images = arrayImage.map(imagen => {
-                                    res.send (images)
+                                    res.send(images)
                                     return {
                                         image: imagen,
                                         productId: +req.params.id
                                     }
-                                
+
                                 })
                                 ProductImage.bulkCreate(images)
-                                .then((images)=>{res.send(images)})
-                                
-                                
+                                    .then((images) => {
+                                        res.send(images)
+                                    })
+
+
                             })
                     }
 
@@ -229,7 +236,7 @@ module.exports = {
                 res.redirect("/admin")
             })
             .catch(err => console.log(err))
- 
+
     },
 
 

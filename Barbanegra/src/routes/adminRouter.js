@@ -10,6 +10,7 @@ let { producto,
     deleteProduct } = require('../controllers/adminController');
 let adminUser = require('../middlewares/adminCheck');
 let session = require('../middlewares/userSession');
+let productsValidator = require('../validations/addProductValidation');
 let upload = require('../middlewares/uploadFiles');
 
 /* GET Index / Index del admin */
@@ -21,7 +22,7 @@ router.get ('/productos',session,adminUser,listarProductos)
 router.get('/agregarProducto',session,adminUser, addProducts)
 
 /* POST- FORMULARIO DE PRODUCTO  */
-router.post('/agregarProducto', upload.array('image'), uploadNewProduct)
+router.post('/agregarProducto', upload.array('image'),productsValidator, uploadNewProduct)
 
 /*ELIMINAR producto */
 router.delete('/eliminarProducto/:id', deleteProduct)

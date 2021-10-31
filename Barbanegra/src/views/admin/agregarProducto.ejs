@@ -13,12 +13,12 @@
             <span class="error" id="productNameErrors"></span>
             </div>
             <div class=""> 
-                <label for="categoryInput">Marca</label>
+                <label for="brand">Marca</label>
                 <br>
                 <select class="form-select w-full" id="specificSizeSelect" name="brand">
                   <option selected hidden value=""><%- brand.name %></option>
                  <% brand.forEach(brand => { %>
-                    <option value="<%- brand.id %>" <%= locals.old && old.category == subcategory.id ? "selected" : "" %> ><%- brand.name %></option>
+                    <option value="<%- brand.id %>" <%= locals.old && old.brand == brand.id ? "selected" : "" %> ><%- brand.name %></option>
                  <% }) %>
                 </select>
             </div>
@@ -36,7 +36,7 @@
                 <div class=''>
                     <label for="categoryInput">Categorias</label>
                     <br>
-                    <select class="form-select w-full" id="specificSizeSelect" name="subcategory">
+                    <select class="form-select w-full" id="specificSizeSelect" name="category">
                       <option selected hidden value="">Categorias</option>
                      <% category.forEach(category => { %>
                         <option value="<%- category.id %>" <%= locals.old && old.category == category.id ? "selected" : "" %> ><%- category.name %></option>
@@ -53,7 +53,7 @@
                     <select class="form-select w-full" id="specificSizeSelect" name="subcategory">
                       <option selected hidden value="">Subcategorias</option>
                      <% subcategory.forEach(subcategory => { %>
-                        <option value="<%- subcategory.id %>" <%= locals.old && old.category == subcategory.id ? "selected" : "" %> ><%- subcategory.name %></option>
+                        <option value="<%- subcategory.id %>" <%= locals.old && old.subcategory == subcategory.id ? "selected" : "" %> ><%- subcategory.name %></option>
                      <% }) %>
                     </select>
                     <% if (locals.errors && errors.category) { %>
