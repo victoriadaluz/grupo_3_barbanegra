@@ -45,26 +45,30 @@ module.exports = {
             })
     },
     addProducts: (req, res) => {
-        Category.findAll({
-                include: [{
+        Product.findAll({
+            include: [{
+                    association: 'productImage'
+                }, {
+                    association: "brand"
+                },
+                {
                     association: "subcategory"
-                }]
-            })
-            .then(categories => {
-                let subcategories = []
-                categories.forEach(category => {
-                    category.subcategory.forEach(subcategory => {
-                        subcategories.push(subcategory)
-                    })
-                })
+                }
+            ]
+        })
+        let category = Category.findAll()
+        let subcategory = Subcategory.findAll()
+        let brand = Brand.findAll()
+        Promise.all([category, subcategory, brand])
+            .then(([category, subcategory, brand]) => {
 
                 res.render('admin/agregarProducto', {
-                    categories,
-                    subcategories,
+                    category,
+                    subcategory,
+                    brand,
                     session: req.session.user ? req.session.user : ""
                 })
             })
-            .catch(err => console.log(err))
     },
     uploadNewProduct: (req, res) => {
 

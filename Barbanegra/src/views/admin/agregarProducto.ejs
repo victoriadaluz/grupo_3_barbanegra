@@ -12,10 +12,15 @@
             <input type="text" name="name" id="inputName">
             <span class="error" id="productNameErrors"></span>
             </div>
-            <div>
-            <label for="inputBrand">Marca</label>
-            <input type="text" name="brand" id="inputBrand">
-            <span class="error" id="productBrandErrors"></span>
+            <div class=""> 
+                <label for="categoryInput">Marca</label>
+                <br>
+                <select class="form-select w-full" id="specificSizeSelect" name="brand">
+                  <option selected hidden value=""><%- brand.name %></option>
+                 <% brand.forEach(brand => { %>
+                    <option value="<%- brand.id %>" <%= locals.old && old.category == subcategory.id ? "selected" : "" %> ><%- brand.name %></option>
+                 <% }) %>
+                </select>
             </div>
             <div>
             <label for="inputPrice">Precio</label>
@@ -33,7 +38,7 @@
                     <br>
                     <select class="form-select w-full" id="specificSizeSelect" name="subcategory">
                       <option selected hidden value="">Categorias</option>
-                     <% categories.forEach(category => { %>
+                     <% category.forEach(category => { %>
                         <option value="<%- category.id %>" <%= locals.old && old.category == category.id ? "selected" : "" %> ><%- category.name %></option>
                      <% }) %>
                     </select>
@@ -47,7 +52,7 @@
                     <br>
                     <select class="form-select w-full" id="specificSizeSelect" name="subcategory">
                       <option selected hidden value="">Subcategorias</option>
-                     <% subcategories.forEach(subcategory => { %>
+                     <% subcategory.forEach(subcategory => { %>
                         <option value="<%- subcategory.id %>" <%= locals.old && old.category == subcategory.id ? "selected" : "" %> ><%- subcategory.name %></option>
                      <% }) %>
                     </select>
