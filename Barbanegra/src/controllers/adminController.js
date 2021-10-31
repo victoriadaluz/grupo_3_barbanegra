@@ -80,6 +80,7 @@ module.exports = {
                 })
             }
             let {
+                //lo que viene por inputs
                 name,
                 brand,
                 price,
@@ -89,6 +90,7 @@ module.exports = {
                 description
             } = req.body
             Product.create({
+                //como viene en base de datos
                 name,
                 brandId:brand,
                 price,
