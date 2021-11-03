@@ -1,4 +1,5 @@
-@-webkit-keyframes scroll {
+
+  @-webkit-keyframes scroll {
     0% {
       -webkit-transform: translateX(0);
               transform: translateX(0);
@@ -26,7 +27,7 @@
     position: relative;
     width: 100%;
   }
-  .slider-home::before, .slider::after {
+  .slider-home::before, .slider-home::after {
     background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 50%);
     content: "";
     height: 100px;
@@ -53,9 +54,9 @@
   }
   .slider-home .slide {
     height: 100px;
-    width: 200px;
+    width: 250px;
   }
 
   .slide {
-    margin: 10px 20px;
+    margin: 10px 30px;
   }

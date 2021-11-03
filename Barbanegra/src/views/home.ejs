@@ -82,33 +82,12 @@
             </div>
             <div class="slider-home">
                 <div class="slide-track">
-                    <div class="slide">
-                        <img src="/images/LOGOS/logowahl.jpeg" height="60" width="100" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="/images/LOGOS/logots.jpeg" height="55" width="100" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="/images/LOGOS/logoBaby.jpeg" height="50" width="100" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="/images/LOGOS/tondeo.png" height="70" width="100" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="/images/LOGOS/yasaka.jpg" height="60" width="100" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="/images/LOGOS/jrl.jpg" height="60" width="100" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="/images/LOGOS/andis.png" height="60" width="100" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="/images/LOGOS/TeknikPro_png.png" height="60" width="100" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="/images/LOGOS/logoJaguar.jpeg" height="60" width="100" alt="" />
-                    </div>
+                    <% for( let i = 0; i < marcas.length; i++ ) { %>
+                        <div class="slide">
+                            <img src="/images/brands-carrousel/<%= marcas[i].images%>" height="60" width="100" alt="" />
+                        </div> 
+                    <% } %>
+                                      
                 </div>
             </div>
         </div>

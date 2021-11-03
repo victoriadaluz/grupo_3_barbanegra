@@ -3,12 +3,12 @@ let {
 } = require('../data/dataBase');
 const { validationResult } = require('express-validator');
 const fs = require('fs');
-const {Product,Subcategory,Category} = require('../database/models');
+const {Product,Subcategory,Category,Brand} = require('../database/models');
 const {Op} = require("sequelize");
 
 module.exports = {
     index: (req, res) => {
-        Product.findAll({
+        let producto= Product.findAll({
             where: {
                 discount: {
                     [Op.gte]: 0
@@ -17,11 +17,13 @@ module.exports = {
             include:[{association:'productImage'},{association:"brand"},
             {association:"subcategory"}]
         })
-        .then(producto =>{
-          
-            
+        let marcas= Brand.findAll()
+        Promise.all([producto,marcas])
+        .then(([producto,marcas]) =>{          
+                      
           res.render('home',{
             producto,
+            marcas,
             session:req.session.user?req.session.user:""
              
           })
