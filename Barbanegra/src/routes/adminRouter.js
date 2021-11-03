@@ -8,7 +8,8 @@ let { producto,
     editarProducto,
     deleteProduct,
     listarUsuarios,
-    eliminarUsuario } = require('../controllers/adminController');
+    eliminarUsuario,
+    editRol } = require('../controllers/adminController');
 let adminUser = require('../middlewares/adminCheck');
 let session = require('../middlewares/userSession');
 let productsValidator = require('../validations/addProductValidation');
@@ -35,5 +36,6 @@ router.put('/productos/editar/:id', upload.array('image'), editarProductoID); //
 //listar usuarios
 router.get('/users/list',session,adminUser,listarUsuarios)
 router.delete('/eliminarUsuario/:id',session,adminUser,eliminarUsuario) //eliminar usuario
+router.put('/users/editRol/:id',session,adminUser,editRol)
 
 module.exports = router;

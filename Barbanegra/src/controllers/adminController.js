@@ -259,6 +259,15 @@ module.exports = {
             }
         }).then(res.redirect('/admin/users/list'))
         
+    },
+    //EDITAR ROL DESDE ADMIN
+    editRol: (req, res) => {
+        let {rol} = req.body
+        Users.update({rol:rol},{where: {id: +req.params.id}})
+        .then((user) => {            
+            res.redirect('/admin/users/list')
+        }).catch(e => console.log(e))
+
     }
 
 }
