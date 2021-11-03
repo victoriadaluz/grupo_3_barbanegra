@@ -285,7 +285,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'gonza@gonza.com','$2a$10$a0ToBEFbL2NtVH.z3dNDg.FpMGlN5igIqgKPVV2tra7xPr0uaW.Me','Gonzalo','Alcocer','1234567890','1633449118989_img_.jpeg',1,'messitetraelacopa','argentina','mendoza',123,2022),(9,'barbanegra@barbanegra.com','$2a$10$VtTKjIzkLWUXnf3CctGNG.ElGybC2PGFXw0beX19N4dcRdhly3Vw.','Barba','Negra','1123456789','1633530392332_img_.png',1,'Calle ','La pampa','La pampa',2345,123);
+INSERT INTO `user` VALUES (1,'gonza@gonza.com','$2a$10$a0ToBEFbL2NtVH.z3dNDg.FpMGlN5igIqgKPVV2tra7xPr0uaW.Me','Gonzalo','Alcocer','1234567890','1635126615620_img_.jpg',1,'messitetraelacopa','argentina','mendoza',123,2022),(9,'barbanegra@barbanegra.com','$2a$10$VtTKjIzkLWUXnf3CctGNG.ElGybC2PGFXw0beX19N4dcRdhly3Vw.','Barba','Negra','1123456789','1633530392332_img_.png',1,'Calle ','La pampa','La pampa',2345,123);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 

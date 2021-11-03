@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-let {login,userRegister,userLogin,userLogout, userProfile, editProfile,prueba , updateProfile} = require('../controllers/usersController')
+let {login,userRegister,userLogin,userLogout, userProfile, editProfile,prueba , updateProfile, deleteUser} = require('../controllers/usersController')
 const uploadAvatar = require('../middlewares/uploadAvatar')
 const registerValidator = require('../validations/registerValidator');
 const loginValidator = require('../validations/loginValidator')
@@ -21,5 +21,8 @@ router.put('/profile/edit/:id', uploadAvatar.single("image"), updateProfile)
 
 /* LOGOUT */
 router.get('/logout', userLogout)
+
+router.delete('/deleteUser/:id',
+ deleteUser)
 
 module.exports = router;

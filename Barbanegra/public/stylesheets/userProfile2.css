@@ -187,3 +187,21 @@
     flex-direction: row;
   }
 }
+
+.inputfield label{
+  color: #1B5185;
+  font-weight:bold;
+  text-transform:uppercase;
+}
+.input-file p{
+color: #1B5185;
+font-weight:bold;
+text-transform:uppercase;
+}
+
+.inputfield input{
+  border: 1px solid #92c1e9;
+}
+.buttonForm{
+  color: #1B5185;
+}

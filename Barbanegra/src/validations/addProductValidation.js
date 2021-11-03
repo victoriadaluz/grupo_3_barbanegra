@@ -5,8 +5,8 @@ module.exports = [
         .notEmpty().withMessage("Este campo es obligatorio").bail()
         .isLength({ min: 4 }).withMessage("El nombre debe tener como mínimo 4 caracteres"),
    
-    check('category')
-        .notEmpty().withMessage("Debes elegir una categoria"),
+  /*   check('category')
+        .notEmpty().withMessage("Debes elegir una categoria"), */
 
     check('subcategory')
         .notEmpty().withMessage("Debes elegir una subcategoria"),
