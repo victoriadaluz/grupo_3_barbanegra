@@ -29,9 +29,9 @@
       <tr  >
         <td data-label="ID"><%= usuario.id %></td>
         <td data-label="EMAIL"><%= usuario.email %></td>
-        <td data-label="Primer Nombre"><%= usuario.firstName %></td>
-        <td data-label="Apellido"><%= usuario.lastName %></td>
-        <td data-label="Telefono"><%= usuario.tel %></td>
+        <td data-label="Primer Nombre"><%= usuario.firstName ? usuario.firstName : "Sin completar" %></td>
+        <td data-label="Apellido"><%= usuario.lastName ? usuario.lastName : "Sin completar" %></td>
+        <td data-label="Telefono"><%= usuario.tel ? usuario.tel : "Sin completar" %></td>
             <td data-label="Rol"><%= usuario.rol %></td>
         <td data-label="Imagen"><img id='imagenAdmin' src="/images/users/<%= usuario.image.length > 0 ? usuario.image : 'default-user.png'%>" alt=""></td>  
 
