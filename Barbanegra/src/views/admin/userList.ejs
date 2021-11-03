@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+    <!-- HEAD -->
+    <%- include('../partials/head') %> 
+<body>
+  <%- include('../partials/headerAdmin') %> 
+<div>
+
+<main class="adminMain">
+  <div class="admin-btn">
+  <h1>LISTADO DE USUARIOS</h1>
+  </div>
+  <table class="tableAd">    
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>EMAIL</th>
+        <th>Primer Nombre</th>
+        <th>Apellido</th>
+        <th>Telefono</th>
+        <th>Rol</th>
+        <th>IMAGEN</th>
+        <th>BORRAR</th>
+      </tr>
+
+    </thead>
+    <tbody>
+      <% usuario.forEach(usuario => { %>
+      <tr  >
+        <td data-label="ID"><%= usuario.id %></td>
+        <td data-label="EMAIL"><%= usuario.email %></td>
+        <td data-label="Primer Nombre"><%= usuario.firstName %></td>
+        <td data-label="Apellido"><%= usuario.lastName %></td>
+        <td data-label="Telefono"><%= usuario.tel %></td>
+            <td data-label="Rol"><%= usuario.rol %></td>
+        <td data-label="Imagen"><img id='imagenAdmin' src="/images/users/<%= usuario.image.length > 0 ? usuario.image : 'default-user.png'%>" alt=""></td>  
+
+        <form action="/admin/eliminarUsuario/<%- usuario.id %>?_method=DELETE" method="POST">
+          <td><button type="submit" style="border: none; background: none;"><i class="fas fa-trash"></i></td>
+        </form>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</main>
+</div>
+</body>
+</html>
