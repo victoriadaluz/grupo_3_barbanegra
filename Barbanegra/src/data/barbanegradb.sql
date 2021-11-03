@@ -54,8 +54,9 @@ DROP TABLE IF EXISTS `brands`;
 CREATE TABLE `brands` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
+  `images` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,7 +65,7 @@ CREATE TABLE `brands` (
 
 LOCK TABLES `brands` WRITE;
 /*!40000 ALTER TABLE `brands` DISABLE KEYS */;
-INSERT INTO `brands` VALUES (1,'Wahl'),(2,'Jaguar'),(3,'BabyLiss Pro'),(4,'TeknikStyle');
+INSERT INTO `brands` VALUES (1,'Wahl','wahl.png'),(2,'Jaguar','jaguar.png'),(3,'BabyLiss Pro','babylyss.jpg'),(4,'TeknikStyle','default.png'),(5,'Don Mateo','don-mateo.png'),(6,'GAMMA','gama.jpg'),(7,'LOREAL','loreal.png'),(8,'Omega','omega.png'),(9,'Taiff','taiff.png'),(10,'Teknikpro','teknikpro.png'),(11,'WELLA','wella.png');
 /*!40000 ALTER TABLE `brands` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -189,7 +190,7 @@ CREATE TABLE `productimage` (
   PRIMARY KEY (`id`),
   KEY `productimage_FK` (`productId`),
   CONSTRAINT `productimage_FK` FOREIGN KEY (`productId`) REFERENCES `product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -302,4 +303,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-11 20:00:48
+-- Dump completed on 2021-11-03  4:18:46
