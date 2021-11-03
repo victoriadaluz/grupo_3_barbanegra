@@ -333,7 +333,6 @@
        
         }
 
- 
  }
  
  
@@ -345,6 +344,7 @@
      .cards{
          grid-template-columns: repeat(4, 1fr);
          padding-right: 50px;
+         max-width: 1400px
         }
 
     .card-de{
@@ -373,5 +373,8 @@
                
                 }
      }
+
+
+  
     
  
