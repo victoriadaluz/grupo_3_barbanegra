@@ -1,8 +1,3 @@
-let {
-    products,
-    addProduct,
-    categories
-} = require('../data/dataBase');
 const {
     validationResult
 } = require('express-validator');
@@ -12,16 +7,11 @@ const {
     Subcategory,
     Category,
     ProductImage,
-    Brand
+    Brand,
+    Users
 } = require('../database/models')
 
 module.exports = {
-    index: (req, res) => {
-        res.render('admin/admin', {
-            title: 'Admin-Barbanegra',
-            session: req.session.user ? req.session.user : ""
-        })
-    },
     listarProductos: (req, res) => {
         Product.findAll({
                 include: [{
@@ -92,11 +82,11 @@ module.exports = {
             Product.create({
                 //como viene en base de datos
                 name,
-                brandId:brand,
+                brandId: brand,
                 price,
                 discount,
                 category,
-                subcategoryId:subcategory,
+                subcategoryId: subcategory,
                 description
             }).then(product => {
                 if (arrayImages.length > 0) {
@@ -118,7 +108,7 @@ module.exports = {
             let brand = Brand.findAll()
             Promise.all([category, subcategory, brand])
                 .then(([category, subcategory, brand]) => {
-                   
+
                     res.render('admin/agregarProducto', {
                         category,
                         subcategory,
@@ -127,7 +117,7 @@ module.exports = {
                         session: req.session.user ? req.session.user : ""
                     })
                 }).catch(err => console.log(err))
-        }//chequar array de imagenes
+        } //chequar array de imagenes
     },
     editarProducto: (req, res) => {
         let productoAEditar = Product.findByPk(req.params.id, {
@@ -241,9 +231,6 @@ module.exports = {
 
     },
 
-
-
-
     deleteProduct: (req, res) => {
         Product.destroy({
             where: {
@@ -251,6 +238,35 @@ module.exports = {
             }
         })
         res.redirect("/admin")
+
+    },
+    //Listar USUARIOS
+    listarUsuarios: (req, res) => {
+        Users.findAll()
+            .then(usuario => {
+                res.render('admin/userList', {
+                    usuario,
+                    session: req.session.user ? req.session.user : ""
+
+                })
+            })
+    },
+    //eliminar usuario
+    eliminarUsuario: (req, res) => {
+        Users.destroy({
+            where: {
+                id: +req.params.id
+            }
+        }).then(res.redirect('/admin/users/list'))
+        
+    },
+    //EDITAR ROL DESDE ADMIN
+    editRol: (req, res) => {
+        let {rol} = req.body
+        Users.update({rol:rol},{where: {id: +req.params.id}})
+        .then((user) => {            
+            res.redirect('/admin/users/list')
+        }).catch(e => console.log(e))
 
     }
 

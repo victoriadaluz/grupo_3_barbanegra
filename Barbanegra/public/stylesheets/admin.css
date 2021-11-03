@@ -16,7 +16,7 @@
  .adminMain div{
      margin-bottom: 20px;
  }
- .adminMain form{
+ form .adminMain{
     max-width: 1440px;
      width: 600px;
      margin: auto;

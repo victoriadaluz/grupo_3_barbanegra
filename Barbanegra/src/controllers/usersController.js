@@ -177,6 +177,16 @@ module.exports = {
         }
         res.redirect('/');
     },
+    deleteUser: (req, res) => {
+        Users.destroy({
+            where: {
+                id: +req.params.id
+            }
+        }),
+        req.session.destroy()
+        res.redirect("/")
+
+    }
 
 
 }

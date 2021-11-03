@@ -3,11 +3,13 @@ let router = express.Router();
 let { producto, 
     listarProductos, 
     addProducts, 
-    uploadNewProduct, 
-    index,
+    uploadNewProduct,
     editarProductoID,
     editarProducto,
-    deleteProduct } = require('../controllers/adminController');
+    deleteProduct,
+    listarUsuarios,
+    eliminarUsuario,
+    editRol } = require('../controllers/adminController');
 let adminUser = require('../middlewares/adminCheck');
 let session = require('../middlewares/userSession');
 let productsValidator = require('../validations/addProductValidation');
@@ -31,6 +33,9 @@ router.delete('/eliminarProducto/:id', deleteProduct)
 router.get('/productos/editar/:id',session,adminUser , editarProducto); //traigo de bd el item que requiere por :id
 router.put('/productos/editar/:id', upload.array('image'), editarProductoID); //de tocar boton editar se activa PUT ojo con eso!
 
-
+//listar usuarios
+router.get('/users/list',session,adminUser,listarUsuarios)
+router.delete('/eliminarUsuario/:id',session,adminUser,eliminarUsuario) //eliminar usuario
+router.put('/users/editRol/:id',session,adminUser,editRol)
 
 module.exports = router;

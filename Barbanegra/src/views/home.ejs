@@ -80,12 +80,15 @@
             <div class="text-center brand-header">
                 <h3>TRABAJAMOS CON LAS MEJORES MARCAS</h3>
             </div>
-            <div class="brands-grid">
-                <img src="/images/LOGOS/logowahl.jpeg" alt="">
-                <img src="/images/LOGOS/logots.jpeg" alt="">
-                <img src="/images/LOGOS/logoBaby.jpeg" alt="">
-                <img src="/images/LOGOS/TeknikPro_png.png" alt="">
-                <img src="/images/LOGOS/logoJaguar.jpeg" alt="">
+            <div class="slider-home">
+                <div class="slide-track">
+                    <% for( let i = 0; i < marcas.length; i++ ) { %>
+                        <div class="slide">
+                            <img src="/images/brands-carrousel/<%= marcas[i].images%>" height="60" width="100" alt="" />
+                        </div> 
+                    <% } %>
+                                      
+                </div>
             </div>
         </div>
 
