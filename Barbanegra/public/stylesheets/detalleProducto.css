@@ -276,6 +276,7 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
+    margin-left: 1%;
 }
 
 
@@ -368,6 +369,10 @@ body {
         height: 280px;
     }
 
+    .inf {
+        margin-left: 1%;
+    }
+
     
     .inf section{
         flex-direction: column;
@@ -430,7 +435,7 @@ body {
 
 /*----------------TABLET -----------------------*/
 
-@media screen and (min-width: 768px) and (max-width: 1023px){
+@media screen and (min-width: 768px) and (max-width: 1024px){
 
 
     .product-info {
@@ -471,6 +476,10 @@ body {
         font-size: 24px;
     }
 
+    .slider-p {
+        margin-top: 145px;
+    }
+
     .slider-p li{
         position: absolute;
         left: 12%;
@@ -487,6 +496,7 @@ body {
 
     .inf {
         margin-top: 10%;
+        margin-left: 1%;
     }
 
     .contenedeor-texto p {
