@@ -4,7 +4,7 @@
 <body>
     <%- include('../partials/headerAdmin.ejs')  %> 
     <main class="adminMain text-black">
-        <form action="/admin/productos/editar/<%= productoAEditar.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <form class='form-admin' action="/admin/productos/editar/<%= productoAEditar.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
             <h2>Editar producto</h2>
             <div id="editProductName">
             <label for="inputName">Nombre </label>
@@ -61,13 +61,15 @@
             <label for="textDescription">Descripción</label>
               <textarea name="description" id="textDescription"><%= productoAEditar.description %></textarea>
               <span class="error" id="descriptionErrors"></span>
-              <figure class="text-center">
-                <img id="userAvatar" src="/images/productos/<%= productoAEditar.productImage.length > 0 ? productoAEditar.productImage[0].image : 'default-image.png'%>" alt="" width="200px" height="200px"
+              <figure class="text-center" id="img-preview">
+                <img  src="/images/productos/<%= productoAEditar.productImage.length > 0 ? productoAEditar.productImage[0].image : 'default-image.png'%>" alt="" width="200px" height="200px"
                   class="rounded-circle avatar">
               </figure>
-              <div class="">
+              <div class="input-file">
                 <label for="inputImage" class="form-label">Imagen</label>
-                <input type="file" name="image" class="form-control" aria-label="file example" id="inputImage" multiple>               
+                <input id="file" type="file" name="image" class="form-control" aria-label="file example" multiple >
+                  
+                   <span class="error" id="fileErrors"></span>               
             </div>
               <button type="submit" class="btn-log">
                 GUARDAR

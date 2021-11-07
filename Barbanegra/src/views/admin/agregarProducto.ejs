@@ -5,7 +5,7 @@
 <body>
     <%- include('../partials/headerAdmin.ejs')  %>
     <main class="adminMain text-black">
-        <form action="agregarProducto" method="POST" enctype="multipart/form-data">
+        <form class="form-admin" action="agregarProducto" method="POST" enctype="multipart/form-data">
             <h2>Agregar producto</h2>
             <div>
             <label for="inputName">Nombre</label>
@@ -67,8 +67,13 @@
                 <span class="error" id="descriptionErrors"></span>
             </div>
             <div class="">
+                <figure class="figureAvatar" id="img-preview">
+                    <img id="userAvatar" src="/images/productos/default-image.png" alt="" width="200px" height="200px"
+                      class="rounded-circle avatar">
+                  </figure>
                 <label for="inputImage" class="form-label">Imagen</label>
-                <input type="file" name="image" class="form-control" aria-label="file example" id="inputImage" multiple>
+                <input id="file" type="file" name="image" class="form-control" aria-label="file example" multiple >
+
                 <% if (locals.errors && errors.image) { %>
                     <small class="text-danger"><%= errors.image.msg %> </small>
                 <% } %>
@@ -77,8 +82,8 @@
         </form>
 
     </main>
-    <script src="/javascript/addProductValidation.js"></script>
-    <%- include('../partials/scripts.ejs')  %>
+    <script src="/javascript/editProductValidation.js"></script>
+<%- include('../partials/scripts.ejs')  %> 
 </body>
 
 </html>
