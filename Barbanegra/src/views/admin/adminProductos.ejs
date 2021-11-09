@@ -1,52 +1,55 @@
  <!DOCTYPE html>
-<html lang="es">
-    <!-- HEAD -->
-    <%- include('../partials/head') %> 
-<body>
-  <%- include('../partials/headerAdmin') %> 
-<div>
+ <html lang="es">
+ <!-- HEAD -->
+ <%- include('../partials/head') %>
 
-<main class="adminMain">
-  <div class="admin-btn">
-  <h1>LISTADO DE PRODUCTOS</h1> 
-  <button class="btn-log btn-admin"><a href="/admin/agregarProducto">Agregar</a></button>
-  </div>
-  <table class="tableAd">
-    
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>NOMBRE</th>
-        <th>MARCA</th>
-        <th>PRECIO</th>
-        <th>DESCRIPCIÓN</th>
-        <th>DESCUENTO</th>
-        <th>SUBCATEGORÍA</th>
-        <th>IMAGEN</th>
-        <th>EDITAR</th>
-        <th>BORRAR</th>
-      </tr>
+ <body>
+   <%- include('../partials/headerAdmin') %>
+   <div>
 
-    </thead>
-    <tbody>
-      <% producto.forEach(producto => { %>
-      <tr  >
-        <td data-label="ID"><%= producto.id %></td>
-        <td data-label="NOMBRE"><%= producto.name %></td>
-        <td data-label="MARCA"><%= producto.brand.name %></td>
-        <td data-label="PRECIO">$<%= producto.price %></td>
-        <td data-label="DESCRIPCIÓN"> 
-          <% if(producto.description.length > 10) { %>
-          <% let descriptionSlice = producto.description.slice(0,10) + "..." %>
-          <%= descriptionSlice %> 
-          <% }else{ %>
-          <%= producto.description %>
-        <% } %></td>
-            <td data-label="DESCUENTO"><%= producto.discount %>%</td>        
-        <td data-label="SUBCATEGORÍA"><%= producto.subcategory.name %></td>
-        <td data-label="Imagen"><img id='imagenAdmin' src="/images/productos/<%= producto.productImage.length > 0 ? producto.productImage[0].image : 'default-image.png'%>" alt=""></td>  
+     <main class="adminMain">
+       <div class="admin-btn">
+         <h1>LISTADO DE PRODUCTOS</h1>
+         <button class="btn-log btn-admin"><a href="/admin/agregarProducto">Agregar</a></button>
+       </div>
+       <table class="tableAd">
 
-        <!-- <td>
+         <thead>
+           <tr>
+             <th>ID</th>
+             <th>NOMBRE</th>
+             <th>MARCA</th>
+             <th>PRECIO</th>
+             <th>DESCRIPCIÓN</th>
+             <th>DESCUENTO</th>
+             <th>SUBCATEGORÍA</th>
+             <th>IMAGEN</th>
+             <th>EDITAR</th>
+             <th>BORRAR</th>
+           </tr>
+
+         </thead>
+         <tbody>
+           <% producto.forEach(producto => { %>
+           <tr>
+             <td data-label="ID"><%= producto.id %></td>
+             <td data-label="NOMBRE"><%= producto.name %></td>
+             <td data-label="MARCA"><%= producto.brand.name %></td>
+             <td data-label="PRECIO">$<%= producto.price %></td>
+             <td data-label="DESCRIPCIÓN">
+               <% if(producto.description.length > 10) { %>
+               <% let descriptionSlice = producto.description.slice(0,10) + "..." %>
+               <%= descriptionSlice %>
+               <% }else{ %>
+               <%= producto.description %>
+               <% } %></td>
+             <td data-label="DESCUENTO"><%= producto.discount %>%</td>
+             <td data-label="SUBCATEGORÍA"><%= producto.subcategory.name %></td>
+             <td data-label="Imagen"><img id='imagenAdmin'
+                 src="/images/productos/<%= producto.productImage.length > 0 ? producto.productImage[0].image : 'default-image.png'%>"
+                 alt=""></td>
+
+             <!-- <td>
           <a href="/admin/eliminarproducto/<%= producto.id %>?_method=DELETE" method="POST">
             <button>ELIMINAR</button>
           </a> 
@@ -54,15 +57,18 @@
             <button>EDITAR</button></a>
           </a>
         </td> -->
-        <td><a href="/admin/productos/editar/<%= producto.id %> "> <i class="fas fa-pen"></i></a></td>
-        <form action="/admin/eliminarProducto/<%- producto.id %>?_method=DELETE" method="POST">
-          <td><button type="submit" style="border: none; background: none;"><i class="fas fa-trash"></i></td>
-        </form>
-      </tr>
-      <% }) %>
-    </tbody>
-  </table>
-</main>
-</div>
-</body>
-</html>
+             <td><a href="/admin/productos/editar/<%= producto.id %> "> <i class="fas fa-pen"></i></a></td>
+             <form action="/admin/eliminarProducto/<%- producto.id %>?_method=DELETE" method="POST">
+               <td><button onclick="if (!confirm('Estas seguro de eliminar el producto: <%= producto.name %>')) { return false }" id="deleteUserBtn" type="submit" style="border: none; background: none;"><i
+                     class="fas fa-trash"></i></td>
+
+             </form>
+           </tr>
+           <% }) %>
+         </tbody>
+       </table>
+     </main>
+   </div>
+ </body>
+
+ </html>

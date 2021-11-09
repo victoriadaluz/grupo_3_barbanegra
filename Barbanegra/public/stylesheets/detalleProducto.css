@@ -17,6 +17,7 @@ body {
     height: 500px;
     align-items: center;
     min-width: 300px;
+    margin-bottom: 120px;
 }
 
 
@@ -46,9 +47,9 @@ body {
     position: relative;
     padding: 0%;
     width: 100%;
-    height: 80%;
+    height: 125%;
     max-width: 100%;
-    margin-top: 20px;
+    margin-top: 65px;
     
 }
 
@@ -275,6 +276,7 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
+    margin-left: 1%;
 }
 
 
@@ -356,6 +358,7 @@ body {
     .main-container-master{
         flex-wrap: wrap;
         height: 100%;
+        margin-bottom: 5px;
     }
 
     .body {
@@ -364,6 +367,10 @@ body {
 
     .slider-p{
         height: 280px;
+    }
+
+    .inf {
+        margin-left: 1%;
     }
 
     
@@ -428,7 +435,7 @@ body {
 
 /*----------------TABLET -----------------------*/
 
-@media screen and (min-width: 768px) and (max-width: 1023px){
+@media screen and (min-width: 768px) and (max-width: 1024px){
 
 
     .product-info {
@@ -439,8 +446,9 @@ body {
     }
 
     .container-algomas {
-        height: 600px;
-        margin-top: 10%;
+    height: 450px;
+    margin-top: 10%;
+    margin-bottom: 25%;
     }
 
 
@@ -468,6 +476,10 @@ body {
         font-size: 24px;
     }
 
+    .slider-p {
+        margin-top: 145px;
+    }
+
     .slider-p li{
         position: absolute;
         left: 12%;
@@ -484,12 +496,17 @@ body {
 
     .inf {
         margin-top: 10%;
+        margin-left: 1%;
     }
 
     .contenedeor-texto p {
         margin-bottom: 0px;
         width: 100%;
         font-size: unset;
+    }
+
+    .main-container-master {
+        margin-bottom: 225px;
     }
 
 
@@ -552,6 +569,10 @@ body {
     .container-algomas {
         height: 600px;
         margin-top: 10%;
+    }
+
+    .main-container-master {
+        margin-bottom: 225px;
     }
 
 }

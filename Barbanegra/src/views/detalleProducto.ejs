@@ -9,11 +9,12 @@
 
 
     
+    
     <div class="container-algomas">
         <ul class="slider-p">
             <li id="slide1-p"><img src="/images/productos/<%= producto.productImage.length > 0 ? producto.productImage[0].image : 'default-image.png'%>" alt=""></li>
-            <!-- <li id="slide2-p"><img src="images/maquina-2.jpeg" alt="incluye"></li> 
-            <li id="slide3-p"><img src="images/maquina-3.jpeg" alt="tercera"></li> -->
+            <li id="slide2-p"><img src="/images/productos/<%= producto.productImage.length > 0 ? producto.productImage[1].image : 'default-image.png'%>" alt="incluye"></li>
+            <li id="slide3-p"><img src="/images/productos/<%= producto.productImage.length > 0 ? producto.productImage[2].image : 'default-image.png'%>" alt="tercera"></li> 
         </ul>
 
         <ul class="menu">

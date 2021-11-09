@@ -55,7 +55,7 @@ margin: 10px 0;
   display: grid;
 grid-template-columns: repeat(4, 1fr);
 gap: 25px;
-margin: 10px 0;
+margin: 10px 19px;
 }
 .cartas-au img {
   width: 100%;
