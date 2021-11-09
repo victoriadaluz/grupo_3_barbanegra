@@ -11,7 +11,8 @@ var indexRouter = require('./routes/indexRouter');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
 let adminRouter = require('./routes/adminRouter');
-
+//apiSearch
+var apiRouter = require('./routes/apiSearch.js');
 
 var app = express();
 
@@ -43,6 +44,7 @@ app.use('/', indexRouter)
 app.use('/users', usersRouter)
 app.use('/productos', productsRouter)
 app.use('/admin', adminRouter)
+app.use('/api', apiRouter); // APIs
 
 
 app.listen(port, () => console.log(`Servidor levantado en el puerto ${port}\n http://localhost:${port}` ))

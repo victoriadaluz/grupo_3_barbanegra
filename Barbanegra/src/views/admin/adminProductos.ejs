@@ -12,8 +12,17 @@
          <h1>LISTADO DE PRODUCTOS</h1>
          <button class="btn-log btn-admin"><a href="/admin/agregarProducto">Agregar</a></button>
        </div>
-       <table class="tableAd">
+      <div class="live-search-bar container w-4/5 ">
+        <input  class= 'search-bar text-black' type="text" id='live-search-bar'>
+        <ul id='resultado-busqueda'>
+          <li>
+            
+          </li>
+        </ul>
+      </div>
 
+
+       <table class="tableAd">        
          <thead>
            <tr>
              <th>ID</th>
@@ -70,5 +79,21 @@
      </main>
    </div>
  </body>
+ <script>
+   window.addEventListener('load', function(){
+      formulario= document.getElementById('formulario')
 
+
+
+      let productos = document.querySelectorAll('tr')
+      for (let index = 0; index < productos.length; index++) {
+        const element = productos[index];
+        console.log(element);
+
+        
+      }
+
+
+   })
+ </script>
  </html>
