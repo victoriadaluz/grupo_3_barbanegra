@@ -2,6 +2,10 @@
     margin-top: 100px;
     background-size: contain;
 }
+.contGral{
+    max-width: 1600px;
+    margin: 0 auto;
+}
 
 .sliderVideo{
     width: 100%;
@@ -333,7 +337,6 @@
        
         }
 
- 
  }
  
  
@@ -373,5 +376,8 @@
                
                 }
      }
+
+
+  
     
  
