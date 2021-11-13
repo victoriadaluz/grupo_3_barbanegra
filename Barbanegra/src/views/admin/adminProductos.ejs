@@ -39,10 +39,8 @@
 
          </thead>
          <tbody>
-           <% producto.forEach(producto => { %>
-            
-           <tr>
-            
+           <% producto.forEach(producto => { %>            
+           <tr>            
              <td data-label="ID"><%= producto.id %></td>
              <td id='name-product' data-label="NOMBRE"><%= producto.name %></td>
              <td data-label="MARCA"><%= producto.brand.name %></td>
@@ -83,6 +81,7 @@
    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">   
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
    <script src="/javascript/confirm-delete.js"></script>
+
  </body>
  
  </html>
