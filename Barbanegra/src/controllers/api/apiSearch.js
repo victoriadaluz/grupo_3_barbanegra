@@ -1,4 +1,7 @@
 let db = require('../../database/models')
+const getUrl = (req) => req.protocol +"://" +req.get("host") + req.originalUrl
+
+
 
 module.exports = {
     getProduct: (req, res)=>{
@@ -16,6 +19,7 @@ module.exports = {
         .then(productos => {
             res.status(200).json({
                 meta: {
+                    endPoint: getUrl(req),
                     status: 200,
                     total: productos.length
                 },
