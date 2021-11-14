@@ -28,7 +28,7 @@
                 </thead>
                 <tbody>
                     <% usuario.forEach(usuario => { %>
-                    <tr>
+                    <tr id='results'>
                         <td data-label="ID"><%= usuario.id %></td>
                         <td data-label="EMAIL"><%= usuario.email %></td>
                         <td data-label="Primer Nombre"><%= usuario.firstName ? usuario.firstName : "Sin completar" %>
@@ -60,6 +60,8 @@
             </table>
         </main>
     </div>
+
+    <%- include('../partials/scripts/') %>
 </body>
 
 </html>

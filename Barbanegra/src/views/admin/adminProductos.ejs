@@ -39,10 +39,10 @@
 
          </thead>
          <tbody>
-           <% producto.forEach(producto => { %>
-           <tr>
+           <% producto.forEach(producto => { %>            
+           <tr id='results'>            
              <td data-label="ID"><%= producto.id %></td>
-             <td data-label="NOMBRE"><%= producto.name %></td>
+             <td id='name-product' data-label="NOMBRE"><%= producto.name %></td>
              <td data-label="MARCA"><%= producto.brand.name %></td>
              <td data-label="PRECIO">$<%= producto.price %></td>
              <td data-label="DESCRIPCIÓN">
@@ -67,33 +67,25 @@
           </a>
         </td> -->
              <td><a href="/admin/productos/editar/<%= producto.id %> "> <i class="fas fa-pen"></i></a></td>
-             <form action="/admin/eliminarProducto/<%- producto.id %>?_method=DELETE" method="POST">
-               <td><button onclick="if (!confirm('Estas seguro de eliminar el producto: <%= producto.name %>')) { return false }" id="deleteUserBtn" type="submit" style="border: none; background: none;"><i
-                     class="fas fa-trash"></i></td>
+             <td class='form-delete' >
+               <form  action="/admin/eliminarProducto/<%- producto.id %>?_method=DELETE" method="POST" id='form-delete-admin'>
+              <button   id="deleteUserBtn" type="submit" style="border: none; background: none;">
+                <i class="fas fa-trash"></i>
+              </button>
+              </form>
+            </td>
 
-             </form>
+             
            </tr>
            <% }) %>
          </tbody>
        </table>
      </main>
    </div>
+   <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">   
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+   <script src="/javascript/confirm-delete.js"></script>
+
  </body>
- <script>
-   window.addEventListener('load', function(){
-      formulario= document.getElementById('formulario')
-
-
-
-      let productos = document.querySelectorAll('tr')
-      for (let index = 0; index < productos.length; index++) {
-        const element = productos[index];
-        console.log(element);
-
-        
-      }
-
-
-   })
- </script>
+ 
  </html>

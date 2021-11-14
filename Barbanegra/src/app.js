@@ -36,9 +36,13 @@ app.use(session({
   saveUninitialized: true,
   cookie:{maxAge: 60000*5} */
 }));
-
+///linea para usar api
+app.use(function(req, res, next) {      // PARA QUE FUNCIONE EL PROYECTO
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 /* Vistas renderizadas */
-
 
 app.use('/', indexRouter)
 app.use('/users', usersRouter)
