@@ -5,7 +5,10 @@
     width: 100%;
 
 }
-
+/* live search */
+.liveSearch{
+    display: none;
+}
 .adminMain h1 {
     width: 100%;
     color: #FFFEFE;
