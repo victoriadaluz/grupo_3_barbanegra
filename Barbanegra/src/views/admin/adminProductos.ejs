@@ -67,8 +67,9 @@
           </a>
         </td> -->
              <td><a href="/admin/productos/editar/<%= producto.id %> "> <i class="fas fa-pen"></i></a></td>
+             <form  action="/admin/eliminarProducto/<%- producto.id %>?_method=DELETE" method="POST" id='form-delete-admin'>
              <td class='form-delete' >
-               <form  action="/admin/eliminarProducto/<%- producto.id %>?_method=DELETE" method="POST" id='form-delete-admin'>
+               
               <button   id="deleteUserBtn" type="submit" style="border: none; background: none;">
                 <i class="fas fa-trash"></i>
               </button>
