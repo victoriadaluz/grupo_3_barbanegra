@@ -9,7 +9,7 @@ window.addEventListener('load', function () {
             e.target.value = ''
           }
           $result.forEach(resultado => {
-            if (resultado.textContent.toLocaleLowerCase().includes(e.target.value)) {
+            if (resultado.textContent.toLowerCase().includes(e.target.value)) {
               resultado.classList.remove('liveSearch')
             } else {
               resultado.classList.add('liveSearch')
@@ -37,8 +37,8 @@ window.addEventListener('load', function () {
               }).then((result) => {
                 if (result.isConfirmed) {
                   Swal.fire(
-                    'Deleted!',
-                    'Your file has been deleted.',
+                    'Borrado!',
+                    'El archivo fue eliminado.',
                     'success',
                     resultado.submit()
                   )
