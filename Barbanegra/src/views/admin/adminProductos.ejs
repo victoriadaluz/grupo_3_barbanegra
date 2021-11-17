@@ -52,7 +52,7 @@
                <% }else{ %>
                <%= producto.description %>
                <% } %></td>
-             <td data-label="DESCUENTO"><%= producto.discount %>%</td>
+             <td data-label="DESCUENTO"><%= producto.discount > 0 ? producto.discount : 0 %>%</td>
              <td data-label="SUBCATEGORÍA"><%= producto.subcategory.name %></td>
              <td data-label="Imagen"><img id='imagenAdmin'
                  src="/images/productos/<%= producto.productImage.length > 0 ? producto.productImage[0].image : 'default-image.png'%>"
