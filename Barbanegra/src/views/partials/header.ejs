@@ -35,7 +35,11 @@
           <%}
           %>           
         </li>
-        <li><a href="/cart"><i class="fas fa-shopping-cart"></i></a></li>
+        <li>
+          <% if (session != "") { %>
+            <a href="/cart"><i class="fas fa-shopping-cart"></i></a></li>
+            <%}
+          %> 
         <li>
           <% if (session.rol == 1) { %>
            <a href="/admin"><i class="fas fa-user-shield"></i></a>
