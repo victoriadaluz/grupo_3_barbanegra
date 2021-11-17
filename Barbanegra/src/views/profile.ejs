@@ -13,22 +13,31 @@
           class="rounded-circle avatar">
       </figure>
       <section class="personal-date text-center text-base sm:text-{sm}">
-          <h1 class="first-name ">Tu nombre: <%= user.firstName %></h1>
-          <h1 class="last-name">Tu apellido:<%= user.lastName %></h1>
-          <h1 class="email">Correo Electronico : <%= user.email %></h1>
-          <h1 class="tel">Telefono : <%= user.tel ? user.tel : "------" %></h1>
+        <h2 id="titleUser">Datos Personales</h2>
+         <h1 class="first-name" id="personal">Nombre :</h1>
+         <p> <%= user.firstName ? user.firstName : "------" %> </p>
+          <h1 class="last-name" id="personal">Apellido :</h1>
+          <p><%= user.lastName ? user.lastName : "------" %></p>
+          <h1 class="email" id="personal">Correo Electronico :</h1>
+          <p> <%= user.email %></p>
+          <h1 class="tel" id="personal">Teléfono :</h1> 
+          <p><%= user.tel ? user.tel : "------" %></p>
       </section>
       <section class="personal-date-adress text-center">
           <div class="container-address">
-              Datos de Envio
+              <h2 id="titleUser">Datos de Envío</h2>
           </div>
-          <h1 class="street">Direccion : <%=  user.street ? user.street : "---------" %> </h1>
-          <h1 class="street">Numeracion : <%=  user.number ? user.number : "---------" %> </h1>
-          <h1 class="street">Codigo postal : <%=  user.postalCode ? user.postalCode : "---------" %> </h1>
-          <h1 class="street">Provincia : <%=  user.province ? user.province : "---------" %> </h1>
+          <h1 class="street" id="shipping">Dirección :</h1>
+          <p> <%=  user.street ? user.street : "------" %> </p>
+          <h1 class="street" id="shipping">Numeración : </h1>
+          <p><%=  user.number ? user.number : "------" %></p>
+          <h1 class="street" id="shipping">Código postal :</h1>
+          <p> <%=  user.postalCode ? user.postalCode : "------" %> </p>
+          <h1 class="street" id="shipping">Provincia :</h1>
+          <p> <%=  user.province ? user.province : "------" %> </p>
       </section>
       <section class="edit-profile text-center m-5 ">
-        <a href="/users/profile/edit/<%= user.id %> " class="bg-blue-400 font-bold text-white px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-500 rounded-full py-3 px-6">
+        <a id="butUs" href="/users/profile/edit/<%= user.id %> " class="bg-blue-400 font-bold text-white px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-500 rounded-full py-3 px-6">
             Editar Perfil
         </a>
         <br>
