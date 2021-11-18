@@ -186,6 +186,21 @@ module.exports = {
         req.session.destroy()
         res.redirect("/")
 
+    },
+    changePw:(req, res) => {
+        Users.findByPk(req.session.user.id)
+            .then((user) => {
+                res.render('changePw',{
+                    user,
+                    session: req.session,
+                })
+            })
+           /*  const {
+                passwordlog, 
+                passwordNew,
+                passwordNew2              
+            } = req.body */
+
     }
 
 

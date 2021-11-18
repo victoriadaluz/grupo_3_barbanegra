@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('./partials/head') %>
+<body class="userProfile">
+  <%- include('./partials/header') %>
+    
+        <main class="uProfile text-black text-center"> 
+            <div class="text-white">
+            <h4>Perfil de <%= user.firstName %>  <%= user.lastName %> </h4>
+            </div>
+            <form action="">
+            <input type="password" name='password' placeholder="Contraseña anteior" id="loginPassInput" /> <br />
+            <input type="password" name='passwordNew' placeholder="Nueva Contraseña" id="loginPassInput" /> <br />
+            <input type="password" name='passwordNew2' placeholder="Repite Contraseña" id="loginPassInput" />
+             </form>
+            </main>
+    
+  <%- include('./partials/footer') %>
+</body>
+
+</html>
