@@ -39,7 +39,8 @@ module.exports = {
                         user: user.user,
                         email: user.email,
                         image: user.imagee,
-                        rol: user.rol
+                        rol: user.rol,
+                        test:0
                     };
                     /*    si hacemos un checkbox poner
                if(req.body.nameimput)  */
@@ -200,6 +201,42 @@ module.exports = {
                 passwordNew,
                 passwordNew2              
             } = req.body */
+
+    },
+    updatePw:(req, res)=>{
+        
+        let errors = validationResult(req);
+        const {
+            password, 
+            passwordNew,            
+        } = req.body
+        if (errors.isEmpty()){
+            Users.update({
+                password:  bcrypt.hashSync(passwordNew, 10),               
+            },
+            {where: {
+                id:req.params.id
+            }}
+            ).then(() => {
+                Users.findByPk(req.params.id)
+                    .then((user) => {
+                        res.redirect('/users/profile')
+                    })
+            }).catch(err => console.log(err)) 
+        } else {
+            Users.findByPk(req.session.user.id)
+            .then((user) => {
+                res.send(errors.mapped())
+                res.render('changePw',{
+                    user,
+                    session: req.session,
+                    errors: errors.mapped()
+                })
+            })
+        }
+            
+        
+
 
     }
 

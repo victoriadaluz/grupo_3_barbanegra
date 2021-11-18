@@ -31,10 +31,9 @@ app.use(methodOverride('_method'));
 
 /*session */
 app.use(session({ 
-  secret: "mySecret",/*  
+  secret: "mySecret",  
   resave: false, 
   saveUninitialized: true,
-  cookie:{maxAge: 60000*5} */
 }));
 ///linea para usar api
 app.use(function(req, res, next) {      // PARA QUE FUNCIONE EL PROYECTO
@@ -51,7 +50,7 @@ app.use('/admin', adminRouter)
 app.use('/api', apiRouter); // APIs
 
 
-app.listen(port, () => console.log(`Servidor levantado en el puerto ${port}\n http://localhost:${port}` ))
+app.listen(port, () => console.log(`💥💥💥💥💥💥💥💥💥💥💥💥💥💥\n💥  Servidor levantado    💥\n💥  en el puerto ${port}     💥\n💥  http://localhost:${port} 💥\n💥💥💥💥💥💥💥💥💥💥💥💥💥💥` ))
 
 
 // catch 404 and forward to error handler

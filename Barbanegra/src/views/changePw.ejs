@@ -8,14 +8,20 @@
             <div class="text-white">
             <h4>Perfil de <%= user.firstName %>  <%= user.lastName %> </h4>
             </div>
-            <form action="">
+            <form action="/users/profile/changepassword/<%= user.id %>?_method=PUT" method="POST" id="formChangePw">
             <input type="password" name='password' placeholder="Contraseña anteior" id="loginPassInput" /> <br />
+           
             <input type="password" name='passwordNew' placeholder="Nueva Contraseña" id="loginPassInput" /> <br />
-            <input type="password" name='passwordNew2' placeholder="Repite Contraseña" id="loginPassInput" />
+            <% if (locals.errors && errors.passwordNew) { %>
+              <br> <small class="text-red-600 ml-10 font-medium" id=""><%= errors.passwordNew.msg %> </small>
+               <% } %>
+            <input type="password" name='passwordNew2' placeholder="Repite Contraseña" id="loginPassInput" /> <br />
+            <span class="error" id=""></span>
+            <button type="submit" class="bg-blue-400 font-bold text-white px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-500 rounded-full py-3 px-6">Cambiar Contraseña</button>
+           
              </form>
             </main>
     
   <%- include('./partials/footer') %>
 </body>
-
 </html>
