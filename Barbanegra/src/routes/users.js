@@ -28,6 +28,6 @@ router.delete('/deleteUser/:id',
 
 //Change password
 router.get('/profile/changePassword/:id',userSession, changePw)
-router.put('/profile/changePassword/:id',userSession, updatePw)
+router.put('/profile/changePassword/:id',userSession,changePasswordValidator, updatePw)
 
 module.exports = router;

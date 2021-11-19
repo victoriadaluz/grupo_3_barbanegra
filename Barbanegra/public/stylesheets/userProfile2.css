@@ -75,7 +75,19 @@
    margin-right: 10px;
   font-size: 14px;
 }
-
+.errores{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.form-changePw{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
 .wrapper .form .inputfield .input,
 .wrapper .form .inputfield .textarea{
   width: 100%;

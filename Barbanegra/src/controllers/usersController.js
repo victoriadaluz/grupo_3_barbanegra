@@ -40,7 +40,7 @@ module.exports = {
                         email: user.email,
                         image: user.imagee,
                         rol: user.rol,
-                        test:0
+                        test:4
                     };
                     /*    si hacemos un checkbox poner
                if(req.body.nameimput)  */
@@ -223,12 +223,21 @@ module.exports = {
                         res.redirect('/users/profile')
                     })
             }).catch(err => console.log(err)) 
-        } else {
+        }else if ( req.session.user.test == 0) {
+            req.session.destroy();
+            if (req.cookies.cookieNegra) {
+                res.cookie('cookieNegra', '', {
+                    maxAge: -1
+                })
+            }
+            res.redirect('/users/login');
+        }
+         else {
             Users.findByPk(req.session.user.id)
             .then((user) => {
-                res.send(errors.mapped())
                 res.render('changePw',{
                     user,
+                    test: req.session.user.test,
                     session: req.session,
                     errors: errors.mapped()
                 })
