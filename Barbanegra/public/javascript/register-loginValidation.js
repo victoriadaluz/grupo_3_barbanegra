@@ -41,13 +41,13 @@ window.addEventListener("load", () => {
     $inputName.addEventListener('blur', () => {
         switch (true) {
             case !$inputName.value.trim():
-                $nameError.innerHTML = 'El campo no puede estar vacio'
+                $nameError.innerHTML = 'El campo no puede estar vacío'
                 $nameError.classList.add('text-red-600', 'ml-10', 'font-medium');
                 $inputNameContainer.classList.remove('border-green-600')
                 $inputNameContainer.classList.add('border-red-600');
                 break;
             case !regExAlpha.test($inputName.value):
-                $nameError.innerHTML = 'Ingresa un nombre valido'
+                $nameError.innerHTML = 'Ingresa un nombre válido'
                 $nameError.classList.add('text-red-600', 'ml-10', 'font-medium');
                 $inputNameContainer.classList.remove('border-green-600');
                 $inputNameContainer.classList.add('border-red-600');
@@ -70,13 +70,13 @@ window.addEventListener("load", () => {
     $inputEmail2.addEventListener('blur', () => {
         switch (true) {
             case !$inputEmail2.value.trim():
-                $errorsEmail2.innerHTML = 'El campo no puede estar vacio'
+                $errorsEmail2.innerHTML = 'El campo no puede estar vacío'
                 $errorsEmail2.classList.add('text-red-600', 'ml-10', 'font-medium');
                 $email2Container.classList.remove('border-green-600')
                 $email2Container.classList.add('border-red-600');
                 break;
             case !regExEmail.test($inputEmail2.value):
-                $errorsEmail2.innerHTML = 'Ingresa un email valido'
+                $errorsEmail2.innerHTML = 'Ingresa un email válido'
                 $errorsEmail2.classList.add('text-red-600', 'ml-10', 'font-medium');
                 $email2Container.classList.remove('border-green-600');
                 $email2Container.classList.add('border-red-600');
@@ -159,13 +159,13 @@ window.addEventListener("load", () => {
     $emailLogin.addEventListener('blur', () => {
         switch (true) {
             case !$emailLogin.value.trim():
-                $emailLoginErrors.innerHTML = 'El campo no puede estar vacio'
+                $emailLoginErrors.innerHTML = 'El campo no puede estar vacío'
                 $emailLoginErrors.classList.add('text-red-600', 'ml-10', 'font-medium');
                 $emailLoginContainer.classList.remove('border-green-600')
                 $emailLoginContainer.classList.add('border-red-600');
                 break;
             case !regExEmail.test($emailLogin.value):
-                $emailLoginErrors.innerHTML = 'Ingresa un email valido'
+                $emailLoginErrors.innerHTML = 'Ingresa un email válido'
                 $emailLoginErrors.classList.add('text-red-600', 'ml-10', 'font-medium');
                 $emailLoginContainer.classList.remove('border-green-600');
                 $emailLoginContainer.classList.add('border-red-600');
