@@ -8,18 +8,13 @@
       <div class="contentH">
       <div class="logoH"><a href="/"> <img src="/images/LOGOS/logocompleto.png" alt=""> </a></div>
         <ul class="linksH">
-          <li><a href="/">HOME</a></li>
+          <li><a href="/admin">HOME</a></li>
           <li>
-            <a href="#" class="desktop-linkH">PRODUCTOS</a>
+            <a href="/admin/productos" class="desktop-linkH">PRODUCTOS</a>
             <input type="checkbox" id="show-products">
             <label for="show-products">PRODUCTOS</label>
-            <ul>
-             <li><a href="/admin/productos">Máquinas</a></li>
-               <li><a href="/admin/productos">Equipamiento</a></li>
-              <li><a href="/admin/productos">Accesorios</a></li>
-              <li><a href="/admin/productos">Repuestos</a></li> 
-            </ul>
         </li>
+        <li><a href="/admin/users/list">USUARIOS</a></li>
           <li>
             <% if (session != "") { %>
              <a href="/users/profile">MI PERFIL</a>
@@ -33,12 +28,14 @@
             <%}
             %>           
           </li>
-          <li><a href="#">USUARIOS</a></li>
+         <li> <% if (session.rol == 1) { %>
+            <a href="/admin"><i class="fas fa-user-shield"></i></a>
+           <%}%> </li>
         </ul>
       </div>
       <label for="show-search" class="searchH"><i class="fas fa-search"></i></label>
       <form action="#" class="search-boxH">
-        <input type="text" placeholder="¿Qué estás buscando?" required name="search">
+        <input id='input-search' type="text" placeholder="¿Qué estás buscando?" required name="search">
         <button type="submit" class="go-iconH"><i class="fas fa-long-arrow-alt-right"></i></button>
       </form>
     </nav>

@@ -5,17 +5,22 @@
 <body>
     <%- include('../partials/headerAdmin.ejs')  %>
     <main class="adminMain text-black">
-        <form action="agregarProducto" method="POST" enctype="multipart/form-data">
+        <form class="form-admin" action="agregarProducto" method="POST" enctype="multipart/form-data">
             <h2>Agregar producto</h2>
             <div>
             <label for="inputName">Nombre</label>
             <input type="text" name="name" id="inputName">
             <span class="error" id="productNameErrors"></span>
             </div>
-            <div>
-            <label for="inputBrand">Marca</label>
-            <input type="text" name="brand" id="inputBrand">
-            <span class="error" id="productBrandErrors"></span>
+            <div class=""> 
+                <label for="brand">Marca</label>
+                <br>
+                <select class="form-select w-full" id="specificSizeSelect" name="brand">
+                  <option selected hidden value=""><%- brand.name %></option>
+                 <% brand.forEach(brand => { %>
+                    <option value="<%- brand.id %>" <%= locals.old && old.brand == brand.id ? "selected" : "" %> ><%- brand.name %></option>
+                 <% }) %>
+                </select>
             </div>
             <div>
             <label for="inputPrice">Precio</label>
@@ -28,27 +33,27 @@
             <span class="error" id="discountErrors"></span>
             </div>
             <div class="categories-subcategories-column grid  gap-4 grid-cols-2">
-                <div class=''>
+                 <div class=''>
                     <label for="categoryInput">Categorias</label>
                     <br>
-                    <select class="form-select w-full" id="specificSizeSelect" name="subcategory">
+                    <select class="form-select w-full" id="specificSizeSelect" name="category">
                       <option selected hidden value="">Categorias</option>
-                     <% categories.forEach(category => { %>
+                     <% category.forEach(category => { %>
                         <option value="<%- category.id %>" <%= locals.old && old.category == category.id ? "selected" : "" %> ><%- category.name %></option>
                      <% }) %>
                     </select>
                     <% if (locals.errors && errors.category) { %>
                         <small class="text-danger"><%= errors.category.msg %></small>
                     <% } %>
-                </div>
+                </div> 
     
                 <div class=""> 
                     <label for="categoryInput">Subcategorias</label>
                     <br>
                     <select class="form-select w-full" id="specificSizeSelect" name="subcategory">
                       <option selected hidden value="">Subcategorias</option>
-                     <% subcategories.forEach(subcategory => { %>
-                        <option value="<%- subcategory.id %>" <%= locals.old && old.category == subcategory.id ? "selected" : "" %> ><%- subcategory.name %></option>
+                     <% subcategory.forEach(subcategory => { %>
+                        <option value="<%- subcategory.id %>" <%= locals.old && old.subcategory == subcategory.id ? "selected" : "" %> ><%- subcategory.name %></option>
                      <% }) %>
                     </select>
                     <% if (locals.errors && errors.category) { %>
@@ -62,8 +67,13 @@
                 <span class="error" id="descriptionErrors"></span>
             </div>
             <div class="">
+                <figure class="figureAvatar" id="img-preview">
+                    <img id="userAvatar" src="/images/productos/default-image.png" alt="" width="200px" height="200px"
+                      class="rounded-circle avatar">
+                  </figure>
                 <label for="inputImage" class="form-label">Imagen</label>
-                <input type="file" name="image" class="form-control" aria-label="file example" id="inputImage" multiple>
+                <input id="file" type="file" name="image" class="form-control" aria-label="file example" multiple >
+
                 <% if (locals.errors && errors.image) { %>
                     <small class="text-danger"><%= errors.image.msg %> </small>
                 <% } %>
@@ -72,8 +82,8 @@
         </form>
 
     </main>
-    <script src="/javascript/addProductValidation.js"></script>
-    <%- include('../partials/scripts.ejs')  %>
+    <script src="/javascript/editProductValidation.js"></script>
+<%- include('../partials/scripts.ejs')  %> 
 </body>
 
 </html>

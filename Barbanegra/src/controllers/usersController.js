@@ -39,7 +39,8 @@ module.exports = {
                         user: user.user,
                         email: user.email,
                         image: user.imagee,
-                        rol: user.rol
+                        rol: user.rol,
+                        test:4
                     };
                     /*    si hacemos un checkbox poner
                if(req.body.nameimput)  */
@@ -146,7 +147,7 @@ module.exports = {
                     image: req.file && req.file.filename,
                 }, {
                     where: {
-                        id: req.session.user.id
+                        id:req.params.id
                     }
                 })
                 .then(() => {
@@ -177,6 +178,76 @@ module.exports = {
         }
         res.redirect('/');
     },
+    deleteUser: (req, res) => {
+        Users.destroy({
+            where: {
+                id: +req.params.id
+            }
+        }),
+        req.session.destroy()
+        res.redirect("/")
+
+    },
+    changePw:(req, res) => {
+        Users.findByPk(req.session.user.id)
+            .then((user) => {
+                res.render('changePw',{
+                    user,
+                    session: req.session,
+                })
+            })
+           /*  const {
+                passwordlog, 
+                passwordNew,
+                passwordNew2              
+            } = req.body */
+
+    },
+    updatePw:(req, res)=>{
+        
+        let errors = validationResult(req);
+        const {
+            password, 
+            passwordNew,            
+        } = req.body
+        if (errors.isEmpty()){
+            Users.update({
+                password:  bcrypt.hashSync(passwordNew, 10),               
+            },
+            {where: {
+                id:req.params.id
+            }}
+            ).then(() => {
+                Users.findByPk(req.params.id)
+                    .then((user) => {
+                        res.redirect('/users/profile')
+                    })
+            }).catch(err => console.log(err)) 
+        }else if ( req.session.user.test == 0) {
+            req.session.destroy();
+            if (req.cookies.cookieNegra) {
+                res.cookie('cookieNegra', '', {
+                    maxAge: -1
+                })
+            }
+            res.redirect('/users/login');
+        }
+         else {
+            Users.findByPk(req.session.user.id)
+            .then((user) => {
+                res.render('changePw',{
+                    user,
+                    test: req.session.user.test,
+                    session: req.session,
+                    errors: errors.mapped()
+                })
+            })
+        }
+            
+        
+
+
+    }
 
 
 }

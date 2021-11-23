@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- HEAD -->
+<%- include('../partials/head') %>
+
+<body>
+    <%- include('../partials/headerAdmin') %>
+    <div>
+
+        <main class="adminMain">
+            <div class="admin-btn">
+                <h1>LISTADO DE USUARIOS</h1>
+            </div>
+            <table class="tableAd">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>EMAIL</th>
+                        <th>Primer Nombre</th>
+                        <th>Apellido</th>
+                        <th>Telefono</th>
+                        <th>Elegir Rol</th>
+                        <th>Editar</th>
+                        <th>IMAGEN</th>
+                        <th>BORRAR</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <% usuario.forEach(usuario => { %>
+                    <tr id='results'>
+                        <td data-label="ID"><%= usuario.id %></td>
+                        <td data-label="EMAIL"><%= usuario.email %></td>
+                        <td data-label="Primer Nombre"><%= usuario.firstName ? usuario.firstName : "Sin completar" %>
+                        </td>
+                        <td data-label="Apellido"><%= usuario.lastName ? usuario.lastName : "Sin completar" %></td>
+                        <td data-label="Telefono"><%= usuario.tel ? usuario.tel : "Sin completar" %></td>
+                        <td data-label="Rol-edit" class="text-black">
+                            <div class="form-control" >
+                            <form class="form" action="/admin/users/editRol/<%- usuario.id%>?_method=PUT" method="POST">
+                            <select name="rol" id="rolEditForm">
+                                <option value="0" <%= usuario.rol == 0? "selected": "" %> >USER</option>
+                                <option value="1" <%= usuario.rol == 1? "selected": "" %>>ADMIN</option>
+                            </select>
+                            <td data-label="Rol-edit"><button type="submit"><i class="fas fa-pen"></i></button></td>
+                         </form>
+                        </div>
+                        </td>
+                        <td data-label="Imagen"><img id='imagenAdmin'
+                                src="/images/users/<%= usuario.image.length > 0 ? usuario.image : 'default-user.png'%>"
+                                alt=""></td>
+
+                        <form action="/admin/eliminarUsuario/<%- usuario.id %>?_method=DELETE" method="POST">
+                            <td><button type="submit" style="border: none; background: none;"><i
+                                        class="fas fa-trash"></i></td>
+                        </form>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </main>
+    </div>
+
+    <%- include('../partials/scripts/') %>
+</body>
+
+</html>

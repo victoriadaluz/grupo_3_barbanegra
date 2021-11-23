@@ -2,7 +2,7 @@ footer{
     bottom: 0px;
     color: #fffefe;
     width: 100%;
-    background-image: url(/images/logos/frame2.png);
+    background-image: url(/images/LOGOS/frame2.png);
     background-size: cover;
     
     
@@ -98,6 +98,11 @@ footer{
         text-align: center;
         color: #fffefe;
     }
+
+    #name, #email, #mess{
+        border-radius: 10px;
+    }
+    
 
 
 

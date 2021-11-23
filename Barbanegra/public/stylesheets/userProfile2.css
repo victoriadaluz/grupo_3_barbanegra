@@ -7,6 +7,25 @@
 .uProfile{
   margin-top: 100px;
 }
+#personal, #shipping{
+  font-weight:600;
+  text-transform: uppercase;
+  color: #1B5185;
+}
+#titleUser{
+  text-align: center;
+  color: #fffefe;
+  font-weight:normal;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #011528, #1b5185, #011528);
+}
+#butUs, #deleteUserBtn{
+  font-weight: lighter;
+  background: linear-gradient(135deg, #011528, #1b5185, #011528)
+}
+#butUs:hover, #deleteUserBtn:hover{
+  box-shadow: inset 0 0 10px;
+}
 .userProfile body{
   margin-top: 100px;
   background: #fec107;
@@ -20,12 +39,13 @@
 .uTitle h4{
   font-size: 30px;
   color: #fff;
+  text-transform: uppercase;
 }
 .wrapper{
   max-width: 500px;
   width: 100%;
   background: #fff;
-  margin: 50px auto;
+  margin: 10px auto;
   box-shadow: 2px 2px 4px rgba(0,0,0,0.125);
   padding: 10px;
 }
@@ -55,7 +75,19 @@
    margin-right: 10px;
   font-size: 14px;
 }
-
+.errores{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.form-changePw{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
 .wrapper .form .inputfield .input,
 .wrapper .form .inputfield .textarea{
   width: 100%;
@@ -186,4 +218,22 @@
   .wrapper .form .inputfield.terms{
     flex-direction: row;
   }
+}
+
+.inputfield label{
+  color: #1B5185;
+  font-weight:600;
+  text-transform:uppercase;
+}
+.input-file p{
+color: #1B5185;
+font-weight:600;
+text-transform:uppercase;
+}
+
+.inputfield input{
+  border: 1px solid #92c1e9;
+}
+.buttonForm{
+  color: #1B5185;
 }

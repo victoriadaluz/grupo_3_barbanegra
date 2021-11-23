@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('./partials/head') %>
+<body class="userProfile">
+  <%- include('./partials/header') %>
+    
+        <main class="uProfile text-black text-center"> 
+            <div class="text-white">
+            <h4> <%= user.firstName %>  <%= user.lastName %>. </h4>
+            <h4>Usted está cambiando su contraseña.</h4> 
+            </div>
+            <form class="form-changePw" action="/users/profile/changepassword/<%= user.id %>?_method=PUT" method="POST" id="formChangePw">
+              <div class="input-field border-2" id="login-email">
+                <i class="fas fa-envelope"></i>
+                <input type="email2" name='email' placeholder="email" id="email1" />
+              </div>
+
+              <div class="input-field border-2" id="loginPass">
+                <i class="fas fa-lock"></i>
+                <input type="password" name='password' placeholder="Contraseña" id="loginPassInput" />
+              </div>
+           
+           <div class="input-field border-2" id="passContainer">
+                <i class="fas fa-lock"></i>
+                <input name="passwordNew" type="password" placeholder="Contraseña" id="password"/>
+              </div>
+
+              <div class="input-field border-2" id="passContainer2">
+                <i class="fas fa-lock"></i>
+                <input name="PasswordNew2" type="password" placeholder="Repetir Contraseña" id="password2" />
+              </div>
+           
+
+              <!-- ERRORES -->
+              <div class="errores border-current bg-yellow-100 text-center rounded-md px-4 ">
+                <% if (locals.errors && errors.password) { %>
+                  <div class="errorPw"><lottie-player src="https://assets7.lottiefiles.com/packages/lf20_pNx6yH.json"  background="transparent"  speed="1"  style="width: 200px; height: 200px;"  loop  autoplay></lottie-player></div>
+               <h1 class="text-red-600 ml-10 font-medium" id=""><%= errors.password.msg %>  Le quedan <%= test -1 %> intentos. Cuando llegue a 0, por motivos de seguridad, se cerrará la sesión. </h1>
+                   <% }  %>
+                <% if (locals.errors && errors.passwordNew) { %>
+                <h1 class="text-red-600 ml-10 font-medium " id=""><%= errors.passwordNew.msg %> </h1>
+                   <% } %>
+              </div>               
+                 
+
+            <button type="submit" class="bg-blue-400 font-bold text-white px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-500 rounded-full py-3 px-6" id= "butUs">Cambiar Contraseña</button>
+           
+             </form>
+            </main>
+    
+  <%- include('./partials/footer') %>
+  <%- include('./partials/scripts') %>
+</body>
+</html>

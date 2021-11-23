@@ -11,7 +11,8 @@ var indexRouter = require('./routes/indexRouter');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
 let adminRouter = require('./routes/adminRouter');
-
+//apiSearch
+var apiRouter = require('./routes/apiSearch.js');
 
 var app = express();
 
@@ -30,22 +31,26 @@ app.use(methodOverride('_method'));
 
 /*session */
 app.use(session({ 
-  secret: "mySecret",/*  
+  secret: "mySecret",  
   resave: false, 
   saveUninitialized: true,
-  cookie:{maxAge: 60000*5} */
 }));
-
+///linea para usar api
+app.use(function(req, res, next) {      // PARA QUE FUNCIONE EL PROYECTO
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 /* Vistas renderizadas */
-
 
 app.use('/', indexRouter)
 app.use('/users', usersRouter)
 app.use('/productos', productsRouter)
 app.use('/admin', adminRouter)
+app.use('/api', apiRouter); // APIs
 
 
-app.listen(port, () => console.log(`Servidor levantado en el puerto ${port}\n http://localhost:${port}` ))
+app.listen(port, () => console.log(`💥💥💥💥💥💥💥💥💥💥💥💥💥💥\n💥  Servidor levantado    💥\n💥  en el puerto ${port}     💥\n💥  http://localhost:${port} 💥\n💥💥💥💥💥💥💥💥💥💥💥💥💥💥` ))
 
 
 // catch 404 and forward to error handler
