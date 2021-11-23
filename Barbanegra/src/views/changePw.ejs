@@ -7,7 +7,7 @@
         <main class="uProfile text-black text-center"> 
             <div class="text-white">
             <h4> <%= user.firstName %>  <%= user.lastName %>. </h4>
-            <h4>Estas cambiando tu contraseña.</h4> 
+            <h4>Usted está cambiando su contraseña.</h4> 
             </div>
             <form class="form-changePw" action="/users/profile/changepassword/<%= user.id %>?_method=PUT" method="POST" id="formChangePw">
               <div class="input-field border-2" id="login-email">
@@ -32,10 +32,10 @@
            
 
               <!-- ERRORES -->
-              <div class="errores border-current bg-yellow-100 text-center rounded-md  ">
+              <div class="errores border-current bg-yellow-100 text-center rounded-md px-4 ">
                 <% if (locals.errors && errors.password) { %>
                   <div class="errorPw"><lottie-player src="https://assets7.lottiefiles.com/packages/lf20_pNx6yH.json"  background="transparent"  speed="1"  style="width: 200px; height: 200px;"  loop  autoplay></lottie-player></div>
-               <h1 class="text-red-600 ml-10 font-medium" id=""><%= errors.password.msg %>  te quedan <%= test -1 %> Intentos, Cuando llegue a 0, por motivos de seguridad, se te deslogeara. </h1>
+               <h1 class="text-red-600 ml-10 font-medium" id=""><%= errors.password.msg %>  Le quedan <%= test -1 %> intentos. Cuando llegue a 0, por motivos de seguridad, se cerrará la sesión. </h1>
                    <% }  %>
                 <% if (locals.errors && errors.passwordNew) { %>
                 <h1 class="text-red-600 ml-10 font-medium " id=""><%= errors.passwordNew.msg %> </h1>
@@ -43,7 +43,7 @@
               </div>               
                  
 
-            <button type="submit" class="bg-blue-400 font-bold text-white px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-500 rounded-full py-3 px-6">Cambiar Contraseña</button>
+            <button type="submit" class="bg-blue-400 font-bold text-white px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-500 rounded-full py-3 px-6" id= "butUs">Cambiar Contraseña</button>
            
              </form>
             </main>

@@ -99,6 +99,11 @@ footer{
         color: #fffefe;
     }
 
+    #name, #email, #mess{
+        border-radius: 10px;
+    }
+    
+
 
 
     /* FIN FOOTER */
