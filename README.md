@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # ECOMMERCE1
 
 _Primer sprint del e-commerce para DH Venture Capitals_
