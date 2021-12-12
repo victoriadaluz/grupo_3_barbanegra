@@ -13,9 +13,23 @@ var productsRouter = require('./routes/products');
 let adminRouter = require('./routes/adminRouter');
 //apiSearch
 var apiRouter = require('./routes/apiSearch.js');
-
+//mysql
+const mysql= require('mysql')
 var app = express();
-
+//conection detaild
+/* const connection = mysql.createConnection({
+  host:'us-cdbr-east-05.cleardb.net',
+  user:'b026d6f8d1fa54',
+  password:'9750b4c0',
+  database:'heroku_0f7c2dcee55ea44'
+})
+connection.query('SELECT * from user where id= "10"',(error,rows)=>{
+  if(error) throw error;
+  if(!error){
+    console.log(rows);
+  }
+} )
+ */
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

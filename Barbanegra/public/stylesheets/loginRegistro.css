@@ -19,9 +19,9 @@ body,
 input {
   font-family: "Poppins", sans-serif;
 }
-  #loginPass, #login-email, #userInput, #email2Input, #passContainer, #passContainer2{
+/*   #loginPass, #login-email, #userInput, #email2Input, #passContainer, #passContainer2{
   display: block;
-} 
+} */ 
 #loginPassInput, #email1, #username, #email2, #password, #password2{
   box-sizing: border-box;
 } 
